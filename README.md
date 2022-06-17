@@ -19,6 +19,7 @@
 - Federico Crespi
 - Franco Curzi
 - Laura María Álvarez 
+- Lidia Paiva
 
 ## Repositorio GitHub:
 https://github.com/lilarock3rs/DHProyectoIntegrador-Musicar.git
