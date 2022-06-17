@@ -1,6 +1,8 @@
 # Digital-Grupo4-Musicar
 
 ## Descripción
+Musicar es un sitio web dedicado a la venta de entradas a eventos musicales. La venta de entradas se efectúa desde el sitio web, mediante la apertura de una cuenta como “Cliente” que le permitirá seleccionar entradas y agregarlas al carrito, para posteriormente efectuar la compra. 
+
 
 
 ## Páginas de Referencia:
