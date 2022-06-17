@@ -25,7 +25,8 @@
 https://github.com/lilarock3rs/DHProyectoIntegrador-Musicar.git
 
 ## Tablero Trello:
-[https://trello.com/b/EjwDK2bR/dh-proyectointegrador-musicar](https://trello.com/b/EjwDK2bR/grupo4musicar-dh)
+
+[https://trello.com/b/EjwDK2bR/grupo4musicar-dh](https://trello.com/b/EjwDK2bR/grupo4musicar-dh)
 
 ## Figma:
 https://www.figma.com/file/bAox4gkBLNVxiVUfzG4BM6/DigitalHouse--Grupo-4-team-library---MUSICAR?node-id=0%3A1
