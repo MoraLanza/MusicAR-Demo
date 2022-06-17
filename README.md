@@ -22,7 +22,7 @@
 - Lidia Paiva
 
 ## Repositorio GitHub:
-https://github.com/lilarock3rs/DHProyectoIntegrador-Musicar.git
+[https://github.com/lilarock3rs/Grupo_4_Musicar/](https://github.com/lilarock3rs/Grupo_4_Musicar/)
 
 ## Tablero Trello:
 
