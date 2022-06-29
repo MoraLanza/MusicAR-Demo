@@ -19,7 +19,6 @@ Musicar es un sitio web dedicado a la venta de entradas a eventos musicales. La 
 - Mora Lanza
 - Hector Fabian Vega
 - Federico Crespi
-- Franco Curzi
 - Laura María Álvarez 
 - Lidia Paiva
 
