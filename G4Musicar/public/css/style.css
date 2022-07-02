@@ -1,22 +1,48 @@
 *{
     margin:0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-p,h1,h2,h3,h4,a{
+body{
     font-family: 'Open Sans', sans-serif;
 }
+
 ul.menu {
     display: flex;
 }
 
 header{
     background-color: #2E1A4E;
-    opacity: 0.8;
-    color:white;
+    opacity: 0.5;
+    padding: 20px 0 15px 0;
+    display: flex;
+    align-items: center;
 }
-nav ul li a {
+
+.lista-opciones, .social-media-list{
+    display: flex;
+}
+
+.nav-item {
     color: white;
-    text-decoration: none;
     font-size: 16px;
+    padding-right: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.boton-border{
+    border: 2px solid white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: white;
+}
+
+.boton-blanco{
+    background-color: white;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #000000;
 }
