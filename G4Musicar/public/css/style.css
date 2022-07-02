@@ -1,1 +1,22 @@
+*{
+    margin:0;
+    padding: 0;
+}
 
+p,h1,h2,h3,h4,a{
+    font-family: 'Open Sans', sans-serif;
+}
+ul.menu {
+    display: flex;
+}
+
+header{
+    background-color: #2E1A4E;
+    opacity: 0.8;
+    color:white;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
