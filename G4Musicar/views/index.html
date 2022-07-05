@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-home.css">
+    <link rel="icon" href="image/favicon.ico">
+
 </head>
 <body>
     <header>
@@ -42,18 +44,75 @@
     <div class="slider-home col-12">
         <img src="image/home/slider-home.png" alt="Slider Home" wid>
     </div>
-    <div class="barra-busqueda">
+    <!-- Sección Buscador -->
+
+    <div class="contenedor-buscador">
+        <div class="barraDeBusqueda">
         <form action="" class="formularioBusqueda">
-            <input type="text" name="palabraClave" id="">
+            
+            <input type="text" name="palabraClave" id="palabraClave" placeholder="Buscar sala, artista,recinto" >
             <select name="categorias" id="categorias">
                 <option selected="selected">Categorias</option>
                 <option value="volvo">Clásica</option>
                 <option value="saab">Rock</option>
                 <option value="mercedes">Salsa</option>
                 <option value="audi">Reggaeton</option>
-</select>
+            </select>
+            <input type="date" name="fechaEvento" id="fechaEvento">
+            <input type="text" name="lugarEvento" id="lugarEvento">
+            <input class="buscar_btn" type="button" value="BUSCAR">
         </form>
     </div>
+    </div>
+    <!-- FIN -- Sección Buscador -->
+
+    <!-- Sección Destacados -->
+    <section class="seccion">
+    <div class="seccion-destacados">
+        <div class="titulo-seccion col-12">
+            <h2>Destacados</h2>
+            <hr class="line-title">
+        </div>
+        <div class="eventos-seccion row-mobile">
+            <div class="contenedor-evento col-4">
+                <div class="imagen-evento">
+                    <img src="/image/home/placeholder.png" alt="">
+                </div>
+                <div class="detalles-evento">
+                   <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                </div>
+            </div>
+            <div class="contenedor-evento col-4">
+                <div class="imagen-evento">
+                    <img src="/image/home/placeholder.png" alt="">
+                </div>
+                <div class="detalles-evento">
+                    <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                </div>
+            </div>
+            <div class="contenedor-evento col-4">
+                <div class="imagen-evento">
+                    <img src="/image/home/placeholder.png" alt="">
+                </div>
+                <div class="detalles-evento">
+                    <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                </div>
+            </div>
+            <div class="contenedor-evento col-4">
+                <div class="imagen-evento">
+                    <img src="/image/home/placeholder.png" alt="">
+                </div>
+                <div class="detalles-evento">
+                    <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- FIN -- Sección Destacados -->
+
     <footer>
         <div class="footer-1 row-mobile">
             <div class="logo col-4">
