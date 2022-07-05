@@ -18,18 +18,17 @@ ul.menu {
 }
 
 header{
-    background-color: #2E1A4E;
-    opacity: 0.5;
+    background-color: #2e1a4e8a;
     padding: 20px 0 15px 0;
     display: flex;
     align-items: center;
+    height: 80px;
 }
 
-.nav-header {
-    align-self: flex-end;
-}
+
 .lista-opciones {
     display: flex;
+    height: 20px;
    
 }
 
@@ -40,6 +39,7 @@ ul.lista-opciones li{
 
 .social-media-list{
     display: flex;
+    height: 80px;
     
 }
 
@@ -64,12 +64,21 @@ ul.lista-opciones li{
     border-radius: 10px;
     color: #000000;
 }
+a.boton-blanco {
+    font-weight: 600;
+    color: black;
+}
 
 .icon-item {
    color: white; 
-   padding-right: 26px;
+   padding: 0px 10px 0px 10px;
    font-size: 24px;
+   border-right: solid 1px white;
 }
+li:last-child .icon-item {
+
+    border-right: transparent;
+ }
 
 .icon-cart {
     color: white;
@@ -106,4 +115,48 @@ nav.nav-footer ul{
 .footer-2{
     background-color: #F3F1F1;
     text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+      width: 100%;
+    }
+  }
+
+
+/* MEDIA QUERIES */
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 767) {
+    [class*="col-"] {
+        width: 100%;
+        float: left;
+      }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    /*Columns*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
 }
