@@ -1,5 +1,4 @@
-   
-  #RETROSPECTIVA - SPRINT 1  
+# RETROSPECTIVA - SPRINT 1  
    
 ## Comenzar a hacer:
 
