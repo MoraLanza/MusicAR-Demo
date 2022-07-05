@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-home.css">
 </head>
 <body>
     <header>
@@ -21,6 +22,9 @@
                 <li><a class="nav-item" href="/">Inicio</a></li>
                 <li><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
                 <li><a class="nav-item" href="/contacto">Contacto</a></li>
+            </ul>
+            <ul class="menu-mobile">
+                <li><a class="icon-item" href=""><i class="fa-solid fa-bars"></i></a></li>
             </ul>
         </nav>
         <ul class="lista-opciones col-4">
@@ -35,19 +39,33 @@
             <li><a class="icon-item" href=""><i class="fab fa-youtube"></i></a></li>
         </ul>
     </header>
-
+    <div class="slider-home col-12">
+        <img src="image/home/slider-home.png" alt="Slider Home" wid>
+    </div>
+    <div class="barra-busqueda">
+        <form action="" class="formularioBusqueda">
+            <input type="text" name="palabraClave" id="">
+            <select name="categorias" id="categorias">
+                <option selected="selected">Categorias</option>
+                <option value="volvo">Clásica</option>
+                <option value="saab">Rock</option>
+                <option value="mercedes">Salsa</option>
+                <option value="audi">Reggaeton</option>
+</select>
+        </form>
+    </div>
     <footer>
-        <div class="footer-1">
-            <div class="logo">
+        <div class="footer-1 row-mobile">
+            <div class="logo col-4">
                 <img src="image/Logo.png" alt="imagen de logo">
             </div>
-            <nav class="nav-footer">
-                <ul class="nav-1">
+            <nav class="nav-footer col-6 row-mobile">
+                <ul class="nav-1 col-2">
                     <li><a  class="nav-item-footer" href="/">Inicio</a></li>
                     <li><a  class="nav-item-footer"href="/faq">Preguntas Frecuentes</a></li>
                     <li><a  class="nav-item-footer"href="/contacto">Contacto</a></li>
                 </ul>
-                <ul class="nav-2">
+                <ul class="nav-2 col-2 row-mobile">
                     <li><a  class="nav-item-footer"href="/">TERMINOS Y CONDICIONES</a></li>
                     <li><a  class="nav-item-footer"href="/faq">DEFENSA AL CONSUMIDOR</a></li>
                     <li><a  class="nav-item-footer"href="/contacto">AYUDA</a></li>
