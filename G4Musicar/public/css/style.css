@@ -9,6 +9,11 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
+h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+
 ul.menu {
     display: flex;
 }
@@ -154,7 +159,7 @@ nav.nav-footer ul{
          text-align: center;
          }
     .row-mobile{
-        display: block;
+        display: block !important;
     }
     nav.nav-footer.col-6 {
         text-align: center;
