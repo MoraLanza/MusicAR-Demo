@@ -113,4 +113,14 @@ nav.nav-footer ul{
 }
 
 
+/*SECTION*/
+
+.titulo-principal{
+    display: flex;
+}
+
 /*MAIN*/
+
+.info-funcion {
+    display: flex;
+}
