@@ -124,3 +124,15 @@ nav.nav-footer ul{
 .info-funcion {
     display: flex;
 }
+
+.medios-de-pago img{
+    width: 145px;
+    height: 110px;
+    box-shadow: 0 0 5px gray;
+}
+
+.medios-de-pago{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
