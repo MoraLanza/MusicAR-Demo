@@ -1,0 +1,213 @@
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+}
+.contenedor-buscador {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.barraDeBusqueda {
+    background-color: #FCFCFC;
+    width: 80%;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+margin-bottom: 40px;
+position: relative;
+top:-50px;
+}
+form.formularioBusqueda {
+    padding: 12px;
+}
+input#palabraClave {
+    width: 250px;
+    border: solid #444444 1px;
+    border-radius: 4px;
+    height: 25px;
+    padding: 5px 10px 5px 10px;
+    margin:10px;
+}
+select#categorias {
+    width: 150px;
+    border: solid #444444 1px;
+    border-radius: 4px;
+    height: 30px;
+    padding: 5px 10px 5px 10px;
+    margin:10px;
+}
+
+input#fechaEvento {
+    width: 150px;
+    border: solid #444444 1px;
+    border-radius: 4px;
+    height: 25px;
+    padding: 5px 10px 5px 10px;
+    margin:10px;
+}
+input#lugarEvento {
+    width: 150px;
+    border: solid #444444 1px;
+    border-radius: 4px;
+    height: 25px;
+    padding: 5px 10px 5px 10px;
+    margin:10px;
+}
+input.buscar_btn {
+    background-color: #FAC025;
+    padding: 9px 17px 9px 17px;
+    border: transparent;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 17px;
+}
+
+.titulo-seccion {
+    text-align:left;
+    position: relative;
+
+}
+.line-title{
+    height:10px;
+    width:110px;
+    color:#FAC025;
+    background-color:#FAC025;
+    border:transparent;
+
+}
+.eventos-seccion {
+
+    margin-top: 10px;
+}
+
+section{
+    width: 100%;
+    justify-content: center;
+
+}
+.seccion-destacados{
+    width: 80%;
+
+    margin: 0 auto;
+
+}
+
+
+.imagen-evento img {
+    width: 100%;
+}
+.detalles-evento {
+    padding: 20px;
+}
+
+.titulo-evento h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.fecha-evento, .valor-evento, .ubicacion-evento, .boton-info {
+    display: flex;
+    padding: 5px 0px;
+}
+.valor{
+    padding: 0px 8px;
+}
+.fecha, .ubicacion {
+    padding: 0px 15px;
+}
+
+.icono-carrito {
+    font-size: 38px;
+    width: 40%;
+    cursor: pointer;
+}
+.boton-amarillo{
+    width: 60%;
+    cursor: pointer;
+    background-color: #FAC025;
+    border-radius:10px;
+    font-size: 14px;
+    font-weight: bold;
+    border:transparent;
+}
+.boton-amarillo:hover{
+    background-color: #d8aa2c;
+    color: white;
+}
+
+
+
+/* MEDIA QUERIES */
+
+
+/*Mobile Phone */
+@media only screen and (max-width: 768px) {
+    article.contenedor-evento {
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin: 6%;
+    }
+    .seccion_eventos {
+        width: 100%;
+        margin-top: 10px;
+        display: block;
+        flex-wrap:inherit;
+    }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) {
+    article.contenedor-evento {
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin: 6%;
+    }
+
+.seccion_eventos {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+    flex-wrap:inherit;
+}
+}
+/*Desktop */
+@media only screen and (min-width: 992px) {
+    .contenedor-evento{
+        background: #FFFFFF;
+    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin: 1%;
+        width: 23%;
+    }
+    .seccion_eventos {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    article.contenedor-evento {
+        width: 23%;
+        background: #FFFFFF;
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin: 1%;       
+    }
+}
