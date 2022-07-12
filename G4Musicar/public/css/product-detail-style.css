@@ -67,6 +67,10 @@ ul.lista-opciones li {
     text-transform: uppercase;
 }
 
+.nav-item:hover{
+    border-bottom: solid 2px white;
+}
+
 .boton-border {
     border: 2px solid white;
     padding: 8px 30px;
@@ -79,6 +83,10 @@ ul.lista-opciones li {
     padding: 10px 40px;
     border-radius: 10px;
     color: #000000;
+}
+
+.boton-blanco:hover{
+    box-shadow: inset 0px 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .icon-item {
@@ -98,6 +106,9 @@ ul.lista-opciones li {
 
 }
 
+.burguer-menu-header{
+    display: none;
+}
 
 /*FOOTER*/
 
@@ -128,6 +139,7 @@ nav.nav-footer ul {
 .footer-2 {
     background-color: #F3F1F1;
     text-align: center;
+    font-size: 12px;
 }
 
 
@@ -170,11 +182,15 @@ nav.nav-footer ul {
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(to bottom, #EDD921, #E7CB3A, #FFBA01);
+    background-image: linear-gradient(to bottom, #d7c521, #d9be36, #daa002);
     font-size: 1rem;
     font-weight: bolder;
     margin-right: 50px;
     margin-left: 190px;
+}
+
+.boton-comprar:hover{
+    background-image: linear-gradient(to bottom, #EDD921, #E7CB3A, #FFBA01);
 }
 
 .boton-carrito {
@@ -186,6 +202,9 @@ nav.nav-footer ul {
     font-size: 2.6rem;
 }
 
+.boton-carrito:hover{
+    font-size: 2.8rem;
+}
 .image-banner img {
     width: 100%;
     height: 547px;
@@ -213,6 +232,10 @@ nav.nav-footer ul {
 .lista-pagina a {
     color: #afacac;
     text-decoration: none;
+}
+
+.lista-pagina a:hover{
+    color:#817f7f;
 }
 
 .lista-pagina i {
@@ -253,8 +276,8 @@ main {
 
 .funcion-form {
     margin: 32px;
-    padding-left: 60px;
-
+    padding-left: 45px;
+    align-self: flex-start;
 }
 
 .funcion-form label {
@@ -285,14 +308,27 @@ main {
 .info-funcion img {
     width: 535px;
     height: 321px;
+    margin-top: 35px;
 }
 
 .localidades {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
+.localidades h3{
+    margin: 0 25px;
+}
+
+.line-localidades{
+    height:5px;
+    width:110px;
+    color:#FAC025;
+    background-color:#FAC025;
+    border:transparent;
+    margin-left: 25px;
+
+}
 
 .table {
     border-collapse: collapse;
@@ -394,7 +430,13 @@ main {
     font-size: 1.3rem;
 
 }
-
+.line-pago{
+    height:5px;
+    width:130px;
+    color:#FAC025;
+    background-color:#FAC025;
+    border:transparent;   
+}
 
 /*Descripcion*/
 
@@ -410,11 +452,20 @@ main {
 
 .descripcion-titulo {
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 30px;
 }
 
 .descripcion-titulo h3 {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
+}
+
+.line-descripcion{
+    height:5px;
+    width:90px;
+    color:#FAC025;
+    background-color:#FAC025;
+    border:transparent;   
+    margin-bottom: 10px;
 }
 
 .descripcion-cuerpo {
@@ -437,8 +488,17 @@ main {
     margin-bottom: 55px;
 }
 
+.line-comollego{
+    height:5px;
+    width:90px;
+    color:#FAC025;
+    background-color:#FAC025;
+    border:transparent; 
+}
+    
+
 .como-llegar iframe {
-    margin-top: 65px;
+    margin-top: 35px;
     width: 941px;
     height: 339px;
 }
@@ -468,7 +528,7 @@ main {
 
 
 /*MEDIA QUERYS*/
-/*tablets*/
+/*mobile phone*/
 @media only screen and (max-width: 768px){
     .nav-header{
         display: none;
@@ -494,18 +554,26 @@ main {
 
     .info-funcion{
         flex-direction: column;
+        align-items: center;
     }
 
     .info-funcion img{
         margin-top: 20px;
+
+    }
+
+    .funcion-form{
+        margin: 32px 0;
+        padding: 0;
     }
 
     .reglas{
-        margin: 0 60px;
+        margin: 0;
     }
 
     .descripcion-cuerpo{
         flex-direction: column;
+        align-items: center;
     }
 
     .texto-descripcion{
@@ -513,8 +581,17 @@ main {
         margin-bottom: 30px;
     }
 
+    .descripcion-cuerpo iframe{
+        max-width: 100%;
+        max-height: fit-content;
+    }
+
     .como-llegar iframe{
-        width: 550px;
+        max-width: 100%;
+    }
+
+    .transporte{
+        margin: 20px 0 0 0;
     }
 
     .nav-pagina{
@@ -523,10 +600,32 @@ main {
 
     .boton-fixed{
         right: 100px;
-        background-color: white;
-        border: solid 2px #2E1A4E;
         padding: 3px;
-        border-radius: 50px;
-        
     }
+
+    .burguer-menu-header{
+        display: block;
+        color: white;
+        font-size: 2rem;
+        margin: 0 20px;
+        align-self: center;
+    }
+
+    .social-media-list{
+        align-items: center;
+    }
+
+    .lista-pagina{
+        display: none;
+    }
+
+    .tarjetas{
+        margin-left: 40px;
+    }
+
+    .medios-de-pago img {
+        width: 106px;
+        height: 91px;
+    }
+    
 }
