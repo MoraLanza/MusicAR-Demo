@@ -32,14 +32,14 @@ ul.menu-mobile {
 
 .boton-border{
     border: 2px solid white;
-    padding: 8px 30px;
+    padding: 8px 15px;
     border-radius: 10px;
     color: white;
 }
 
 .boton-blanco{
     background-color: white;
-    padding: 10px 40px;
+    padding: 10px 15px;
     border-radius: 10px;
     color: #000000;
 }
@@ -120,7 +120,6 @@ nav.nav-footer ul{
 /* Tablet */
 @media only screen and (min-width: 768px) {
     ul.menu-mobile {width: 50%; }
-    .logo{width: 50%;}
     .nav-item { display: none;}
     ul.lista-opciones {display: none;}
     header {display: flex; flex-wrap: wrap;}

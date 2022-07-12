@@ -21,6 +21,9 @@ app.get('/login', (req, res) => {
 app.get('/registro', (req, res) => {
     res.sendFile(path.join(__dirname, './views/registro.html'))
 });
+app.get('/detallesdelproducto', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/product-detail.html'))
+});
 
 
 app.listen(3000, () =>
