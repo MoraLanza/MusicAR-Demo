@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img-background {
+    background-image: url(/image/home/loginfondo.png);
+    background-size: cover;
+    height: calc(100vh - 148px);
+}
+
+p {
+    padding: 10px;
+    text-align: center;
+}
+
+.formulario {
+    color: white;
+    text-align: center;
+    padding: 95px 20px 30px 20px;
+    font-size: 13px;
+    border-radius: 15px;
+    width: 60%;
+    background: rgb(5, 7, 12, 0.40);
+}
+
+.controls {
+    border-radius: 7px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding: 7px;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.linea {
+    padding: 0;
+    margin: 5px;
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+
+.redes-titulo {
+    padding: 10px;
+    margin: -2px;
+    font-size: 24px;
+}
+
+.redes-logos {
+    margin: -10px;
+    display: flex;
+}
+
+/* .redes-logos atras de referencia */
+
+.redes-logos .item-logo {
+    font-size: 50px;
+    margin: 20px;
+}
+
+button {
+    background-color: #FAC025;
+    padding: 9px 17px 9px 17px;
+    border: transparent;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 15px;
+    margin: 17px;
+    width: 40%;
+    text-align: center;
+}
+
+button:hover {
+    background: rgb(36, 36, 149);
+}

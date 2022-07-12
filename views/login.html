@@ -1,69 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicar</title>
+    <title>Musicar - Crea tu cuenta</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="image/Logo.png" alt="imagen de logo">
-        </div>
-        <nav class="nav-header">
-            <ul class="menu">
-                <li><a class="nav-item" href="/">Inicio</a></li>
-                <li><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
-                <li><a class="nav-item" href="/contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <ul class="lista-opciones">
-            <li><a class="boton-border" href="/login">Inicia Sesión</a></li>
-            <li><a class="boton-blanco" href="/registro">Registrate</a></li>
-            <li><a class="icon-item" href=""><i class="fas fa-shopping-cart"></i></a></li>
-        </ul>
-        <ul class="social-media-list" style="color: black;">
-            <li><a class="icon-item" href=""><i class="fab fa-facebook"></i></a></li>
-            <li><a class="icon-item" href=""> <i class="fab fa-instagram"></i></a></li>
-            <li><a class="icon-item" href=""><i class="fab fa-tiktok"></i></a></li>
-            <li><a class="icon-item" href=""><i class="fab fa-youtube"></i></a></li>
-        </ul>
-    </header>
+    <link rel="stylesheet" href="/css/style-home.css">
+    <link rel="stylesheet" href="/css/style-login.css">
+    <link rel="icon" href="image/favicon.ico">
 
-    <main class="login">
-        <form action="/" method="POST" class="form-login">
-            <input type="text" name="user" placeholder="Nombre de usuario">
-            <input type="password" name="pass" placeholder="Contraseña">
-            <button class="btn" type="submit">Ingresar</button>
+</head>
+
+<header>
+    <div class="logo">
+        <img src="image/Logo.png" alt="imagen de logo">
+    </div>
+    <nav class="nav-header">
+        <ul class="menu">
+            <li><a class="nav-item" href="/">Inicio</a></li>
+            <li><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
+            <li><a class="nav-item" href="/contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <ul class="lista-opciones">
+        <li><a class="boton-border" href="/login">Inicia Sesión</a></li>
+        <li><a class="boton-blanco" href="/registro">Registrate</a></li>
+        <li><a class="icon-cart" href=""><i class="fas fa-shopping-cart"></i></a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li><a class="icon-item" href=""><i class="fab fa-facebook"></i></a></li>
+        <li><a class="icon-item" href=""> <i class="fab fa-instagram"></i></a></li>
+        <li><a class="icon-item" href=""><i class="fab fa-tiktok"></i></a></li>
+        <li><a class="icon-item" href=""><i class="fab fa-youtube"></i></a></li>
+    </ul>
+</header>
+
+<body>
+    <main class="img-background">
+        <form action="login.html" method="POST" class="sombra">
+            <div class="formulario">
+                <h2>Ingresá a tu Usuario</h2>
+                <div class="emails">
+                    <div>
+                    <label for="user">E-mail</label>
+                    <input class="controls" type="text" name="email" placeholder="ejemplo@..." id="email">
+                    </div>
+                    <div>
+                    <label for="password">Contraseña</label>
+                    <input class="controls" type="password" name="password" placeholder="****************" id="password">
+                    </div>
+                    <div class="button-container">
+                        <button class="button" type="submit">Ingresar</button>
+                    </div>
+                    <div class="registro">
+                        <p>¿No tienes una cuenta?<a class="Registrate" href="/registro">Registrate!</a></p>
+                    </div>
+                    <div class="redes">
+                        <hr class="linea">
+                        <h5 class="redes-titulo">O inicia con</h5>
+                        <ul class="redes-logos">
+                            <li class="item-logo"><i class="fa-brands fa-facebook"></i></li>
+                            <li class="item-logo"><i class="fa-brands fa-google"></i></li>
+                            <li class="item-logo"><i class="fa-brands fa-instagram"></i></li>
+                        </ul>                        
+                    </div>
+                </div>
+            </div>
         </form>
     </main>
 
     <footer>
-        <div>
-            <div class="logo">
+        <div class="footer-1 row-mobile">
+            <div class="logo col-4">
                 <img src="image/Logo.png" alt="imagen de logo">
             </div>
-            <nav class="nav-header">
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/faq">Preguntas Frecuentes</a></li>
-                    <li><a href="/contacto">Contacto</a></li>
-                    <li><a href="/">TERMINOS Y CONDICIONES</a></li>
-                    <li><a href="/faq">DEFENSA AL CONSUMIDOR</a></li>
-                    <li><a href="/contacto">AYUDA</a></li>
+            <nav class="nav-footer col-6 row-mobile">
+                <ul class="nav-1 col-2">
+                    <li><a class="nav-item-footer" href="/">Inicio</a></li>
+                    <li><a class="nav-item-footer" href="/faq">Preguntas Frecuentes</a></li>
+                    <li><a class="nav-item-footer" href="/contacto">Contacto</a></li>
+                </ul>
+                <ul class="nav-2 col-2 row-mobile">
+                    <li><a class="nav-item-footer" href="/">TERMINOS Y CONDICIONES</a></li>
+                    <li><a class="nav-item-footer" href="/faq">DEFENSA AL CONSUMIDOR</a></li>
+                    <li><a class="nav-item-footer" href="/contacto">AYUDA</a></li>
                 </ul>
             </nav>
         </div>
-        <div>
+        <div class="footer-2">
             <p>MusicAR | Calle falsa 123 (C1106ABE) CABA – Argentina | Info Espectáculos: (011) 4938-4304</p>
             <p>Copyright 2022 MusicAR SRL | Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <include src="/part-header.html"></include>
+
+
 </body>
+
 </html>
