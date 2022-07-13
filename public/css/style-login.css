@@ -7,7 +7,8 @@
 .img-background {
     background-image: url(/image/home/loginfondo.png);
     background-size: cover;
-    height: calc(100vh - 148px);
+    height: calc(100vh - 0px);
+    padding-top: 100px;
 }
 
 p {
@@ -15,21 +16,48 @@ p {
     text-align: center;
 }
 
+a {
+    color: white;
+    font-weight: bold;
+}
+
+form.sombra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .formulario {
     color: white;
     text-align: center;
-    padding: 95px 20px 30px 20px;
+    padding: 30px 20px 30px 20px;
     font-size: 13px;
     border-radius: 15px;
     width: 60%;
     background: rgb(5, 7, 12, 0.40);
 }
 
+.emails {
+    width: 100%;
+}
+
+.barra div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra div label {
+    align-self: flex-start;
+}
+
 .controls {
     border-radius: 7px;
-    margin-bottom: 12px;
-    margin-top: 12px;
-    padding: 7px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 10px;
+    width: 40%;
 }
 
 .redes {
