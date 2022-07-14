@@ -22,6 +22,7 @@ a {
 
 form.sombra {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -32,23 +33,23 @@ form.sombra {
     padding: 30px 20px 30px 20px;
     font-size: 13px;
     border-radius: 15px;
-    width: 60%;
     background: rgb(5, 7, 12, 0.40);
 }
 
-.emails {
-    width: 100%;
-}
 
-.barra div {
+.barra {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    min-width: 100%;
+    margin-top: 20px;
 }
 
-.barra div label {
-    align-self: flex-start;
+.barra label{
+    width: 100%;
+    max-width: 80%;
+    text-align: left;
 }
 
 .controls {
@@ -56,7 +57,8 @@ form.sombra {
     margin-bottom: 0px;
     margin-top: 0px;
     padding: 10px;
-    width: 40%;
+    width: 100%;
+    max-width: 80%;
 }
 
 .redes {
@@ -99,10 +101,19 @@ button {
     border-radius: 10px;
     font-size: 15px;
     margin: 17px;
-    width: 40%;
     text-align: center;
 }
 
 button:hover {
     background: rgb(36, 36, 149);
+}
+
+@media (min-width: 992px) {
+    .controls{  
+        max-width: 20%;
+    }
+
+    .barra label{
+        max-width: 20%;
+    }
 }

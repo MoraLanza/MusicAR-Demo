@@ -45,39 +45,40 @@
 
 <body>
     <main class="img-background">
-        <form action="login.html" method="POST" class="sombra">
-            <div class="formulario">
+
+        <div class="formulario">
+            <form action="login.html" method="POST" class="sombra">
                 <h2>Inicia Sesión</h2>
-                <div class="emails">
+                
                     <div class="barra">
-                        <div>
-                            <p><label for="user">E-mail</label></p>
-                            <input class="controls" type="text" name="email" placeholder="ejemplo@..." id="email">
-                        </div>
-                        <div>
-                            <p><label for="password">Contraseña</label></p>
-                            <input class="controls" type="password" name="password" placeholder="****************"
-                                id="password">
-                        </div>
+                        <label for="user">E-mail</label>
+                        <input class="controls" type="text" name="email" placeholder="ejemplo@..." id="email">
                     </div>
-                    <div class="button-container">
-                        <button class="button" type="submit">Ingresar</button>
+
+                    <div class="barra">
+                        <label for="password">Contraseña</label>
+                        <input class="controls" type="password" name="password" placeholder="****************"
+                            id="password">
                     </div>
-                    <div class="registro">
-                        <p>¿No tienes una cuenta? <a class="Registrate" href="/registro">Registrate!</a></p>
-                    </div>
-                    <div class="redes">
-                        <hr class="linea">
-                        <h5 class="redes-titulo">O inicia con</h5>
-                        <ul class="redes-logos">
-                            <li class="item-logo"><i class="fa-brands fa-facebook"></i></li>
-                            <li class="item-logo"><i class="fa-brands fa-google"></i></li>
-                            <li class="item-logo"><i class="fa-brands fa-instagram"></i></li>
-                        </ul>
-                    </div>
+    
+                <div class="barra">
+                    <button class="controls" type="submit">Ingresar</button>
                 </div>
-            </div>
-        </form>
+
+                <div class="registro">
+                    <p>¿No tienes una cuenta? <a class="Registrate" href="/registro">Registrate!</a></p>
+                </div>
+                <div class="redes">
+                    <hr class="linea">
+                    <h5 class="redes-titulo">O inicia con</h5>
+                    <ul class="redes-logos">
+                        <li class="item-logo"><i class="fa-brands fa-facebook"></i></li>
+                        <li class="item-logo"><i class="fa-brands fa-google"></i></li>
+                        <li class="item-logo"><i class="fa-brands fa-instagram"></i></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
     </main>
 
     <footer>
