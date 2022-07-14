@@ -19,9 +19,9 @@ ul.menu {
     display: flex;
 }
 
-.logo {
+/*.logo {
     padding: 0 30px 0 60px;
-}
+}*/
 
 header {
     background-color: rgba(46, 26, 78, 0.5);
@@ -530,7 +530,17 @@ main {
 
 /*MEDIA QUERYS*/
 /*mobile phone*/
-@media only screen and (max-width: 768px){
+
+
+    
+@media  (max-width: 768px){
+
+    .boton-fixed{
+        display: none;
+    }
+    .main{
+        width: 100vh;
+    }
     .nav-header{
         display: none;
     }
@@ -608,12 +618,12 @@ main {
         display: block;
         color: white;
         font-size: 2rem;
-        margin: 0 20px;
+
         align-self: center;
     }
 
     .social-media-list{
-        align-items: center;
+        
     }
 
     .lista-pagina{
@@ -629,4 +639,24 @@ main {
         height: 91px;
     }
     
+    .image-banner {
+        width: 100vh;
+        object-position: right;
+    }
+
+    .titulo-principal {
+        width: 100vh;
+    }
+    
+    .nav-pagina{
+        width: 100vh;
+    }
+
+    header{
+        width: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
 }

@@ -9,7 +9,7 @@ app.use(express.static(publicPath));
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, './views/header.html'))
+    res.sendFile(path.join(__dirname, './views/product-detail.html'))
 });
 
 app.listen(3000, () =>
