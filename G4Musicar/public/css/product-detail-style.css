@@ -531,15 +531,18 @@ main {
 /*MEDIA QUERYS*/
 /*mobile phone*/
 
-
     
 @media  (max-width: 768px){
-
+    
     .boton-fixed{
         display: none;
     }
-    .main{
+    main{
         width: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .nav-header{
         display: none;
@@ -550,9 +553,10 @@ main {
     }
 
     .titulo-principal{
-        top: 200px;
+        top: 31%;
         flex-direction: column;
         text-align: center;
+        width: 100vh;
     }
 
     .boton-comprar{
@@ -563,23 +567,26 @@ main {
         flex-direction: column;
     }
 
+    .funcion-form{
+        margin: 32px 0;
+    }
+
     .info-funcion{
         flex-direction: column;
         align-items: center;
     }
-
+    .info-sin-img{
+        max-width: 80%;
+    }
     .info-funcion img{
         margin-top: 20px;
-
-    }
-
-    .funcion-form{
-        margin: 32px 0;
-        padding: 0;
+        max-width: 100%;
     }
 
     .reglas{
         margin: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     .descripcion-cuerpo{
@@ -589,6 +596,7 @@ main {
 
     .texto-descripcion{
         width: 100%;
+       max-width: 80%;
         margin-bottom: 30px;
     }
 
@@ -622,16 +630,14 @@ main {
         align-self: center;
     }
 
-    .social-media-list{
-        
-    }
 
     .lista-pagina{
         display: none;
     }
 
     .tarjetas{
-        margin-left: 40px;
+        align-self: flex-end;
+    width: 80%;
     }
 
     .medios-de-pago img {
@@ -639,17 +645,14 @@ main {
         height: 91px;
     }
     
-    .image-banner {
+    .image-banner  {
         width: 100vh;
         object-position: right;
     }
 
-    .titulo-principal {
-        width: 100vh;
-    }
     
     .nav-pagina{
-        width: 100vh;
+        display: none;
     }
 
     header{
