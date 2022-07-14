@@ -7,7 +7,6 @@
 - Hacer peer review de manera más estructurada teniendo en cuenta los checkpoints.
 - Usar el espacio de reuniones que tenemos de manera más optima, es decir, llegar con preguntas puntuales frente a lo que falta para así enfocarnos más en completar los items del Sprint. 
 - Hacer preguntas de manera más elaboradas, señalando como se ocasionó el problema, en que contexto, que hice yo, etc.
-- Googlear. Parece joda pero es muy importante.
 
 ## Hacer más:
 - Los prototipos generados en figma fueron muy detallados y esto permitió que se creara más fácilmente las páginas del sitio web.
