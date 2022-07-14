@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musicar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-home.css">
+    <link rel="stylesheet" href="/css/style-carrito.css">
+    <link rel="icon" href="image/favicon.ico">
+
+</head>
+<body class="carrito-page">
+    <header>
+        <div class="logo col-2">
+            <img src="image/Logo.png" alt="imagen de logo">
+        </div>
+        <nav class="nav-header col-4">
+        <ul class="menu">
+                <li><a class="nav-item" href="/">Inicio</a></li>
+                <li><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
+                <li><a class="nav-item" href="/contacto">Contacto</a></li>
+            </ul>
+            <ul class="menu-mobile">
+                <li><a class="icon-item" href=""><i class="fa-solid fa-bars"></i></a></li>
+            </ul>
+        </nav>
+        <ul class="lista-opciones col-4">
+            <li><a class="boton-border" href="/login">Inicia Sesión</a></li>
+            <li><a class="boton-blanco" href="/registro">Registrate</a></li>
+            <li><a class="icon-cart" href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+        <ul class="social-media-list col-2">
+            <li><a class="icon-item" href=""><i class="fab fa-facebook"></i></a></li>
+            <li><a class="icon-item" href=""> <i class="fab fa-instagram"></i></a></li>
+            <li><a class="icon-item" href=""><i class="fab fa-tiktok"></i></a></li>
+            <li><a class="icon-item" href=""><i class="fab fa-youtube"></i></a></li>
+        </ul>
+    </header>
+    <main class="carrito-main">
+        <section class="carrito-section">
+            <div>
+                <h1 class="carrito-titulo">Carrito de entradas</h1>
+            </div>
+            <form action="/" method="post">
+                <div class="carrito-tabla-container">
+                    <table class="carrito-tabla" cellpadding="0" cellspacing="0" border="0">
+                        <thead class="carrito-thead">
+                            <tr>
+                                <td class="td-show">
+                                    <h6>show</h6>
+                                </td>
+                                <td>
+                                    <h6>precio</h6>
+                                </td>
+                                <td>
+                                    <h6>cantidad</h6>
+                                </td>
+                                <td>
+                                    <h6>costo de servicio</h6>
+                                </td>
+                                <td>
+                                    <h6>subtotal</h6>
+                                </td>
+                            </tr>
+                        </thead>                
+                        <tbody class="carrito-tbody">
+                            <tr class="trow">
+                                <td>
+                                    <figure class="item-carrito-figure">
+                                        <img src="image/home/placeholder.png" alt="">
+                                        <figcaption class="item-carrito-figcaption">
+                                            <h6 class="item-carrito-titulo">Carpa delirio</h6>
+                                            <p>salsa + circo + orquesta</p>
+                                            <p>24 de junio 20hs.</p>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <p>$2.000.-</p>
+                                </td>
+                                <td>
+                                    <div class="counter-container">
+                                        <div class="input-group counter-input">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonMinus" data-field="quantity">-</button>
+                                            <input type="number" max="150" min="1" step="1" value="1" class="form-control" name="quantity">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonPlus" data-field="quantity">+</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>$600.-</p>
+                                </td>
+                                <td>
+                                    <p>$2.600.-</p>
+                                </td>
+                                <td>
+                                    <button class="action-delete">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5"><hr class="trow-divider"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <figure class="item-carrito-figure">
+                                        <img src="image/home/placeholder.png" alt="">
+                                        <figcaption class="item-carrito-figcaption">
+                                            <h6 class="item-carrito-titulo">Carpa delirio</h6>
+                                            <p>salsa + circo + orquesta</p>
+                                            <p>VIP</p>
+                                            <p>24 de junio 20hs.</p>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <p>$2.000.-</p>
+                                </td>
+                                <td>
+                                    <div class="counter-container">
+                                        <div class="input-group counter-input">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonMinus" data-field="quantity">-</button>
+                                            <input type="number" max="150" min="1" step="1" value="1" class="form-control" name="quantity">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonPlus" data-field="quantity">+</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>$600.-</p>
+                                </td>
+                                <td>
+                                    <p>$2.600.-</p>
+                                </td>
+                                <td>
+                                    <button class="action-delete">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="carrito-trow-total">
+                                <td colspan="4" style="text-align:right;">
+                                    <h5>Total final:</h5>
+                                </td>
+                                <td>
+                                    <h5>$5.200</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="carrito-mobile">
+                    <ul class="list-items-carrito">
+                        <li class="carrito-item">
+                            <div class="item-part-top">
+                                <figure class="item-carrito-figure">
+                                    <img src="image/home/placeholder.png" alt="">
+                                    <figcaption class="item-carrito-figcaption">
+                                        <h6 class="item-carrito-titulo">Carpa delirio</h6>
+                                        <p>salsa + circo + orquesta</p>
+                                        <p>24 de junio 20hs.</p>
+                                    </figcaption>
+                                </figure>
+                                <div>
+                                    <button class="action-delete">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                    <p>$2.000.-</p>
+                                    <div class="counter-container">
+                                        <div class="input-group counter-input">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonMinus" data-field="quantity">-</button>
+                                            <input type="number" max="150" min="1" step="1" value="1" class="form-control" name="quantity">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonPlus" data-field="quantity">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-part-bottom">
+                                <h6 class="item-price-title">costo de servicio <span>$600</span></h6>
+                                <h6 class="item-price-title">subtotal <span>$2600</span></h6>
+                            </div>
+                        </li>
+                        <li class="carrito-item">
+                            <div class="item-part-top">
+                                <figure class="item-carrito-figure">
+                                    <img src="image/home/placeholder.png" alt="">
+                                    <figcaption class="item-carrito-figcaption">
+                                        <h6 class="item-carrito-titulo">Carpa delirio</h6>
+                                        <p>salsa + circo + orquesta</p>
+                                        <p>24 de junio 20hs.</p>
+                                    </figcaption>
+                                </figure>
+                                <div>
+                                    <button class="action-delete">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                    <p>$2.000.-</p>
+                                    <div class="counter-container">
+                                        <div class="input-group counter-input">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonMinus" data-field="quantity">-</button>
+                                            <input type="number" max="150" min="1" step="1" value="1" class="form-control" name="quantity">
+                                            <button class="btn btn-outline-secondary" type="button" id="buttonPlus" data-field="quantity">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-part-bottom">
+                                <h6 class="item-price-title">costo de servicio <span>$600</span></h6>
+                                <h6 class="item-price-title">subtotal <span>$2600</span></h6>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="total-row-mobile">
+                        <h4 class="total-price-mobile">Total final:</h4>
+                        <h4 class="total-price-mobile">$5200</h4>
+                    </div>
+                </div>
+                <div class="btn-tabla-container">
+                    <button type="submit" class="submit-button">Continuar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-1">
+            <div class="footer-logo  col-4 mobile">
+                <img src="image/Logo.png" alt="imagen de logo">
+            </div>
+            <nav class="nav-footer col-6 mobile">
+                <ul class="nav-1 col-2">
+                    <li><a href="/" class="nav-item-footer">INICIO</a></li>
+                    <li><a href="/faq" class="nav-item-footer">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="/contacto" class="nav-item-footer">CONTACTO</a></li>
+                </ul>
+                <ul class="nav-2 col-2 mobile">
+                    <li><a href="/terminos" class="nav-item-footer">TERMINOS Y CONDICIONES</a></li>
+                    <li><a href="/defensaconsumidor" class="nav-item-footer">DEFENSA AL CONSUMIDOR</a></li>
+                    <li><a href="/ayuda" class="nav-item-footer">AYUDA</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-2">
+            <p>MusicAR | Calle falsa 123 (C1106ABE) CABA – Argentina | Info Espectáculos: (011) 4938-4304</p>
+            <p>Copyright 2022 MusicAR SRL | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <include src="/part-header.html"></include>
+
+</body>
+</html>
