@@ -11,39 +11,46 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/style-home.css">
-    <link rel="stylesheet" href="/css/style-register.css">
     <link rel="icon" href="image/favicon.ico">
 
 </head>
 <body>
-    <header>
-        <div class="logo col-2">
+    <header id="top">
+        <div class="logo">
             <img src="image/Logo.png" alt="imagen de logo">
         </div>
-        <nav class="nav-header col-4">
+        <nav class="nav-header">
             <ul class="menu">
                 <li><a class="nav-item" href="/">Inicio</a></li>
                 <li><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
                 <li><a class="nav-item" href="/contacto">Contacto</a></li>
             </ul>
-            <ul class="menu-mobile">
-                <li><a class="icon-item" href=""><i class="fa-solid fa-bars"></i></a></li>
-            </ul>
         </nav>
-        <ul class="lista-opciones col-4">
+        <div class="contenedor-lista">
+        <ul class="lista-opciones">
             <li><a class="boton-border" href="/login">Inicia Sesión</a></li>
             <li><a class="boton-blanco" href="/registro">Registrate</a></li>
-            <li><a class="icon-cart" href=""><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a class="icon-cart" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
-        <ul class="social-media-list col-2">
-            <li><a class="icon-item" href=""><i class="fab fa-facebook"></i></a></li>
-            <li><a class="icon-item" href=""> <i class="fab fa-instagram"></i></a></li>
-            <li><a class="icon-item" href=""><i class="fab fa-tiktok"></i></a></li>
-            <li><a class="icon-item" href=""><i class="fab fa-youtube"></i></a></li>
+        </div>
+
+        <div class="burguer-menu-header">
+        <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <ul class="social-media-list">
+            <li><a class="icon-item" href=""><i class="fa-brands fa-facebook"></i></a></li>
+            <p>|</p>
+            <li><a class="icon-item" href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <p>|</p>
+            <li><a class="icon-item" href=""><i class="fa-brands fa-tiktok"></i></a></li>
+            <p>|</p>
+            <li><a class="icon-item" href=""><i class="fa-brands fa-youtube"></i></a></li>
         </ul>
+        
     </header>
     <div class="slider-home col-12">
-        <img src="image/home/slider-home.png" alt="Slider Home" wid>
+        <img src="image/home/slider-home.png"  width="100%" alt="Slider Home" wid>
     </div>
     <!-- Sección Buscador -->
 
@@ -66,69 +73,367 @@
     </div>
     </div>
     <!-- FIN -- Sección Buscador -->
-
     <!-- Sección Destacados -->
-    <section class="seccion">
+<section>
     <div class="seccion-destacados">
         <div class="titulo-seccion col-12">
             <h2>Destacados</h2>
             <hr class="line-title">
         </div>
-        <div class="eventos-seccion row-mobile">
-            <div class="contenedor-evento col-4">
+        <div class="seccion_eventos">
+            <article class="contenedor-evento">
+                <a class="contenedor-evento-link" href="/product-detail"></a>
                 <div class="imagen-evento">
                     <img src="/image/home/placeholder.png" alt="">
                 </div>
                 <div class="detalles-evento">
-                   <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                <div class="fecha-evento">
+                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
                 </div>
-            </div>
-            <div class="contenedor-evento col-4">
+                <div class="valor-evento">
+                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                    <div class="valor"><p>Desde $1.000.-</p></div>
+                </div>
+                <div class="ubicacion-evento">
+                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                </div>
+                <div class="boton-info">
+                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                </div>
+                </div>
+            </article>
+            <article class="contenedor-evento">
+                <a class="contenedor-evento-link" href="/product-detail"></a>
                 <div class="imagen-evento">
                     <img src="/image/home/placeholder.png" alt="">
                 </div>
                 <div class="detalles-evento">
-                    <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                <div class="fecha-evento">
+                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
                 </div>
-            </div>
-            <div class="contenedor-evento col-4">
+                <div class="valor-evento">
+                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                    <div class="valor"><p>Desde $1.000.-</p></div>
+                </div>
+                <div class="ubicacion-evento">
+                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                </div>
+                <div class="boton-info">
+                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                </div>
+                </div>
+            </article>
+            <article class="contenedor-evento">
+                <a class="contenedor-evento-link" href="/product-detail"></a>
                 <div class="imagen-evento">
                     <img src="/image/home/placeholder.png" alt="">
                 </div>
                 <div class="detalles-evento">
-                    <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                <div class="fecha-evento">
+                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
                 </div>
-            </div>
-            <div class="contenedor-evento col-4">
+                <div class="valor-evento">
+                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                    <div class="valor"><p>Desde $1.000.-</p></div>
+                </div>
+                <div class="ubicacion-evento">
+                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                </div>
+                <div class="boton-info">
+                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                </div>
+                </div>
+            </article>
+            <article class="contenedor-evento">
+                <a class="contenedor-evento-link" href="/product-detail"></a>
                 <div class="imagen-evento">
                     <img src="/image/home/placeholder.png" alt="">
                 </div>
                 <div class="detalles-evento">
-                    <p> Carpa DELIRIO - De vuelta al ritmo</p>
+                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                <div class="fecha-evento">
+                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                    <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
                 </div>
-            </div>
+                <div class="valor-evento">
+                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                    <div class="valor"><p>Desde $1.000.-</p></div>
+                </div>
+                <div class="ubicacion-evento">
+                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                </div>
+                <div class="boton-info">
+                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+
+                </div>
+                </div>
+            </article>         
         </div>
 
     </div>
 </section>
-
     <!-- FIN -- Sección Destacados -->
-
+<br>
+<br>
+    <!-- Sección Lo más buscado-->
+    <section>
+        <div class="seccion-destacados">
+            <div class="titulo-seccion col-12">
+                <h2>Lo más buscados</h2>
+                <hr class="line-title">
+            </div>
+            <div class="seccion_eventos">
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>         
+            </div>
+    
+        </div>
+    </section>
+        <!-- FIN -- Sección Lo más buscado -->
+<br>
+<br>
+    <!-- Sección Lo más buscado-->
+    <section>
+        <div class="seccion-destacados">
+            <div class="titulo-seccion col-12">
+                <h2>Seleccionado por vos</h2>
+                <hr class="line-title">
+            </div>
+            <div class="seccion_eventos">
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>
+                <article class="contenedor-evento">
+                    <a class="contenedor-evento-link" href="/product-detail"></a>
+                    <div class="imagen-evento">
+                        <img src="/image/home/placeholder.png" alt="">
+                    </div>
+                    <div class="detalles-evento">
+                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
+                    <div class="fecha-evento">
+                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                        <div class="fecha"><p>24 de junio de 2022  a las 20 hs.</p></div>
+                    </div>
+                    <div class="valor-evento">
+                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                        <div class="valor"><p>Desde $1.000.-</p></div>
+                    </div>
+                    <div class="ubicacion-evento">
+                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
+                    </div>
+                    <div class="boton-info">
+                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="/detallesdelproducto" class="boton-amarillo">Más información</a>
+                    </div>
+                    </div>
+                </article>         
+            </div>
+    
+        </div>
+    </section>
+        <!-- FIN -- Sección Lo más buscado -->
+<br>
+<br>
     <footer>
-        <div class="footer-1 row-mobile">
-            <div class="logo col-4">
+        <div class="footer-1">
+            <div class="footer-logo  col-4 mobile">
                 <img src="image/Logo.png" alt="imagen de logo">
             </div>
-            <nav class="nav-footer col-6 row-mobile">
+            <nav class="nav-footer col-6 mobile">
                 <ul class="nav-1 col-2">
-                    <li><a  class="nav-item-footer" href="/">Inicio</a></li>
-                    <li><a  class="nav-item-footer"href="/faq">Preguntas Frecuentes</a></li>
-                    <li><a  class="nav-item-footer"href="/contacto">Contacto</a></li>
+                    <li><a href="/" class="nav-item-footer">INICIO</a></li>
+                    <li><a href="/faq" class="nav-item-footer">PREGUNTAS FRECUENTES</a></li>
+                    <li><a href="/contacto" class="nav-item-footer">CONTACTO</a></li>
                 </ul>
-                <ul class="nav-2 col-2 row-mobile">
-                    <li><a  class="nav-item-footer"href="/">TERMINOS Y CONDICIONES</a></li>
-                    <li><a  class="nav-item-footer"href="/faq">DEFENSA AL CONSUMIDOR</a></li>
-                    <li><a  class="nav-item-footer"href="/contacto">AYUDA</a></li>
+                <ul class="nav-2 col-2 mobile">
+                    <li><a href="/terminos" class="nav-item-footer">TERMINOS Y CONDICIONES</a></li>
+                    <li><a href="/defensaconsumidor" class="nav-item-footer">DEFENSA AL CONSUMIDOR</a></li>
+                    <li><a href="/ayuda" class="nav-item-footer">AYUDA</a></li>
                 </ul>
             </nav>
         </div>

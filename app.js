@@ -22,6 +22,14 @@ app.get('/registro', (req, res) => {
     res.sendFile(path.join(__dirname, './views/registro.html'))
 });
 
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/carrito.html'))
+});
+
+app.get('/product-detail', (req, res) => {
+    res.sendFile(path.join(__dirname, './views/product-detail.html'))
+});
+
 
 app.listen(3000, () =>
 console.log('http://localhost:3000'));

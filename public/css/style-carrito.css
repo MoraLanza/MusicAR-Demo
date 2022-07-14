@@ -8,6 +8,11 @@
     height:100%;
     
 }
+
+.carrito-mobile{
+    display: none;
+}
+
 .carrito-thead, .carrito-trow-total{
     background-color:  rgba(66, 48, 96, 0.15);
     font-size: 16px;
@@ -171,6 +176,9 @@
 }
 
 @media (max-width: 991px){
+    .carrito-mobile{
+        display: block;
+    }    
     .carrito-tabla-container {
         display: none;
     }    
