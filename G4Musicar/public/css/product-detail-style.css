@@ -35,10 +35,6 @@ header {
 }
 
 
-.nav-header {
-    align-self: flex-end;
-}
-
 .lista-opciones {
     display: flex;
 
@@ -531,8 +527,66 @@ main {
 /*MEDIA QUERYS*/
 /*mobile phone*/
 
+@media (max-width: 1333px){
+    .nav-item{
+        padding-right: 5.5px;
+        padding-left: 5.5px;
+    }
+    .logo img{
+        max-width: 175px
+    }
+    .boton-blanco{
+        padding: 10px 25px;
+    }
+    .boton-border{
+        padding: 8px 15px;
+    }
+    .social-media-list li{
+        display: flex;
+        align-items: center;
+    }
+    .icon-item{
+        font-size: 20px;
+    }
+    .icon-cart{
+        font-size: 25px;
+    }
+    ul.lista-opciones li {
+        padding-right: 15px;
+    }
+}
 
+@media (max-width: 1056px){
+    ul.lista-opciones li {
+        padding-right: 10px;
+    }
+    .nav-item {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 992px){
+    .social-media-list, .contenedor-lista, .nav-header{
+        display: none;
+    }
     
+    .burguer-menu-header{
+        display: block;
+        color: white;
+        font-size: 2rem;
+        align-self: center;
+    }
+
+    #top{
+        padding: 20px 30px;
+        width: inherit;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+    }
+}
+
 @media  (max-width: 768px){
 
     .boton-fixed{
@@ -540,9 +594,6 @@ main {
     }
     .main{
         width: 100vh;
-    }
-    .nav-header{
-        display: none;
     }
 
     .contenedor-lista{
@@ -614,18 +665,6 @@ main {
         padding: 3px;
     }
 
-    .burguer-menu-header{
-        display: block;
-        color: white;
-        font-size: 2rem;
-
-        align-self: center;
-    }
-
-    .social-media-list{
-        
-    }
-
     .lista-pagina{
         display: none;
     }
@@ -646,17 +685,6 @@ main {
 
     .titulo-principal {
         width: 100vh;
-    }
-    
-    .nav-pagina{
-        width: 100vh;
-    }
-
-    header{
-        width: 100vh;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
     }
 
 }
