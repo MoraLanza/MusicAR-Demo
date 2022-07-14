@@ -132,7 +132,13 @@ section{
     font-size: 14px;
     font-weight: bold;
     border:transparent;
+    text-align: center;
+    padding: 16px;
 }
+a.boton-amarillo{
+color: black;
+}
+
 .boton-amarillo:hover{
     background-color: #d8aa2c;
     color: white;
