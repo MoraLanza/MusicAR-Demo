@@ -19,15 +19,12 @@ ul.menu {
     display: flex;
 }
 
-/*.logo {
-    padding: 0 30px 0 60px;
-}*/
-
 header {
     background-color: rgba(46, 26, 78, 0.5);
     padding: 20px 0 15px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -51,8 +48,6 @@ ul.lista-opciones li {
 
 .social-media-list {
     display: flex;
-
-
 }
 
 .nav-item {
@@ -75,6 +70,10 @@ ul.lista-opciones li {
     color: white;
 }
 
+.boton-border:hover{
+    border: 2px solid rgb(200, 196, 196);
+ }
+
 .boton-blanco {
     background-color: white;
     padding: 10px 40px;
@@ -83,7 +82,7 @@ ul.lista-opciones li {
 }
 
 .boton-blanco:hover{
-    box-shadow: inset 0px 0px 2px 3px rgba(0, 0, 0, 0.2);
+   background-color: rgb(200, 196, 196);
 }
 
 .icon-item {
@@ -92,9 +91,17 @@ ul.lista-opciones li {
     font-size: 24px;
 }
 
+.icon-item:hover{
+    color: rgb(200, 196, 196);
+}
+
 .icon-cart {
     color: white;
     font-size: 30px;
+}
+
+.icon-cart:hover{
+    color: rgb(200, 196, 196);
 }
 
 .social-media-list p {
@@ -106,7 +113,6 @@ ul.lista-opciones li {
 .burguer-menu-header{
     display: none;
 }
-
 /*FOOTER*/
 
 .footer-1 {
@@ -149,7 +155,7 @@ nav.nav-footer ul {
     position: absolute;
     width: 100%;
     z-index: 2;
-    top: 370px;
+    bottom: 0;
 }
 
 .titulo-principal h1 {
@@ -202,6 +208,10 @@ nav.nav-footer ul {
 .boton-carrito:hover{
     font-size: 2.8rem;
 }
+
+.image-banner{
+    position: relative;
+}
 .image-banner img {
     width: 100%;
     height: 547px;
@@ -246,10 +256,6 @@ nav.nav-footer ul {
 
 /*MAIN*/
 
-main {
-    margin: 0 10%;
-
-}
 
 /*Boton fixed*/
 
@@ -272,9 +278,7 @@ main {
 
 
 .funcion-form {
-    margin: 32px;
-    padding-left: 45px;
-    align-self: flex-start;
+    margin: 32px 0;
 }
 
 .funcion-form label {
@@ -293,6 +297,7 @@ main {
 .funcion-form-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .info-funcion {
@@ -467,6 +472,7 @@ main {
 
 .descripcion-cuerpo {
     display: flex;
+    justify-content: center;
 }
 
 .texto-descripcion {
@@ -524,10 +530,12 @@ main {
 }
 
 
-/*MEDIA QUERYS*/
-/*mobile phone*/
 
-@media (max-width: 1333px){
+/*MEDIA QUERYS*/
+
+
+@media (max-width: 1380px){
+
     .nav-item{
         padding-right: 5.5px;
         padding-left: 5.5px;
@@ -554,15 +562,88 @@ main {
     ul.lista-opciones li {
         padding-right: 15px;
     }
+
+    .descripcion-cuerpo{
+        justify-content: center;
+        max-width: 95%;
+    }
+    .texto-descripcion{
+        width: 50%;
+    }
+
+    .transporte{
+        justify-content: center;
+    }
+
+    .colectivos{
+        width: 45%;
+    }
+    
+    .subtes{
+        width: 45%;
+    }
 }
 
-@media (max-width: 1056px){
+@media (max-width: 1067px){
     ul.lista-opciones li {
         padding-right: 10px;
     }
     .nav-item {
         font-size: 13px;
     }
+
+    .titulo-principal{
+        flex-direction: column;
+        text-align: center;
+    
+    }
+     .boton-comprar{
+        margin-left: 0;
+    }
+     .info-funcion{
+        align-items: center;
+    }
+    .info-sin-img{
+        max-width: 80%;
+    }
+    .info-funcion img{
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .reglas{
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .descripcion-cuerpo{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .texto-descripcion{
+        width: 100%;
+       max-width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .descripcion-cuerpo iframe{
+        max-width: 100%;
+        max-height: fit-content;
+    }
+
+    .como-llegar iframe{
+        max-width: 100%;
+    }
+
+    .transporte{
+        margin: 20px 0 0 0;
+    }
+
+    .medios-de-pago img {
+        width: 106px;
+        height: 91px;
 }
 
 @media (max-width: 992px){
@@ -585,9 +666,31 @@ main {
         display: flex;
         align-items: center;
     }
+
+    .titulo-principal{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-pagina{
+        display: none;
+    }
+    .info-funcion{
+        flex-direction: column;
+    }
+    .funcion-form-info{
+        flex-direction: column;
+    }
+
+    .funcion-form{
+        margin: 32px 0;
+    }
+
+   
+    }
 }
 
-@media  (max-width: 768px){
+@media  (max-width: 814px){
 
     .boton-fixed{
         display: none;
@@ -596,41 +699,53 @@ main {
         width: 100vh;
     }
 
-    .contenedor-lista{
+
+    .lista-pagina{
         display: none;
     }
 
+    
+    .image-banner img {
+        width: 100%;
+        
+    }
+
     .titulo-principal{
-        top: 200px;
         flex-direction: column;
         text-align: center;
+       
+    }
+    .titulo-principal h1{
+        font-size: 2.5rem;
     }
 
-    .boton-comprar{
-        margin-left: 0;
+    .titulo-principal p{
+        font-size: 1.2rem;
     }
-
     .funcion-form-info{
         flex-direction: column;
+    }
+
+    .funcion-form{
+        margin: 32px 0;
     }
 
     .info-funcion{
         flex-direction: column;
         align-items: center;
     }
-
+    .info-sin-img{
+        max-width: 80%;
+    }
     .info-funcion img{
         margin-top: 20px;
-
-    }
-
-    .funcion-form{
-        margin: 32px 0;
-        padding: 0;
+        max-width: 100%;
     }
 
     .reglas{
         margin: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     .descripcion-cuerpo{
@@ -640,6 +755,7 @@ main {
 
     .texto-descripcion{
         width: 100%;
+       max-width: 80%;
         margin-bottom: 30px;
     }
 
@@ -649,28 +765,16 @@ main {
     }
 
     .como-llegar iframe{
-        max-width: 100%;
+        max-width: 90%;
     }
 
     .transporte{
         margin: 20px 0 0 0;
     }
 
-    .nav-pagina{
-        padding-right: 0;
-    }
-
-    .boton-fixed{
-        right: 100px;
-        padding: 3px;
-    }
-
-    .lista-pagina{
-        display: none;
-    }
-
     .tarjetas{
-        margin-left: 40px;
+        align-self: flex-end;
+    width: 80%;
     }
 
     .medios-de-pago img {
@@ -678,13 +782,5 @@ main {
         height: 91px;
     }
     
-    .image-banner {
-        width: 100vh;
-        object-position: right;
-    }
-
-    .titulo-principal {
-        width: 100vh;
-    }
 
 }
