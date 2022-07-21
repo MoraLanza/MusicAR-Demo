@@ -48,8 +48,6 @@ ul.lista-opciones li {
 
 .social-media-list {
     display: flex;
-
-
 }
 
 .nav-item {
@@ -72,6 +70,10 @@ ul.lista-opciones li {
     color: white;
 }
 
+.boton-border:hover{
+    border: 2px solid rgb(200, 196, 196);
+ }
+
 .boton-blanco {
     background-color: white;
     padding: 10px 40px;
@@ -80,7 +82,7 @@ ul.lista-opciones li {
 }
 
 .boton-blanco:hover{
-    box-shadow: inset 0px 0px 2px 3px rgba(0, 0, 0, 0.2);
+   background-color: rgb(200, 196, 196);
 }
 
 .icon-item {
@@ -89,9 +91,17 @@ ul.lista-opciones li {
     font-size: 24px;
 }
 
+.icon-item:hover{
+    color: rgb(200, 196, 196);
+}
+
 .icon-cart {
     color: white;
     font-size: 30px;
+}
+
+.icon-cart:hover{
+    color: rgb(200, 196, 196);
 }
 
 .social-media-list p {
@@ -103,7 +113,6 @@ ul.lista-opciones li {
 .burguer-menu-header{
     display: none;
 }
-
 /*FOOTER*/
 
 .footer-1 {

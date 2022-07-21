@@ -119,15 +119,20 @@ section{
     padding: 0px 15px;
 }
 
+.ubicacion{
+    font-size: 14px;
+}
+
 .icono-carrito {
     font-size: 38px;
     width: 40%;
     cursor: pointer;
 }
+
 .boton-amarillo{
     width: 60%;
     cursor: pointer;
-    background-color: #FAC025;
+    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     border-radius:10px;
     font-size: 14px;
     font-weight: bold;
@@ -136,12 +141,13 @@ section{
     padding: 16px;
 }
 a.boton-amarillo{
-color: black;
+    color: black;
+    font-weight: bold;
 }
 
 .boton-amarillo:hover{
-    background-color: #d8aa2c;
-    color: white;
+    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+    transition: 0.5s;
 }
 
 .contenedor-evento{
