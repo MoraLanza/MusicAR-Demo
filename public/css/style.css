@@ -120,7 +120,8 @@ ul.lista-opciones li {
     opacity: 0.9;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    font-size: 13px;
 }
 
 .nav-footer {
@@ -131,7 +132,6 @@ ul.lista-opciones li {
 
 .nav-item-footer {
     color: white;
-    font-size: 14px;
     text-transform: uppercase;
 }
 

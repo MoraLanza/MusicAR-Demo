@@ -44,6 +44,14 @@ main.fondoImagen {
 
 }
 
+.formulario h2{
+    font-size: 32px;
+}
+
+.formulario label{
+    font-size: 16px;
+}
+
 .item-input {
     display: flex;
     flex-direction: column;
@@ -60,6 +68,7 @@ main.fondoImagen {
     margin-bottom: 12px;
     margin-top: 12px;
     padding: 7px;
+    height: 40px;
 }
 
 .register-button {
@@ -67,18 +76,19 @@ main.fondoImagen {
     flex-direction: row-reverse;
 }
 
-button {
-    background-color: #FAC025;
-    padding: 9px 17px 9px 17px;
+.register-button button {
+    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+    width: 210px;
+    height: 40px;
     border: transparent;
     font-weight: 600;
     border-radius: 10px;
-    font-size: 15px;
-    margin: 17px;
+    font-size: 16px;
+    margin: 17px 0;
 }
 
-button:hover {
-    background: rgb(36, 36, 149);
+.register-button button:hover {
+    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
 }
 
 @media (max-width: 767px) {

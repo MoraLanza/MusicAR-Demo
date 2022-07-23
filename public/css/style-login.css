@@ -120,7 +120,7 @@ a {
     margin: 20px;
 }
 
-button {
+.barra button{
     background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     padding: 9px 17px 9px 17px;
     border: transparent;
@@ -132,13 +132,13 @@ button {
     max-width: 80%;
 }
 
-button:hover {
+ .barra button:hover {
     background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
 }
 
 
 @media (min-width: 992px) {
-    .controls, .barra label, .barra p, button{  
+    .controls, .barra label, .barra p, .barra button{  
         max-width: 60%;
     }
 
