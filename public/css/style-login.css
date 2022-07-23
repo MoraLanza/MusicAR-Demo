@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/image/home/loginfondo.png);
+    background-size: cover; 
+}
+
+main{
+    height: calc(100vh - 200px);
+}
+
+header{
+    position: static;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+.sombra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sombra h2{
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 15px;
+    background: rgb(5, 7, 12, 0.40);
+    align-self: center;
+    margin: 5% 30%;
+   
+}
+
+
+.barra {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    margin-top: 20px;
+}
+
+.barra label{
+    width: 100%;
+    max-width: 80%;
+    text-align: left;
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+.barra p{
+    width: 100%;
+    max-width: 80%;
+    align-self: flex-end;
+    padding-top: 5px;
+    font-size: 12px;
+    color: rgb(165, 161, 161);
+}
+
+.registro {
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.controls {
+    border-radius: 7px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 10px;
+    width: 100%;
+    max-width: 80%;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.linea {
+    padding: 0;
+    margin: 5px;
+    width: 50%;
+    color: white;
+    text-align: center;
+}
+
+.redes-titulo {
+    padding: 10px;
+    margin: -2px;
+    font-size: 24px;
+}
+
+.redes-logos {
+    margin: -10px;
+    display: flex;
+}
+
+/* .redes-logos atras de referencia */
+
+.redes-logos .item-logo {
+    font-size: 50px;
+    margin: 20px;
+}
+
+.barra button{
+    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+    padding: 9px 17px 9px 17px;
+    border: transparent;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 80%;
+}
+
+ .barra button:hover {
+    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+}
+
+
+@media (min-width: 992px) {
+    .controls, .barra label, .barra p, .barra button{  
+        max-width: 60%;
+    }
+
+   
+}
+
+@media (max-width:768px ) {
+    .formulario{
+        margin: 5% 10%;
+    }
+}
