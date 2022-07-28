@@ -35,15 +35,22 @@
 # RETROSPECTIVA - SPRINT 2 
    
 ## Comenzar a hacer:
-- 
+-  Documentar más los procesos y conocimientos que trabajamos. ejemplo: cheat sheet, grabar las reuniones, etc.
+ 
 
 ## Hacer más:
-- 
+-  Estar al día con el contenido de playground.
+-  Hacer preguntas de manera más elaboradas, señalando como se ocasionó el problema, en que contexto, que hice yo, etc.
+-  Usar más trello para la realización de las activdades pendientes.
 
 ## Continuar haciendo:
-- 
+- Reuniones cortas, más seguidas y con tiempo optimizado 3 veces a la semana (semi-daily).
+- Commitear de manera regular para que todes podamos ver en que etapa está el otro.
+- Revisar el codigo de cada uno entre todes.
  
 ## Hacer menos:
-- 
+- No organizarnos con tiempo para resolver quien hace cada tarea.
+- No tener un esquema de días.
+
 ## Dejar de hacer:
-- 
+- No estar al día con playground, nos atrasa.
