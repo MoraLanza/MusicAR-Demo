@@ -1,55 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musicar</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style-home.css">
+
+    <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/style-carrito.css">
-    <link rel="icon" href="image/favicon.ico">
-
 </head>
+
 <body class="carrito-page">
-    <header id="top">
-        <div class="logo">
-            <img src="image/Logo.png" alt="imagen de logo">
-        </div>
-        <nav class="nav-header">
-            <ul class="menu">
-                <li><a class="nav-item" href="/">Inicio</a></li>
-                <li><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
-                <li><a class="nav-item" href="/contacto">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="contenedor-lista">
-        <ul class="lista-opciones">
-            <li><a class="boton-border" href="/login">Inicia Sesión</a></li>
-            <li><a class="boton-blanco" href="/registro">Registrate</a></li>
-            <li><a class="icon-cart" href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
-        </ul>
-        </div>
 
-        <div class="burguer-menu-header">
-        <i class="fa-solid fa-bars"></i>
-        </div>
+    <%- include('../partials/header') %>
 
-        <ul class="social-media-list">
-            <li><a class="icon-item" href=""><i class="fa-brands fa-facebook"></i></a></li>
-            <p>|</p>
-            <li><a class="icon-item" href=""><i class="fa-brands fa-instagram"></i></a></li>
-            <p>|</p>
-            <li><a class="icon-item" href=""><i class="fa-brands fa-tiktok"></i></a></li>
-            <p>|</p>
-            <li><a class="icon-item" href=""><i class="fa-brands fa-youtube"></i></a></li>
-        </ul>
-        
-    </header>
     <main class="carrito-main">
         <section class="carrito-section">
             <div>
@@ -236,32 +195,8 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-1">
-            <div class="footer-logo  col-4 mobile">
-                <img src="image/Logo.png" alt="imagen de logo">
-            </div>
-            <nav class="nav-footer col-6 mobile">
-                <ul class="nav-1 col-2">
-                    <li><a href="/" class="nav-item-footer">INICIO</a></li>
-                    <li><a href="/faq" class="nav-item-footer">PREGUNTAS FRECUENTES</a></li>
-                    <li><a href="/contacto" class="nav-item-footer">CONTACTO</a></li>
-                </ul>
-                <ul class="nav-2 col-2 mobile">
-                    <li><a href="/terminos" class="nav-item-footer">TERMINOS Y CONDICIONES</a></li>
-                    <li><a href="/defensaconsumidor" class="nav-item-footer">DEFENSA AL CONSUMIDOR</a></li>
-                    <li><a href="/ayuda" class="nav-item-footer">AYUDA</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="footer-2">
-            <p>MusicAR | Calle falsa 123 (C1106ABE) CABA – Argentina | Info Espectáculos: (011) 4938-4304</p>
-            <p>Copyright 2022 MusicAR SRL | Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <%- include('../partials/footer') %>
 
-
-    <include src="/part-header.html"></include>
 
 </body>
 </html>
