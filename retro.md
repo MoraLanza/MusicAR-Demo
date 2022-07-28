@@ -31,3 +31,19 @@
 - Avanzar las tareas propias de principio a fin sin espacios intermedios de corrección/peer review.
 - Reunirnos poco durante la semana.
 - No googlear.
+
+# RETROSPECTIVA - SPRINT 2 
+   
+## Comenzar a hacer:
+- 
+
+## Hacer más:
+- 
+
+## Continuar haciendo:
+- 
+ 
+## Hacer menos:
+- 
+## Dejar de hacer:
+- 
