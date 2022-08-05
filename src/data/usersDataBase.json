@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "nombre": "Jordan",
+        "apellido": "Stolberg",
+        "email": "jstolberg0@ftc.gov",
+        "nombreUsuario": "jstolberg0",
+        "contraseña": "c24MlweG"
+    },
+    {
+        "id": 2,
+        "nombre": "Gal",
+        "apellido": "Avraam",
+        "email": "gavraam1@foxnews.com",
+        "nombreUsuario": "gavraam1",
+        "contraseña": "fKzJBHt9KN"
+    },
+    {
+        "id": 3,
+        "nombre": "Grange",
+        "apellido": "Tolliday",
+        "email": "gtolliday2@xrea.com",
+        "nombreUsuario": "gtolliday2",
+        "contraseña": "1SndeeLJT0"
+    },
+    {
+        "id": 4,
+        "nombre": "Cecilia",
+        "apellido": "Ellam",
+        "email": "cellam3@ameblo.jp",
+        "nombreUsuario": "cellam3",
+        "contraseña": "wwNwHsTiK4"
+    },
+    {
+        "id": 5,
+        "nombre": "Sephira",
+        "apellido": "McSkeagan",
+        "email": "smcskeagan4@devhub.com",
+        "nombreUsuario": "smcskeagan4",
+        "contraseña": "KnZb8euKpRn"
+    },
+    {
+        "id": 6,
+        "nombre": "Alvina",
+        "apellido": "MacAndie",
+        "email": "amacandie5@weebly.com",
+        "nombreUsuario": "amacandie5",
+        "contraseña": "7fe1jmbE7WkF"
+    },
+    {
+        "id": 7,
+        "nombre": "Del",
+        "apellido": "Jeannenet",
+        "email": "djeannenet6@ycombinator.com",
+        "nombreUsuario": "djeannenet6",
+        "contraseña": "Rr9ubzsx"
+    },
+    {
+        "id": 8,
+        "nombre": "Aron",
+        "apellido": "Baum",
+        "email": "abaum7@amazonaws.com",
+        "nombreUsuario": "abaum7",
+        "contraseña": "whUOjLuu5lo"
+    },
+    {
+        "id": 9,
+        "nombre": "Jerry",
+        "apellido": "Kassidy",
+        "email": "jkassidy8@merriam-webster.com",
+        "nombreUsuario": "jkassidy8",
+        "contraseña": "HypZmjl"
+    },
+    {
+        "id": 10,
+        "nombre": "Kendra",
+        "apellido": "Barrowcliff",
+        "email": "kbarrowcliff9@sogou.com",
+        "nombreUsuario": "kbarrowcliff9",
+        "contraseña": "FtctOaVV"
+    }
+]
