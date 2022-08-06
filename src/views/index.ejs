@@ -1,406 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="/css/style-home.css">
+        <link rel="stylesheet" href="/css/style-home.css">
 </head>
+
 <body>
 
     <%- include('./partials/header') %>
-   
-    <div class="slider-home col-12">
-        <img src="image/home/slider-home.png"  width="100%" alt="Slider Home" wid>
-    </div>
-    <!-- Sección Buscador -->
 
-    <div class="contenedor-buscador">
-        <div class="barraDeBusqueda">
-        <form action="" class="formularioBusqueda">
+        <div class="slider-home col-12">
+            <img src="image/home/slider-home.png" width="100%" alt="Slider Home" wid>
+        </div>
+        <!-- Sección Buscador -->
+
+        <div class="contenedor-buscador">
+            <div class="barraDeBusqueda">
+                <form action="" class="formularioBusqueda">
+
+                    <input type="text" name="palabraClave" id="palabraClave" placeholder="Buscar sala, artista,recinto">
+                    <select name="categorias" id="categorias">
+                        <option selected="selected">Categorias</option>
+                        <option value="volvo">Clásica</option>
+                        <option value="saab">Rock</option>
+                        <option value="mercedes">Salsa</option>
+                        <option value="audi">Reggaeton</option>
+                    </select>
+                    <input type="date" name="fechaEvento" id="fechaEvento">
+                    <input type="text" name="lugarEvento" id="lugarEvento" placeholder="Lugar">
+                    <input class="buscar_btn" type="button" value="buscar">
+                </form>
+            </div>
+        </div>
+        <!-- FIN -- Sección Buscador -->
+        <!-- Sección Destacados -->
+        <section class="seccion-destacados">
             
-            <input type="text" name="palabraClave" id="palabraClave" placeholder="Buscar sala, artista,recinto" >
-            <select name="categorias" id="categorias">
-                <option selected="selected">Categorias</option>
-                <option value="volvo">Clásica</option>
-                <option value="saab">Rock</option>
-                <option value="mercedes">Salsa</option>
-                <option value="audi">Reggaeton</option>
-            </select>
-            <input type="date" name="fechaEvento" id="fechaEvento">
-            <input type="text" name="lugarEvento" id="lugarEvento" placeholder="Lugar">
-            <input class="buscar_btn" type="button" value="BUSCAR">
-        </form>
-    </div>
-    </div>
-    <!-- FIN -- Sección Buscador -->
-    <!-- Sección Destacados -->
-<section>
-    <div class="seccion-destacados">
-        <div class="titulo-seccion col-12">
-            <h2>Destacados</h2>
-            <hr class="line-title">
-        </div>
-        <div class="seccion_eventos">
-            <div></div>
-            <article class="contenedor-evento">
-                <div class="imagen-evento">
-                    <a  href="products/detail">
-                    <img src="/image/home/placeholder.png" alt="">
-                    </a>
-                </div>
-                <div class="detalles-evento">
-                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                <div class="fecha-evento">
-                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                    <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                </div>
-                <div class="valor-evento">
-                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                    <div class="valor"><p>Desde $1.000.-</p></div>
-                </div>
-                <div class="ubicacion-evento">
-                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                </div>
-                <div class="boton-info">
-                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    <a href="" class="boton-amarillo">Comprar ahora</a>
-                </div>
-                </div>
-            </article>
-            <article class="contenedor-evento">
-                <div class="imagen-evento">
-                    <a href="/product-detail">
-                    <img src="/image/home/placeholder.png" alt="">
-                    </a>
-                </div>
-                <div class="detalles-evento">
-                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                <div class="fecha-evento">
-                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                    <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                </div>
-                <div class="valor-evento">
-                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                    <div class="valor"><p>Desde $1.000.-</p></div>
-                </div>
-                <div class="ubicacion-evento">
-                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                </div>
-                <div class="boton-info">
-                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                </div>
-                </div>
-            </article>
-            <article class="contenedor-evento">
-                <div class="imagen-evento">
-                    <a href="/product-detail">
-                    <img src="/image/home/placeholder.png" alt="">
-                    </a>
-                </div>
-                <div class="detalles-evento">
-                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                <div class="fecha-evento">
-                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                    <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                </div>
-                <div class="valor-evento">
-                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                    <div class="valor"><p>Desde $1.000.-</p></div>
-                </div>
-                <div class="ubicacion-evento">
-                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                </div>
-                <div class="boton-info">
-                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                </div>
-                </div>
-            </article>
-            <article class="contenedor-evento">
-                <div class="imagen-evento">
-                    <a href="/product-detail">
-                    <img src="/image/home/placeholder.png" alt="">
-                    </a>
-                </div>
-                <div class="detalles-evento">
-                <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                <div class="fecha-evento">
-                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                    <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                </div>
-                <div class="valor-evento">
-                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                    <div class="valor"><p>Desde $1.000.-</p></div>
-                </div>
-                <div class="ubicacion-evento">
-                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                </div>
-                <div class="boton-info">
-                    <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                    <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-
-                </div>
-                </div>
-            </article>         
-        </div>
-
-    </div>
-</section>
-    <!-- FIN -- Sección Destacados -->
-<br>
-<br>
-    <!-- Sección Lo más buscado-->
-    <section>
-        <div class="seccion-destacados">
             <div class="titulo-seccion col-12">
-                <h2>Lo más buscados</h2>
-                <hr class="line-title">
-            </div>
-        
-            <div class="seccion_eventos">
-                <article class="contenedor-evento">
-
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>
-                <article class="contenedor-evento">
-
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>
-                <article class="contenedor-evento">
-
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>
-                <article class="contenedor-evento">
-
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>         
-            </div>
-    
-        </div>
-    </section>
-        <!-- FIN -- Sección Lo más buscado -->
-<br>
-<br>
-    <!-- Sección Lo más buscado-->
-    <section>
-        <div class="seccion-destacados">
-            <div class="titulo-seccion col-12">
-                <h2>Seleccionado por vos</h2>
+                <h2>Destacados</h2>
                 <hr class="line-title">
             </div>
             <div class="seccion_eventos">
-                <article class="contenedor-evento">
+                <% destacados.forEach(element=> { %>
+                    <article class="contenedor-evento">
+                        <div class="imagen-evento">
+                            <a href="products/detail">
+                                <img src="/image/products/<%= element.imagen %> " alt="">
+                            </a>
+                        </div>
 
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>
-                <article class="contenedor-evento">
+                        <div class="titulo-evento">
+                            <h2>
+                                <%= element.artista %>
+                            </h2>
+                            <h4>
+                                <%= element.subtitulo %>
+                            </h4>
+                        </div>
 
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>
-                <article class="contenedor-evento">
+                        <div class="informacion-general">
+                            <div class="iconos">
+                                <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="informacion-especifica">
+                                <div class="fecha-evento">
+                                    <p>
+                                        <%= element.fechaFuncion1 %> a las <%= element.horario1 %>.
+                                    </p>
+                                </div>
+                                <div class="valor-evento">
+                                    <p>Desde $<%= element.precio1 %>.-</p>
+                                </div>
+                                <div class="ubicacion-evento">
+                                    <p>
+                                        <%= element.escenario %>, <%= element.ciudad %>.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>
-                <article class="contenedor-evento">
-
-                    <div class="imagen-evento">
-                        <a href="/product-detail">
-                        <img src="/image/home/placeholder.png" alt="">
-                        </a>
-                    </div>
-                    <div class="detalles-evento">
-                    <div class="titulo-evento"><h2> Carpa DELIRIO - De vuelta al ritmo</h2></div> 
-                    <div class="fecha-evento">
-                        <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                        <div class="fecha"><p>24/06 a las 20hs.</p></div>
-                    </div>
-                    <div class="valor-evento">
-                        <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                        <div class="valor"><p>Desde $1.000.-</p></div>
-                    </div>
-                    <div class="ubicacion-evento">
-                        <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <div class="ubicacion">Teatro Santa Marta, Santa Marta.</div>
-                    </div>
-                    <div class="boton-info">
-                        <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                        <a href="/detallesdelproducto" class="boton-amarillo">Comprar ahora</a>
-                    </div>
-                    </div>
-                </article>         
+                        <div class="boton-info">
+                            <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                            <a href="" class="boton-amarillo">Comprar ahora</a>
+                        </div>
+                    </article>
+                    <% }) %>      
             </div>
-    
-        </div>
     </section>
+        <!-- FIN -- Sección Destacados -->
+        <br>
+        <br>
+        <!-- Sección Lo más buscado-->
+        <section class="seccion-destacados">
+            
+                <div class="titulo-seccion col-12">
+                    <h2>Lo más buscado</h2>
+                    <hr class="line-title">
+                </div>
+
+                <div class="seccion_eventos">
+                    <% buscados.forEach(element=> { %>
+                        <article class="contenedor-evento">
+                            <div class="imagen-evento">
+                                <a href="products/detail">
+                                    <img src="/image/products/<%= element.imagen %> " alt="">
+                                </a>
+                            </div>
+
+                            <div class="titulo-evento">
+                                <h2>
+                                    <%= element.artista %>
+                                </h2>
+                                <h4>
+                                    <%= element.subtitulo %>
+                                </h4>
+                            </div>
+
+                            <div class="informacion-general">
+                                <div class="iconos">
+                                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="informacion-especifica">
+                                    <div class="fecha-evento">
+                                        <p>
+                                            <%= element.fechaFuncion1 %> a las <%= element.horario1 %>.
+                                        </p>
+                                    </div>
+                                    <div class="valor-evento">
+                                        <p>Desde $<%= element.precio1 %>.-</p>
+                                    </div>
+                                    <div class="ubicacion-evento">
+                                        <p>
+                                            <%= element.escenario %>, <%= element.ciudad %>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="boton-info">
+                                <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="boton-amarillo">Comprar ahora</a>
+                            </div>
+                        </article>
+                        <% }) %>    
+                </div>
+        </section>
         <!-- FIN -- Sección Lo más buscado -->
-<br>
-<br>
-<%- include('./partials/footer') %>
+        <br>
+        <br>
+        <!-- Sección seleccionado para vos-->
+        <section class="seccion-destacados">
+            
+                <div class="titulo-seccion col-12">
+                    <h2>Seleccionado para vos</h2>
+                    <hr class="line-title">
+                </div>
+                <div class="seccion_eventos">
+                    <% seleccionados.forEach(element=> { %>
+                        <article class="contenedor-evento">
+                            <div class="imagen-evento">
+                                <a href="products/detail">
+                                    <img src="/image/products/<%= element.imagen %> " alt="">
+                                </a>
+                            </div>
+
+                            <div class="titulo-evento">
+                                <h2>
+                                    <%= element.artista %>
+                                </h2>
+                                <h4>
+                                    <%= element.subtitulo %>
+                                </h4>
+                            </div>
+
+                            <div class="informacion-general">
+                                <div class="iconos">
+                                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="informacion-especifica">
+                                    <div class="fecha-evento">
+                                        <p>
+                                            <%= element.fechaFuncion1 %> a las <%= element.horario1 %>.
+                                        </p>
+                                    </div>
+                                    <div class="valor-evento">
+                                        <p>Desde $<%= element.precio1 %>.-</p>
+                                    </div>
+                                    <div class="ubicacion-evento">
+                                        <p>
+                                            <%= element.escenario %>, <%= element.ciudad %>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="boton-info">
+                                <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="boton-amarillo">Comprar ahora</a>
+                            </div>
+                        </article>
+                        <% }) %>
+                </div>
+           
+        </section>
+        <!-- FIN -- Sección Lo más buscado -->
+        <br>
+        <br>
+        <%- include('./partials/footer') %>
 
 </body>
+
 </html>

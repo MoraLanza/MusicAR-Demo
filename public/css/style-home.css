@@ -8,7 +8,10 @@ header {
     width: 100%;
     justify-content: center;
     display: flex;
+   
 }
+
+
 .barraDeBusqueda {
     background-color: #FCFCFC;
     width: 80%;
@@ -56,7 +59,7 @@ input#lugarEvento {
     margin:10px;
 }
 input.buscar_btn {
-    background-color: #FAC025;
+    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     padding: 9px 17px 9px 17px;
     border: transparent;
     font-weight: 600;
@@ -65,10 +68,21 @@ input.buscar_btn {
     margin: 17px;
 }
 
+input.buscar_btn:hover{
+    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+    transition: 0.5s;
+}
+
 .titulo-seccion {
     text-align:left;
     position: relative;
+    margin-bottom: 50px;
+    
 
+}
+
+.titulo-seccion h2{
+    font-size: 32px;
 }
 .line-title{
     height:10px;
@@ -94,30 +108,61 @@ section{
     margin: 0 auto;
 
 }
+.contenedor-evento{
+    display: flex;
+    flex-direction: column;
+}
 
+.imagen-evento{
+    width: 100%;
+}
 
 .imagen-evento img {
     width: 100%;
-}
-.detalles-evento {
-    padding: 20px;
+    height: 200px;
+    object-fit: cover;
 }
 
+
+.titulo-evento{
+    text-align: center;
+    margin-bottom: 10px;
+}
 .titulo-evento h2 {
     font-size: 24px;
     font-weight: bold;
+}
+
+
+.iconos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 10px 10px 0;
+}
+
+.informacion-especifica{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0 10px 0;
+}
+
+
+
+.informacion-general{
+    display: flex;
+}
+
+.icono-fecha, .icono-valor, .fecha-evento, .valor-evento {
     margin-bottom: 5px;
 }
-.fecha-evento, .valor-evento, .ubicacion-evento, .boton-info {
+
+.boton-info {
     display: flex;
     padding: 5px 0px;
+    width: 90%;
 }
-.valor{
-    padding: 0px 8px;
-}
-.fecha, .ubicacion {
-    padding: 0px 15px;
-}
+
 
 .ubicacion{
     font-size: 14px;
@@ -150,9 +195,9 @@ a.boton-amarillo{
     transition: 0.5s;
 }
 
-.contenedor-evento{
+/* .contenedor-evento{
     position: relative;
-}
+} */
 
 .contenedor-evento-link{
     position: absolute;
@@ -216,8 +261,13 @@ a.boton-amarillo{
         align-items: center;
         margin: 0 auto;
         margin: 1%;
-        width: 23%;
+        width: 30%;
+        transition: 100ms;
     }
+    .contenedor-evento:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 41px 4px rgba(0,0,0,0.25);
+}
     .seccion_eventos {
         width: 100%;
         margin-top: 10px;
@@ -225,13 +275,18 @@ a.boton-amarillo{
         flex-wrap: wrap;
     }
     article.contenedor-evento {
-        width: 23%;
+        width: 30%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
         border-radius: 10px;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        margin: 1%;       
+               
+    }
+}
+@media only screen and (min-width: 1300px) {
+    article.contenedor-evento {
+        width: 23%;
     }
 }

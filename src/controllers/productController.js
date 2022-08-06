@@ -5,9 +5,6 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let productController = {
-    index: (req, res) => {
-        res.render('index', {products})
-    },
     detail: (req, res) => {
          res.render('./products/product-detail');
     },
@@ -17,7 +14,7 @@ let productController = {
     store: (req, res) => {
         const productsClone = products;
 		const newProduct = {
-			id: req.body.name,
+			id: products[products.length -1].id + 1,
 			tipoDeShow: req.body.tipoDeShow,
 			clase: req.body.clase,
             artista: req.body.artista,
@@ -30,8 +27,7 @@ let productController = {
 			fechaFuncion1: req.body.fechaFuncion1,
 			horario1: req.body.horario1,
             precio1: req.body.precio1,
-			price: req.body.price,
-			description: req.body.description,
+			cantidadDisponible1: req.body.cantidadDisponible1,
 			image: req.file ? req.file.filename : null
 		}
 
@@ -46,10 +42,21 @@ let productController = {
     update: (req, res) => {
 
     },
-    delete: (req, res) => {
+    delete : (req, res) => {
+		const deletedProduct =  products.find((prod) => {
+			return prod.id == req.params.id;
+			});
 
-    }
+		const prodIndex = products.findIndex((p) => p.id == deletedProduct.id);
+		
+		products.splice(prodIndex,1);
 
-};
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+
+		res.redirect('/index');
+	}
+
+
+    };
 
 module.exports = productController;

@@ -1,5 +1,6 @@
 let express = require('express');
 const multer = require('multer');
+const mainController = require('../controllers/mainController');
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -15,15 +16,15 @@ const upload = multer ({storage});
 
 const productController = require('../controllers/productController');
 
-router.get('/', productController.index)
+router.get('/', mainController.index)
 
 router.get('/detail', productController.detail);
 
 router.get('/create', productController.create);
 router.post('/create',upload.single('image'), productController.store);
 
-router.get('/:id/edit', productController.edit);
-router.put('/:id/edit', productController.update);
+router.get('/edit/:id', productController.edit);
+router.put('/edit/:id', productController.update);
 
 router.delete('/:id/delete', productController.delete);
 
