@@ -19,7 +19,12 @@
             <div class="barraDeBusqueda">
                 <form action="" class="formularioBusqueda">
 
-                    <input type="text" name="palabraClave" id="palabraClave" placeholder="Buscar sala, artista,recinto">
+                 <div class="buscar" >
+                    <input type="text" name="palabraClave" id="palabraClave" placeholder="Buscar sala, artista, recinto...">
+                     <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div>
                     <select name="categorias" id="categorias">
                         <option selected="selected">Categorias</option>
                         <option value="volvo">Clásica</option>
@@ -27,8 +32,15 @@
                         <option value="mercedes">Salsa</option>
                         <option value="audi">Reggaeton</option>
                     </select>
+                 </div>
+                 <div> 
                     <input type="date" name="fechaEvento" id="fechaEvento">
+                </div>
+                 <div class="lugar">
                     <input type="text" name="lugarEvento" id="lugarEvento" placeholder="Lugar">
+                    <i class="fa-solid fa-location-dot"></i>
+                 </div>  
+                    
                     <input class="buscar_btn" type="button" value="buscar">
                 </form>
             </div>

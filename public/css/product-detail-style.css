@@ -228,6 +228,8 @@ nav.nav-footer ul {
     justify-content: flex-end;
     align-items: center;
     padding-right: 100px;
+    position: sticky;
+    top:0;
 }
 
 .lista-pagina {

@@ -8,7 +8,6 @@ header {
     width: 100%;
     justify-content: center;
     display: flex;
-   
 }
 
 
@@ -23,49 +22,53 @@ header {
     top:-50px;
 }
 form.formularioBusqueda {
-    padding: 12px;
-}
-input#palabraClave {
-    width: 250px;
-    border: solid #444444 1px;
-    border-radius: 4px;
-    height: 25px;
-    padding: 5px 10px 5px 10px;
-    margin:10px;
-}
-select#categorias {
-    width: 150px;
-    border: solid #444444 1px;
-    border-radius: 4px;
-    height: 30px;
-    padding: 5px 10px 5px 10px;
-    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-input#fechaEvento {
-    width: 150px;
-    border: solid #444444 1px;
-    border-radius: 4px;
-    height: 25px;
-    padding: 5px 10px 5px 10px;
-    margin:10px;
+input#fechaEvento, .barraDeBusqueda select {
+    height: 40px;
+    width: 250px;
+    padding: 0 5px;
+    border-radius: 8px;
+    border: solid 1px #7F7F7F;
+    margin-bottom: 5px;
 }
-input#lugarEvento {
-    width: 150px;
-    border: solid #444444 1px;
-    border-radius: 4px;
-    height: 25px;
-    padding: 5px 10px 5px 10px;
-    margin:10px;
+
+.barraDeBusqueda select{
+    height: 42px;
 }
+.buscar i, .lugar i {
+margin: 0 5px;
+}
+
+.buscar input, .lugar input{
+    border: transparent;
+    padding: 8px;
+}
+.buscar, .lugar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    border: solid 1px #7F7F7F;
+    height: 40px;
+    width: 250px;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
 input.buscar_btn {
     background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-    padding: 9px 17px 9px 17px;
+    height: 40px;
+    width: 150px;
     border: transparent;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 15px;
-    margin: 17px;
 }
 
 input.buscar_btn:hover{
