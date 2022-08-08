@@ -13,21 +13,38 @@ let productController = {
     },
     store: (req, res) => {
         const productsClone = products;
-		const newProduct = {
+        const newTicket = {
+            price: req.body.price,
+            ticketType: req.body.ticketType,
+            lot : req.body.lot
+        }
+        const newFunctions = {
+            date: req.body.date,
+            hours: req.body.hours,
+        }
+		const newProduct = {             
 			id: products[products.length -1].id + 1,
-			tipoDeShow: req.body.tipoDeShow,
-			clase: req.body.clase,
-            artista: req.body.artista,
-			descripcion: req.body.descripcion,
-			pais: req.body.pais,
-            provincia: req.body.provincia,
-			ciudad: req.body.ciudad,
-			escenario: req.body.escenario,
-            direccion: req.body.direccion,
-			fechaFuncion1: req.body.fechaFuncion1,
-			horario1: req.body.horario1,
-            precio1: req.body.precio1,
-			cantidadDisponible1: req.body.cantidadDisponible1,
+			showType: req.body.showType,
+			class: req.body.class,
+            artist: req.body.artist,
+            subtitle: req.body.subtitle,
+			description: req.body.description,
+			country: req.body.country,
+            state: req.body.state,
+			city: req.body.city,
+			stage: req.body.stage,
+            direction: req.body.direction,
+            date1: req.body.date1,
+            hour1: req.body.hour1,
+            ticketType1: req.body.ticketType1,   
+            price1: req.body.price1,            
+            lot1: req.body.lot1,            
+            // ticket : [ 
+            //     ...newTicket
+            // ],
+            // functions: [
+            //    ...newFunction
+            // ],
 			image: req.file ? req.file.filename : null
 		}
 
@@ -40,7 +57,7 @@ let productController = {
         res.render('/products/editar-evento', {product});
     },
     update: (req, res) => {
-
+        
     },
     delete : (req, res) => {
 		const deletedProduct =  products.find((prod) => {
