@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 0 80px 65px;
+    padding: 0 0 30px 65px;
 }
 
 .btn-img-box{
@@ -54,9 +54,14 @@ body {
 .btn-edit-banner{
     background-color: transparent;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     border: none;
     cursor: pointer;
+    display: flex;
+}
+.fa-image{
+    font-size: 60px;
+    margin-right: 3px;
 }
 
 .titulo-principal-box label{
@@ -146,6 +151,7 @@ body {
     background: #FFFFFF;
     border: 1px solid #808080;
     border-radius: 8px;
+    padding-left: 8px;
 }
 
 .inputs-row{
@@ -186,6 +192,43 @@ body {
 
 .description-row{
     align-items: flex-start;
+}
+
+.form-btns{
+    display: flex;
+    padding: 30px 135px;
+    justify-content: space-between;
+}
+
+.right-btns-conteiner{
+    display: flex;
+}
+
+.submit-button, .reset-button, .cancel-button{
+    height: 40px;
+    border-radius: 8px;
+    padding: 0px 50px;
+}
+
+.submit-button{
+    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);    margin-left: 10px ;
+    font-size: 16px;
+    font-weight: bold;
+    border: transparent;
+}
+
+.submit-button:hover{
+    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+    transition: 0.5s;
+}
+
+.cancel-button, .reset-button{
+    background-color: transparent;
+   color: #4D4D4D;
+    border: solid 2px #626161;
+}
+.cancel-button:hover, .reset-button:hover{
+    background-color: #FCFAFF;
 }
 
 @media (max-width: 1250px) {

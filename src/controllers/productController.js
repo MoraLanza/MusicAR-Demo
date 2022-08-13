@@ -6,39 +6,42 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let productController = {
     detail: (req, res) => {
-         res.render('./products/product-detail');
+        const product = products.find(element => element.id == req.params.id);
+         res.render('./products/product-detail', {products});
     },
     create: (req, res) => {
-        res.render('./products/crear-evento');
+        res.render('./products/create-event');
     },
     store: (req, res) => {
-        const productsClone = products;
-        const newTicket = {
-            price: req.body.price,
-            ticketType: req.body.ticketType,
-            lot : req.body.lot
-        }
-        const newFunctions = {
-            date: req.body.date,
-            hours: req.body.hours,
-        }
+        // const productsClone = products;
+        // const newTicket = {
+        //     price: req.body.price,
+        //     ticketType: req.body.ticketType,
+        //     lot : req.body.lot
+        // }
+        // const newFunctions = {
+        //     date: req.body.date,
+        //     hours: req.body.hours,
+        // }
 		const newProduct = {             
 			id: products[products.length -1].id + 1,
 			showType: req.body.showType,
-			class: req.body.class,
+			// class: req.body.class,
             artist: req.body.artist,
             subtitle: req.body.subtitle,
 			description: req.body.description,
 			country: req.body.country,
             state: req.body.state,
 			city: req.body.city,
+            direction : req.body.direction,
 			stage: req.body.stage,
             direction: req.body.direction,
             date1: req.body.date1,
             hour1: req.body.hour1,
             ticketType1: req.body.ticketType1,   
             price1: req.body.price1,            
-            lot1: req.body.lot1,            
+            lot1: req.body.lot1,
+            category: req.body.category,
             // ticket : [ 
             //     ...newTicket
             // ],
@@ -54,7 +57,7 @@ let productController = {
     },
     edit: (req, res) => {
         const product = products.find(element => element.id == req.params.id); 
-        res.render('/products/editar-evento', {product});
+        res.render('./products/edit-event', {product});
     },
     update: (req, res) => {
         

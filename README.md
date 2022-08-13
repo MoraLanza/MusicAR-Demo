@@ -18,8 +18,6 @@ Musicar es un sitio web dedicado a la venta de entradas a eventos musicales. La 
 ## Integrantes del proyecto:
 - Mora Lanza
 - Hector Fabian Vega
-- Federico Crespi
-- Laura María Álvarez 
 - Lidia Paiva
 
 ## Repositorio GitHub:

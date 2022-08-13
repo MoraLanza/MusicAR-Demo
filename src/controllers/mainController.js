@@ -11,8 +11,8 @@ let mainController = {
         const selected = products.filter(product => product.class === 'seleccionados');
         res.render('index',{selected, featured, searched} );
     },
-    contacto: function(req, res){
-        res.render("contacto");
+    contact: function(req, res){
+        res.render("contact");
     },
     faq: function(req, res){
         res.render("faq");

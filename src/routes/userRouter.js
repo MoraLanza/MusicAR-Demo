@@ -3,8 +3,8 @@ const router = express.Router();
 
 const userController = require('../controllers/userController');
 
-router.get('/carrito', userController.carrito);
+router.get('/shopping-cart', userController.cart);
 router.get('/login', userController.login);
-router.get('/registro', userController.registro);
+router.get('/register', userController.register);
 
 module.exports = router;

@@ -15,54 +15,54 @@
         </div>
         <!-- Sección Buscador -->
 
-        <div class="contenedor-buscador">
-            <div class="barraDeBusqueda">
-                <form action="" class="formularioBusqueda">
+        <div class="search-conteiner">
+            <div class="search-nav">
+                <form action="" class="search-form">
 
-                 <div class="buscar" >
-                    <input type="text" name="palabraClave" id="palabraClave" placeholder="Buscar sala, artista, recinto...">
+                 <div class="search" >
+                    <input type="text" name="key-word" id="key-word" placeholder="Buscar sala, artista, recinto...">
                      <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
 
                 <div>
-                    <select name="categorias" id="categorias">
+                    <select name="categories" id="categories">
                         <option selected="selected">Categorias</option>
-                        <option value="volvo">Clásica</option>
-                        <option value="saab">Rock</option>
-                        <option value="mercedes">Salsa</option>
-                        <option value="audi">Reggaeton</option>
+                        <option value="clasic">Clásica</option>
+                        <option value="rock">Rock</option>
+                        <option value="salsa">Salsa</option>
+                        <option value="reggaeton">Reggaeton</option>
                     </select>
                  </div>
                  <div> 
-                    <input type="date" name="fechaEvento" id="fechaEvento">
+                    <input type="date" name="event-date" id="event-date">
                 </div>
-                 <div class="lugar">
-                    <input type="text" name="lugarEvento" id="lugarEvento" placeholder="Lugar">
+                 <div class="place">
+                    <input type="text" name="event-place" id="event-place" placeholder="Lugar">
                     <i class="fa-solid fa-location-dot"></i>
                  </div>  
                     
-                    <input class="buscar_btn" type="button" value="buscar">
+                    <input class="search-btn" type="button" value="Buscar">
                 </form>
             </div>
         </div>
         <!-- FIN -- Sección Buscador -->
         <!-- Sección Destacados -->
-        <section class="seccion-destacados">
+        <section class="section-events">
             
-            <div class="titulo-seccion col-12">
+            <div class="section-title col-12">
                 <h2>Destacados</h2>
                 <hr class="line-title">
             </div>
-            <div class="seccion_eventos">
+            <div class="events-conteiner">
                 <% featured.forEach(element=> { %>
-                    <article class="contenedor-evento">
-                        <div class="imagen-evento">
+                    <article class="article-conteiner">
+                        <div class="article-image">
                             <a href="products/detail">
                                 <img src="/image/products/<%= element.image %> " alt="">
                             </a>
                         </div>
 
-                        <div class="titulo-evento">
+                        <div class="article-title">
                             <h2>
                                 <%= element.artist %>
                             </h2>
@@ -71,23 +71,23 @@
                             </h4>
                         </div>
 
-                        <div class="informacion-general">
-                            <div class="iconos">
-                                <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                                <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <div class="article-information-general">
+                            <div class="icons">
+                                <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </div>
                             </div>
-                            <div class="informacion-especifica">
-                                <div class="fecha-evento">
+                            <div class="article-information-specific">
+                                <div class="event-date">
                                     <p>
                                         <%= element.date1 %> a las <%= element.hour1 %>.
                                     </p>
                                 </div>
-                                <div class="valor-evento">
+                                <div class="event-price">
                                     <p>Desde $<%= element.price1 %>.-</p>
                                 </div>
-                                <div class="ubicacion-evento">
+                                <div class="event-place">
                                     <p>
                                         <%= element.stage %>, <%= element.city %>.
                                     </p>
@@ -95,9 +95,9 @@
                             </div>
                         </div>
 
-                        <div class="boton-info">
-                            <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                            <a href="" class="boton-amarillo">Comprar ahora</a>
+                        <div class="article-buttons">
+                            <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                            <a href="" class="buy-button">Comprar ahora</a>
                         </div>
                     </article>
                     <% }) %>      
@@ -107,23 +107,23 @@
         <br>
         <br>
         <!-- Sección Lo más buscado-->
-        <section class="seccion-destacados">
+        <section class="section-events">
             
-                <div class="titulo-seccion col-12">
+                <div class="section-title col-12">
                     <h2>Lo más buscado</h2>
                     <hr class="line-title">
                 </div>
 
-                <div class="seccion_eventos">
+                <div class="events-conteiner">
                     <% searched.forEach(element=> { %>
-                        <article class="contenedor-evento">
-                            <div class="imagen-evento">
+                        <article class="article-conteiner">
+                            <div class="article-image">
                                 <a href="products/detail">
                                     <img src="/image/products/<%= element.image %> " alt="">
                                 </a>
                             </div>
 
-                            <div class="titulo-evento">
+                            <div class="article-title">
                                 <h2>
                                     <%= element.artist %>
                                 </h2>
@@ -132,23 +132,23 @@
                                 </h4>
                             </div>
 
-                            <div class="informacion-general">
-                                <div class="iconos">
-                                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </div>
                                 </div>
-                                <div class="informacion-especifica">
-                                    <div class="fecha-evento">
+                                <div class="article-information-specific">
+                                    <div class="event-date">
                                         <p>
                                             <%= element.date1 %> a las <%= element.hour1 %>.
                                         </p>
                                     </div>
-                                    <div class="valor-evento">
+                                    <div class="event-price">
                                         <p>Desde $<%= element.price1 %>.-</p>
                                     </div>
-                                    <div class="ubicacion-evento">
+                                    <div class="event-place">
                                         <p>
                                             <%= element.stage %>, <%= element.city %>.
                                         </p>
@@ -156,9 +156,9 @@
                                 </div>
                             </div>
 
-                            <div class="boton-info">
-                                <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                                <a href="" class="boton-amarillo">Comprar ahora</a>
+                            <div class="article-buttons">
+                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="buy-button">Comprar ahora</a>
                             </div>
                         </article>
                         <% }) %>    
@@ -168,22 +168,22 @@
         <br>
         <br>
         <!-- Sección seleccionado para vos-->
-        <section class="seccion-destacados">
+        <section class="section-events">
             
-                <div class="titulo-seccion col-12">
+                <div class="section-title col-12">
                     <h2>Seleccionado para vos</h2>
                     <hr class="line-title">
                 </div>
-                <div class="seccion_eventos">
+                <div class="events-conteiner">
                     <% selected.forEach(element=> { %>
-                        <article class="contenedor-evento">
-                            <div class="imagen-evento">
+                        <article class="article-conteiner">
+                            <div class="article-image">
                                 <a href="products/detail">
                                     <img src="/image/products/<%= element.image %> " alt="">
                                 </a>
                             </div>
 
-                            <div class="titulo-evento">
+                            <div class="article-title">
                                 <h2>
                                     <%= element.artist %>
                                 </h2>
@@ -192,23 +192,23 @@
                                 </h4>
                             </div>
 
-                            <div class="informacion-general">
-                                <div class="iconos">
-                                    <div class="icono-fecha"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="icono-valor"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                                    <div class="icono-ubicacion"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </div>
                                 </div>
-                                <div class="informacion-especifica">
-                                    <div class="fecha-evento">
+                                <div class="article-information-specific">
+                                    <div class="event-date">
                                         <p>
                                             <%= element.date1 %> a las <%= element.hour1 %>.
                                         </p>
                                     </div>
-                                    <div class="valor-evento">
+                                    <div class="event-price">
                                         <p>Desde $<%= element.price1 %>.-</p>
                                     </div>
-                                    <div class="ubicacion-evento">
+                                    <div class="event-place">
                                         <p>
                                             <%= element.stage %>, <%= element.city %>.
                                         </p>
@@ -216,9 +216,9 @@
                                 </div>
                             </div>
 
-                            <div class="boton-info">
-                                <div class="icono-carrito"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                                <a href="" class="boton-amarillo">Comprar ahora</a>
+                            <div class="article-buttons">
+                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="buy-button">Comprar ahora</a>
                             </div>
                         </article>
                         <% }) %>

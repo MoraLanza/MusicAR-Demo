@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+    <link rel="stylesheet" href="../css/style-create-product.css">
+    </head>
+
+    <body>
+
+        <%- include('../partials/header') %>
+
+            <main>
+                <section class="section-form-event-create">
+                    <form action="" method="post" class="form-crear-evento">
+                        <div class="image-banner no-charged"
+                            style="background-image: url(/image/add-image-default.png) ;">
+                            <div class="titulo-principal-box">
+                                <div class="form-group event-principal-title">
+                                    <label for="event-title">
+                                        <input class="form-control" type="text" id="event-title" maxlength="50"
+                                            name="event-title" placeholder="Título">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-description">
+                                        <input class="form-control" type="text" id="event-description" maxlength="150"
+                                            name="event-description" placeholder="Subtítulo">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="btn-img-box">
+                                <button type="button" class="btn-edit-banner">
+                                    <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="boton-fixed">
+                            <a href="#top"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+
+                        <div class="form-data-box">
+                            <h4 class="form-data-box-title">Datos de localización</h4>
+                            <div class="form box-white">
+                                <div class="inputs-row">
+                                    <div class="form-group">
+                                        <label for="showType">Tipo de Show*</label>
+                                        <select class="form-control" name="showType" id="showType">
+                                            <option value="">Presencial</option>
+                                            <option value="">Virtual</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group link-maps">
+                                        <label for="link-maps">Link de Maps*</label>
+                                        <input class="form-control" type="text" name="link-maps" id="link-maps">
+                                    </div>
+                                </div>
+                                <div class="inputs-row">
+                                    <div class="form-group">
+                                        <label for="country">País*</label>
+                                        <select class="form-control" name="country" id="country">
+                                            <option value="">Argentina</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">Provincia*</label>
+                                        <select class="form-control" name="state" id="state">
+                                            <option value="">Buenos Aires</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="city">Ciudad*</label>
+                                        <select class="form-control" name="city" id="city">
+                                            <option value="">CABA</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="direction">Dirección*</label>
+                                        <input class="form-control" type="text" name="direction" id="direction"
+                                            placeholder="Av. San Martin 4563">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="divider-forms-box">
+                        </div>
+                        <div class="form-data-box">
+                            <h4 class="form-data-box-title">Fecha de función/es</h4>
+                            <div class="form box-white">
+                                <div class="inputs-row">
+                                    <div class="form-group">
+                                        <label for="date1">Fecha de función*</label>
+                                        <input class="form-control" type="date" name="date1" id="date1">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hour1">Horario de inicio*</label>
+                                        <input class="form-control" type="number" name="hour1" id="hour1">
+                                    </div>
+                                    <!-- <div class="form-group">
+                                <label for="show-type">Horario de finalización*</label>
+                                <input class="form-control" type="number" name="" id="">
+                            </div> -->
+                                    <div>
+                                        <button class="btn-add-show" type="button "><i
+                                                class="fa-solid fa-plus"></i>Añadir una función</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <hr class="divider-forms-box">
+                        </div>
+                        <div class="form-data-box">
+                            <h4 class="form-data-box-title">Datos de ticket</h4>
+                            <div class="form box-white">
+                                <div class="inputs-row">
+                                    <div class="form-group">
+                                        <label for="ticketType1">Tipo de entrada*</label>
+                                        <select class="form-control" name="ticketType1" id="ticketType1">
+                                            <option value="">Pullman</option>
+                                            <option value="">General</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price1">Precio*</label>
+                                        <input class="form-control" type="number" name="price1" id="price1"
+                                            placeholder="Ej: 5000.-">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lot1">Cantidad disponible*</label>
+                                        <input class="form-control" type="number" name="lot1" id="lot1" placeholder="Ej: 20">
+                                    </div>
+                                    <div>
+                                        <button class="btn-add-show" type="button"><i
+                                                class="fa-solid fa-plus"></i>Añadir una función</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="divider-forms-box">
+                        </div>
+                        <div class="form-data-box">
+                            <h4 class="form-data-box-title">Descripción del evento</h4>
+                            <div class="form box-white">
+                                <div class="inputs-row description-row">
+                                    <div class="form-group description-textarea">
+                                        <label for="description">Descripción del evento*</label>
+                                        <textarea name="description" id="description" cols="80" rows="5"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="link-yt">Link de youtube</label>
+                                        <input class="form-control" type="text" name="link-yt" id="link-yt" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="inputs-row">
+                                    <div class="form-group">
+                                        <label for="category">Categorias*</label>
+                                        <input class="form-control" type="text" name="category" id="category"
+                                            placeholder="Rock, moderno, alternativo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-btns">
+                            <div class="cancel-btn-conteiner">
+                                <input type="button" class="cancel-button" value="Cancelar">
+                            </div>
+                            <div class="right-btns-conteiner">
+                                <div class="reset-btn-conteiner">
+                                    <button type="reset" class="reset-button">Resetear</button>
+                                </div>
+                                <div class="submit-btn-conteiner">
+                                    <button type="submit" class="submit-button">Crear evento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+            <%- include('../partials/footer') %>
+    </body>
+
+</html>

@@ -4,14 +4,14 @@ header {
     z-index: 1000;
 
 }
-.contenedor-buscador {
+.search-conteiner {
     width: 100%;
     justify-content: center;
     display: flex;
 }
 
 
-.barraDeBusqueda {
+.search-nav {
     background-color: #FCFCFC;
     width: 80%;
     text-align: center;
@@ -21,7 +21,7 @@ header {
     position: relative;
     top:-50px;
 }
-form.formularioBusqueda {
+form.search-form{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -29,7 +29,7 @@ form.formularioBusqueda {
     padding: 20px;
 }
 
-input#fechaEvento, .barraDeBusqueda select {
+input#event-date, .search-nav select {
     height: 40px;
     width: 250px;
     padding: 0 5px;
@@ -38,18 +38,18 @@ input#fechaEvento, .barraDeBusqueda select {
     margin-bottom: 5px;
 }
 
-.barraDeBusqueda select{
+.search-nav select{
     height: 42px;
 }
-.buscar i, .lugar i {
+.search i, .place i {
 margin: 0 5px;
 }
 
-.buscar input, .lugar input{
+.search input, .place input{
     border: transparent;
     padding: 8px;
 }
-.buscar, .lugar {
+.search, .place {
     background-color: white;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@ margin: 0 5px;
     margin-bottom: 5px;
 }
 
-input.buscar_btn {
+input.search-btn {
     background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     height: 40px;
     width: 150px;
@@ -71,12 +71,12 @@ input.buscar_btn {
     font-size: 15px;
 }
 
-input.buscar_btn:hover{
+input.search-btn:hover{
     background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     transition: 0.5s;
 }
 
-.titulo-seccion {
+.section-title {
     text-align:left;
     position: relative;
     margin-bottom: 50px;
@@ -84,7 +84,7 @@ input.buscar_btn:hover{
 
 }
 
-.titulo-seccion h2{
+.section-title h2{
     font-size: 32px;
 }
 .line-title{
@@ -95,7 +95,7 @@ input.buscar_btn:hover{
     border:transparent;
 
 }
-.eventos-seccion {
+.events-conteiner {
 
     margin-top: 10px;
 }
@@ -105,46 +105,46 @@ section{
     justify-content: center;
 
 }
-.seccion-destacados{
+.section-events{
     width: 80%;
 
     margin: 0 auto;
 
 }
-.contenedor-evento{
+.article-conteiner{
     display: flex;
     flex-direction: column;
 }
 
-.imagen-evento{
+.article-image{
     width: 100%;
 }
 
-.imagen-evento img {
+.article-image img {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
 
-.titulo-evento{
+.article-title {
     text-align: center;
     margin-bottom: 10px;
 }
-.titulo-evento h2 {
+.article-title h2 {
     font-size: 24px;
     font-weight: bold;
 }
 
 
-.iconos{
+.icons{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px 10px 10px 0;
 }
 
-.informacion-especifica{
+.article-information-specific{
     display: flex;
     flex-direction: column;
     margin: 5px 0 10px 0;
@@ -152,32 +152,32 @@ section{
 
 
 
-.informacion-general{
+.article-information-general{
     display: flex;
 }
 
-.icono-fecha, .icono-valor, .fecha-evento, .valor-evento {
+.date-icon, .price-icon, .event-date, .event-price {
     margin-bottom: 5px;
 }
 
-.boton-info {
+.article-buttons {
     display: flex;
     padding: 5px 0px;
     width: 90%;
 }
 
 
-.ubicacion{
+.place{
     font-size: 14px;
 }
 
-.icono-carrito {
+.cart-icon {
     font-size: 38px;
     width: 40%;
     cursor: pointer;
 }
 
-.boton-amarillo{
+.buy-button{
     width: 60%;
     cursor: pointer;
     background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
@@ -188,21 +188,21 @@ section{
     text-align: center;
     padding: 16px;
 }
-a.boton-amarillo{
+a.buy-button{
     color: black;
     font-weight: bold;
 }
 
-.boton-amarillo:hover{
+.buy-button:hover{
     background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     transition: 0.5s;
 }
 
-/* .contenedor-evento{
+/* .article-conteiner{
     position: relative;
 } */
 
-.contenedor-evento-link{
+.article-conteiner-link{
     position: absolute;
     top: 0;
     left: 0;
@@ -217,7 +217,7 @@ a.boton-amarillo{
 
 /*Mobile Phone */
 @media only screen and (max-width: 768px) {
-    article.contenedor-evento {
+    article.article-conteiner {
         width: 100%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
@@ -227,7 +227,7 @@ a.boton-amarillo{
         margin: 0 auto;
         margin: 6%;
     }
-    .seccion_eventos {
+    .events-conteiner {
         width: 100%;
         margin-top: 10px;
         display: block;
@@ -236,7 +236,7 @@ a.boton-amarillo{
 }
 /* Tablet */
 @media only screen and (min-width: 768px) {
-    article.contenedor-evento {
+    article.article-conteiner {
         width: 100%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
@@ -247,7 +247,7 @@ a.boton-amarillo{
         margin: 6%;
     }
 
-.seccion_eventos {
+.events-conteiner {
     width: 100%;
     margin-top: 10px;
     display: block;
@@ -256,7 +256,7 @@ a.boton-amarillo{
 }
 /*Desktop */
 @media only screen and (min-width: 992px) {
-    .contenedor-evento{
+    .article-conteiner{
         background: #FFFFFF;
     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -267,17 +267,17 @@ a.boton-amarillo{
         width: 30%;
         transition: 100ms;
     }
-    .contenedor-evento:hover{
+    .article-conteiner:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 41px 4px rgba(0,0,0,0.25);
 }
-    .seccion_eventos {
+    .events-conteiner {
         width: 100%;
         margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
     }
-    article.contenedor-evento {
+    article.article-conteiner {
         width: 30%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
@@ -289,7 +289,7 @@ a.boton-amarillo{
     }
 }
 @media only screen and (min-width: 1300px) {
-    article.contenedor-evento {
+    article.article-conteiner {
         width: 23%;
     }
 }

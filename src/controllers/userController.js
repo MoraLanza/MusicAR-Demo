@@ -1,12 +1,12 @@
 let userController = {
-    carrito: function(req, res){
-        res.render("users/carrito");
+    cart: function(req, res){
+        res.render("users/shopping-cart");
     },
     login: function(req, res){
         res.render("users/login");
     },
-    registro: function(req, res){
-        res.render("users/registro");
+    register: function(req, res){
+        res.render("users/register");
     }
 }
 
