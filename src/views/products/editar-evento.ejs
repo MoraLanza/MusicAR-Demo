@@ -91,7 +91,7 @@
                     <div class="form box-white">
                         <div class="inputs-row">
                             <div class="form-group">
-                                <label for="show-type">Tipo de Show*</label>
+                                <label for="show-type"><%= product.showType %> label>
                                 <select class="form-control" name="show-type" id="show-type">
                                     <option value="">Presencial</option>
                                     <option value="">Virtual</option>
@@ -104,28 +104,28 @@
                         </div>
                         <div class="inputs-row">
                             <div class="form-group">
-                                <label for="pais">País*</label>
+                                <label for="pais"><%= product.country %> </label>
                                 <select class="form-control" name="pais" id="pais">
                                     <option value="">Argentina</option>
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="provincia">Provincia*</label>
+                                <label for="provincia"><%= product.state %> </label>
                                 <select class="form-control" name="provincia" id="provincia">
                                     <option value="">Buenos Aires</option>
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="localidad">Localidad*</label>
+                                <label for="localidad"><%= product.city %> </label>
                                 <select class="form-control" name="localidad" id="localidad">
                                     <option value="">CABA</option>
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="direccion">Dirección*</label>
+                                <label for="direccion"><%= product.direction %> </label>
                                 <input class="form-control" type="text" name="direccion" id="direccion" placeholder="Av. San Martin 4563">
                             </div>
                         </div>
@@ -137,15 +137,15 @@
                     <div class="form box-white">
                         <div class="inputs-row">
                             <div class="form-group">
-                                <label for="show-type">Fecha de función*</label>
+                                <label for="show-type"><%= product.date1 %> </label>
                                 <input class="form-control" type="date" name="" id="">
                             </div>
                             <div class="form-group">
-                                <label for="show-type">Horario de inicio*</label>
+                                <label for="show-type"><%= product.hour1 %> </label>
                                 <input class="form-control" type="number" name="" id="">
                             </div>
                             <div class="form-group">
-                                <label for="show-type">Horario de finalización*</label>
+                                <label for="show-type"><%= product.hour1 %> </label>
                                 <input class="form-control" type="number" name="" id="">
                             </div>
                             <div>
@@ -160,18 +160,18 @@
                     <div class="form box-white">
                         <div class="inputs-row">
                             <div class="form-group">
-                                <label for="show-type">Tipo de entrada*</label>
+                                <label for="show-type"><%= product.ticketType1 %> </label>
                                 <select class="form-control" name="localidad" id="localidad">
                                     <option value="">Pullman</option>
                                     <option value="">General</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="show-type">Precio*</label>
+                                <label for="show-type"><%= product.price1 %> </label>
                                 <input class="form-control" type="number" name="" id="" placeholder="Ej: 5000.-">
                             </div>
                             <div class="form-group">
-                                <label for="show-type">Cantidad disponible*</label>
+                                <label for="show-type"><%= product.lot1 %> </label>
                                 <input class="form-control" type="number" name="" id="" placeholder="Ej: 20">
                             </div>
                             <div>
@@ -186,7 +186,7 @@
                     <div class="form box-white">
                         <div class="inputs-row description-row">
                             <div class="form-group description-textarea">
-                                <label for="show-type">Descripción del evento*</label>
+                                <label for="show-type"><%= product.description %> </label>
                                 <textarea name="" id="" cols="80" rows="5"></textarea>
                             </div>
                             <div class="form-group">
