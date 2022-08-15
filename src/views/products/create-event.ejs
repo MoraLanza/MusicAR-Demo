@@ -11,7 +11,7 @@
 
             <main>
                 <section class="section-form-event-create">
-                    <form action="" method="post" class="form-crear-evento">
+                    <form action="/products/create" method="POST" class="form-crear-evento" enctype="multipart/form-data">
                         <div class="image-banner no-charged"
                             style="background-image: url(/image/add-image-default.png) ;">
                             <div class="titulo-principal-box">
@@ -31,15 +31,14 @@
                                 </div>
                             </div>
                             <div class="btn-img-box">
-                                <button type="button" class="btn-edit-banner">
-                                    <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i>
-                                </button>
+                                <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i></label>
+						<input type="file" name="image" id="image" class="form-input">
                             </div>
                         </div>
 
-                        <div class="boton-fixed">
+                        <!-- <div class="boton-fixed">
                             <a href="#top"><i class="fas fa-chevron-up"></i></a>
-                        </div>
+                        </div> -->
 
                         <div class="form-data-box">
                             <h4 class="form-data-box-title">Datos de localización</h4>
@@ -48,8 +47,8 @@
                                     <div class="form-group">
                                         <label for="showType">Tipo de Show*</label>
                                         <select class="form-control" name="showType" id="showType">
-                                            <option value="">Presencial</option>
-                                            <option value="">Virtual</option>
+                                            <option value="presencial">Presencial</option>
+                                            <option value="virtual">Virtual</option>
                                         </select>
                                     </div>
                                     <div class="form-group link-maps">
@@ -61,21 +60,21 @@
                                     <div class="form-group">
                                         <label for="country">País*</label>
                                         <select class="form-control" name="country" id="country">
-                                            <option value="">Argentina</option>
+                                            <option value="argentina">Argentina</option>
                                             <option value=""></option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="state">Provincia*</label>
                                         <select class="form-control" name="state" id="state">
-                                            <option value="">Buenos Aires</option>
+                                            <option value="Buenos-Aires">Buenos Aires</option>
                                             <option value=""></option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="city">Ciudad*</label>
                                         <select class="form-control" name="city" id="city">
-                                            <option value="">CABA</option>
+                                            <option value="CABA">CABA</option>
                                             <option value=""></option>
                                         </select>
                                     </div>

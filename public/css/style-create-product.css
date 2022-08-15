@@ -63,6 +63,10 @@ body {
     font-size: 60px;
     margin-right: 3px;
 }
+.btn-img-box label{
+    color: white;
+
+}
 
 .titulo-principal-box label{
     display: flex;

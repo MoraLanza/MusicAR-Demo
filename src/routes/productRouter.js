@@ -16,7 +16,7 @@ const upload = multer ({storage});
 
 const productController = require('../controllers/productController');
 
-router.get('/', mainController.index)
+router.get('/all', productController.allProducts);
 
 router.get('/detail/:id', productController.detail);
 

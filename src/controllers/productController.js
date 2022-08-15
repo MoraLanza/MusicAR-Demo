@@ -5,6 +5,10 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let productController = {
+    allProducts: (req, res) => {
+        const all = products.filter(product => product.all === 'all');
+        res.render('./products/all-products',{all});
+    },
     detail: (req, res) => {
         const product = products.find(element => element.id == req.params.id);
          res.render('./products/product-detail', {products});
@@ -13,7 +17,7 @@ let productController = {
         res.render('./products/create-event');
     },
     store: (req, res) => {
-        // const productsClone = products;
+        const productsClone = products;
         // const newTicket = {
         //     price: req.body.price,
         //     ticketType: req.body.ticketType,
@@ -53,7 +57,7 @@ let productController = {
 
 		productsClone.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(productsClone, null, ' '));
-		res.redirect('/products');
+		res.redirect('/');
     },
     edit: (req, res) => {
         const product = products.find(element => element.id == req.params.id); 
