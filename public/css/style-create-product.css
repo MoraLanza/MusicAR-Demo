@@ -165,9 +165,12 @@ body {
 }
 
 .form-data-box .form-group.link-maps{
-    max-width: 74%;
+    max-width: 50%;
 }
 
+.form-data-box .form-group.date1, .form-data-box .form-group.hour1 {
+    max-width: 35%;
+}
 .btn-add-show{
     font-weight: 600;
     font-size: 14px;

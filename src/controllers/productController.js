@@ -67,17 +67,18 @@ let productController = {
         
     },
     delete : (req, res) => {
-		const deletedProduct =  products.find((prod) => {
-			return prod.id == req.params.id;
-			});
+		// const deletedProduct =  products.find((prod) => {
+		// 	return prod.id == req.params.id;
+		// 	});
 
-		const prodIndex = products.findIndex((p) => p.id == deletedProduct.id);
+		// const prodIndex = products.findIndex((p) => p.id == deletedProduct.id);
 		
-		products.splice(prodIndex,1);
+		// products.splice(prodIndex, 1);
+        const allProductsFilter = products.filter(product => product.id != req.params.id);
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
 
-		res.redirect('/index');
+		res.redirect('../all-products');
 	}
 
 

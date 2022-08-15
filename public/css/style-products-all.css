@@ -205,6 +205,7 @@ section{
     background: linear-gradient(180deg, rgb(241, 110, 110) 0%, rgb(240, 96, 52) 100%); 
     font-size: 14px;
     font-weight: 300;
+    cursor: pointer;
 }
 
 .delete-button:hover{

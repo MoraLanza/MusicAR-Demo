@@ -1,7 +1,7 @@
 [
  {
   "all": "all",
-    "id": 1,
+  "id": 1,
   "showType": "Presencial",
   "class": "buscados",
   "artist": "Coyote Mint",
@@ -34,7 +34,7 @@
  },
  {
   "all": "all",
-    "id": 2,
+  "id": 2,
   "showType": "Online",
   "class": "buscados",
   "artist": "Jackie's Saddle",
@@ -54,7 +54,7 @@
  },
  {
   "all": "all",
-    "id": 3,
+  "id": 3,
   "showType": "Presencial",
   "class": "destacados",
   "artist": "Woollypod Milkvetch",
@@ -74,7 +74,7 @@
  },
  {
   "all": "all",
-    "id": 4,
+  "id": 4,
   "showType": "Online",
   "class": "buscados",
   "artist": "Lava Rock",
@@ -94,7 +94,7 @@
  },
  {
   "all": "all",
-    "id": 5,
+  "id": 5,
   "showType": "Presencial",
   "class": "seleccionados",
   "artist": "Clokey's Nightshade",
@@ -114,7 +114,7 @@
  },
  {
   "all": "all",
-    "id": 6,
+  "id": 6,
   "showType": "Presencial",
   "class": "seleccionados",
   "artist": "Jungle Netvine",
@@ -134,7 +134,7 @@
  },
  {
   "all": "all",
-    "id": 7,
+  "id": 7,
   "showType": "Online",
   "class": "destacados",
   "artist": "Spathulate Botrychium",
@@ -154,7 +154,7 @@
  },
  {
   "all": "all",
-    "id": 8,
+  "id": 8,
   "showType": "Presencial",
   "class": "seleccionados",
   "artist": "Bog Yelloweyed Grass",
@@ -174,7 +174,7 @@
  },
  {
   "all": "all",
-    "id": 9,
+  "id": 9,
   "showType": "Presencial",
   "class": "destacados",
   "artist": "Pipsissewa",
@@ -191,42 +191,5 @@
   "price1": 6737,
   "lot1": 282,
   "image": "Pipsissewa.jpg"
- },
- {
-  "all": "all",
-    "id": 10,
-  "showType": "Online",
-  "class": "buscados",
-  "artist": "Tobacco Root",
-  "subtitle": "lorem ipsu blablabla",
-  "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-  "country": "Argentina",
-  "state": "Cordoba",
-  "city": "Ciudad de Cordoba",
-  "stage": "Zombies Rock Bar",
-  "direction": "245 Banding Center",
-  "date1": "26.02.2023",
-  "hour1": "10:00 PM",
-  "ticketType1": "Pullman",
-  "price1": 2254,
-  "lot1": 248,
-  "image": ""
- },
- {
-  "all": "all",
-    "id": 11,
-  "showType": "presencial",
-  "description": "fggfdfgd",
-  "country": "argentina",
-  "state": "Buenos-Aires",
-  "city": "CABA",
-  "direction": "fgf",
-  "date1": "2022-08-10",
-  "hour1": "4",
-  "ticketType1": "",
-  "price1": "43",
-  "lot1": "34",
-  "category": "rock",
-  "image": null
  }
 ]
