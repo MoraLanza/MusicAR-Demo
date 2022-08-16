@@ -53,7 +53,7 @@ let productController = {
             // functions: [
             //    ...newFunction
             // ],
-			image: req.file ? req.file.filename : null
+			image: req.file.filename  //no pudimos hacer funcionar la subida de la imagen ? req.file.filename : null
 		}
 
 		productsClone.push(newProduct);
@@ -65,7 +65,29 @@ let productController = {
         res.render('./products/edit-event', {product});
     },
     update: (req, res) => {
-        
+            const indexProducto = products.findIndex(element => element.id == req.params.id);
+            products[indexProducto] = {
+            showType: req.body.showType,
+            artist: req.body.artist,
+            subtitle: req.body.subtitle,
+			description: req.body.description,
+			country: req.body.country,
+            state: req.body.state,
+			city: req.body.city,
+            direction : req.body.direction,
+			stage: req.body.stage,
+            direction: req.body.direction,
+            date1: req.body.date1,
+            hour1: req.body.hour1,
+            ticketType1: req.body.ticketType1,   
+            price1: req.body.price1,            
+            lot1: req.body.lot1,
+            category: req.body.category, 
+			image: req.file ? req.file.filename : null
+            }
+    
+            let productModificarJson = JSON.stringify(products, null, ' ');
+            fs.writeFileSync(productsFilePath, productModificarJson);
     },
     delete : (req, res) => {
 		// const deletedProduct =  products.find((prod) => {
