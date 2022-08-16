@@ -46,6 +46,7 @@ let productController = {
             price1: req.body.price1,            
             lot1: req.body.lot1,
             category: req.body.category,
+            all: req.body.all,
             // ticket : [ 
             //     ...newTicket
             // ],
@@ -73,12 +74,14 @@ let productController = {
 
 		// const prodIndex = products.findIndex((p) => p.id == deletedProduct.id);
 		
-		// products.splice(prodIndex, 1);
+		// products.splice(prodIndex, 1); 
         const allProductsFilter = products.filter(product => product.id != req.params.id);
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
 
-		res.redirect('../all-products');
+		res.redirect('../all');
+        // acá se redirecciona pero no se refresca la pagina, o sea entra a la misma pagina bien, pero se ve el articulo borrado solo cuando apretas f5
+        //no supimos como solucionarlo
 	}
 
 
