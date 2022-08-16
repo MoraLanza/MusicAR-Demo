@@ -16,8 +16,8 @@
             <img src="/image/carpa delirio.jpg" alt="Imagen de Carpa Delirio">
         <div class="titulo-principal">
             <div>
-                <h1>CARPA DELIRIO</h1>
-                <p>Salsa + circo + orquesta | Viernes 24 de Junio 20 hs</p>
+                <h1><%= product.artist %></h1>
+                <p><%= product.subtitle %></p>
             </div>
             <div class="botones-titulo-principal">
                 <button class="boton-comprar">COMPRAR ENTRADA</button>
@@ -49,7 +49,7 @@
             <form class="funcion-form" action="/" method="GET">
                 <label>FUNCIÓN</label>
                 <select name="fecha-función">
-                    <option value="funcion1">Función 1</option>
+                    <option value="funcion1"><%= product.date1 %> </option>
                     <option value="funcion2">Función 2</option>
                     <option value="funcion3">Función 3</option>
                     <option value="funcion4">Función 4</option>
@@ -66,13 +66,13 @@
 
                                 <tr class="super-pullman">
                                     <td>
-                                        <h4>Super Pullman</h4>
+                                        <h4><%= product.ticketType1%></h4>
 
                                         <p>Fila 01 a 16</p>
                                     </td>
                                     <td></td>
                                     <td>$</td>
-                                    <td class="precio">5500.-</td>
+                                    <td class="precio"><%=product.price1%>.-</td>
                                     <td class="color-superpullman"></td>
                                 </tr>
 
@@ -169,26 +169,14 @@
 
         <div class="descripcion" id="descripcion">
             <div class="descripcion-titulo">
-                <h3>CARPA DELIRIO</h3>
+                <h3><%= product.artist%></h3>
                 <hr class="line-descripcion">
-                <p>Salsa + circo + orquesta</p>
+                <p><%= product.subtitle%></p>
 
             </div>
             <div class="descripcion-cuerpo">
                 <div class="texto-descripcion">
-                    <p>En medio de la dificultad, los corazones testarudos, imbatibles y pachangueros, vuelven al baile;
-                        plantándole cara a la adversidad, pisando firmes en la esperanza y agarrándole la mano a la
-                        disciplina para volver a vivir los momentos que lo son todo, que nos hacen recordar el poderío
-                        de este departamento valiente y cuyo ritmo, ese que baila por nuestras venas, late al son del
-                        orgullo de ser quienes somos, de venir de dónde venimos.</p>
-                    <br>
-                    <p>Por eso, en la Carpa Delirio estamos de vuelta al ritmo, el último viernes de cada mes como
-                        siempre lo fue y siempre lo será, para recordar que nada puede contra un espíritu alegre,
-                        creativo y delirante. </p>
-                    <br>
-                    <p> que sigamos juntos lo seremos todo, y esta carpa que es de cada uno de ustedes, se alza una vez
-                        más convencida del poder del arte para transformarnos una y otra vez, para demostrar que en esta
-                        tierra le bailamos a la vida y le cantamos al orgullo.</p>
+                    <p><%= product.description%></p>
                 </div>
                 <iframe width="679" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
                     title="Carpa Delirio 2022" frameborder="0"

@@ -10,8 +10,8 @@ let productController = {
         res.render('./products/all-products',{all});
     },
     detail: (req, res) => {
-        const product = products.find(element => element.id == req.params.id);
-         res.render('./products/product-detail', {products});
+        const product = products.find(element => element.id == req.params.id); 
+        res.render('./products/product-detail', {product});
     },
     create: (req, res) => {
         res.render('./products/create-event');

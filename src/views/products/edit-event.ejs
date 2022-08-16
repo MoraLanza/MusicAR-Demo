@@ -3,7 +3,7 @@
 
 
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="../css/style-create-product.css">
+    <link rel="stylesheet" href="/css/style-create-product.css">
 </head>
 
 <body>
@@ -12,76 +12,81 @@
 
     <main>
         <section class="section-form-event-create">
-            <form action="/product/edit/:id?_method=PUT" method="POST" class="form-crear-evento">
+            <form action="/products/create" method="POST" class="form-crear-evento" enctype="multipart/form-data">
                 <div class="image-banner no-charged"
-                    style="background-image: url(../../../public/image/add-image-default.png) ;">
+                    style="background-image: url(/image/add-image-default.png) ;">
                     <div class="titulo-principal-box">
                         <div class="form-group event-principal-title">
                             <label for="event-title">
-                                <input class="form-control" type="text" id="event-title" maxlength="50" name="event-title" placeholder="Título">
+                                <input class="form-control" type="text" id="event-title" maxlength="50"
+                                    name="event-title" placeholder="<%= product.artist%>">
                                 <i class="fa-solid fa-pen"></i>
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="event-description">
-                                <input class="form-control" type="text" id="event-description" maxlength="150" name="event-description" placeholder="Subtítulo">
+                                <input class="form-control" type="text" id="event-description" maxlength="150"
+                                    name="event-description" placeholder="<%= product.subtitle%>">
                                 <i class="fa-solid fa-pen"></i>
                             </label>
                         </div>
                     </div>
                     <div class="btn-img-box">
-                        <button type="button" class="btn-edit-banner">
-                            <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i>
-                        </button>
+                        <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i></label>
+                <input type="file" name="image" id="image" class="form-input">
                     </div>
                 </div>
-    
-                <div class="boton-fixed">
+
+                <!-- <div class="boton-fixed">
                     <a href="#top"><i class="fas fa-chevron-up"></i></a>
-                </div>
-    
+                </div> -->
+
                 <div class="form-data-box">
                     <h4 class="form-data-box-title">Datos de localización</h4>
                     <div class="form box-white">
                         <div class="inputs-row">
                             <div class="form-group">
-                                <label for="show-type">Tipo de Show*</label>
-                                <select class="form-control" name="show-type" id="show-type">
-                                    <option value="">Presencial</option>
-                                    <option value="">Virtual</option>
+                                <label for="showType">Tipo de Show*</label>
+                                <select class="form-control" name="showType" id="showType">
+                                    <option value="presencial" <%= product.showType == "Presencial" ? 'selected' : null%>>Presencial</option>
+                                    <option value="virtual" <%= product.showType == "Virtual" ? 'selected' : null%>>Virtual</option>
                                 </select>
                             </div>
                             <div class="form-group link-maps">
                                 <label for="link-maps">Link de Maps*</label>
                                 <input class="form-control" type="text" name="link-maps" id="link-maps">
                             </div>
+                            <div class="form-group stage">
+                                <label for="stage">Teatro o lugar*</label>
+                                <input class="form-control" type="text" name="stage" id="stage" placeholder="<%=product.stage %>">
+                            </div>
                         </div>
                         <div class="inputs-row">
                             <div class="form-group">
                                 <label for="country">País*</label>
                                 <select class="form-control" name="country" id="country">
-                                    <option value="">Argentina</option>
+                                    <option value="argentina">Argentina</option>
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="state">Provincia*</label>
                                 <select class="form-control" name="state" id="state">
-                                    <option value="">Buenos Aires</option>
+                                    <option value="Buenos-Aires">Buenos Aires</option>
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="city">Ciudad*</label>
                                 <select class="form-control" name="city" id="city">
-                                    <option value="">CABA</option>
+                                    <option value="CABA">CABA</option>
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="direction">Dirección*</label>
                                 <input class="form-control" type="text" name="direction" id="direction"
-                                    placeholder="Av. San Martin 4563">
+                                    placeholder="<%= product.direction%>">
                             </div>
                         </div>
                     </div>
@@ -91,11 +96,12 @@
                     <h4 class="form-data-box-title">Fecha de función/es</h4>
                     <div class="form box-white">
                         <div class="inputs-row">
-                            <div class="form-group">
+                            <div class="form-group date1">
                                 <label for="date1">Fecha de función*</label>
-                                <input class="form-control" type="date" name="date1" id="date1">
+                                <input class="form-control" type="text" name="date1" id="date1" placeholder="<%= product.date1%> "
+                                onfocus="(this.type='date')">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group hour1">
                                 <label for="hour1">Horario de inicio*</label>
                                 <input class="form-control" type="number" name="hour1" id="hour1">
                             </div>
@@ -158,6 +164,9 @@
                                 <label for="category">Categorias*</label>
                                 <input class="form-control" type="text" name="category" id="category"
                                     placeholder="Rock, moderno, alternativo">
+                            </div>
+                            <div>
+                                <input type="radio" id="all" name="all" value="all" checked>
                             </div>
                         </div>
                     </div>

@@ -57,7 +57,7 @@
                 <% featured.forEach(element=> { %>
                     <article class="article-conteiner">
                         <div class="article-image">
-                            <a href="products/detail">
+                            <a href="/products/detail/<%=element.id%>">
                                 <img src="/image/products/<%= element.image %> " alt="">
                             </a>
                         </div>
@@ -118,7 +118,7 @@
                     <% searched.forEach(element=> { %>
                         <article class="article-conteiner">
                             <div class="article-image">
-                                <a href="products/detail">
+                                <a href="/products/detail/<%=element.id%>">
                                     <img src="/image/products/<%= element.image %> " alt="">
                                 </a>
                             </div>
@@ -178,7 +178,7 @@
                     <% selected.forEach(element=> { %>
                         <article class="article-conteiner">
                             <div class="article-image">
-                                <a href="products/detail">
+                                <a href="/products/detail/<%=element.id%>">
                                     <img src="/image/products/<%= element.image %> " alt="">
                                 </a>
                             </div>
@@ -228,7 +228,7 @@
         <!-- FIN -- Sección Lo más buscado -->
         <br>
         <br>
-        <%- include('./partials/footer') %>
+        <%- include('../partials/footer') %>
 
 </body>
 
