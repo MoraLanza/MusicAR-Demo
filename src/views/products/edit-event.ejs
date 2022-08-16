@@ -12,21 +12,21 @@
 
     <main>
         <section class="section-form-event-create">
-            <form action="/products/create" method="POST" class="form-crear-evento" enctype="multipart/form-data">
+            <form action="/products/edit/<%=product.id%>?_method=PUT" method="POST" class="form-crear-evento" enctype="multipart/form-data">
                 <div class="image-banner no-charged"
                     style="background-image: url(/image/add-image-default.png) ;">
                     <div class="titulo-principal-box">
                         <div class="form-group event-principal-title">
                             <label for="event-title">
                                 <input class="form-control" type="text" id="event-title" maxlength="50"
-                                    name="event-title" placeholder="<%= product.artist%>">
+                                    name="event-title" value="<%= product.artist%>">
                                 <i class="fa-solid fa-pen"></i>
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="event-description">
                                 <input class="form-control" type="text" id="event-description" maxlength="150"
-                                    name="event-description" placeholder="<%= product.subtitle%>">
+                                    name="event-description" value="<%= product.subtitle%>">
                                 <i class="fa-solid fa-pen"></i>
                             </label>
                         </div>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-group stage">
                                 <label for="stage">Teatro o lugar*</label>
-                                <input class="form-control" type="text" name="stage" id="stage" placeholder="<%=product.stage %>">
+                                <input class="form-control" type="text" name="stage" id="stage" value="<%=product.stage %>">
                             </div>
                         </div>
                         <div class="inputs-row">
@@ -86,7 +86,7 @@
                             <div class="form-group">
                                 <label for="direction">Dirección*</label>
                                 <input class="form-control" type="text" name="direction" id="direction"
-                                    placeholder="<%= product.direction%>">
+                                    value="<%= product.direction%>">
                             </div>
                         </div>
                     </div>
@@ -98,8 +98,8 @@
                         <div class="inputs-row">
                             <div class="form-group date1">
                                 <label for="date1">Fecha de función*</label>
-                                <input class="form-control" type="text" name="date1" id="date1" placeholder="<%= product.date1%> "
-                                onfocus="(this.type='date')">
+                                <input class="form-control" type="text" name="date1" id="date1" value="<%= product.date1%> 
+                                "onfocus="(this.type='date')">
                             </div>
                             <div class="form-group hour1">
                                 <label for="hour1">Horario de inicio*</label>
@@ -131,12 +131,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="price1">Precio*</label>
-                                <input class="form-control" type="number" name="price1" id="price1"
-                                    placeholder="Ej: 5000.-">
+                                <input class="form-control" type="number" name="price1" id="price1" value="<%= product.price1%>">
                             </div>
                             <div class="form-group">
                                 <label for="lot1">Cantidad disponible*</label>
-                                <input class="form-control" type="number" name="lot1" id="lot1" placeholder="Ej: 20">
+                                <input class="form-control" type="number" name="lot1" id="lot1" value="<%= product.lot1%>">
                             </div>
                             <div>
                                 <button class="btn-add-show" type="button"><i
@@ -152,18 +151,18 @@
                         <div class="inputs-row description-row">
                             <div class="form-group description-textarea">
                                 <label for="description">Descripción del evento*</label>
-                                <textarea name="description" id="description" cols="80" rows="5"></textarea>
+                                <textarea name="description" id="description" cols="80" rows="5"><%= product.description%></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="link-yt">Link de youtube</label>
-                                <input class="form-control" type="text" name="link-yt" id="link-yt" placeholder="">
+                                <input class="form-control" type="text" name="link-yt" id="link-yt" value="">
                             </div>
                         </div>
                         <div class="inputs-row">
                             <div class="form-group">
                                 <label for="category">Categorias*</label>
                                 <input class="form-control" type="text" name="category" id="category"
-                                    placeholder="Rock, moderno, alternativo">
+                                    value="Rock, moderno, alternativo">
                             </div>
                             <div>
                                 <input type="radio" id="all" name="all" value="all" checked>

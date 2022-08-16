@@ -66,6 +66,7 @@ let productController = {
     },
     update: (req, res) => {
             const indexProducto = products.findIndex(element => element.id == req.params.id);
+            const product = products.find(element => element.id == req.params.id);
             products[indexProducto] = {
             showType: req.body.showType,
             artist: req.body.artist,
@@ -80,9 +81,9 @@ let productController = {
             date1: req.body.date1,
             hour1: req.body.hour1,
             ticketType1: req.body.ticketType1,   
-            price1: req.body.price1,            
+            price1: req.body.price1 != product.price1 ? req.body.price1 : product.price1,            
             lot1: req.body.lot1,
-            category: req.body.category, 
+            category: req.body.category ? req.body.category : product.category, 
 			image: req.file ? req.file.filename : null
             }
     
