@@ -3,22 +3,24 @@ const path = require('path');
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+const getProducts = () => {
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    return products;
+};
 let productController = {
     allProducts: (req, res) => {
-        const all = products.filter(product => product.all === 'all');
+        const all = getProducts().filter(product => product.all === 'all');
         res.render('./products/all-products',{all});
     },
     detail: (req, res) => {
-        const product = products.find(element => element.id == req.params.id); 
+        const product = getProducts().find(element => element.id == req.params.id); 
         res.render('./products/product-detail', {product});
     },
     create: (req, res) => {
         res.render('./products/create-event');
     },
     store: (req, res) => {
-        const productsClone = products;
+        const productsClone = getProducts();
         // const newTicket = {
         //     price: req.body.price,
         //     ticketType: req.body.ticketType,
@@ -29,7 +31,7 @@ let productController = {
         //     hours: req.body.hours,
         // }
 		const newProduct = {             
-			id: products[products.length -1].id + 1,
+			id: productsClone[productsClone.length -1].id + 1,
 			showType: req.body.showType,
 			// class: req.body.class,
             artist: req.body.artist,
@@ -62,12 +64,13 @@ let productController = {
 		res.redirect('/');
     },
     edit: (req, res) => {
-        const product = products.find(element => element.id == req.params.id); 
+        const product = getProducts().find(element => element.id == req.params.id); 
         res.render('./products/edit-event', {product});
     },
     update: (req, res) => {
+            const products = getProducts();
             const indexProducto = products.findIndex(element => element.id == req.params.id);
-            const product = products.find(element => element.id == req.params.id);
+            const product = getProducts().find(element => element.id == req.params.id);
             products[indexProducto] = {
             showType: req.body.showType,
             artist: req.body.artist,
@@ -99,7 +102,7 @@ let productController = {
 		// const prodIndex = products.findIndex((p) => p.id == deletedProduct.id);
 		
 		// products.splice(prodIndex, 1); 
-        const allProductsFilter = products.filter(product => product.id != req.params.id);
+        const allProductsFilter = getProducts().filter(product => product.id != req.params.id);
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
 
