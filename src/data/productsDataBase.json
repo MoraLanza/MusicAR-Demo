@@ -217,25 +217,7 @@
   "linkYT": ""
  },
  {
-  "id": 10,
-  "showType": "presencial",
-  "artist": "Sakura card captor",
-  "subtitle": "lorm ipsu blabalba",
-  "description": "sdgkjdlkñgjlkdfjlñdkjhñdlfkxjh",
-  "country": "Argentina",
-  "state": "Buenos Aires",
-  "city": "CABA",
-  "direction": "Guatemala 4516",
-  "stage": "Vorterix",
-  "date1": "2022-08-17",
-  "hour1": "10pm",
-  "ticketType1": "General",
-  "price1": "4000",
-  "lot1": "20",
-  "category": "Metal",
   "all": "all",
-  "linkMaps": "fgdfgdg",
-  "linkYT": "dfgdgd",
-  "image": "image-1660697038803"
+  "id": 10
  }
 ]
