@@ -1,5 +1,8 @@
 [
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 1,
   "showType": "Presencial",
@@ -17,7 +20,7 @@
   "ticketType1": "Pullman",
   "price1": 1748,
   "lot1": 9,
-  "image": "",
+  "image": "coyote-mint.jpg",
   "functions": [
    {
     "date": "2022-10-09",
@@ -33,6 +36,9 @@
   ]
  },
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 2,
   "showType": "Online",
@@ -50,9 +56,12 @@
   "ticketType1": "Pullman",
   "price1": 6755,
   "lot1": 462,
-  "image": ""
+  "image": "jackies-saddle.jpg"
  },
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 3,
   "showType": "Presencial",
@@ -73,6 +82,9 @@
   "image": "Woollypod-Milkvetch.jpg"
  },
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 4,
   "showType": "Online",
@@ -90,9 +102,12 @@
   "ticketType1": "Pullman",
   "price1": 4683,
   "lot1": 103,
-  "image": ""
+  "image": "lava-rock.jpg"
  },
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 5,
   "showType": "Presencial",
@@ -110,9 +125,12 @@
   "ticketType1": "Pullman",
   "price1": 4134,
   "lot1": 244,
-  "image": ""
+  "image": "clokeys-nigthshade.jpg"
  },
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 6,
   "showType": "Presencial",
@@ -130,7 +148,7 @@
   "ticketType1": "Pullman",
   "price1": 6221,
   "lot1": 371,
-  "image": ""
+  "image": "jungle-netvine.jpg"
  },
  {
   "all": "all",
@@ -153,6 +171,9 @@
   "image": "Spathulate-Botrychium.jpg"
  },
  {
+  "linkMaps": "",
+  "category": "",
+  "linkYT": "",
   "all": "all",
   "id": 8,
   "showType": "Presencial",
@@ -170,7 +191,7 @@
   "ticketType1": "Pullman",
   "price1": 4986,
   "lot1": 124,
-  "image": ""
+  "image": "bog.jpg"
  },
  {
   "all": "all",
@@ -190,26 +211,13 @@
   "ticketType1": "Pullman",
   "price1": 6737,
   "lot1": 282,
-  "image": "Pipsissewa.jpg"
+  "image": "Pipsissewa.jpg",
+  "linkMaps": "",
+  "category": "",
+  "linkYT": ""
  },
  {
   "all": "all",
-  "id": 11,
-  "showType": "Presencial",
-  "class": "destacados",
-  "artist": "Pipsissewa222",
-  "subtitle": "lorem ipsu blablabla",
-  "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-  "country": "Argentina",
-  "state": "Buenos Aires",
-  "city": "CABA",
-  "stage": "El Quetzal",
-  "direction": "25 Rockefeller Drive",
-  "date1": "29.08.2022",
-  "hour1": "7:00 PM",
-  "ticketType1": "Pullman",
-  "price1": 6737,
-  "lot1": 282,
-  "image": "Pipsissewa.jpg"
+  "id": 10
  }
 ]

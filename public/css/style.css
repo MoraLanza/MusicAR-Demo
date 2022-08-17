@@ -40,11 +40,11 @@ header {
 ul.lista-opciones li {
     padding-right: 30px;
     align-self: center;
+    display: flex;
+    align-items: center;
 }
 
-.contenedor-lista {
-    align-self: flex-end;
-}
+
 
 .social-media-list {
     display: flex;
@@ -63,6 +63,9 @@ ul.lista-opciones li {
     border-bottom: solid 2px white;
 }
 
+.contenedor-lista{
+    align-self: flex-end;
+}
 .boton-border {
     border: 2px solid white;
     padding: 8px 30px;
@@ -113,6 +116,23 @@ ul.lista-opciones li {
 .burguer-menu-header{
     display: none;
 }
+
+.boton-admin{
+    color: white;
+    font-size: 16px;
+}
+.fa-user-pen, .fa-pen-to-square{
+    color: white;
+    font-size: 30px;
+    margin-right: 8px;
+}
+
+.nav-header-admin{
+    align-self: flex-end;
+}
+
+
+
 /*FOOTER*/
 
 .footer-1 {
