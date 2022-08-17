@@ -107,8 +107,7 @@ let productController = {
 		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
 
 		res.redirect('../all');
-        // acá se redirecciona pero no se refresca la pagina, o sea entra a la misma pagina bien, pero se ve el articulo borrado solo cuando apretas f5
-        //no supimos como solucionarlo
+       
 	}
 
 

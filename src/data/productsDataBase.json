@@ -191,25 +191,5 @@
   "price1": 6737,
   "lot1": 282,
   "image": "Pipsissewa.jpg"
- },
- {
-  "all": "all",
-  "id": 11,
-  "showType": "Presencial",
-  "class": "destacados",
-  "artist": "Pipsissewa222",
-  "subtitle": "lorem ipsu blablabla",
-  "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-  "country": "Argentina",
-  "state": "Buenos Aires",
-  "city": "CABA",
-  "stage": "El Quetzal",
-  "direction": "25 Rockefeller Drive",
-  "date1": "29.08.2022",
-  "hour1": "7:00 PM",
-  "ticketType1": "Pullman",
-  "price1": 6737,
-  "lot1": 282,
-  "image": "Pipsissewa.jpg"
  }
 ]
