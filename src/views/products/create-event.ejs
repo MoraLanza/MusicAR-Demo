@@ -17,15 +17,15 @@
                             <div class="titulo-principal-box">
                                 <div class="form-group event-principal-title">
                                     <label for="event-title">
-                                        <input class="form-control" type="text" id="event-title" maxlength="50"
-                                            name="event-title" placeholder="Título">
+                                        <input class="form-control" type="text" id="artist" maxlength="50"
+                                            name="artist" placeholder="Título">
                                         <i class="fa-solid fa-pen"></i>
                                     </label>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-description">
-                                        <input class="form-control" type="text" id="event-description" maxlength="150"
-                                            name="event-description" placeholder="Subtítulo">
+                                        <input class="form-control" type="text" id="subtitle" maxlength="150"
+                                            name="subtitle" placeholder="Subtítulo">
                                         <i class="fa-solid fa-pen"></i>
                                     </label>
                                 </div>
@@ -46,46 +46,43 @@
                                 <div class="inputs-row">
                                     <div class="form-group">
                                         <label for="showType">Tipo de Show*</label>
-                                        <select class="form-control" name="showType" id="showType">
+                                        <select class="form-control" name="showType" id="showType" required>
                                             <option value="presencial">Presencial</option>
                                             <option value="virtual">Virtual</option>
                                         </select>
                                     </div>
                                     <div class="form-group link-maps">
-                                        <label for="link-maps">Link de Maps*</label>
-                                        <input class="form-control" type="text" name="link-maps" id="link-maps">
+                                        <label for="linkMaps">Link de Maps*</label>
+                                        <input class="form-control" type="text" name="linkMaps" id="linkMaps" required>
                                     </div>
                                     <div class="form-group stage">
                                         <label for="stage">Teatro o lugar*</label>
-                                        <input class="form-control" type="text" name="stage" id="stage">
+                                        <input class="form-control" type="text" name="stage" id="stage" placeholder="Ej: Teatro Vorterix" required>
                                     </div>
                                 </div>
                                 <div class="inputs-row">
                                     <div class="form-group">
                                         <label for="country">País*</label>
-                                        <select class="form-control" name="country" id="country">
-                                            <option value="argentina">Argentina</option>
-                                            <option value=""></option>
+                                        <select class="form-control" name="country" id="country" required>   
+                                            <option value='Argentina'>Argentina</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="state">Provincia*</label>
-                                        <select class="form-control" name="state" id="state">
-                                            <option value="Buenos-Aires">Buenos Aires</option>
-                                            <option value=""></option>
+                                        <select class="form-control" name="state" id="state" required>
+                                            <option value='Buenos Aires'>Buenos Aires</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="city">Ciudad*</label>
-                                        <select class="form-control" name="city" id="city">
+                                        <select class="form-control" name="city" id="city" required>
                                             <option value="CABA">CABA</option>
-                                            <option value=""></option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="direction">Dirección*</label>
-                                        <input class="form-control" type="text" name="direction" id="direction"
-                                            placeholder="Av. San Martin 4563">
+                                        <input class="form-control" type="text" name="direction" 
+                                        id="direction" placeholder=" Ej: Av. San Martin 4563" required>
                                     </div>
                                 </div>
                             </div>
@@ -97,18 +94,26 @@
                                 <div class="inputs-row">
                                     <div class="form-group date1">
                                         <label for="date1">Fecha de función*</label>
-                                        <input class="form-control" type="date" name="date1" id="date1">
+                                        <input class="form-control" type="date" name="date1" id="date1" required>
                                     </div>
                                     <div class="form-group hour1">
                                         <label for="hour1">Horario de inicio*</label>
-                                        <input class="form-control" type="number" name="hour1" id="hour1">
+                                        <select class="form-control" name="hour1" id="hour1" required>
+                                            <option value="7pm">7:00 pm</option>
+                                            <option value="8pm">8:00 pm</option>
+                                            <option value="9pm">9:00 pm</option>
+                                            <option value="10pm">10:00 pm</option>
+                                            <option value="11pm">11:00 pm</option>
+                                            <option value="12am">12:00 am</option>
+                                            <option value="1am">1:00 am</option>
+                                        </select>
                                     </div>
                                     <!-- <div class="form-group">
                                 <label for="show-type">Horario de finalización*</label>
                                 <input class="form-control" type="number" name="" id="">
                             </div> -->
                                     <div>
-                                        <button class="btn-add-show" type="button "><i
+                                        <button class="btn-add-show" type="button"><i
                                                 class="fa-solid fa-plus"></i>Añadir una función</button>
                                     </div>
                                 </div>
@@ -122,19 +127,23 @@
                                 <div class="inputs-row">
                                     <div class="form-group">
                                         <label for="ticketType1">Tipo de entrada*</label>
-                                        <select class="form-control" name="ticketType1" id="ticketType1">
-                                            <option value="">Pullman</option>
-                                            <option value="">General</option>
+                                        <select class="form-control" name="ticketType1" id="ticketType1" required>
+                                            <option value="Pullman">Pullman</option>
+                                            <option value="Super Pullman">Super Pullman</option>
+                                            <option value="Pullman Lateral">Pullman Lateral</option>
+                                            <option value="General">General</option>
+                                            <option value="Campo">Campo</option>
+                                            <option value="discapacitados">Discapacitados</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="price1">Precio*</label>
                                         <input class="form-control" type="number" name="price1" id="price1"
-                                            placeholder="Ej: 5000.-">
+                                            placeholder="Ej: 5000.-" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="lot1">Cantidad disponible*</label>
-                                        <input class="form-control" type="number" name="lot1" id="lot1" placeholder="Ej: 20">
+                                        <input class="form-control" type="number" name="lot1" id="lot1" placeholder="Ej: 20" required>
                                     </div>
                                     <div>
                                         <button class="btn-add-show" type="button"><i
@@ -150,18 +159,30 @@
                                 <div class="inputs-row description-row">
                                     <div class="form-group description-textarea">
                                         <label for="description">Descripción del evento*</label>
-                                        <textarea name="description" id="description" cols="80" rows="5"></textarea>
+                                        <textarea name="description" id="description" cols="80" rows="5" required></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="link-yt">Link de youtube</label>
-                                        <input class="form-control" type="text" name="link-yt" id="link-yt" placeholder="">
+                                        <label for="linkYT">Link de youtube</label>
+                                        <input class="form-control" type="text" name="linkYT" id="linkYT" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="inputs-row">
                                     <div class="form-group">
                                         <label for="category">Categorias*</label>
-                                        <input class="form-control" type="text" name="category" id="category"
-                                            placeholder="Rock, moderno, alternativo">
+                                        <select class="form-control" name="category" id="category" required>
+                                            <option value="Jazz">Jazz</option>
+                                            <option value="Blues">Blues</option>
+                                            <option value="Soul">Soul</option>
+                                            <option value="Góspel">Góspel</option>
+                                            <option value="Pop">Pop</option>
+                                            <option value="Rock">Rock</option>
+                                            <option value="Techno">Techno</option>
+                                            <option value="Reggae">Reggae</option>
+                                            <option value="Salsa">Salsa</option>
+                                            <option value="Hip hop/Rap">Hip hop/Rap</option>
+                                            <option value="Metal">Metal</option>
+                                            <option value="Funk">Funk</option>
+                                        </select>
                                     </div>
                                     <div>
                                         <input type="radio" id="all" name="all" value="all" checked>

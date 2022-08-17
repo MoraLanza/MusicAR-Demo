@@ -4,6 +4,7 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+
 let productController = {
     allProducts: (req, res) => {
         const all = products.filter(product => product.all === 'all');
@@ -30,7 +31,6 @@ let productController = {
 		const newProduct = {             
 			id: products[products.length -1].id + 1,
 			showType: req.body.showType,
-			// class: req.body.class,
             artist: req.body.artist,
             subtitle: req.body.subtitle,
 			description: req.body.description,
@@ -47,15 +47,17 @@ let productController = {
             lot1: req.body.lot1,
             category: req.body.category,
             all: req.body.all,
+            linkMaps: req.body.linkMaps,
+            linkYT: req.body.linkYT,
+			image: req.file ? req.file.filename : null //no pudimos hacer funcionar la subida de la imagen 
+		    // class: req.body.class,
             // ticket : [ 
             //     ...newTicket
             // ],
             // functions: [
             //    ...newFunction
             // ],
-			image: req.file.filename  //no pudimos hacer funcionar la subida de la imagen ? req.file.filename : null
-		}
-
+    }
 		productsClone.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(productsClone, null, ' '));
 		res.redirect('/');
@@ -65,9 +67,12 @@ let productController = {
         res.render('./products/edit-event', {product});
     },
     update: (req, res) => {
-            const indexProducto = products.findIndex(element => element.id == req.params.id);
-            const product = products.find(element => element.id == req.params.id);
+        const indexProducto = products.findIndex(element => element.id == req.params.id);
+        const product = products.find(element => element.id == req.params.id); 
+
             products[indexProducto] = {
+            all: "all",
+            id: product.id,
             showType: req.body.showType,
             artist: req.body.artist,
             subtitle: req.body.subtitle,
@@ -81,14 +86,18 @@ let productController = {
             date1: req.body.date1,
             hour1: req.body.hour1,
             ticketType1: req.body.ticketType1,   
-            price1: req.body.price1 != product.price1 ? req.body.price1 : product.price1,            
+            price1: req.body.price1,            
             lot1: req.body.lot1,
-            category: req.body.category ? req.body.category : product.category, 
-			image: req.file ? req.file.filename : null
+            category: req.body.category, 
+            linkMaps: req.body.linkMaps,
+            linkYT: req.body.linkYT,
+			image: req.file ? req.file.filename : req.body.oldImage
             }
-    
+
             let productModificarJson = JSON.stringify(products, null, ' ');
             fs.writeFileSync(productsFilePath, productModificarJson);
+
+            res.redirect('../all');
     },
     delete : (req, res) => {
 		// const deletedProduct =  products.find((prod) => {
