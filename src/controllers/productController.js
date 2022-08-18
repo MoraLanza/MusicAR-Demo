@@ -72,7 +72,7 @@ let productController = {
     update: (req, res) => {
         const indexProducto = getProducts().findIndex(element => element.id == req.params.id);
         const products = getProducts();
-            const product = getProducts().find(element => element.id == req.params.id);
+
             products[indexProducto] = {
             ...products[indexProducto],    
             showType: req.body.showType,
@@ -99,7 +99,7 @@ let productController = {
             let productModificarJson = JSON.stringify(products, null, ' ');
             fs.writeFileSync(productsFilePath, productModificarJson);
 
-            res.redirect('/products/all');
+            res.redirect('../all');
     },
     delete : (req, res) => {
 		// const deletedProduct =  products.find((prod) => {
