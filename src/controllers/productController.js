@@ -7,7 +7,7 @@ const getProducts = () => {
     return products;
 };
 
-
+  
 let productController = {
     allProducts: (req, res) => {
         const all = getProducts().filter(product => product.all === 'all');
@@ -72,7 +72,7 @@ let productController = {
     update: (req, res) => {
         const indexProducto = getProducts().findIndex(element => element.id == req.params.id);
         const products = getProducts();
-
+            const product = getProducts().find(element => element.id == req.params.id);
             products[indexProducto] = {
             ...products[indexProducto],    
             showType: req.body.showType,

@@ -1,14 +1,17 @@
 const path = require('path');
 const fs = require('fs');
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const getProducts = () => {
+    const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+    const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    return products;
+};
 
 let mainController = {
     index: function (req, res) {
-        const featured = products.filter(product => product.class === 'destacados');
-		const searched = products.filter(product => product.class === 'buscados');
-        const selected = products.filter(product => product.class === 'seleccionados');
+        const featured = getProducts().filter(product => product.class === 'destacados');
+		const searched = getProducts().filter(product => product.class === 'buscados');
+        const selected = getProducts().filter(product => product.class === 'seleccionados');
         res.render('index',{selected, featured, searched} );
     },
     contact: function(req, res){
