@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const bcryptjs = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const getUsers = () => {
@@ -27,9 +28,12 @@ let userController = {
             lastName: req.body.lastName,
             email: req.body.email,
             username: req.body.username,
-            password: req.body.password,
-            imageUser: 
+            password: bcryptjs.hashSync(req.body.password,10),
+            imageUser: req.file? req.file.filename: null 
         }
+        usersClone.push(newUser);
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersClone, null, ' '));
+		res.redirect('/');
     }
 }
 

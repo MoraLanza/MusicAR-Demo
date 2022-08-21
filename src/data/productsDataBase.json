@@ -218,6 +218,24 @@
  },
  {
   "all": "all",
-  "id": 10
+  "id": 10,
+  "showType": "presencial",
+  "class": "destacados",
+  "artist": "Pipsissewa",
+  "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+  "country": "Argentina",
+  "state": "Buenos Aires",
+  "city": "CABA",
+  "stage": "El Quetzal",
+  "direction": "Guatemala 4516",
+  "date1": "29.08.2022",
+  "hour1": "7pm",
+  "ticketType1": "Pullman",
+  "price1": "6737",
+  "lot1": "282",
+  "image": "Pipsissewa.jpg",
+  "linkMaps": " ",
+  "category": "Jazz",
+  "linkYT": " "
  }
 ]

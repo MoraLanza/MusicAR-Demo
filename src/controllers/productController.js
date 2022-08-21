@@ -7,6 +7,7 @@ const getProducts = () => {
     return products;
 };
 
+  
 let productController = {
     allProducts: (req, res) => {
         const all = getProducts().filter(product => product.all === 'all');
@@ -70,12 +71,10 @@ let productController = {
     },
     update: (req, res) => {
         const indexProducto = getProducts().findIndex(element => element.id == req.params.id);
-        const product = getProducts().find(element => element.id == req.params.id); 
         const products = getProducts();
 
             products[indexProducto] = {
-            all: "all",
-            id: product.id,
+            ...products[indexProducto],    
             showType: req.body.showType,
             artist: req.body.artist,
             subtitle: req.body.subtitle,
@@ -94,7 +93,7 @@ let productController = {
             category: req.body.category, 
             linkMaps: req.body.linkMaps,
             linkYT: req.body.linkYT,
-			image: req.file ? req.file.filename : req.body.oldImage
+			// image: req.file ? req.file.filename : req.body.oldImage
             }
 
             let productModificarJson = JSON.stringify(products, null, ' ');
