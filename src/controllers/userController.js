@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const getUsers = () => {
@@ -20,6 +21,14 @@ let userController = {
         res.render("users/register");
     },
     store: function(req, res){
+        const resultValidation =validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('users/register', {
+                errors: resultValidation.mapped()
+            });
+        }
+
         const usersClone = getUsers();
 
         const newUser = {

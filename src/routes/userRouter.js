@@ -17,29 +17,28 @@ const storage = multer.diskStorage({
 
 const upload = multer ({storage});
 
-const validator = [
-    body('name').notEmpty()
-    .isLength({min: 2}).withMessage('Debe ingresar un nombre'),
+const validations = [
+    body('name').notEmpty().withMessage('Debe ingresar un nombre.')
+    .isLength({min: 2}).withMessage('El nombre debe tener un minimo de 2 letras.'),
 
-    body('lastName').notEmpty()
-    .isLength({ min: 2 }).withMessage('Debe seleccionar un apellido'),
+    body('lastName').notEmpty().withMessage('Debe ingresar un apellido.')
+    .isLength({ min: 2 }).withMessage('El apellido debe tener un minimo de 2 letras.'),
 
-    body('email').notEmpty()
+    body('email').notEmpty().withMessage('Debe ingresar un e-mail.')
     .isEmail().withMessage('Debe ingresar un email valido.'),
 
-    body('username').notEmpty().withMessage('Debe ingresar un nombre')
+    body('username').notEmpty().withMessage('Debe ingresar un nombre de usuario.')
     .isLength({min: 5, max: 16}).withMessage('El nombre de usuario debe tener mínimo 5 caracteres, máximo 16.'),
 
-    body('password').notEmpty().withMessage('Debe ingresar una contraseña')
+    body('password').notEmpty().withMessage('Debe ingresar una contraseña.')
     .isLength({min: 8, max: 16}).withMessage('La contraseña debe tener mínimo 8 caracteres, máximo 16.'),
 
-    body
 ];
 
 router.get('/shopping-cart', userController.cart);
 router.get('/login', userController.login);
 
 router.get('/register', userController.register);
-router.post('/register', upload.single('imageUser'), userController.store);
+router.post('/register', upload.single('imageUser'), validations, userController.store);
 
 module.exports = router;
