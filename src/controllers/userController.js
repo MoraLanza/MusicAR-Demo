@@ -25,7 +25,8 @@ let userController = {
 
         if (resultValidation.errors.length > 0) {
             return res.render('users/register', {
-                errors: resultValidation.mapped()
+                errors: resultValidation.mapped(),
+                oldData: req.body
             });
         }
 

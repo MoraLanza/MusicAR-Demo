@@ -38,7 +38,7 @@ main.fondoImagen {
     text-align: center;
     font-size: 13px;
     border-radius: 5px;
-    background: rgb(5, 7, 12, 0.40);
+    background: rgb(5, 7, 12, 0.5);
     margin: 120px 0;
     padding: 20px;
 
@@ -59,14 +59,15 @@ main.fondoImagen {
 
 .input-user {
     display: flex;
+    margin-top: 20px;
 }
 
 
 .controls {
     width: 100%;
     border-radius: 7px;
-    margin-bottom: 12px;
-    margin-top: 12px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     padding: 7px;
     height: 40px;
 }
