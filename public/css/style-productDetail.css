@@ -150,7 +150,7 @@ nav.nav-footer ul {
 
 .titulo-principal {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     position: absolute;
     width: 100%;
@@ -216,7 +216,7 @@ nav.nav-footer ul {
     width: 100%;
     height: 547px;
     object-fit: cover;
-    object-position: top;
+    /* object-position: top; */
 }
 
 /*SECTION nav pagina*/
@@ -276,53 +276,50 @@ nav.nav-footer ul {
     color: #2E1A4E;
 }
 
-/*localidades*/
 
-
-.funcion-form {
-    margin: 32px 0;
-}
-
-.funcion-form label {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.funcion-form select {
-    width: 320px;
-    height: 42px;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.funcion-form-info {
+.event-information{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.info-funcion {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 70px;
-    border-bottom: solid 6px #E0D8DA;
-}
-
-.info-funcion img {
-    width: 535px;
-    height: 321px;
-    margin-top: 35px;
-}
-
-.localidades {
+.conteiner{
+    width: 100%;
+    max-width: 80%;
+    background-color: white;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 7px 12px 0px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+    padding: 30px
+/* Localidades */
+
+
+}
+.information-tickets{
+    margin-top: 80px;
+}
+.date{
+    width: 100%;
 }
 
-.localidades h3{
-    margin: 0 25px;
+.date form select{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0px 6px 12px 0px rgb(0 0 0 / 20%);
 }
+.teater-map{
+    margin: 20px;
+}
+
+.tickets{
+    width: 70%;
+    margin: 10px;
+}
+
 
 .line-localidades{
     height:5px;
@@ -336,7 +333,7 @@ nav.nav-footer ul {
 
 .table {
     border-collapse: collapse;
-    margin: 30px;
+    width: 100%;
 
 }
 
@@ -348,14 +345,12 @@ nav.nav-footer ul {
 .table p {
     font-size: 0.688rem;
     padding: 0 10px;
+    text-align: center
 }
 
 .table h4 {
     padding: 0 10px;
-}
-
-.precio {
-    padding: 0 30px;
+    text-align: center;
 }
 
 .color-superpullman {
@@ -379,41 +374,65 @@ nav.nav-footer ul {
     background-color: #E7CB3A;
 }
 
-.reglas {
+/* reglas y medios de pago */
+
+.information-rules{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.rules{
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 438px;
-    height: 166px;
-    background-color: #D9D9D9;
-    border-radius: 5px;
-    color: #414141;
-    font-size: 0.875rem;
-    margin: 0 40px;
-
 }
 
-.reglas div {
+.rules-item{
     display: flex;
     align-items: center;
+    color: #414141;
+    font-size: 0.875rem;
     margin: 16px 16px 0 16px;
-
 }
 
-.reglas i {
+.rules-item i {
     font-size: 2rem;
     align-self: center;
     color: #6C6C6C;
     margin-right: 10px;
 
+} 
+
+.paying-methods{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #505050;
 }
 
+.paying-methods h3{
+    margin-bottom: 30px;
+}
+.cards{
+    display: flex;
+}
+
+.cards img{
+    width: 83px;
+    height: 60px;
+    box-shadow: 0 0 5px gray;
+    margin-right: 20px;
+   
+}
 
 
 /*medios de pago*/
 
 
-.medios-de-pago img {
+/* .medios-de-pago img {
     width: 135px;
     height: 110px;
     box-shadow: 0 0 5px gray;
@@ -444,7 +463,7 @@ nav.nav-footer ul {
 
 /*Descripcion*/
 
-
+/* 
 .descripcion {
     display: flex;
     flex-direction: column;
@@ -484,7 +503,7 @@ nav.nav-footer ul {
 
 
 /*Commo llegar*/
-.como-llegar {
+/* .como-llegar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -530,8 +549,7 @@ nav.nav-footer ul {
 .subtes {
     width: 50%;
 }
-
-
+  */
 
 /*MEDIA QUERYS*/
 
