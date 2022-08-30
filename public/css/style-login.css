@@ -30,7 +30,7 @@ a {
 }
 
 .sombra h2{
-    font-size: 32px;
+    font-size: 36px;
     margin-top: 10px;
 }
 
@@ -41,7 +41,7 @@ a {
     text-align: center;
     font-size: 13px;
     border-radius: 15px;
-    background: rgb(5, 7, 12, 0.40);
+    background: rgb(5, 7, 12, 0.50);
     align-self: center;
     margin: 5% 30%;
    
@@ -62,7 +62,7 @@ a {
     max-width: 80%;
     text-align: left;
     padding: 5px 0;
-    font-weight: bold;
+    font-size: 16px;
 }
 
 .barra p{
@@ -80,24 +80,25 @@ a {
 }
 
 .controls {
+    width: 100%; 
+    max-width: 80%; 
     border-radius: 7px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding: 10px;
-    width: 100%;
-    max-width: 80%;
+    margin-bottom: 5px;
+    padding: 7px;
+    height: 40px;
 }
 
 .redes {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .linea {
     padding: 0;
     margin: 5px;
-    width: 50%;
+    width: 100%;
     color: white;
     text-align: center;
 }
@@ -105,7 +106,7 @@ a {
 .redes-titulo {
     padding: 10px;
     margin: -2px;
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .redes-logos {
@@ -116,17 +117,17 @@ a {
 /* .redes-logos atras de referencia */
 
 .redes-logos .item-logo {
-    font-size: 50px;
+    font-size: 40px;
     margin: 20px;
 }
 
 .barra button{
     background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-    padding: 9px 17px 9px 17px;
+    height: 40px;
     border: transparent;
     font-weight: bold;
     border-radius: 7px;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     width: 100%;
     max-width: 80%;

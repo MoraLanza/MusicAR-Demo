@@ -1,6 +1,7 @@
 let express = require('express');
 const multer = require('multer');
 const path = require('path');
+
 const router = express.Router();
 
 
@@ -29,7 +30,7 @@ router.get('/create', productController.create);
 router.post('/create',upload.single('image'), productController.store);
 
 router.get('/edit/:id', productController.edit);
-router.put('/update/:id',productController.update);        
+router.put('/update/:id',upload.single('image'), productController.update);        
 
 router.delete('/delete/:id', productController.delete);
 

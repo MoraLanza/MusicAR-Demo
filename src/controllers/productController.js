@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const getProducts = () => {
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -52,7 +53,7 @@ let productController = {
             all: req.body.all,
             linkMaps: req.body.linkMaps,
             linkYT: req.body.linkYT,
-			image: req.file ? req.file.filename : null //no pudimos hacer funcionar la subida de la imagen 
+			image: req.file ? req.file.filename : null
 		    // class: req.body.class,
             // ticket : [ 
             //     ...newTicket
@@ -93,7 +94,7 @@ let productController = {
             category: req.body.category, 
             linkMaps: req.body.linkMaps,
             linkYT: req.body.linkYT,
-			// image: req.file ? req.file.filename : req.body.oldImage
+			image: req.file ? req.file.filename : req.body.oldImage
             }
 
             let productModificarJson = JSON.stringify(products, null, ' ');

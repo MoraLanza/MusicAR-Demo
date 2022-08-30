@@ -9,6 +9,8 @@ const userRouter = require('./routes/userRouter');
 
 const app = express();
 
+app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: false}));
