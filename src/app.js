@@ -8,6 +8,10 @@ const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
 
 const app = express();
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
+app.use(userLoggedMiddleware);
+
 
 app.use(express.urlencoded({ extended: false }));
 
