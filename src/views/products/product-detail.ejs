@@ -162,14 +162,14 @@
                                 <p>Apertura de puertas: 19:30 hs.</p>
                             </div>
 
-                            <div class="rules-item"> 
+                            <div class="rules-item">
                                 <i class="fas fa-clock"></i>
                                 <p>Duración aproximada: 2:30 hs.</p>
                             </div>
 
                         </div>
-                        <div class="section-item paying-methods" >
-                                <h3>Medios de pago habilitados</h3>
+                        <div class="section-item paying-methods">
+                            <h3>Medios de pago habilitados</h3>
                             <div class="cards">
                                 <img src="/image/paidMethod/mastercard.svg" alt="mastercard">
                                 <img src="/image/paidMethod/maestro.svg" alt="maestro">
@@ -186,22 +186,28 @@
 
 
                     <section class="conteiner information-description">
+                        <div class="title-body">
                         <div class="description-title">
-                            <h3><%= product.artist%></h3>
-                            <hr class="line-descripcion">
-                            <p><%= product.subtitle%></p>
-            
+                            <h3>
+                                <%= product.artist%>
+                            </h3>
+                            <p>
+                                <%= product.subtitle%>
+                            </p>
+
                         </div>
                         <div class="description-body">
                             <div class="texto-descripcion">
-                                <p><%= product.description%></p>
+                                <p>
+                                    <%= product.description%>
+                                </p>
                             </div>
-                            <iframe width="679" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
+                        </div>
+                        </div>
+                        <iframe width="679" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
                                 title="Carpa Delirio 2022" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
-            
-                        </div>
                     </section>
 
 
@@ -209,8 +215,8 @@
 
                     </section>
                 </div>
-             
-<!-- 
+
+                <!-- 
         <div class="descripcion" id="descripcion">
             <div class="descripcion-titulo">
                 <h3><%= product.artist%></h3>
@@ -255,7 +261,7 @@
                 </div>
             </div>
 
-        </div> --> 
+        </div> -->
             </main>
 
             <%- include('../partials/footer') %>

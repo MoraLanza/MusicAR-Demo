@@ -428,39 +428,23 @@ nav.nav-footer ul {
    
 }
 
-
-/*medios de pago*/
-
-
-/* .medios-de-pago img {
-    width: 135px;
-    height: 110px;
-    box-shadow: 0 0 5px gray;
-    margin-right: 35px;
-    margin-top: 65px;
-}
-
-.medios-de-pago {
+/* Descripcion */
+.information-description {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 70px;
-    padding-bottom: 120px;
-    border-bottom: solid 6px #E0D8DA;
+    flex-direction: row;
 }
 
-.medios-de-pago h3 {
-    font-size: 1.3rem;
-
-}
-.line-pago{
-    height:5px;
-    width:130px;
-    color:#FAC025;
-    background-color:#FAC025;
-    border:transparent;   
+.title-body {
+    width: 40%;
 }
 
+.description-title h3 {
+    font-size: 32px;
+}
+
+.description-title p {
+    font-size: 24px;
+}
 /*Descripcion*/
 
 /* 

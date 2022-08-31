@@ -135,7 +135,7 @@ ul.lista-opciones li {
     align-self: flex-end;
 }
 
-.fa-ticket, .fa-user {
+, .fa-user {
     font-size: 30px;
     margin-right: 15px;
 }
