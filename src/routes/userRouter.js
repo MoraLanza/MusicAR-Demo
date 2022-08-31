@@ -53,9 +53,15 @@ const validations = [
 ];
 
 router.get('/shopping-cart', userController.cart);
+
+
 router.get('/login', userController.login);
 
+router.post('/login', userController.loginProcess);
+
+
 router.get('/register', userController.register);
+
 router.post('/register', upload.single('imageUser'), validations, userController.store);
 
 module.exports = router;

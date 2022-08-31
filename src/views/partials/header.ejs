@@ -1,6 +1,6 @@
 <header id="top">
     <div class="logo">
-        <a href="/"><img src="../image/Logo.png" alt="imagen de logo"></a>
+        <a href="/"><img src="../../image/Logo.png" alt="imagen de logo"></a>
     </div>
     <nav class="nav-header">
         <ul class="menu">
@@ -10,15 +10,25 @@
         </ul>
     </nav>
     <div class="contenedor-lista">
-    <ul class="lista-opciones">
-        <li><a class="boton-border" href="/users/login">Inicia Sesión</a></li>
-        <li><a class="boton-blanco" href="/users/register">Registrate</a></li>
-        <li><a class="icon-cart" href="/users/shopping-cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-    </ul>
+        <ul class="lista-opciones">
+            <% if (locals.isLogged){ %>
+
+                <li><a class="boton-border" href=""><i class="fa-solid fa-ticket"></i>Mis Entradas</a></li>
+                <li><a class="boton-blanco" href=""><i class="fa-solid fa-user"></i>Mi cuenta</a></li>
+
+                <% } else { %>
+
+                    <li><a class="boton-border" href="/users/login">Inicia Sesión</a></li>
+                    <li><a class="boton-blanco" href="/users/register">Registrate</a></li>
+                    <li><a class="icon-cart" href="/users/shopping-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+
+                <% } %>
+        </ul>
     </div>
 
     <div class="burguer-menu-header">
-    <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
     </div>
 
     <ul class="social-media-list">
@@ -30,5 +40,5 @@
         <p>|</p>
         <li><a class="icon-item" href=""><i class="fa-brands fa-youtube"></i></a></li>
     </ul>
-    
+
 </header>

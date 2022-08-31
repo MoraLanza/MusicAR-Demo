@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/style-login.css">
-</head>
+    <link rel="stylesheet" href="/css/style-invalid-Input.css" </head>
 
 
-<body>
-    <%- include('../partials/header') %>
-    <main>
+    <body>
+        <%- include('../partials/header') %>
+            <main>
 
-        <div class="formulario">
-            <form action="login.html" method="POST" class="sombra">
-                <h2>Inicia Sesión</h2>
-                
-                    <div class="barra">
-                        <label for="email">E-mail</label>
-                        <input class="controls" type="email" name="email" placeholder="ejemplo@..." id="email" required>
-                    </div>
+                <div class="formulario">
+                    <form action="/users/login" method="POST" class="sombra">
+                        <h2>Inicia Sesión</h2>
 
-                    <div class="barra">
-                        <label for="password">Contraseña</label>
-                        <input class="controls" type="password" name="password" placeholder="****************"
-                            id="password" required>
-                        <p>Recordar contraseña</p>
-                    </div>
-    
-                <div class="barra">
-                    <button type="submit">Ingresar</button>
+                        <div class="barra">
+                            <label for="email">E-mail</label>
+                            <input class="controls  <%= locals.errors && errors.email ||locals.errors && errors.password?  'is-invalid': null  %> "
+                             type="email" name="email" placeholder="ejemplo@..." id="email"
+                                required>
+
+                        </div>
+
+                        <div class="barra">
+                            <label for="password">Contraseña</label>
+                            <input class="controls  <%= locals.errors && errors.email ||locals.errors && errors.password? 'is-invalid': null  %> "
+                            type="password" name="password" placeholder="****************"
+                                id="password" required>
+                            
+                            <label class="form-check-label" style=" font-size: 14px;">
+                                <input type="checkbox" class="form-check-input" name="remember_user"> Recordar mi usuario
+                            </label>
+
+                        </div>
+                        <br>
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error-text">
+                                <p>
+                                    <%= errors.email.msg %>
+                                </p>
+                            </div>
+
+                            <% } %>
+                                <div class="barra">
+                                    <button type="submit">Ingresar</button>
+                                </div>
+
+                                <div class="registro">
+                                    <a class="registrate" href="/registro">
+                                        <p>¿No tienes una cuenta? Registrate!</p>
+                                    </a>
+                                </div>
+                                <div class="redes">
+                                    <hr class="linea">
+                                    <h5 class="redes-titulo">O inicia con</h5>
+                                    <ul class="redes-logos">
+                                        <li class="item-logo"><i class="fa-brands fa-facebook"></i></li>
+                                        <li class="item-logo"><i class="fa-brands fa-google"></i></li>
+                                        <li class="item-logo"><i class="fa-brands fa-instagram"></i></li>
+                                    </ul>
+                                </div>
+                    </form>
                 </div>
+            </main>
 
-                <div class="registro">
-                  <a class="registrate" href="/registro"><p>¿No tienes una cuenta? Registrate!</p></a>  
-                </div>
-                <div class="redes">
-                    <hr class="linea">
-                    <h5 class="redes-titulo">O inicia con</h5>
-                    <ul class="redes-logos">
-                        <li class="item-logo"><i class="fa-brands fa-facebook"></i></li>
-                        <li class="item-logo"><i class="fa-brands fa-google"></i></li>
-                        <li class="item-logo"><i class="fa-brands fa-instagram"></i></li>
-                    </ul>
-                </div>
-            </form>
-        </div>
-    </main>
+            <%- include('../partials/footer') %>
 
-    <%- include('../partials/footer') %>
-
-    <include src="/part-header.html"></include>
+                <include src="/part-header.html"></include>
 
 
-</body>
+    </body>
 
 </html>
