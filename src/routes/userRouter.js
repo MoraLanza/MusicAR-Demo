@@ -5,6 +5,10 @@ const { body } = require('express-validator');
 
 const userController = require('../controllers/userController');
 
+// Middlewares
+const guestMiddleware = require('../middlewares/guestMiddleware')
+
+
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -55,12 +59,12 @@ const validations = [
 router.get('/shopping-cart', userController.cart);
 
 
-router.get('/login', userController.login);
+router.get('/login', guestMiddleware, userController.login);
 
 router.post('/login', userController.loginProcess);
 
 
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 
 router.post('/register', upload.single('imageUser'), validations, userController.store);
 
