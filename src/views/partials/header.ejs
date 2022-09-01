@@ -12,8 +12,26 @@
     <div class="contenedor-lista">
         <ul class="lista-opciones">
             <% if (locals.isLogged) {%>
-                    <li><i class="fa-solid fa-pen-to-square"></i> <a class=" boton-admin" href="/products/create"> Crear Evento</a></li>
-                    <li><i class="fa-solid fa-user-pen"></i> <a class=" boton-admin" href="/products/all"> Administrador</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <i class="fa-solid fa-pen-to-square"></i> 
+                            <p class="dropdown-title">Eventos</p>
+                            <div class="item-container">
+                                <div class="item-text"><a class="boton-admin" href="/products/create">Crear Evento</a></div>
+                                <div class="item-text"><a class="boton-admin" href="/products/all"> Administrador</a></div>                            
+                            </div>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="dropdown">
+                            <i class="fa-solid fa-user-pen"></i>
+                            <p class="dropdown-title">User</p>
+                            <div class="item-container">
+                                <div class="item-text"><a class="boton-admin" href="">Perfil</a></div>
+                                <div class="item-text"><a class="boton-admin" href="">Cerrar sesión</a></div>                            
+                            </div>
+                        </div>
+                    </li>
                 <% } else {%> 
                     <li><a class="boton-border" href="/users/login">Inicia Sesión</a></li>
                     <li><a class="boton-blanco" href="/users/register">Registrate</a></li>

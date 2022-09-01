@@ -48,7 +48,7 @@ let userController = {
     },
 
     register: function (req, res) {
-        res.cookies('testing', 'buh', { maxAge: 1000 * 30 })
+        res.cookie('testing', 'buh', { maxAge: 1000 * 30 })
         res.render("users/register");
     },
     store: function (req, res) {

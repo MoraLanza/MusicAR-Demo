@@ -126,5 +126,15 @@
     "email": "marquitoAntonio@gmail.com",
     "password": "12345678",
     "passwordConfirm": "12345678"
+  },
+  {
+    "id": 16,
+    "name": "Lidia",
+    "lastName": "Paiva",
+    "username": "lidia123",
+    "email": "lidiamportiz@gmail.com",
+    "password": "$2a$10$9dIcA6UmOrzvitSgm9jXhOBqRVzXchlQAoxNO/oSvtAewcOzrgICW",
+    "passwordConfirm": "holamundo",
+    "imageUser": "imageUser-1661998216151"
   }
 ]
