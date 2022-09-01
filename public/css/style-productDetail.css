@@ -283,7 +283,7 @@ nav.nav-footer ul {
     align-items: center;
 }
 
-.conteiner{
+.container{
     width: 100%;
     max-width: 80%;
     background-color: white;
@@ -432,18 +432,43 @@ nav.nav-footer ul {
 .information-description {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
 }
 
 .title-body {
-    width: 40%;
+    padding: 0 40px 0 0;
+    width: 50%;
 }
 
-.description-title h3 {
+.title-event{
     font-size: 32px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-.description-title p {
+.description-title{
+    margin-bottom: 40px;
+}
+
+.subtitle-event-description {
     font-size: 24px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.description-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.video-box{
+    width: 50%;
 }
 /*Descripcion*/
 
@@ -480,7 +505,7 @@ nav.nav-footer ul {
     justify-content: center;
 }
 
-.texto-descripcion {
+.description-text {
     width: 40%;
     margin-right: 20px;
 }
@@ -571,9 +596,6 @@ nav.nav-footer ul {
         justify-content: center;
         max-width: 95%;
     }
-    .texto-descripcion{
-        width: 50%;
-    }
 
     .transporte{
         justify-content: center;
@@ -626,7 +648,7 @@ nav.nav-footer ul {
         align-items: center;
     }
 
-    .texto-descripcion{
+    .description-text{
         width: 100%;
        max-width: 80%;
         margin-bottom: 30px;
@@ -757,7 +779,7 @@ nav.nav-footer ul {
         align-items: center;
     }
 
-    .texto-descripcion{
+    .description-text{
         width: 100%;
        max-width: 80%;
         margin-bottom: 30px;

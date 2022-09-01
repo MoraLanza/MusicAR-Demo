@@ -15,7 +15,7 @@
         </div>
         <!-- Sección Buscador -->
 
-        <div class="search-conteiner">
+        <div class="search-container">
             <div class="search-nav">
                 <form action="" class="search-form">
 
@@ -53,9 +53,9 @@
                 <h2>Destacados</h2>
                 <hr class="line-title">
             </div>
-            <div class="events-conteiner">
+            <div class="events-container">
                 <% featured.forEach(element=> { %>
-                    <article class="article-conteiner">
+                    <article class="article-container">
                         <div class="article-image">
                             <a href="/products/detail/<%=element.id%>">
                                 <img src="/image/products/<%= element.image %> " alt="">
@@ -114,9 +114,9 @@
                     <hr class="line-title">
                 </div>
 
-                <div class="events-conteiner">
+                <div class="events-container">
                     <% searched.forEach(element=> { %>
-                        <article class="article-conteiner">
+                        <article class="article-container">
                             <div class="article-image">
                                 <a href="/products/detail/<%=element.id%>">
                                     <img src="/image/products/<%= element.image %> " alt="">
@@ -174,9 +174,9 @@
                     <h2>Seleccionado para vos</h2>
                     <hr class="line-title">
                 </div>
-                <div class="events-conteiner">
+                <div class="events-container">
                     <% selected.forEach(element=> { %>
-                        <article class="article-conteiner">
+                        <article class="article-container">
                             <div class="article-image">
                                 <a href="/products/detail/<%=element.id%>">
                                     <img src="/image/products/<%= element.image %> " alt="">

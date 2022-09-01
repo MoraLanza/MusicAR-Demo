@@ -52,7 +52,7 @@
 
 
                 <div class="event-information">
-                    <section class="conteiner information-tickets" id="localidades">
+                    <section class="container information-tickets" id="localidades">
                         <div class="section-item date">
                             <form class="function-form" action="/" method="GET">
 
@@ -148,7 +148,7 @@
                     </section>
 
 
-                    <section class="conteiner information-rules">
+                    <section class="container information-rules">
                         <div class="section-item rules">
                             <div class="rules-item">
                                 <i class="fas fa-ban"></i>
@@ -185,33 +185,35 @@
                     </section>
 
 
-                    <section class="conteiner information-description">
+                    <section class="container information-description">
                         <div class="title-body">
-                        <div class="description-title">
-                            <h3>
-                                <%= product.artist%>
-                            </h3>
-                            <p>
-                                <%= product.subtitle%>
-                            </p>
+                            <div class="description-title">
+                                <h4 class="title-event">
+                                    <%= product.artist%>
+                                </h4>
+                                <h5 class="subtitle-event-description">
+                                    <%= product.subtitle%>
+                                </h5>
 
-                        </div>
-                        <div class="description-body">
-                            <div class="texto-descripcion">
-                                <p>
-                                    <%= product.description%>
-                                </p>
+                            </div>
+                            <div class="description-body">
+                                <div class="description-text">
+                                    <p>
+                                        <%= product.description%>
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                        <div class="video-box">
+                            <iframe width="100%" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
+                                    title="Carpa Delirio 2022" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                         </div>
-                        <iframe width="679" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
-                                title="Carpa Delirio 2022" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
                     </section>
 
 
-                    <section class="conteiner information-location">
+                    <section class="container information-location">
 
                     </section>
                 </div>
@@ -225,7 +227,7 @@
 
             </div>
             <div class="descripcion-cuerpo">
-                <div class="texto-descripcion">
+                <div class="description-text">
                     <p><%= product.description%></p>
                 </div>
                 <iframe width="679" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
