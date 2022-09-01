@@ -4,7 +4,7 @@ header {
     z-index: 1000;
 
 }
-.search-conteiner {
+.search-container {
     width: 100%;
     justify-content: center;
     display: flex;
@@ -95,7 +95,7 @@ input.search-btn:hover{
     border:transparent;
 
 }
-.events-conteiner {
+.events-container {
 
     margin-top: 10px;
 }
@@ -111,7 +111,7 @@ section{
     margin: 0 auto;
 
 }
-.article-conteiner{
+.article-container{
     display: flex;
     flex-direction: column;
 }
@@ -198,11 +198,11 @@ a.buy-button{
     transition: 0.5s;
 }
 
-/* .article-conteiner{
+/* .article-container{
     position: relative;
 } */
 
-.article-conteiner-link{
+.article-container-link{
     position: absolute;
     top: 0;
     left: 0;
@@ -217,7 +217,7 @@ a.buy-button{
 
 /*Mobile Phone */
 @media only screen and (max-width: 768px) {
-    article.article-conteiner {
+    article.article-container {
         width: 100%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
@@ -227,7 +227,7 @@ a.buy-button{
         margin: 0 auto;
         margin: 6%;
     }
-    .events-conteiner {
+    .events-container {
         width: 100%;
         margin-top: 10px;
         display: block;
@@ -236,7 +236,7 @@ a.buy-button{
 }
 /* Tablet */
 @media only screen and (min-width: 768px) {
-    article.article-conteiner {
+    article.article-container {
         width: 100%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
@@ -247,7 +247,7 @@ a.buy-button{
         margin: 6%;
     }
 
-.events-conteiner {
+.events-container {
     width: 100%;
     margin-top: 10px;
     display: block;
@@ -256,7 +256,7 @@ a.buy-button{
 }
 /*Desktop */
 @media only screen and (min-width: 992px) {
-    .article-conteiner{
+    .article-container{
         background: #FFFFFF;
     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -267,17 +267,17 @@ a.buy-button{
         width: 30%;
         transition: 100ms;
     }
-    .article-conteiner:hover{
+    .article-container:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 41px 4px rgba(0,0,0,0.25);
 }
-    .events-conteiner {
+    .events-container {
         width: 100%;
         margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
     }
-    article.article-conteiner {
+    article.article-container {
         width: 30%;
         background: #FFFFFF;
         box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
@@ -289,7 +289,7 @@ a.buy-button{
     }
 }
 @media only screen and (min-width: 1300px) {
-    article.article-conteiner {
+    article.article-container {
         width: 23%;
     }
 }

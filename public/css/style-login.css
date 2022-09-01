@@ -137,6 +137,9 @@ a {
     background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
 }
 
+.form-check-label {
+    font-size: 10px;
+}
 
 @media (min-width: 992px) {
     .controls, .barra label, .barra p, .barra button{  

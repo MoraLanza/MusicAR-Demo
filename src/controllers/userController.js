@@ -1,27 +1,58 @@
 const fs = require('fs');
 const path = require('path');
 const bcryptjs = require('bcryptjs');
-const { validationResult } = require('express-validator');
+const User = require('../models/User');
 
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const getUsers = () => {
-    const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    return users;
-};
+const { validationResult } = require('express-validator');
 
 
 let userController = {
-    cart: function(req, res){
+    cart: function (req, res) {
         res.render("users/shopping-cart");
     },
-    login: function(req, res){
+    login: function (req, res) {
         res.render("users/login");
     },
-    register: function(req, res){
+
+    loginProcess: (req, res) => {
+        let userToLogin = User.findFirstByField('email', req.body.email);
+        
+        if(userToLogin){
+            let truePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if(truePassword) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                res.redirect('/');
+            }
+            return res.render('users/login', {
+                errors: {
+                    email:{
+                        msg: 'Email o contraseña invalidos'
+                    }
+                }
+            })
+        }
+
+        return res.render('users/login', {
+            errors: {
+                email:{
+                    msg: 'Email o contraseña invalidos'
+                }
+            }
+        })
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
+    },
+
+    register: function (req, res) {
+        res.cookies('testing', 'buh', { maxAge: 1000 * 30 })
         res.render("users/register");
     },
-    store: function(req, res){
-        const resultValidation =validationResult(req);
+    store: function (req, res) {
+        const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
             return res.render('users/register', {
@@ -29,21 +60,27 @@ let userController = {
                 oldData: req.body
             });
         }
+        let userInDB = User.findFirstByField('email', req.body.email);
 
-        const usersClone = getUsers();
-
-        const newUser = {
-            id: usersClone[ usersClone.length - 1].id + 1,
-            name: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            username: req.body.username,
-            password: bcryptjs.hashSync(req.body.password,10),
-            imageUser: req.file? req.file.filename: null 
+        if (userInDB) {
+            return res.render('users/register', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya está en uso'
+                    }
+                },
+                oldData: req.body
+            });
         }
-        usersClone.push(newUser);
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersClone, null, ' '));
-		res.redirect('/');
+
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            imageUser: req.file ? req.file.filename : null,
+        }
+        let userCreated =User.create(userToCreate);
+
+        res.redirect('/');
     }
 }
 

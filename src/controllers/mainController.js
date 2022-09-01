@@ -15,7 +15,7 @@ let mainController = {
         res.render('index',{selected, featured, searched} );
     },
     contact: function(req, res){
-        res.render("contact");
+        res.render('contact');
     },
     faq: function(req, res){
         res.render("faq");
