@@ -135,7 +135,7 @@ ul.lista-opciones li {
     align-self: flex-end;
 }
 
-, .fa-user {
+.fa-user {
     font-size: 30px;
     margin-right: 15px;
 }
@@ -147,7 +147,8 @@ ul.lista-opciones li {
     opacity: 0.9;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding: 10px;
     font-size: 13px;
 }
 
@@ -167,9 +168,12 @@ nav.nav-footer ul {
 }
 
 .footer-2 {
-    background-color: #F3F1F1;
+    padding: 10px;
+    background-color: #271545;
+    opacity: 0.9;
     text-align: center;
     font-size: 12px;
+    color: white;
 }
 
 
@@ -236,6 +240,17 @@ nav.nav-footer ul {
         display: flex;
         align-items: center;
     }
+
+    .footer-1{
+        flex-direction: column;
+    }
+
+    nav.nav-footer ul{
+        padding: 0;
+    }
+    nav.nav-footer ul:first-child{
+       margin-right: 30px;
+    }
 }
 
 @media  (max-width: 768px){
@@ -245,6 +260,9 @@ nav.nav-footer ul {
     }
     .main{
         width: 100vh;
+    }
+    .nav-footer {
+        flex-direction: column;
     }
 
 }

@@ -22,6 +22,10 @@ let userController = {
             if(truePassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+
+                if(req.body.remember_name){
+                    res.cookies('userEmail', req.body.email, { maxAge: (1000 * 60)* 30})
+                }
                 res.redirect('/');
             }
             return res.render('users/login', {
@@ -43,12 +47,12 @@ let userController = {
     },
 
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     },
 
     register: function (req, res) {
-        res.cookies('testing', 'buh', { maxAge: 1000 * 30 })
         res.render("users/register");
     },
     store: function (req, res) {
@@ -78,7 +82,7 @@ let userController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             imageUser: req.file ? req.file.filename : null,
         }
-        let userCreated =User.create(userToCreate);
+        let userCreated = User.create(userToCreate);
 
         res.redirect('/');
     }

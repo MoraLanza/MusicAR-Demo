@@ -98,9 +98,15 @@
 
                     <div class="item-input">
                         <div class="input-user">
-                            <label for="repeat-password">Repetir Contraseña* </label>
+                            <label for="passwordConfirm">Repetir Contraseña* </label>
                         </div>
-                        <input class="controls  <%= locals.errors && errors.password ? 'is-invalid': null  %> "  type="password" name="passwordConfirm" id="password">
+                        <input type="password" name="passwordConfirm" id="passwordConfirm"
+                         class="controls  <%= locals.errors && errors.passwordConfirm ? 'is-invalid': null  %> ">
+                         <% if (locals.errors && errors.passwordConfirm) {%>
+                            <div class="error-text">
+                               <p><%= errors.passwordConfirm.msg %></p>  
+                            </div>
+                           <% } %> 
                     </div>
 
                     <div class="item-input">

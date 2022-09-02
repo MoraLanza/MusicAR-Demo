@@ -126,5 +126,35 @@
     "email": "marquitoAntonio@gmail.com",
     "password": "12345678",
     "passwordConfirm": "12345678"
+  },
+  {
+    "id": 16,
+    "name": "Maria",
+    "lastName": "Paiva",
+    "username": "MariPa",
+    "email": "maripa.pp@hotmail.com",
+    "password": "$2a$10$QmPRM.rwd/hOP3rYwOoEqeK5BuluYo97AHFSWmgcnaYmsXYgWV7Le",
+    "passwordConfirm": "12345678",
+    "imageUser": "imageUser-1662054256328"
+  },
+  {
+    "id": 17,
+    "name": "Julian",
+    "lastName": "Galeando",
+    "username": "2Leta",
+    "email": "julianGaleano@gmail.com",
+    "password": "$2a$10$KjdeYXDwsoB5eOaslKE0wehN7yEUXxWx1GRzjW5PauP4CQq3E0huO",
+    "passwordConfirm": "12345678",
+    "imageUser": "imageUser-1662056389486"
+  },
+  {
+    "id": 18,
+    "name": "Marco",
+    "lastName": "Antonio",
+    "username": "Marquitos99",
+    "email": "pp@pp.com",
+    "password": "$2a$10$am8BEAz1gFvcAE7NImLbueEeGDGAgnx24s7/qJUAjrapVXCHn0NEG",
+    "passwordConfirm": "12345678",
+    "imageUser": "imageUser-1662056635168"
   }
 ]
