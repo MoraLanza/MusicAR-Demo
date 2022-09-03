@@ -198,9 +198,9 @@ a.buy-button{
     transition: 0.5s;
 }
 
-/* .article-container{
+.article-container{
     position: relative;
-} */
+}
 
 .article-container-link{
     position: absolute;

@@ -55,51 +55,51 @@
             </div>
             <div class="events-container">
                 <% featured.forEach(element=> { %>
-                    <article class="article-container">
-                        <div class="article-image">
-                            <a href="/products/detail/<%=element.id%>">
-                                <img src="/image/products/<%= element.image %> " alt="">
-                            </a>
-                        </div>
+                    <article class="article-container"> 
+                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
+                            <div class="article-image">
+                                    <img src="/image/products/<%= element.image %> " alt="">
+                            </div>
 
-                        <div class="article-title">
-                            <h2>
-                                <%= element.artist %>
-                            </h2>
-                            <h4>
-                                <%= element.subtitle %>
-                            </h4>
-                        </div>
+                            <div class="article-title">
+                                <h2>
+                                    <%= element.artist %>
+                                </h2>
+                                <h4>
+                                    <%= element.subtitle %>
+                                </h4>
+                            </div>
 
-                        <div class="article-information-general">
-                            <div class="icons">
-                                <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                                <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="article-information-specific">
+                                    <div class="event-date">
+                                        <p>
+                                            <%= element.date1 %> a las <%= element.hour1 %>.
+                                        </p>
+                                    </div>
+                                    <div class="event-price">
+                                        <p>Desde $<%= element.price1 %>.-</p>
+                                    </div>
+                                    <div class="event-place">
+                                        <p>
+                                            <%= element.stage %>, <%= element.city %>.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="article-information-specific">
-                                <div class="event-date">
-                                    <p>
-                                        <%= element.date1 %> a las <%= element.hour1 %>.
-                                    </p>
-                                </div>
-                                <div class="event-price">
-                                    <p>Desde $<%= element.price1 %>.-</p>
-                                </div>
-                                <div class="event-place">
-                                    <p>
-                                        <%= element.stage %>, <%= element.city %>.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="article-buttons">
-                            <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                            <a href="" class="buy-button">Comprar ahora</a>
-                        </div>
-                    </article>
+                            <div class="article-buttons">
+                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="buy-button">Comprar ahora</a>
+                            </div>
+                        </article>
+
                     <% }) %>      
             </div>
     </section>
@@ -117,10 +117,9 @@
                 <div class="events-container">
                     <% searched.forEach(element=> { %>
                         <article class="article-container">
+                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
                             <div class="article-image">
-                                <a href="/products/detail/<%=element.id%>">
                                     <img src="/image/products/<%= element.image %> " alt="">
-                                </a>
                             </div>
 
                             <div class="article-title">
@@ -177,10 +176,9 @@
                 <div class="events-container">
                     <% selected.forEach(element=> { %>
                         <article class="article-container">
+                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
                             <div class="article-image">
-                                <a href="/products/detail/<%=element.id%>">
                                     <img src="/image/products/<%= element.image %> " alt="">
-                                </a>
                             </div>
 
                             <div class="article-title">
