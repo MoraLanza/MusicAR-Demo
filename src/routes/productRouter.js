@@ -19,7 +19,7 @@ router.get('/detail/:id', productController.detail);
 router.get('/create', authMiddleware, productController.create);
 router.post('/create',multerProductMiddleware.single('image'), productController.store);
 
-router.get('/edit/:id', productController.edit);
+router.get('/edit/:id',authMiddleware, productController.edit);
 router.put('/update/:id',multerProductMiddleware.single('image'), productController.update);        
 
 router.delete('/delete/:id', authMiddleware, productController.delete);

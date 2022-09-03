@@ -16,21 +16,21 @@ let userController = {
 
     loginProcess: (req, res) => {
         let userToLogin = User.findFirstByField('email', req.body.email);
-        
-        if(userToLogin){
+
+        if (userToLogin) {
             let truePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if(truePassword) {
+            if (truePassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
 
-                if(req.body.remember_name){
-                    res.cookies('userEmail', req.body.email, { maxAge: (1000 * 60)* 30})
+                if (req.body.remember_name) {
+                    res.cookies('userEmail', req.body.email, { maxAge: (1000 * 60) * 30 })
                 }
                 res.redirect('/');
             }
             return res.render('users/login', {
                 errors: {
-                    email:{
+                    email: {
                         msg: 'Email o contraseña invalidos'
                     }
                 }
@@ -39,7 +39,7 @@ let userController = {
 
         return res.render('users/login', {
             errors: {
-                email:{
+                email: {
                     msg: 'Email o contraseña invalidos'
                 }
             }

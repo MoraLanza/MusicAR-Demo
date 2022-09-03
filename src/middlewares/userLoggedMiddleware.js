@@ -8,7 +8,7 @@
     let userFromCookie = User.findFirstByField('email', emailInCookie);
 
     if(userFromCookie) {
-        Request.session.userLogged = userFromCookie;
+        req.session.userLogged = userFromCookie;
     }
 
     if (req.session && req.session.userLogged) {
