@@ -113,28 +113,10 @@
     "id": 14,
     "name": "Mora",
     "lastName": "Lanza",
+    "username": "morit4",
     "email": "modalila@hotmail.com",
-    "username": "Morit4",
-    "password": "$2a$10$jVacZlPIUTc8mgIBBmVjwOqzcZLmXrgMWE/bTMVU6spAroSjtwD3q",
-    "imageUser": "imageUser-1661266333592"
-  },
-  {
-    "id": 15,
-    "name": "Marco",
-    "lastName": "Antonio|",
-    "username": "TuMarquitos",
-    "email": "marquitoAntonio@gmail.com",
-    "password": "12345678",
-    "passwordConfirm": "12345678"
-  },
-  {
-    "id": 16,
-    "name": "Lidia",
-    "lastName": "Paiva",
-    "username": "lidia123",
-    "email": "lidiamportiz@gmail.com",
-    "password": "$2a$10$9dIcA6UmOrzvitSgm9jXhOBqRVzXchlQAoxNO/oSvtAewcOzrgICW",
-    "passwordConfirm": "holamundo",
-    "imageUser": "imageUser-1661998216151"
+    "password": "$2a$10$Bl0cljiEY38dUPUmQWPNeOe0EagXYTTR2NfXP6JYW4iQqCCVFSmRa",
+    "passwordConfirm": "12345678",
+    "imageUser": "cat.jpg-1662416637050"
   }
 ]

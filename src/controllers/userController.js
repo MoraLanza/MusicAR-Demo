@@ -45,7 +45,7 @@ let userController = {
             }
         })
     },
-
+    
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();

@@ -70,6 +70,7 @@ ul.lista-opciones li {
     color: white;
     display: flex;
     align-items: center;
+    transition: ease-in 0.3s;
 }
 
 .boton-border:hover{
@@ -83,6 +84,7 @@ ul.lista-opciones li {
     color: #000000;
     display: flex;
     align-items: center;
+    transition: ease-in 0.3s;
 }
 
 .boton-blanco:hover{
@@ -103,6 +105,7 @@ ul.lista-opciones li {
 .icon-cart {
     color: white;
     font-size: 30px;
+    transition: ease-in 0.3s;
 }
 
 .icon-cart:hover{
@@ -122,6 +125,8 @@ ul.lista-opciones li {
 .boton-admin{
     color: white;
     font-size: 16px;
+    background-color: none;
+    border: none ;
 }
 .fa-user-pen, .fa-pen-to-square{
     color: white;
@@ -164,9 +169,10 @@ ul.lista-opciones li {
     display: none;
     position: absolute;
     min-width: 100%;
-    top: 45px;
+    top: 55px;
     left: 0;
 }
+
 
 .item-text {
     padding: 15px 10px 15px 10px;
