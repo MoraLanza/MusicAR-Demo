@@ -1,5 +1,4 @@
 let express = require('express');
-const path = require('path');
 const router = express.Router();
 
 const userController = require('../controllers/userController');
@@ -18,6 +17,6 @@ router.post('/login', userController.loginProcess);
 router.get('/register', guestMiddleware, userController.register);
 router.post('/register', multerUserMiddleware.single('imageUser'), registerValidationMiddleware, userController.store);
 
-router.post('/logout', userController.logout)
+router.get('/logout/', userController.logout)
 
 module.exports = router;

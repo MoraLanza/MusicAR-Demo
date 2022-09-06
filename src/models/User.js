@@ -1,10 +1,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json')
- const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 
 const User = {
+     usersFilePath: path.join(__dirname, '../data/usersDataBase.json'),
+
+    getData: () => { 
+         return JSON.parse(fs.readFileSync(User.usersFilePath, 'utf-8'));
+    },
 
     generateId: () => {
         let allUsers = User.findAll();
@@ -16,11 +20,11 @@ const User = {
     },
 
      findAll: () => {
-        return users;
+        return User.getData();
     },
 
     findByPk: (id) => {
-        let allUsers = User.findAll();
+        let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser.id === id);
         return userFound;
     },
@@ -38,12 +42,12 @@ const User = {
             ...userData
         }
         allUsers.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, '  '));
+        fs.writeFileSync(User.usersFilePath, JSON.stringify(allUsers, null, '  '));
         return newUser;
     },
 
-    delete: (id) =>{
-        let allUsers = User.findAll();
+    delete: (id) => {
+        let allUsers = this.findAll();
         let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
         fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, '  '));
     }

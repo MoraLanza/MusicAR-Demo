@@ -17,11 +17,10 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 app.use(express.urlencoded({ extended: false }));
 
 app.use(session({
-    secret: 'secreto de estado',
-    resave: false,
-    saveUninitialized: false,
+	secret: "secreto de estado",
+	resave: false,
+	saveUninitialized: false,
 }));
-
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method'));

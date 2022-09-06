@@ -28,10 +28,7 @@
                             <p class="dropdown-title">Hola, <%= locals.userLogged.name%>!</p>
                             <div class="item-container">
                                 <div class="item-text"><a class="boton-admin" href="">Perfil</a></div>
-                                <div class="item-text">
-                                    <!-- <a class="boton-admin" href="">Cerrar Sesión</a> -->
-                                    <form action="/users/logout" method="POST">
-                                       <button class="boton-admin" type="submit">Cerrar Sesión</button>                           
+                                <div class="item-text"><a class="boton-admin" href="/users/logout">Cerrar Sesión</a>                            
                             </div>
                         </div>
                     </li>

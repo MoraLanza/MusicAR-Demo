@@ -1,5 +1,4 @@
-const fs = require('fs');
-const path = require('path');
+
 const bcryptjs = require('bcryptjs');
 const User = require('../models/User');
 
@@ -15,16 +14,17 @@ let userController = {
     },
 
     loginProcess: (req, res) => {
-        let userToLogin = User.findFirstByField('email', req.body.email);
-
+        let userToLogin = User.findFirstByField("email", req.body.email);
+        console.log(userToLogin.password)
         if (userToLogin) {
             let truePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            
             if (truePassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
 
                 if (req.body.remember_name) {
-                    res.cookies('userEmail', req.body.email, { maxAge: (1000 * 60) * 30 })
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 30 })
                 }
                 res.redirect('/');
             }
