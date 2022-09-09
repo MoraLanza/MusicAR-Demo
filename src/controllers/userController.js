@@ -26,7 +26,8 @@ let userController = {
                 if (req.body.remember_name) {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 360 })
                 }
-                res.redirect('/');
+             return res.redirect('/');
+                
             }
             return res.render('users/login', {
                 errors: {
@@ -67,7 +68,7 @@ let userController = {
         let userInDB = User.findFirstByField('email', req.body.email);
 
         if (userInDB) {
-            return res.render('users/register', {
+            return res.render('users/login', {
                 errors: {
                     email: {
                         msg: 'Este email ya está en uso'
@@ -87,7 +88,7 @@ let userController = {
         }
         let userCreated = User.create(userToCreate);
 
-        res.redirect('/');
+      return  res.redirect('/');
     }
 }
 

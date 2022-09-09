@@ -100,7 +100,7 @@ let productController = {
             let productModificarJson = JSON.stringify(products, null, ' ');
             fs.writeFileSync(productsFilePath, productModificarJson);
 
-            res.redirect('/products/all');
+            return res.redirect('/products/all');
     },
     delete : (req, res) => {
 		
@@ -108,7 +108,7 @@ let productController = {
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
 
-		res.redirect('/products/all');
+		return res.redirect('/products/all');
        
 	}
 
