@@ -1,4 +1,4 @@
-# RETROSPECTIVA - SPRINT 1  
+# RETROSPECTIVA - SPRINT 2  
    
 ## Comenzar a hacer:
 - Tener una reunión con estructura tipo: que hice, que dificultades tuve y si necesito ayuda o no de parte de cada uno, gastarle x numero de tiempo y pasar a definir que vamos a trabajar en el siguiente sprint y como dividiremos el proyecto. Utilizar metodología scrum en sesiones cortas.
@@ -32,7 +32,7 @@
 - Reunirnos poco durante la semana.
 - No googlear.
 
-# RETROSPECTIVA - SPRINT 2 
+# RETROSPECTIVA - SPRINT 3 
    
 ## Comenzar a hacer:
 -  Documentar más los procesos y conocimientos que trabajamos. ejemplo: cheat sheet, grabar las reuniones, etc.
@@ -54,3 +54,44 @@
 
 ## Dejar de hacer:
 - No estar al día con playground, nos atrasa.
+
+
+# RETROSPECTIVA - SPRINT 4
+
+## Qué hicimos bien?
+- Poder adaptarnos y cumplir con las tareas a pesar de las adversidades del equipo (cada vez siendo menos).
+- Organización de las delegaciones de las tareas.
+- Mejoramos cómo encaramos las dudas y problemáticas.
+- Poder confiar y ayudarnos entre nosotros.
+- Peer review de código en equipo.
+
+## Qué debemos mejorar? 
+- Se puede seguir mejorando el tema de las semi-daily.
+- Mantenernos al día con el contenido del pg.
+- Apegarnos mejor a los planes de acción propuestos.
+- Poder adelantar contenido / actividades / tareas para pulir mejor el proyecto.
+
+## Plan de acción para el siguiente sprint: 
+- Respetar el cronograma de las daily (o poder reorganizarlas en su defecto).
+- Poner fechas de entregas de las tareas.
+- Mejorar los tiempos de las tareas.
+- Mejorar la estructura de delegaciones de tareas en el Trello para tener más visibilidad del estado del proyecto.
+
+
+# RETROSPECTIVA - SPRINT 5
+
+## Que hicimos bien?
+- Abordar las tareas con tiempo.
+- Usar el trello de manera más organizada.
+- Poder resolver desafios en equipo utilizando las herramientas y aprendizaje adquirido.
+- Distribuir mejor las tareas.
+
+## Qué debemos mejorar? 
+- Estar más presentes en las reuniones/ no aplazarlas tanto.
+
+## Plan de acción para el siguiente sprint: 
+- Seguir abordando las tareas con anticipación.
+- Mantenernos comunicados sobre obstaculos e ideas.
+- Estar más atentos a las necesidades del proyecto.
+
+
