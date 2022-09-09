@@ -1,142 +1,29 @@
 [
   {
     "id": 1,
-    "name": "Jordan",
-    "lastName": "Stolberg",
-    "email": "jstolberg0@ftc.gov",
-    "username": "jstolberg0",
-    "password": "c24MlweG"
+    "name": "Mora",
+    "lastName": "Lanza",
+    "email": "modalila@hotmail.com",
+    "username": "Morita",
+    "password": "$2a$10$Ec6fwRHktn9h9yntVa2ny.4nzeJ.uIpXDdOeq6R4Yddd4jszuAYdq",
+    "imageUser": "tp_5relleno_mora_lanza_page-0001.jpg-1662684666887"
   },
   {
     "id": 2,
-    "name": "Gal",
-    "lastName": "Avraam",
-    "email": "gavraam1@foxnews.com",
-    "username": "gavraam1",
-    "password": "fKzJBHt9KN"
+    "name": "Lidia",
+    "lastName": "Paiva",
+    "email": "lili@gmail.com",
+    "username": "LiliKun",
+    "password": "$2a$10$AQDx3Fb2E6V8gOQ8obO.C.TN2s9tJfYwZHiKwQcT3gr/HjXbKdy/q",
+    "imageUser": "img201.jpg-1662684759863"
   },
   {
     "id": 3,
-    "name": "Grange",
-    "lastName": "Tolliday",
-    "email": "gtolliday2@xrea.com",
-    "username": "gtolliday2",
-    "password": "1SndeeLJT0"
-  },
-  {
-    "id": 4,
-    "name": "Cecilia",
-    "lastName": "Ellam",
-    "email": "cellam3@ameblo.jp",
-    "username": "cellam3",
-    "password": "wwNwHsTiK4"
-  },
-  {
-    "id": 5,
-    "name": "Sephira",
-    "lastName": "McSkeagan",
-    "email": "smcskeagan4@devhub.com",
-    "username": "smcskeagan4",
-    "password": "KnZb8euKpRn"
-  },
-  {
-    "id": 6,
-    "name": "Alvina",
-    "lastName": "MacAndie",
-    "email": "amacandie5@weebly.com",
-    "username": "amacandie5",
-    "password": "7fe1jmbE7WkF"
-  },
-  {
-    "id": 7,
-    "name": "Del",
-    "lastName": "Jeannenet",
-    "email": "djeannenet6@ycombinator.com",
-    "username": "djeannenet6",
-    "password": "Rr9ubzsx"
-  },
-  {
-    "id": 8,
-    "name": "Aron",
-    "lastName": "Baum",
-    "email": "abaum7@amazonaws.com",
-    "username": "abaum7",
-    "password": "whUOjLuu5lo"
-  },
-  {
-    "id": 9,
-    "name": "Jerry",
-    "lastName": "Kassidy",
-    "email": "jkassidy8@merriam-webster.com",
-    "username": "jkassidy8",
-    "password": "HypZmjl"
-  },
-  {
-    "id": 10,
-    "name": "Kendra",
-    "lastName": "Barrowcliff",
-    "email": "kbarrowcliff9@sogou.com",
-    "username": "kbarrowcliff9",
-    "password": "FtctOaVV"
-  },
-  {
-    "id": 11,
-    "name": "Marco",
-    "lastName": "Antonio",
-    "email": "marcoLoco@hotmail.com",
-    "username": "Marquitos99",
-    "password": [
-      "1234567",
-      "1234567"
-    ],
-    "imageUser": "imageUser-1660700425628"
-  },
-  {
-    "id": 12,
-    "name": "Maria",
-    "lastName": "Antionieta",
-    "email": "mariloca@gmail.com",
-    "username": "RococoCo",
-    "password": "laMarijuana",
-    "imageUser": "imageUser-1660700509219"
-  },
-  {
-    "id": 13,
-    "name": "Lidia",
-    "lastName": "Paiva",
-    "email": "lidiaPaiva666@yahoo.com.ar",
-    "username": "EscorpianaXD",
-    "password": "$2a$10$6Unk34peGkG5.YYH8PR/AelDULRPDKL13mh.ByygoBZcd.Zb.JonS",
-    "imageUser": "imageUser-1660701491414"
-  },
-  {
-    "id": 14,
-    "name": "Lidia",
-    "lastName": "Paiva",
-    "username": "LiliKun",
-    "email": "lidia@gmail.com",
-    "password": "$2a$10$AFY3K9VRakxXpLoEnnL2pOp/cogStA6vkm21RagvJWCJkFJpB74Fi",
-    "passwordConfirm": "12345678",
-    "imageUser": "bonk.gif-1662424716169"
-  },
-  {
-    "id": 15,
-    "name": "Marco",
-    "lastName": "Polo",
-    "username": "marcoPolo",
-    "email": "marco@gmail.com",
-    "password": "$2a$10$cjJEeBddhfaWTDk4M8X91.PkhZO6XFgflYU3sAacwb1WqnotU32ge",
-    "passwordConfirm": "12345678",
-    "imageUser": "Artwork.jpg-1662425909179"
-  },
-  {
-    "id": 16,
-    "name": "Mora",
-    "lastName": "Lanza",
-    "username": "Morit4",
-    "email": "modalila@hotmail.com",
-    "password": "$2a$10$HqmaQGvGzaUjLzRe0McXC.NSzVrJ.yMLsC/ZG1Xb4o1Sc/G138cGO",
-    "passwordConfirm": "12345678",
-    "imageUser": "cat.jpg-1662427480375"
+    "name": "Fabian",
+    "lastName": "Vega",
+    "email": "fabi@fabi.com",
+    "username": "FabiDelProyeto",
+    "password": "$2a$10$6z0r1X5KWE70uGLCf8HWEuZqorUpWK5sGb0OtDtsawBhZhJdQW1Aq",
+    "imageUser": "my-blob.jpg-1662684832362"
   }
 ]
