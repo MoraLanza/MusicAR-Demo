@@ -53,7 +53,7 @@ let productController = {
             all: req.body.all,
             linkMaps: req.body.linkMaps,
             linkYT: req.body.linkYT,
-			image: req.file ? req.file.filename : null
+			image:  req.file.filename
 		    // class: req.body.class,
             // ticket : [ 
             //     ...newTicket
@@ -100,21 +100,15 @@ let productController = {
             let productModificarJson = JSON.stringify(products, null, ' ');
             fs.writeFileSync(productsFilePath, productModificarJson);
 
-            res.redirect('../all');
+            return res.redirect('/products/all');
     },
     delete : (req, res) => {
-		// const deletedProduct =  products.find((prod) => {
-		// 	return prod.id == req.params.id;
-		// 	});
-
-		// const prodIndex = products.findIndex((p) => p.id == deletedProduct.id);
 		
-		// products.splice(prodIndex, 1); 
         const allProductsFilter = getProducts().filter(product => product.id != req.params.id);
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
 
-		res.redirect('../all');
+		return res.redirect('/products/all');
        
 	}
 

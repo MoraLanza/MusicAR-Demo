@@ -15,7 +15,7 @@ let userController = {
 
     loginProcess: (req, res) => {
         let userToLogin = User.findFirstByField("email", req.body.email);
-        console.log(userToLogin.password)
+       
         if (userToLogin) {
             let truePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             
@@ -24,9 +24,10 @@ let userController = {
                 req.session.userLogged = userToLogin;
 
                 if (req.body.remember_name) {
-                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 30 })
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 360 })
                 }
-                res.redirect('/');
+             return res.redirect('/');
+                
             }
             return res.render('users/login', {
                 errors: {
@@ -67,7 +68,7 @@ let userController = {
         let userInDB = User.findFirstByField('email', req.body.email);
 
         if (userInDB) {
-            return res.render('users/register', {
+            return res.render('users/login', {
                 errors: {
                     email: {
                         msg: 'Este email ya está en uso'
@@ -78,13 +79,16 @@ let userController = {
         }
 
         let userToCreate = {
-            ...req.body,
+            name: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            username: req.body.username,
             password: bcryptjs.hashSync(req.body.password, 10),
             imageUser: req.file ? req.file.filename : null,
         }
         let userCreated = User.create(userToCreate);
 
-        res.redirect('/');
+      return  res.redirect('/');
     }
 }
 

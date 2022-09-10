@@ -12,7 +12,7 @@
 
     <main>
         <section class="section-form-event-create">
-            <form action="/products/update/<%=product.id%>?_method=PUT" method="POST" class="form-crear-evento">
+            <form action="/products/update/<%=product.id%>?_method=PUT" method="POST" class="form-crear-evento" enctype="multipart/form-data">
                 <div class="image-banner no-charged"
                     style="background-image: url(/image/products/<%=product.image%>);">
                     <div class="titulo-principal-box">
@@ -33,8 +33,8 @@
                     </div>
                     <div class="btn-img-box">
                         <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i></label>
-                        <input type="hidden" name="oldImage" <% product.image%> >
-                        <input type="file" name="image" id="image" class="form-input">
+                        <input type="hidden" name="oldImage" value="<%= product.image %>" >
+                        <input type="file" name="image" id="image" class="form-input" >
                     </div>
                 </div>
 
@@ -193,6 +193,7 @@
                     </div>
                 </div>
                 <div class="form-btns">
+                    
                         <div class="reset-btn-container">
                             <button type="reset" class="reset-button">Borrar</button>
                         </div>
