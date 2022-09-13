@@ -12,14 +12,14 @@ const getProducts = () => {
 let productController = {
     allProducts: (req, res) => {
         const all = getProducts().filter(product => product.all === 'all');
-        res.render('./products/all-products',{all});
+       return res.render('./products/all-products',{all});
     },
     detail: (req, res) => {
         const product = getProducts().find(element => element.id == req.params.id); 
-        res.render('./products/product-detail', {product});
+        return res.render('./products/product-detail', {product});
     },
     create: (req, res) => {
-        res.render('./products/create-event');
+       return res.render('./products/create-event');
     },
     store: (req, res) => {
         const productsClone = getProducts();
@@ -64,11 +64,11 @@ let productController = {
     }
 		productsClone.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(productsClone, null, ' '));
-		res.redirect('/');
+		return res.redirect('/');
     },
     edit: (req, res) => {
         const product = getProducts().find(element => element.id == req.params.id); 
-        res.render('./products/edit-event', {product});
+       return  res.render('./products/edit-event', {product});
     },
     update: (req, res) => {
         const indexProducto = getProducts().findIndex(element => element.id == req.params.id);

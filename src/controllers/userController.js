@@ -7,10 +7,10 @@ const { validationResult } = require('express-validator');
 
 let userController = {
     cart: function (req, res) {
-        res.render("users/shopping-cart");
+       return res.render("users/shopping-cart");
     },
     login: function (req, res) {
-        res.render("users/login");
+       return res.render("users/login");
     },
 
     loginProcess: (req, res) => {
@@ -54,7 +54,7 @@ let userController = {
     },
 
     register: function (req, res) {
-        res.render("users/register");
+       return res.render("users/register");
     },
     store: function (req, res) {
         const resultValidation = validationResult(req);
