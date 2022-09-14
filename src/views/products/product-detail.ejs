@@ -46,11 +46,6 @@
 
                 </section>
 
-                <div class="boton-fixed">
-                    <a href="#top"><i class="fas fa-chevron-up"></i></a>
-                </div>
-
-
                 <div class="event-information">
                     <section class="container information-tickets" id="localidades">
                         <div class="section-item date">
@@ -205,7 +200,7 @@
                             </div>
                         </div>
                         <div class="video-box">
-                            <iframe width="100%" height="380" src="https://www.youtube.com/embed/hZrqe1riqmw"
+                            <iframe width="100%" height="380" src="<%=product.linkYT%>"
                                 title="Carpa Delirio 2022" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
@@ -236,10 +231,7 @@
                             </div>
                         </div>
                         <div class="location-map">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3284.079296441212!2d-58.3684163!3d-34.6021563!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a335325f19f9a3%3A0xfd34b93fba734a98!2sLuna%20Park!5e0!3m2!1ses-419!2sar!4v1656991219467!5m2!1ses-419!2sar"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                           <%= product.linkMaps %> 
                         </div>
                     </section>
                 </div>
