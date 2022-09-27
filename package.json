@@ -1,0 +1,36 @@
+{
+  "name": "musicar",
+  "version": "1.0.0",
+  "description": "Musicar es un sitio web dedicado a la venta de entradas a eventos musicales. La venta de entradas se efectúa desde el sitio web, mediante la apertura de una cuenta como “Cliente” que le permitirá seleccionar entradas y agregarlas al carrito, para posteriormente efectuar la compra.",
+  "start": "node app.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilarock3rs/Grupo_4_Musicar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lilarock3rs/Grupo_4_Musicar/issues"
+  },
+  "homepage": "https://github.com/lilarock3rs/Grupo_4_Musicar#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.18",
+    "path": "^0.12.7",
+    "sequelize": "^6.23.0",
+    "sequelize-cli": "^6.4.1"
+  }
+}

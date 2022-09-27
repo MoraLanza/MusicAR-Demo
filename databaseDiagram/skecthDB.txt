@@ -1,0 +1,41 @@
+Usuario 
+	- id (PK)
+	- name varchar (255)
+	- lastName varchar (255)
+	- email varchar (255)
+	- password no se q sos
+	- imageUser no se q sos x2 
+
+Producto/Evento 
+
+	-id (PK)
+	-artist varchar (255)
+	-subtitle varchar (255)
+	-showtype varchar (255) ? 
+	-description text
+	-country varchar (255)
+	-state varchar (255)
+	-city varchar (255)
+	-stage varchar (255)
+	-direction varchar (255)
+	-category varchar (255)
+	-linksMaps 
+	-linkYoutube
+	-imageEvento
+Funcion 
+	-id (PK)
+	-fecha 
+	-hora
+	-id_evento	
+	
+Tickets 
+	-id
+	_id_funcion 
+	_id_evento
+	_price
+	_tickeytype 
+	_lot 
+	
+	
+	
+	

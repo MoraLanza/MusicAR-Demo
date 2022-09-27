@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/image/wallpapers/1-fondo.png);
+    background-size: cover; 
+}
+
+main{
+    height: calc(100vh - 200px);
+}
+
+header{
+    position: static;
+}
+
+.registrate {
+    color: white;
+    font-weight: bold;
+}
+
+.sombra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sombra h2{
+    font-size: 48px;
+    margin-top: 10px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 15px;
+    background: rgb(5, 7, 12, 0.50);
+    align-self: center;
+    margin: 5% 30%;
+   
+}
+
+
+.barra {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: 85%;
+    margin-top: 20px;
+}
+
+.barra label{
+    width: 100%;
+    max-width: 80%;
+    text-align: left;
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.barra p{
+    width: 100%;
+    max-width: 80%;
+    align-self: flex-end;
+    padding-top: 5px;
+    font-size: 12px;
+    color: rgb(165, 161, 161);
+}
+
+.registro {
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.controls {
+    width: 100%; 
+    max-width: 80%; 
+    border-radius: 7px;
+    margin-bottom: 5px;
+    padding: 7px;
+    height: 45px;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.linea {
+    padding: 0;
+    margin: 5px;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.redes-titulo {
+    padding: 10px;
+    margin: -2px;
+    font-size: 30px;
+}
+
+.redes-logos {
+    margin: -10px;
+    display: flex;
+}
+
+/* .redes-logos atras de referencia */
+
+.redes-logos .item-logo {
+    font-size: 40px;
+    margin: 20px;
+}
+
+.barra button{
+    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+    height: 40px;
+    border: transparent;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 80%;
+}
+
+ .barra button:hover {
+    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
+}
+
+.form-check-label {
+    font-size: 10px;
+}
+
+@media (min-width: 992px) {
+    .controls, .barra label, .barra p, .barra button{  
+        max-width: 60%;
+    }
+
+   
+}
+
+@media (max-width:768px ) {
+    .formulario{
+        margin: 5% 10%;
+    }
+}

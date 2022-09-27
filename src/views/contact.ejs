@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/style-register.css">
+    <link rel="stylesheet" href="/css/style-contact.css">
+    <link rel="icon" href="image/favicon.ico">
+
+</head>
+
+
+<body>
+    <%- include('./partials/header') %>
+
+        <main class="fondoImagenContacto">
+            <div class="formularioContacto">
+                <div class="col-1">
+                    <h2>Contactá con nosotros!</h2>
+                    <h4>
+                        <li>A la brevedad nos pondremos en</li>
+                        <li>contacto con vos.</li>
+                        <div class="mail"> <i class="fa-solid fa-envelope"></i>cosmefulanito@gmail.com.ar</div>
+                        <div class="phone"> <i class="fa-solid fa-phone"></i>+54 11 988 888</div>
+                </div>
+
+                <div class="col-2">
+                    <form action="register.html" method="POST">
+
+
+                        <div class="name-and-surname-contacto">
+                            <div class="item-input-contacto">
+                                <div class="input-user-contacto">
+                                    <label for="nombre">Nombre* </label>
+                                </div>
+                                <input class="controls-name" type="text" name="nombre" id="nombre" required>
+                            </div>
+
+                            <div class="item-input-contacto">
+                                <div class="input-user-contacto">
+                                    <label for="apellido">Apellido* </label>
+                                </div>
+                                <input class="controls-name" type="text" name="apellido" id="apellido" required>
+                            </div>
+                        </div>
+                        <div class="users">
+
+                            <div class="item-input-contacto">
+                                <div class="input-user-contacto">
+                                    <label for="user">Email* </label>
+                                </div>
+                                <input class="controlsTwo" type="user" name="user" id="user" required>
+                            </div>
+
+                            <div class="item-input-contacto">
+                                <div class="input-user-contacto">
+                                    <label for="user">Teléfono* </label>
+                                </div>
+                                <input class="controlsTwo" type="user" name="user" id="user" required>
+                            </div>
+
+                            <div class="item-input-contacto">
+                                <div class="input-user-contacto">
+                                    <label for="text">Mensaje* </label>
+                                </div>
+                                <input class="controlsMessage" type="password" name="password" id="password" required>
+                            </div>
+
+
+                        </div>
+
+                        <div class="register-button">
+                            <button type="submit"> Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+
+
+        <%- include('./partials/footer') %>
+
+
+</body>
+
+</html>

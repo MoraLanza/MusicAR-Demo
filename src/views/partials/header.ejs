@@ -1,0 +1,57 @@
+<header id="top">
+    <div class="logo">
+        <a href="/"><img src="../../image/Logo.png" alt="imagen de logo"></a>
+    </div>
+    <nav class="nav-header">
+        <ul class="menu">
+            <li class="nav-item-box"><a class="nav-item" href="/">Inicio</a></li>
+            <li class="nav-item-box"><a class="nav-item" href="/faq">Preguntas Frecuentes</a></li>
+            <li class="nav-item-box"><a class="nav-item" href="/contact">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="contenedor-lista">
+        <ul class="lista-opciones">
+            <% if (locals.isLogged) {%>
+                    <li>
+                        <div class="dropdown">
+                            <i class="fa-solid fa-pen-to-square"></i> 
+                            <p class="dropdown-title">Eventos</p>
+                            <div class="item-container">
+                                <div class="item-text"><a class="boton-admin" href="/products/create">Crear Evento</a></div>
+                                <div class="item-text"><a class="boton-admin" href="/products/all"> Administrador</a></div>                            
+                            </div>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="dropdown">
+                            <img class="userImage" src="../../../image/users/<%=locals.userLogged.imageUser %>">
+                            <p class="dropdown-title">Hola, <%= locals.userLogged.username%>!</p>
+                            <div class="item-container">
+                                <div class="item-text"><a class="boton-admin" href="">Perfil</a></div>
+                                <div class="item-text"><a class="boton-admin" href="/users/logout">Cerrar Sesión</a>                            
+                            </div>
+                        </div>
+                    </li>
+                <% } else {%> 
+                    <li><a class="boton-border" href="/users/login">Inicia Sesión</a></li>
+                    <li><a class="boton-blanco" href="/users/register">Registrate</a></li>
+                    <li><a class="icon-cart" href="/users/shopping-cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <% } %>  
+        </ul>
+    </div>
+
+    <div class="burguer-menu-header">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <ul class="social-media-list">
+        <li><a class="icon-item" href=""><i class="fa-brands fa-facebook"></i></a></li>
+        <p>|</p>
+        <li><a class="icon-item" href=""><i class="fa-brands fa-instagram"></i></a></li>
+        <p>|</p>
+        <li><a class="icon-item" href=""><i class="fa-brands fa-tiktok"></i></a></li>
+        <p>|</p>
+        <li><a class="icon-item" href=""><i class="fa-brands fa-youtube"></i></a></li>
+    </ul>
+
+</header>

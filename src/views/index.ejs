@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <link rel="stylesheet" href="/css/style-home.css">
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+        <div class="slider-home col-12">
+            <img src="image/home/slider-home.png" width="100%" alt="Slider Home">
+        </div>
+        <!-- Sección Buscador -->
+
+        <div class="search-container">
+            <div class="search-nav">
+                <form action="" class="search-form">
+
+                 <div class="search" >
+                    <input type="text" name="key-word" id="key-word" placeholder="Buscar sala, artista, recinto...">
+                     <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div>
+                    <select name="categories" id="categories">
+                        <option selected="selected">Categorias</option>
+                        <option value="clasic">Clásica</option>
+                        <option value="rock">Rock</option>
+                        <option value="salsa">Salsa</option>
+                        <option value="reggaeton">Reggaeton</option>
+                    </select>
+                 </div>
+                 <div> 
+                    <input type="date" name="event-date" id="event-date">
+                </div>
+                 <div class="place">
+                    <input type="text" name="event-place" id="event-place" placeholder="Lugar">
+                    <i class="fa-solid fa-location-dot"></i>
+                 </div>  
+                    
+                    <input class="search-btn" type="button" value="Buscar">
+                </form>
+            </div>
+        </div>
+        <!-- FIN -- Sección Buscador -->
+        <!-- Sección Destacados -->
+        <section class="section-events">
+            
+            <div class="section-title col-12">
+                <h2>Destacados</h2>
+                <hr class="line-title">
+            </div>
+            <div class="events-container">
+                <% featured.forEach(element=> { %>
+                    <article class="article-container"> 
+                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
+                            <div class="article-image">
+                                    <img src="/image/products/<%= element.image %> " alt="">
+                            </div>
+
+                            <div class="article-title">
+                                <h2>
+                                    <%= element.artist %>
+                                </h2>
+                                <h4>
+                                    <%= element.subtitle %>
+                                </h4>
+                            </div>
+
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="article-information-specific">
+                                    <div class="event-date">
+                                        <p>
+                                            <%= element.date1 %> a las <%= element.hour1 %>.
+                                        </p>
+                                    </div>
+                                    <div class="event-price">
+                                        <p>Desde $<%= element.price1 %>.-</p>
+                                    </div>
+                                    <div class="event-place">
+                                        <p>
+                                            <%= element.stage %>, <%= element.city %>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="article-buttons">
+                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="buy-button">Comprar ahora</a>
+                            </div>
+                        </article>
+
+                    <% }) %>      
+            </div>
+    </section>
+        <!-- FIN -- Sección Destacados -->
+        <br>
+        <br>
+        <!-- Sección Lo más buscado-->
+        <section class="section-events">
+            
+                <div class="section-title col-12">
+                    <h2>Lo más buscado</h2>
+                    <hr class="line-title">
+                </div>
+
+                <div class="events-container">
+                    <% searched.forEach(element=> { %>
+                        <article class="article-container">
+                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
+                            <div class="article-image">
+                                    <img src="/image/products/<%= element.image %> " alt="">
+                            </div>
+
+                            <div class="article-title">
+                                <h2>
+                                    <%= element.artist %>
+                                </h2>
+                                <h4>
+                                    <%= element.subtitle %>
+                                </h4>
+                            </div>
+
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="article-information-specific">
+                                    <div class="event-date">
+                                        <p>
+                                            <%= element.date1 %> a las <%= element.hour1 %>.
+                                        </p>
+                                    </div>
+                                    <div class="event-price">
+                                        <p>Desde $<%= element.price1 %>.-</p>
+                                    </div>
+                                    <div class="event-place">
+                                        <p>
+                                            <%= element.stage %>, <%= element.city %>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="article-buttons">
+                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="buy-button">Comprar ahora</a>
+                            </div>
+                        </article>
+                        <% }) %>    
+                </div>
+        </section>
+        <!-- FIN -- Sección Lo más buscado -->
+        <br>
+        <br>
+        <!-- Sección seleccionado para vos-->
+        <section class="section-events">
+            
+                <div class="section-title col-12">
+                    <h2>Seleccionado para vos</h2>
+                    <hr class="line-title">
+                </div>
+                <div class="events-container">
+                    <% selected.forEach(element=> { %>
+                        <article class="article-container">
+                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
+                            <div class="article-image">
+                                    <img src="/image/products/<%= element.image %> " alt="">
+                            </div>
+
+                            <div class="article-title">
+                                <h2>
+                                    <%= element.artist %>
+                                </h2>
+                                <h4>
+                                    <%= element.subtitle %>
+                                </h4>
+                            </div>
+
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="article-information-specific">
+                                    <div class="event-date">
+                                        <p>
+                                            <%= element.date1 %> a las <%= element.hour1 %>.
+                                        </p>
+                                    </div>
+                                    <div class="event-price">
+                                        <p>Desde $<%= element.price1 %>.-</p>
+                                    </div>
+                                    <div class="event-place">
+                                        <p>
+                                            <%= element.stage %>, <%= element.city %>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="article-buttons">
+                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                                <a href="" class="buy-button">Comprar ahora</a>
+                            </div>
+                        </article>
+                        <% }) %>
+                </div>
+           
+        </section>
+        <!-- FIN -- Sección Lo más buscado -->
+        <br>
+        <br>
+        <%- include('./partials/footer') %>
+
+</body>
+
+</html>

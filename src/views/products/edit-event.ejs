@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/style-create-product.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="section-form-event-create">
+            <form action="/products/update/<%=product.id%>?_method=PUT" method="POST" class="form-crear-evento" enctype="multipart/form-data">
+                <div class="image-banner no-charged"
+                    style="background-image: url(/image/products/<%=product.image%>);">
+                    <div class="titulo-principal-box">
+                        <div class="form-group event-principal-title">
+                            <label for="event-title">
+                                <input class="form-control" type="text" id="event-title" maxlength="50"
+                                    name="artist" value="<%= product.artist%>">
+                                <i class="fa-solid fa-pen"></i>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-description">
+                                <input class="form-control" type="text" id="event-description" maxlength="150"
+                                    name="event-description" value="<%= product.subtitle%>">
+                                <i class="fa-solid fa-pen"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="btn-img-box">
+                        <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i></label>
+                        <input type="hidden" name="oldImage" value="<%= product.image %>" >
+                        <input type="file" name="image" id="image" class="form-input" >
+                    </div>
+                </div>
+
+                <!-- <div class="boton-fixed">
+                    <a href="#top"><i class="fas fa-chevron-up"></i></a>
+                </div> -->
+
+                <div class="form-data-box">
+                    <h4 class="form-data-box-title">Datos de localización</h4>
+                    <div class="form box-white">
+                        <div class="inputs-row">
+                            <div class="form-group">
+                                <label for="showType">Tipo de Show*</label>
+                                <select class="form-control" name="showType" id="showType">
+                                    <option value="presencial" <%= product.showType == "Presencial" ? 'selected' : null%>>Presencial</option>
+                                    <option value="virtual" <%= product.showType == "Virtual" ? 'selected' : null%>>Virtual</option>
+                                </select>
+                            </div>
+                            <div class="form-group link-maps">
+                                <label for="linkMaps">Link de Maps*</label>
+                                <input class="form-control" type="text" name="linkMaps" id="linkMaps" value="<%= product.linkMaps %> ">
+                            </div>
+                            <div class="form-group stage">
+                                <label for="stage">Teatro o lugar*</label>
+                                <input class="form-control" type="text" name="stage" id="stage" value="<%=product.stage %>">
+                            </div>
+                        </div>
+                        <div class="inputs-row">
+                            <div class="form-group">
+                                <label for="country">País*</label>
+                                <select class="form-control" name="country" id="country">
+                                    <option value="Argentina" <%= product.country == "Argentina" ? 'selected' : null%>>Argentina</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">Provincia*</label>
+                                <select class="form-control" name="state" id="state">
+                                    <option value="Buenos Aires" <%= product.country == "Buenos Aires" ? 'selected' : null%>>Buenos Aires</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Ciudad*</label>
+                                <select class="form-control" name="city" id="city">
+                                    <option value="CABA"<%= product.city == "CABA" ? 'selected' : null%>>CABA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="direction">Dirección*</label>
+                                <input class="form-control" type="text" name="direction" id="direction"
+                                    value="<%= product.direction%>">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider-forms-box">
+                </div>
+                <div class="form-data-box">
+                    <h4 class="form-data-box-title">Fecha de función/es</h4>
+                    <div class="form box-white">
+                        <div class="inputs-row">
+                            <div class="form-group date1">
+                                <label for="date1">Fecha de función*</label>
+                                <input class="form-control" type="text" name="date1" id="date1" value="<%= product.date1%> 
+                                "onfocus="(this.type='date')">
+                            </div>
+                            <div class="form-group hour1">
+                                <label for="hour1">Horario de inicio*</label>
+                                <select class="form-control" name="hour1" id="hour1">
+                                    <option value="7pm"<%= product.hour1 == "7pm" ? 'selected' : null%>>7:00 pm</option>
+                                    <option value="8pm"<%= product.hour1 == "8pm" ? 'selected' : null%>>8:00 pm</option>
+                                    <option value="9pm"<%= product.hour1 == "9pm" ? 'selected' : null%>>9:00 pm</option>
+                                    <option value="10pm"<%= product.hour1 == "10pm" ? 'selected' : null%>>10:00 pm</option>
+                                    <option value="11pm"<%= product.hour1 == "11pm" ? 'selected' : null%>>11:00 pm</option>
+                                    <option value="12am"<%= product.hour1 == "12am" ? 'selected' : null%>>12:00 am</option>
+                                    <option value="1am"<%= product.hour1 == "1am" ? 'selected' : null%>>1:00 am</option>
+                                </select>
+                            </div>
+                            <!-- <div class="form-group">
+                        <label for="show-type">Horario de finalización*</label>
+                        <input class="form-control" type="number" name="" id="">
+                    </div> -->
+                            <div>
+                                <button class="btn-add-show" type="button "><i
+                                        class="fa-solid fa-plus"></i>Añadir una función</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr class="divider-forms-box">
+                </div>
+                <div class="form-data-box">
+                    <h4 class="form-data-box-title">Datos de ticket</h4>
+                    <div class="form box-white">
+                        <div class="inputs-row">
+                            <div class="form-group">
+                                <label for="ticketType1">Tipo de entrada*</label>
+                                <select class="form-control" name="ticketType1" id="ticketType1">
+                                    <option value="Pullman"        <%= product.ticketType1 == "Pullman" ? 'selected' : null%> >Pullman</option>
+                                    <option value="Super Pullman"  <%= product.ticketType1 == "Super Pullman" ? 'selected' : null%>>Super Pullman</option>
+                                    <option value="Pullman Lateral"<%= product.ticketType1 == "Pullman Lateral" ? 'selected' : null%>>Pullman Lateral</option>
+                                    <option value="General"        <%= product.ticketType1 == "General" ? 'selected' : null%>>General</option>
+                                    <option value="Campo"          <%= product.ticketType1 == "Campo" ? 'selected' : null%>>Campo</option>
+                                    <option value="discapacitados" <%= product.ticketType1 == "discapacitados" ? 'selected' : null%>>Discapacitados</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="price1">Precio*</label>
+                                <input class="form-control" type="number" name="price1" id="price1" value="<%= product.price1%>">
+                            </div>
+                            <div class="form-group">
+                                <label for="lot1">Cantidad disponible*</label>
+                                <input class="form-control" type="number" name="lot1" id="lot1" value="<%= product.lot1%>">
+                            </div>
+                            <div>
+                                <button class="btn-add-show" type="button"><i
+                                        class="fa-solid fa-plus"></i>Añadir una función</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="divider-forms-box">
+                </div>
+                <div class="form-data-box">
+                    <h4 class="form-data-box-title">Descripción del evento</h4>
+                    <div class="form box-white">
+                        <div class="inputs-row description-row">
+                            <div class="form-group description-textarea">
+                                <label for="description">Descripción del evento*</label>
+                                <textarea name="description" id="description" cols="80" rows="5"><%= product.description%></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="linkYT">Link de youtube</label>
+                                <input class="form-control" type="text" name="linkYT" id="linkYT" value="<%= product.linkYT %> ">
+                            </div>
+                        </div>
+                        <div class="inputs-row">
+                            <div class="form-group">
+                                <label for="category">Categorias*</label>
+                                <select class="form-control" name="category" id="category">
+                                    <option value="Jazz"   <%= product.category == "Jazz" ? 'selected' : null%>>Jazz</option>
+                                    <option value="Blues"  <%= product.category == "Blues" ? 'selected' : null%>>Blues</option>
+                                    <option value="Soul"   <%= product.category == "Soul" ? 'selected' : null%>>Soul</option>
+                                    <option value="Góspel" <%= product.category == "Góspel" ? 'selected' : null%>>Góspel</option>
+                                    <option value="Pop"    <%= product.category == "Pop" ? 'selected' : null%>>Pop</option>
+                                    <option value="Rock"   <%= product.category == "Rock" ? 'selected' : null%>>Rock</option>
+                                    <option value="Techno" <%= product.category == "Techno" ? 'selected' : null%>>Techno</option>
+                                    <option value="Reggae" <%= product.category == "Reggae" ? 'selected' : null%>>Reggae</option>
+                                    <option value="Salsa"  <%= product.category == "Salsa" ? 'selected' : null%>>Salsa</option>
+                                    <option value="Hip Hop"<%= product.category == "Hip Hop" ? 'selected' : null%>>Hip hop/Rap</option>
+                                    <option value="Metal"  <%= product.category == "Metal" ? 'selected' : null%>>Metal</option>
+                                    <option value="Funk"   <%= product.category == "Funk" ? 'selected' : null%>>Funk</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="radio" id="all" name="all" value="all" checked hidden>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-btns">
+                    
+                        <div class="reset-btn-container">
+                            <button type="reset" class="reset-button">Borrar</button>
+                        </div>
+                        <div class="submit-btn-container">
+                            <button type="submit" class="submit-button">Modificar</button>
+                        </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+</body>
+
+</html>
