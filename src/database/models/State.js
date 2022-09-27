@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        state_id: {
+        country_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
@@ -22,12 +22,12 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const States = sequelize.define(alias, cols, config);
+    const State = sequelize.define(alias, cols, config);
 
     State.associate = (models) => {
-        State.belongsTo(models.State, {
-            as: 'city',
-            foreignKey: 'city_id'
+        State.belongsTo(models.Country, {
+            as: 'country',
+            foreignKey: 'country_id'
         });
     }
 

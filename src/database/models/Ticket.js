@@ -19,18 +19,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        functions_id: {
+        function_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
         shopping_cart_id: {
             type: dataTypes.INTEGER,
             allowNull: false
-        },
-        shopping_cart_users_id: {
-            type: dataTypes.INTEGER,
-            allowNull: false
-        },
+        }
     }
     
     const config = {
@@ -43,7 +39,12 @@ module.exports = (sequelize, dataTypes) => {
     Ticket.associate = (models) => {
         Ticket.belongsTo(models.Function, {
             as: 'functions',
-            foreignKey: 'event_id'
+            foreignKey: 'function_id'
+        }),
+
+        Ticket.belongsTo(models.ShoppingCart, {
+            as: 'shopping_cart',
+            foreignKey: 'shopping_cart_id'
         });
     }
 

@@ -23,15 +23,7 @@ let productController = {
     },
     store: (req, res) => {
         const productsClone = getProducts();
-        // const newTicket = {
-        //     price: req.body.price,
-        //     ticketType: req.body.ticketType,
-        //     lot : req.body.lot
-        // }
-        // const newFunctions = {
-        //     date: req.body.date,
-        //     hours: req.body.hours,
-        // }
+        
 		const newProduct = {             
 			id: productsClone[productsClone.length -1].id + 1,
 			showType: req.body.showType,
@@ -54,13 +46,7 @@ let productController = {
             linkMaps: req.body.linkMaps,
             linkYT: req.body.linkYT,
 			image:  req.file.filename
-		    // class: req.body.class,
-            // ticket : [ 
-            //     ...newTicket
-            // ],
-            // functions: [
-            //    ...newFunction
-            // ],
+		    
     }
 		productsClone.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(productsClone, null, ' '));

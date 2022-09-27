@@ -7,16 +7,16 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        nameTeater: {
+        name: {
             type: dataTypes.STRING,
             allowNull: false
         },
-        directionTeater: {
+        direction: {
             type: dataTypes.STRING,
             allowNull: false
         },
         
-        citys_id: {
+        city_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
@@ -33,7 +33,12 @@ module.exports = (sequelize, dataTypes) => {
     Teater.associate = (models) => {
         Teater.hasMany(models.Event, {
             as: 'events',
-            foreignKey: 'teaters_id'
+            foreignKey: 'teater_id'
+        }),
+
+        Teater.belongsTo(models.City, {
+            as: 'citys',
+            foreignKey: 'city_id'
         });
     }
 
