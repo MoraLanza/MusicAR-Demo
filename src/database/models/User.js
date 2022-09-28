@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        lastname: {
+        lastName: {
             type: dataTypes.INTEGER,
             allowNull: false
         },
@@ -31,6 +31,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
+        imageUser: {
+            type: dataTypes.BLOB,
+            allowNull: false
+        }
     }
     
     const config = {
@@ -44,8 +48,13 @@ module.exports = (sequelize, dataTypes) => {
         User.belongsTo(models.City, {
             as: 'citys',
             foreignKey: 'citys_id'
+        }),
+
+        User.belongsTo(models.Role, {
+            as: 'roles',
+            foreignKey: 'role_id'
         });
     }
 
     return User;
-};
+}
