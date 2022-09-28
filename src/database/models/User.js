@@ -47,5 +47,5 @@ module.exports = (sequelize, dataTypes) => {
         });
     }
 
-    return Ticket;
+    return User;
 };
