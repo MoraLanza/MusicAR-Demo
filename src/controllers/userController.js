@@ -1,11 +1,42 @@
 
 const bcryptjs = require('bcryptjs');
 const User = require('../models/User');
+const Users = db.User;
 
 const { validationResult } = require('express-validator');
 
 
 let userController = {
+    create: (req, res) => {
+        Users.create(
+            {
+                id: req.body.id,
+                name: req.body.name,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                roles_id: req.body.roles_id,
+                citys_id: req.body.citys_id,
+                imageUser: req.file ? req.file.filename : null,
+            }
+        )
+        .then(() => {
+            return res.redirect('/users')
+        })
+        .catch(error => res.send(error))
+    },
+
+    edit: (req, res) => {
+        const userId = req.params.id;
+        const promUsers = Users.findByPk(userId, { include: ['user'] });
+        Promise
+            .all([promUsers])
+            .then(([promUsers]) => {
+                return res.render('edit-event', { Movie, allGenres, allActors })
+            })
+            .catch(error => res.send(error))
+    },
+    
     cart: function (req, res) {
        return res.render("users/shopping-cart");
     },
