@@ -21,7 +21,8 @@ let productController = {
             const functions = await Functions.findAll();
             const tickets = await Tickets.findAll();
             const teaters = await Teaters.findAll();
-            return res.render('./products/all-products', {events, functions, tickets, teaters})
+            const categories = await Categories.findAll();
+            return res.render('./products/all-products', {events, functions, tickets, teaters, categories})
         } catch (error) {
             res.send(error)
         }
@@ -175,11 +176,14 @@ let productController = {
             
             return res.redirect('/products/all');
     },
-    delete: (req, res) => {
-		
-        const allProductsFilter = getProducts().filter(product => product.id != req.params.id);
+    delete: async (req, res) => {
+		try {
+       const eventId = req.params.id;
+        
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(allProductsFilter, null, ' '));
+        } catch (error) {
+            res.send(error)
+        }
 
 		return res.redirect('/products/all');
        
