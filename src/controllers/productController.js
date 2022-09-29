@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+
+const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require('sequelize');
 
@@ -70,7 +72,7 @@ let productController = {
         };
 
 		const newFunction = {
-            date: req.body.date1,
+            date: req.body.date,
             time: req.body.time,
             durationTime: req.body.durationTime,
             event_id: req.params.id
@@ -86,7 +88,10 @@ let productController = {
       await  Events.create(newEvent);
       await Functions.create(newFunction);
       await  Tickets.create(newTicket);
-            
+
+    // como hago para guardar diferentes funciones y 
+    // diferentes tickets?
+
           return res.redirect('/');  
     } 
     catch (error) {
@@ -113,8 +118,6 @@ let productController = {
                 });
             }
 
-            
-
                 return res.render('./products/edit-event', {Event, functions, eventTickets, teater} );
 
             
@@ -122,36 +125,54 @@ let productController = {
             res.send(error)
         }
     },
-    update: (req, res) => {
-        const indexProducto = getProducts().findIndex(element => element.id == req.params.id);
-        const products = getProducts();
+    update: async (req, res) => {
+        try{
+            const eventId = req.params.id;
+            const functions = await Functions.findAll({
+                where: {
+                    event_id: eventId
+                }}
+            );
 
-            products[indexProducto] = {
-            ...products[indexProducto],    
-            showType: req.body.showType,
-            artist: req.body.artist,
-            subtitle: req.body.subtitle,
-			description: req.body.description,
-			country: req.body.country,
-            state: req.body.state,
-			city: req.body.city,
-            direction : req.body.direction,
-			stage: req.body.stage,
-            direction: req.body.direction,
-            date1: req.body.date1,
-            hour1: req.body.hour1,
-            ticketType1: req.body.ticketType1,   
-            price1: req.body.price1,            
-            lot1: req.body.lot1,
-            category: req.body.category, 
-            linkMaps: req.body.linkMaps,
-            linkYT: req.body.linkYT,
-			image: req.file ? req.file.filename : req.body.oldImage
+            const eventToUpdate = {
+                showtype: req.body.showType,
+                artist: req.body.artist,
+                subtitle: req.body.subtitle,
+                description: req.body.description,
+                linkMaps: req.body.linkMaps,
+                linkYoutube: req.body.linkYT,
+                imageEvent:  req.file.filename, 
+                category_id: req.body.category,
+                teater_id: req.body.teater
+            };
+
+            const functionToUpdate = {
+                date: req.body.date,
+                time: req.body.time,
+                durationTime: req.body.durationTime
             }
 
-            let productModificarJson = JSON.stringify(products, null, ' ');
-            fs.writeFileSync(productsFilePath, productModificarJson);
+            // la idea acá es que: si el id de los datos a cambiar
+            // (porque si se muestran diferentes funciones ya de 
+            // por si tienen su propio id) es igual al id de alguna de las
+            //  funciones que contienen el mismo event_id que el evento 
+            // entonces me haga un update en el modelo donde los datos son los
+            // especificados en el functionToUpdate y el dónde o qué función 
+            // se lo de el id de la función que está dando la vuelta en el loop 
+            // (y que previamente verifiqué)
+            
+        for (let i = 0; i <= functions.length; i++){
+            if(functionToUpdate.id == functions[i].id){
+              return Functions.update(functionToUpdate, {where: {id: functions[i].id}})
+            }
+        }
 
+        Events.update(eventToUpdate, {where: { id: eventId}});
+
+        } catch (error){
+            res.send(error)
+        }
+            
             return res.redirect('/products/all');
     },
     delete: (req, res) => {
