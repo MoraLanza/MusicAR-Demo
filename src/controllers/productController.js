@@ -31,16 +31,20 @@ let productController = {
         try {
             const eventId = req.params.id;
             const Event = await Events.findByPk(eventId);
-            const teater = await Teaters.findAll();
+            const teater = await Teaters.findOne({
+                where: {
+                    id: Event.teater_id
+                }
+            });
             const functions = await Functions.findAll({
                 where: {
                     event_id: eventId
                 }}
             );
-            const eventTickets = [];
+            const functionTickets = [];
 
             for (let i = 0; i <= functions.length; i++){
-                eventTickets = await Tickets.findAll({
+                functionTickets = await Tickets.findAll({
                     where: {
                     function_id: functions[i].id
                     }
