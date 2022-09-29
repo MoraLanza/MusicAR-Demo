@@ -50,7 +50,7 @@ let productController = {
                     }
                 });
             }
-            return res.render('./products/product-detail', {Event, functions, eventTickets, teater});
+            return res.render('./products/product-detail', {Event, functions, functionTickets, teater});
         } catch (error) {
             res.send(error)
         }
