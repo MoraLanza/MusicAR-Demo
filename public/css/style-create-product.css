@@ -83,7 +83,7 @@ body {
 .titulo-principal-box .form-control{
     height: 55px;
     width: 100%;
-    max-width: 310px;
+    max-width: 600px;
     color: white;
     font-weight: 600;
 }
@@ -93,6 +93,7 @@ body {
     border: none;
     outline: none;
     border-bottom: 3px solid white;
+    font-size: 48px;
 }
 
 .titulo-principal-box .form-control::placeholder{

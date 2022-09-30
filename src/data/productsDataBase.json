@@ -58,9 +58,9 @@
   "image": "jackies-saddle.jpg"
  },
  {
-  "linkMaps": " ",
+  "linkMaps": "  ",
   "category": "Jazz",
-  "linkYT": " ",
+  "linkYT": "  ",
   "all": "all",
   "id": 3,
   "showType": "presencial",
@@ -72,12 +72,12 @@
   "city": "CABA",
   "stage": "Morrigan",
   "direction": "4123 Londonderry Center",
-  "date1": "14.01.2023                                 ",
+  "date1": "14.01.2023                                                                  ",
   "hour1": "7pm",
   "ticketType1": "Pullman",
   "price1": "4281",
   "lot1": "6",
-  "image": ""
+  "image": "image-1663028361170"
  },
  {
   "linkMaps": "",
@@ -167,7 +167,7 @@
   "image": "image-1662687784355",
   "category": "Jazz",
   "linkMaps": "         ",
-  "linkYT": "         "
+  "linkYT": "https://www.youtube.com/embed/OOWjbnWCYBM"
  },
  {
   "linkMaps": "",

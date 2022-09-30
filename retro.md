@@ -88,6 +88,7 @@
 
 ## Qué debemos mejorar? 
 - Estar más presentes en las reuniones/ no aplazarlas tanto.
+- Testear bien todo.
 
 ## Plan de acción para el siguiente sprint: 
 - Seguir abordando las tareas con anticipación.
