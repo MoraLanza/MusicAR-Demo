@@ -6,6 +6,8 @@ const sequelize = db.sequelize;
 
 
 const Users = db.User;
+const Citys = db.City;
+const Countries = db.Country;
 
 const { validationResult } = require('express-validator');
 
@@ -68,8 +70,17 @@ let userController = {
         return res.redirect('/');
     },
 
-    register: function (req, res) {
-       return res.render("users/register");
+    register: async function (req, res) {
+        try {
+            const countries = await Countries.findAll();
+            const citys = await Citys.findAll();
+           
+               return res.render("users/register", { countries, citys });
+        }
+           catch (error) {
+            res.send(error)
+           }
+
     },
     store: async function (req, res) {
        try {
@@ -105,6 +116,8 @@ let userController = {
             username: req.body.username,
             password: bcryptjs.hashSync(req.body.password, 10),
             imageUser: req.file ? req.file.filename : null,
+            role_id: 2,
+            city_id: req.body.city_id
         }
         let userCreated = await Users.create(userToCreate);
 

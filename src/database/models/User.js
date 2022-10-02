@@ -23,13 +23,13 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
-        roles_id: {
+        role_id: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
-        citys_id: {
+        city_id: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         imageUser: {
             type: dataTypes.BLOB,
@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = (models) => {
         User.belongsTo(models.City, {
             as: 'citys',
-            foreignKey: 'citys_id'
+            foreignKey: 'city_id'
         }),
 
         User.belongsTo(models.Role, {

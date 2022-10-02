@@ -111,6 +111,30 @@
 
                     <div class="item-input">
                         <div class="input-user">
+                            <label for="country_id">Elegí tu país* </label>
+                        </div>
+                        <select name="country_id" class="select-city">
+                            <% countries.forEach(country => { %>
+                             <option value="<%= country.id%>"> <%=country.countryName%></option>   
+                           <% }) %> 
+                           
+                        </select>
+                    </div>
+
+                    <div class="item-input">
+                        <div class="input-user">
+                            <label for="city_id">Elegí tu ciudad* </label>
+                        </div>
+                        <select name="city_id" class="select-city">
+                            <% citys.forEach(city => { %>
+                             <option value="<%= city.id%>"> <%=city.cityName%></option>   
+                           <% }) %> 
+                           
+                        </select>
+                    </div>
+
+                    <div class="item-input">
+                        <div class="input-user">
                             <label for="imageUser">Elija su foto de perfil*</label>
                         </div>
                             <input class="controls"  type="file" name="imageUser" id="imageUser"
