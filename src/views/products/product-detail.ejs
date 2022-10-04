@@ -13,14 +13,14 @@
             <main>
 
                 <section class="image-banner">
-                    <img src="/image/products/<%= product.image %>" alt="Imagen de Artista">
+                    <img src="/image/products/<%=event.imageEvent%>" alt="Imagen de Artista">
                     <div class="titulo-principal">
                         <div>
                             <h1>
-                                <%= product.artist %>
+                                <%= event.artist %>
                             </h1>
                             <p>
-                                <%= product.subtitle %>
+                                <%= event.subtitle %>
                             </p>
                         </div>
                         <div class="botones-titulo-principal">
@@ -52,12 +52,9 @@
                             <form class="function-form" action="/" method="GET">
 
                                 <select name="event-date">
-                                    <option value="funcion1">
-                                        <%= product.date1 %>
-                                    </option>
-                                    <option value="funcion2">Función 2</option>
-                                    <option value="funcion3">Función 3</option>
-                                    <option value="funcion4">Función 4</option>
+                                    <% functions.forEach(eventfunction => { %>
+                                        <option value="function_<%= eventfunction.id%>"> <%=eventfunction.date%> a las <%= eventfunction.time %> </option>   
+                                      <% }) %> 
                                 </select>
                             </form>
                         </div>
@@ -70,71 +67,25 @@
                             <hr class="line-localidades"> -->
                                 <table class="table">
                                     <tbody>
-
+                                        
+                                        <% tickets.forEach(ticket => { %>
+                                            <% if (functions[0].id == ticket.function_id) {%>  
                                         <tr class="super-pullman">
                                             <td>
                                                 <h4>
-                                                    <%= product.ticketType1%>
+                                                    <%= ticket.type %>
                                                 </h4>
 
-                                                <p>Fila 01 a 16</p>
+                                                <p>agregar descripcion a la db?</p>
                                             </td>
                                             <td></td>
                                             <td>$</td>
                                             <td class="precio">
-                                                <%=product.price1%>.-
+                                                <%=ticket.price%>.-
                                             </td>
-                                            <td class="color-superpullman"></td>
+                                            <!-- <td class="color-superpullman"></td> -->
                                         </tr>
-
-                                        <tr class="campo">
-                                            <td>
-                                                <h4>Campo</h4>
-
-                                                <p>De pie</p>
-                                            </td>
-                                            <td></td>
-                                            <td>$</td>
-                                            <td class="precio">4000.-</td>
-                                            <td class="color-campo"></td>
-                                        </tr>
-
-
-                                        <tr class="pullman-lateral">
-                                            <td>
-                                                <h4>Pullman Lateral</h4>
-
-                                                <p>Fila 01 a 16</p>
-                                            </td>
-                                            <td></td>
-                                            <td>$</td>
-                                            <td class="precio">3500.-</td>
-                                            <td class="color-pullmanlateral"></td>
-                                        </tr>
-
-                                        <tr class="cabecera">
-                                            <td>
-                                                <h4>Cabecera</h4>
-
-                                                <p>Sentado sin numerar</p>
-                                            </td>
-                                            <td></td>
-                                            <td>$</td>
-                                            <td class="precio">2000.-</td>
-                                            <td class="color-cabecera"></td>
-                                        </tr>
-
-                                        <tr class="silla-de-ruedas">
-                                            <td>
-                                                <h4>Silla de Ruedas</h4>
-
-                                                <p>Sector limitado</p>
-                                            </td>
-                                            <td></td>
-                                            <td>$</td>
-                                            <td class="precio">1000.-</td>
-                                            <td class="color-silla-ruedas"></td>
-                                        </tr>
+                                        <% }}) %> 
                                     </tbody>
                                 </table>
                             </div>
@@ -184,23 +135,23 @@
                         <div class="title-body">
                             <div class="description-title">
                                 <h4 class="title-event">
-                                    <%= product.artist%>
+                                    <%= event.artist%>
                                 </h4>
                                 <h5 class="subtitle-event-description">
-                                    <%= product.subtitle%>
+                                    <%= event.subtitle%>
                                 </h5>
 
                             </div>
                             <div class="description-body">
                                 <div class="description-text">
                                     <p>
-                                        <%= product.description%>
+                                        <%= event.description%>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="video-box">
-                            <iframe width="100%" height="380" src="<%=product.linkYT%>"
+                            <iframe width="100%" height="380" src="<%=event.linkYoutube%>"
                                 title="Carpa Delirio 2022" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
@@ -231,7 +182,7 @@
                             </div>
                         </div>
                         <div class="location-map">
-                           <%= product.linkMaps %> 
+                           <%= event.linkMaps %> 
                         </div>
                     </section>
                 </div>

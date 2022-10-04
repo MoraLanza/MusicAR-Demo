@@ -31,27 +31,32 @@ let productController = {
     detail: async (req, res) => {
         try {
             const eventId = req.params.id;
-            const Event = await Events.findByPk(eventId);
+            const event = await Events.findByPk(eventId);
+
             const teater = await Teaters.findOne({
                 where: {
-                    id: Event.teater_id
+                    id: event.teater_id
                 }
             });
             const functions = await Functions.findAll({
                 where: {
                     event_id: eventId
-                }}
-            );
-            const functionTickets = [];
-
-            for (let i = 0; i <= functions.length; i++){
-                functionTickets = await Tickets.findAll({
-                    where: {
-                    function_id: functions[i].id
-                    }
-                });
-            }
-            return res.render('./products/product-detail', {Event, functions, functionTickets, teater});
+                },
+                order: [
+                    ['date', 'ASC']
+                ]
+        });
+           const tickets = await Tickets.findAll({
+            where: {
+                event_id: eventId
+            },
+            order: [
+                ['price', 'ASC']
+            ]
+           });
+            
+            return res.render('./products/product-detail', {event, tickets, functions, teater});
+        
         } catch (error) {
             res.send(error)
         }
