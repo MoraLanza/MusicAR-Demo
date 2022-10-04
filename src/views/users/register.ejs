@@ -133,9 +133,10 @@
                         </select>
                     </div>
 
+                    
                     <div class="item-input">
                         <div class="input-user">
-                            <label for="imageUser">Elija su foto de perfil*</label>
+                            <label for="imageUser">Eligí tu foto de perfil*</label>
                         </div>
                             <input class="controls"  type="file" name="imageUser" id="imageUser"
                             value = "<%= locals.oldData ? oldData.imageUser : null %>"
@@ -146,6 +147,26 @@
                                 </div>
                                <% } %>  
                     </div>
+
+                    <div class="item-input">
+                        <div class="input-user">
+                            <label for="category_id">Elegí tu categoria preferida*</label>
+                        </div>
+                        <div class="selects">
+                        <select name="category_id" class="select-category">
+                            <% categories.forEach(category => { %>
+                             <option value="<%= category.id%>"> <%=category.name%></option>   
+                           <% }) %> 
+                        </select>
+
+                      
+                           <% if (locals.errors && errors.category_id) {%>
+                            <div class="error-text">
+                               <p><%= errors.category_id.msg %></p>  
+                            </div>
+                           <% } %>  
+                    </div>
+
                 </div>
                         
                 <div class="register-button">

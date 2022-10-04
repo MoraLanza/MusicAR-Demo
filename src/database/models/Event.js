@@ -38,12 +38,17 @@ module.exports = (sequelize, dataTypes) => {
          teater_id: {
             type: dataTypes.INTEGER,
             allowNull: false
+         },
+         city_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
          }
         
     };
 
     const config = {
-        tableName: 'events'
+        tableName: 'events',
+        timestamps: false
     };
 
     const Event = sequelize.define(alias, cols, config);

@@ -29,10 +29,14 @@ module.exports = (sequelize, dataTypes) => {
         },
         city_id: {
             type: dataTypes.INTEGER,
-            allowNull: true
+            allowNull: false
         },
         imageUser: {
             type: dataTypes.BLOB,
+            allowNull: false
+        },
+        category_id: {
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     }
@@ -53,8 +57,8 @@ module.exports = (sequelize, dataTypes) => {
         User.belongsTo(models.Role, {
             as: 'roles',
             foreignKey: 'role_id'
-        });
-    }
+        })
+    };
 
     return User;
 }

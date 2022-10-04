@@ -11,7 +11,7 @@
     </nav>
     <div class="contenedor-lista">
         <ul class="lista-opciones">
-            <% if (locals.isLogged) {%>
+            <% if (locals.isLogged && locals.userLogged.role_id == 1 ) {%>
                     <li>
                         <div class="dropdown">
                             <i class="fa-solid fa-pen-to-square"></i> 
@@ -24,19 +24,44 @@
                     </li>
                     <li> 
                         <div class="dropdown">
-                            <img class="userImage" src="../../../image/users/<%=locals.userLogged.imageUser %>">
-                            <p class="dropdown-title">Hola, <%= locals.userLogged.username%>!</p>
+                            <img class="userImage" src= <%=locals.userLogged.imageUser %>>
+                            <p class="dropdown-title">Hola, <%= locals.userLogged.name%>!</p>
                             <div class="item-container">
                                 <div class="item-text"><a class="boton-admin" href="">Perfil</a></div>
                                 <div class="item-text"><a class="boton-admin" href="/users/logout">Cerrar Sesión</a>                            
                             </div>
                         </div>
                     </li>
-                <% } else {%> 
+                <% } else if ((locals.isLogged && locals.userLogged.role_id == 2 )){%> 
+
+                    <li>
+                        <div class="dropdown">
+                            <i class="fa-solid fa-ticket"></i>
+                            <p class="dropdown-title">Mis tickets</p>
+                            <div class="item-container">
+                                <div class="item-text"><a class="boton-admin" href="">Compras</a></div>
+                                <div class="item-text"><a class="boton-admin" href=""> Devoluciones</a></div>                            
+                            </div>
+                        </div>
+                    </li>
+                    <li> 
+                        <div class="dropdown">
+                            <img class="userImage" src=<%=locals.userLogged.imageUser %>>
+                            <p class="dropdown-title">Hola, <%= locals.userLogged.name%>!</p>
+                            <div class="item-container">
+                                <div class="item-text"><a class="boton-admin" href="">Perfil</a></div>
+                                <div class="item-text"><a class="boton-admin" href="/users/logout">Cerrar Sesión</a>                            
+                            </div>
+                        </div>
+                    </li>
+                    
+            <% } else { %>  
+
                     <li><a class="boton-border" href="/users/login">Inicia Sesión</a></li>
                     <li><a class="boton-blanco" href="/users/register">Registrate</a></li>
                     <li><a class="icon-cart" href="/users/shopping-cart"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <% } %>  
+
+                <% } %> 
         </ul>
     </div>
 

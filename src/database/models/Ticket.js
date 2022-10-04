@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
-        shopping_cart_id: {
+        event_id: {
             type: dataTypes.INTEGER,
             allowNull: false
         }
@@ -40,13 +40,9 @@ module.exports = (sequelize, dataTypes) => {
         Ticket.belongsTo(models.Function, {
             as: 'functions',
             foreignKey: 'function_id'
-        }),
-
-        Ticket.belongsTo(models.ShoppingCart, {
-            as: 'shopping_cart',
-            foreignKey: 'shopping_cart_id'
-        });
+        })
     }
+    
 
     return Ticket;
 };

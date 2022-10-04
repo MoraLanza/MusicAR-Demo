@@ -148,7 +148,7 @@ ul.lista-opciones li {
     background-color: none;
     border: none ;
 }
-.fa-user-pen, .fa-pen-to-square{
+.fa-user-pen, .fa-pen-to-square, .fa-ticket{
     color: white;
     font-size: 30px;
     margin-right: 8px;

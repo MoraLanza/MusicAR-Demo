@@ -40,8 +40,9 @@ const registerValidationMiddleware = [
         }  
 
         return true;
-    })
-
+    }),
+    body('category_id').notEmpty().withMessage('Debe elegir una categoría.').bail()
+    
 ];
 
 module.exports = registerValidationMiddleware;

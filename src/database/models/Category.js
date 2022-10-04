@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
         Category.hasMany(models.Event, {
             as: 'events',
             foreignKey: 'category_id'
-        });
+        })
     }
 
     return Category;

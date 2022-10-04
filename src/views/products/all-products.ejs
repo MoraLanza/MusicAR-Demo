@@ -54,20 +54,20 @@
                 <hr class="line-title">
             </div>
             <div class="events-container">
-                <% all.forEach(element=> { %>
+                <% events.forEach(event=> { %>
                     <article class="article-container">
                         <div class="article-image">
-                            <a href="./detail/<%=element.id%>">
-                                <img src="/image/products/<%= element.image %> " alt="">
+                            <a href="./detail/<%=event.id%>">
+                                <img src="/image/products/<%= event.imageEvent %> " alt="">
                             </a>
                         </div>
 
                         <div class="article-title">
                             <h2>
-                                <%= element.artist %>
+                                <%= event.artist %>
                             </h2>
                             <h4>
-                                <%= element.subtitle %>
+                                <%= event.subtitle %>
                             </h4>
                         </div>
 
@@ -81,26 +81,40 @@
                             <div class="article-information-specific">
                                 <div class="event-date">
                                     <p>
-                                        <%= element.date1 %> a las <%= element.hour1 %>.
-                                    </p>
+                                        <% if (event.id === functions[0].event_id) {%>
+                                         <%= functions[0].date %>  a las <%= functions[0].time %>.
+                                         <% } %> 
+                                </p>
                                 </div>
                                 <div class="event-price">
-                                    <p>Desde $<%= element.price1 %>.-</p>
+                                    <p> 
+                                        <% if (event.id === tickets[0].event_id) {%>
+                                            Desde $<%= tickets[0].price %> .-
+                                            <% } %> 
+                                         
+                                    </p>
                                 </div>
                                 <div class="event-place">
                                     <p>
-                                        <%= element.stage %>, <%= element.city %>.
+                                        <% for( let i = 0; i < teaters.length; i++) {%>
+                                            <% if (event.teater_id === teaters[i].id) {%>
+                                                <%= teaters[i].name%>
+                                                <% }} %>,
+                                        <% for( let i = 0; i < citys.length; i++) {%>
+                                            <% if (event.city_id === citys[i].id) {%> 
+                                                <%= citys[i].cityName %>.
+                                                <% }} %>
                                     </p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="article-buttons">
-                            <form action="/products/delete/<%=element.id%>?_method=DELETE" method="POST">
+                            <form action="/products/delete/<%=event.id%>?_method=DELETE" method="POST">
                                 <button type="submit" class="delete-button">Eliminar</button>
                             </form>
                             
-                             <a class="update-button" href="/products/edit/<%= element.id%>" >Modificar</a>
+                             <a class="update-button" href="/products/edit/<%= event.id%>" >Modificar</a>
                             
 
                             </form>

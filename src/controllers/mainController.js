@@ -1,36 +1,71 @@
-const path = require('path');
-const fs = require('fs');
 const { localsName } = require('ejs');
+const db = require('../database/models');
+const sequelize = db.sequelize;
 
-const getProducts = () => {
-        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        return products;
-    };
+
+const Users = db.User;
+const Categories = db.Category;
+const Events = db.Event;
+const Citys = db.City;
+const Teaters = db.Teater;
+const Functions = db.Function;
+const Tickets = db.Ticket;
+
 
 let mainController = {
     index: async function (req, res) {
         try {
-            if (locals.isLogged){
+                  if(req.session.loggedIn){
+                // const userCategory = await Users.findOne({
+                //     where: {
+                //         category_id: locals.userLogged.category_id
+                //     }
+                // });
+               
+                //  const eventsUserCategory =  await Events.findAll({
+                //         where: {
+                //             category_id: userCategory.category_id
+                //         }
+                //     });
                 
-            }
-        res.render('index',{ } );
+                //     return res.render('index', { eventsUserCategory });
+                const allEvents = await Events.findAll();
+                
+                const functions = await Functions.findAll();
+                const teaters = await Teaters.findAll();
+                const citys = await Citys.findAll();
+                const tickets = await Tickets.findAll();
+                
+                return res.render('index', { allEvents, functions, teaters, citys, tickets});
+                  } else {
+
+                 const allEvents = await Events.findAll();
+                const functions = await Functions.findAll();
+                const teaters = await Teaters.findAll();
+                const citys = await Citys.findAll();
+                const tickets = await Tickets.findAll();
+                
+                return res.render('index', { allEvents, functions, teaters, citys, tickets});
+                }
+            
         } catch (error) {
             res.send(error)
         }
-       
+
     },
-    contact: function(req, res){
+    contact: function (req, res) {
         res.render('contact');
     },
-    faq: function(req, res){
+    faq: function (req, res) {
         res.render("faq");
     }
 }
 
 module.exports = mainController;
 
-
+// const path = require('path');
+// const fs = require('fs');
+// const { localsName } = require('ejs');
 
 // const getProducts = () => {
 //     const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');

@@ -8,6 +8,8 @@ const sequelize = db.sequelize;
 const Users = db.User;
 const Citys = db.City;
 const Countries = db.Country;
+const Categories = db.Category;
+const UserCategories = db.UserCategory;
 
 const { validationResult } = require('express-validator');
 
@@ -74,8 +76,9 @@ let userController = {
         try {
             const countries = await Countries.findAll();
             const citys = await Citys.findAll();
+            const categories = await Categories.findAll();
            
-               return res.render("users/register", { countries, citys });
+               return res.render("users/register", {countries, citys, categories});
         }
            catch (error) {
             res.send(error)
@@ -87,9 +90,17 @@ let userController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
+
+            const countries = await Countries.findAll();
+            const citys = await Citys.findAll();
+            const categories = await Categories.findAll();
+
             return res.render('users/register', {
                 errors: resultValidation.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                countries,
+                citys,
+                categories
             });
         }
         let userInDB = await Users.findOne({
@@ -117,9 +128,12 @@ let userController = {
             password: bcryptjs.hashSync(req.body.password, 10),
             imageUser: req.file ? req.file.filename : null,
             role_id: 2,
-            city_id: req.body.city_id
+            city_id: req.body.city_id,
+            category_id: req.body.category_id
         }
-        let userCreated = await Users.create(userToCreate);
+
+        await Users.create(userToCreate);
+
 
         return  res.redirect('/');
 

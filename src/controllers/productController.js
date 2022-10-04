@@ -22,7 +22,8 @@ let productController = {
             const tickets = await Tickets.findAll();
             const teaters = await Teaters.findAll();
             const categories = await Categories.findAll();
-            return res.render('./products/all-products', {events, functions, tickets, teaters, categories})
+            const citys = await Citys.findAll();
+            return res.render('./products/all-products', {events, functions, tickets, teaters, categories, citys})
         } catch (error) {
             res.send(error)
         }
@@ -182,14 +183,13 @@ let productController = {
     },
     delete: async (req, res) => {
 		try {
-       const eventId = req.params.id;
-        
+            const eventId = req.params.id;
+            await Events.destroy({where: {id: eventId}})
+            return res.redirect('/products/all');
 
         } catch (error) {
             res.send(error)
         }
-
-		return res.redirect('/products/all');
        
 	}
 
