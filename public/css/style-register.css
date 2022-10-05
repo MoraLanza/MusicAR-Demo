@@ -63,7 +63,7 @@ main.fondoImagen {
 }
 
 
-.controls {
+.controls, .select-city, .select-category {
     width: 100%;
     border-radius: 7px;
     margin-bottom: 5px;
@@ -91,6 +91,14 @@ main.fondoImagen {
 .register-button button:hover {
     background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
 }
+
+.selects {
+    display: flex;
+}
+ 
+/* .select-category {
+    margin-right: 10px;
+} */
 
 @media (max-width: 767px) {
     .name-and-surname {

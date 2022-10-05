@@ -52,19 +52,19 @@
                 </div>
                 <div class="users">
 
-                    <div class="item-input">
+                    <!-- <div class="item-input">
                         <div class="input-user">
                             <label for="username">Usuario* </label>
                         </div>
                         <input  type="text" name="username" id="username"
-                        class="controls  <%= locals.errors && errors.username ? 'is-invalid': null  %> " 
-                        value = "<%= locals.oldData ? oldData.username : null %>">
-                        <% if (locals.errors && errors.username) {%>
+                        class="controls  " 
+                        value = "">
+                       
                             <div class="error-text">
-                               <p><%= errors.username.msg %> </p> 
+                               <p> </p> 
                             </div>
-                           <% } %>  
-                    </div>
+                          
+                    </div> -->
 
                     <div class="item-input">
                         <div class="input-user">
@@ -111,7 +111,32 @@
 
                     <div class="item-input">
                         <div class="input-user">
-                            <label for="imageUser">Elija su foto de perfil*</label>
+                            <label for="country_id">Elegí tu país* </label>
+                        </div>
+                        <select name="country_id" class="select-city">
+                            <% countries.forEach(country => { %>
+                             <option value="<%= country.id%>"> <%=country.countryName%></option>   
+                           <% }) %> 
+                           
+                        </select>
+                    </div>
+
+                    <div class="item-input">
+                        <div class="input-user">
+                            <label for="city_id">Elegí tu ciudad* </label>
+                        </div>
+                        <select name="city_id" class="select-city">
+                            <% citys.forEach(city => { %>
+                             <option value="<%= city.id%>"> <%=city.cityName%></option>   
+                           <% }) %> 
+                           
+                        </select>
+                    </div>
+
+                    
+                    <div class="item-input">
+                        <div class="input-user">
+                            <label for="imageUser">Eligí tu foto de perfil*</label>
                         </div>
                             <input class="controls"  type="file" name="imageUser" id="imageUser"
                             value = "<%= locals.oldData ? oldData.imageUser : null %>"
@@ -122,6 +147,19 @@
                                 </div>
                                <% } %>  
                     </div>
+
+                    <div class="item-input">
+                        <div class="input-user">
+                            <label for="category_id">Elegí tu categoria preferida*</label>
+                        </div>
+                        <div class="selects">
+                        <select name="category_id" class="select-category">
+                            <% categories.forEach(category => { %>
+                             <option value="<%= category.id%>"> <%=category.name%></option>   
+                           <% }) %> 
+                        </select>
+                    </div>
+
                 </div>
                         
                 <div class="register-button">
@@ -139,7 +177,6 @@
 
     <%- include('../partials/footer') %>
 
-    <include src="/part-header.html"></include>
 
 
 </body>

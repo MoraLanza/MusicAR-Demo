@@ -11,7 +11,7 @@
     <%- include('./partials/header') %>
 
         <div class="slider-home col-12">
-            <img src="image/home/slider-home.png" width="100%" alt="Slider Home">
+            <img src="/image/home/slider-home.png" width="100%" alt="Slider Home">
         </div>
         <!-- Sección Buscador -->
 
@@ -47,87 +47,30 @@
         </div>
         <!-- FIN -- Sección Buscador -->
         <!-- Sección Destacados -->
-        <section class="section-events">
-            
-            <div class="section-title col-12">
-                <h2>Destacados</h2>
-                <hr class="line-title">
-            </div>
-            <div class="events-container">
-                <% featured.forEach(element=> { %>
-                    <article class="article-container"> 
-                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
-                            <div class="article-image">
-                                    <img src="/image/products/<%= element.image %> " alt="">
-                            </div>
 
-                            <div class="article-title">
-                                <h2>
-                                    <%= element.artist %>
-                                </h2>
-                                <h4>
-                                    <%= element.subtitle %>
-                                </h4>
-                            </div>
-
-                            <div class="article-information-general">
-                                <div class="icons">
-                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                                <div class="article-information-specific">
-                                    <div class="event-date">
-                                        <p>
-                                            <%= element.date1 %> a las <%= element.hour1 %>.
-                                        </p>
-                                    </div>
-                                    <div class="event-price">
-                                        <p>Desde $<%= element.price1 %>.-</p>
-                                    </div>
-                                    <div class="event-place">
-                                        <p>
-                                            <%= element.stage %>, <%= element.city %>.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="article-buttons">
-                                <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                                <a href="" class="buy-button">Comprar ahora</a>
-                            </div>
-                        </article>
-
-                    <% }) %>      
-            </div>
-    </section>
-        <!-- FIN -- Sección Destacados -->
-        <br>
-        <br>
-        <!-- Sección Lo más buscado-->
-        <section class="section-events">
+        <% if (locals.isLogged) {%> 
+        
+            <section class="section-events">
             
                 <div class="section-title col-12">
-                    <h2>Lo más buscado</h2>
+                    <h2>Destacados</h2>
                     <hr class="line-title">
                 </div>
 
                 <div class="events-container">
-                    <% searched.forEach(element=> { %>
+                    <% allEvents.forEach(event=> { %>
                         <article class="article-container">
-                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
+                            <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                             <div class="article-image">
-                                    <img src="/image/products/<%= element.image %> " alt="">
+                                    <img src="/image/products/<%= event.imageEvent %> " alt="">
                             </div>
 
                             <div class="article-title">
                                 <h2>
-                                    <%= element.artist %>
+                                    <%= event.artist %>
                                 </h2>
                                 <h4>
-                                    <%= element.subtitle %>
+                                    <%= event.subtitle %>
                                 </h4>
                             </div>
 
@@ -141,15 +84,29 @@
                                 <div class="article-information-specific">
                                     <div class="event-date">
                                         <p>
-                                            <%= element.date1 %> a las <%= element.hour1 %>.
+                                                <% if (event.id === functions[0].event_id) {%>
+                                                 <%= functions[0].date %>  a las <%= functions[0].time %>.
+                                                 <% } %> 
                                         </p>
                                     </div>
                                     <div class="event-price">
-                                        <p>Desde $<%= element.price1 %>.-</p>
+                                        <p> 
+                                            <% if (event.id === tickets[0].event_id) {%>
+                                                Desde $<%= tickets[0].price %> .-
+                                                <% } %> 
+                                             
+                                        </p>
                                     </div>
                                     <div class="event-place">
                                         <p>
-                                            <%= element.stage %>, <%= element.city %>.
+                                            <% for( let i = 0; i < teaters.length; i++) {%>
+                                                <% if (event.teater_id === teaters[i].id) {%>
+                                                    <%= teaters[i].name%>
+                                                    <% }} %>,
+                                            <% for( let i = 0; i < citys.length; i++) {%>
+                                                <% if (event.city_id === citys[i].id) {%> 
+                                                    <%= citys[i].cityName %>.
+                                                    <% }} %>
                                         </p>
                                     </div>
                                 </div>
@@ -160,33 +117,42 @@
                                 <a href="" class="buy-button">Comprar ahora</a>
                             </div>
                         </article>
+
                         <% }) %>    
                 </div>
         </section>
-        <!-- FIN -- Sección Lo más buscado -->
+        
         <br>
         <br>
-        <!-- Sección seleccionado para vos-->
+
+           
+
+        <% } else {%> 
+        
+        <br>
+        <br>
+        
         <section class="section-events">
             
                 <div class="section-title col-12">
-                    <h2>Seleccionado para vos</h2>
+                    <h2>Destacados</h2>
                     <hr class="line-title">
                 </div>
+
                 <div class="events-container">
-                    <% selected.forEach(element=> { %>
+                    <% allEvents.forEach(event=> { %>
                         <article class="article-container">
-                            <a href="/products/detail/<%=element.id%>" class="article-container-link"></a>
+                            <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                             <div class="article-image">
-                                    <img src="/image/products/<%= element.image %> " alt="">
+                                    <img src="/image/products/<%= event.image %> " alt="">
                             </div>
 
                             <div class="article-title">
                                 <h2>
-                                    <%= element.artist %>
+                                    <%= event.artist %>
                                 </h2>
                                 <h4>
-                                    <%= element.subtitle %>
+                                    <%= event.subtitle %>
                                 </h4>
                             </div>
 
@@ -200,15 +166,29 @@
                                 <div class="article-information-specific">
                                     <div class="event-date">
                                         <p>
-                                            <%= element.date1 %> a las <%= element.hour1 %>.
+                                                <% if (event.id === functions[0].event_id) {%>
+                                                 <%= functions[0].date %>  a las <%= functions[0].time %>.
+                                                 <% } %> 
                                         </p>
                                     </div>
                                     <div class="event-price">
-                                        <p>Desde $<%= element.price1 %>.-</p>
+                                        <p> 
+                                            <% if (event.id === tickets[0].event_id) {%>
+                                                Desde $<%= tickets[0].price %> .-
+                                                <% } %> 
+                                             
+                                        </p>
                                     </div>
                                     <div class="event-place">
                                         <p>
-                                            <%= element.stage %>, <%= element.city %>.
+                                            <% for( let i = 0; i < teaters.length; i++) {%>
+                                                <% if (event.teater_id === teaters[i].id) {%>
+                                                    <%= teaters[i].name%>
+                                                    <% }} %>,
+                                            <% for( let i = 0; i < citys.length; i++) {%>
+                                                <% if (event.city_id === citys[i].id) {%> 
+                                                    <%= citys[i].cityName %>.
+                                                    <% }} %>
                                         </p>
                                     </div>
                                 </div>
@@ -219,13 +199,15 @@
                                 <a href="" class="buy-button">Comprar ahora</a>
                             </div>
                         </article>
-                        <% }) %>
+
+                        <% }) %>    
                 </div>
-           
         </section>
-        <!-- FIN -- Sección Lo más buscado -->
+        <% } %> 
         <br>
         <br>
+
+
         <%- include('./partials/footer') %>
 
 </body>
