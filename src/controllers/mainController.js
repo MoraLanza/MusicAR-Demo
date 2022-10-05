@@ -16,6 +16,7 @@ let mainController = {
     index: async function (req, res) {
         try {
                   if(req.session.loggedIn){
+                    // console.log(req.cookies.userEmail)
                 // const userCategory = await Users.findOne({
                 //     where: {
                 //         category_id: locals.userLogged.category_id
@@ -30,7 +31,6 @@ let mainController = {
                 
                 //     return res.render('index', { eventsUserCategory });
                 const allEvents = await Events.findAll();
-                
                 const functions = await Functions.findAll();
                 const teaters = await Teaters.findAll();
                 const citys = await Citys.findAll();
@@ -58,6 +58,9 @@ let mainController = {
     },
     faq: function (req, res) {
         res.render("faq");
+    }, 
+    searchBar: function (req, res) {
+        
     }
 }
 

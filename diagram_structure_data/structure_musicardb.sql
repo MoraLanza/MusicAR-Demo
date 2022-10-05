@@ -124,3 +124,11 @@ foreign key (city_id) references citys(id);
 ALTER TABLE users
 ADD COLUMN category_id 	INT,
 ADD FOREIGN KEY (category_id) REFERENCES categories(id);
+
+alter table events 
+add column state_id INT,
+ADD FOREIGN KEY (state_id) REFERENCES states(id); 
+
+alter table events 
+add column country_id INT,
+ADD FOREIGN KEY (country_id) REFERENCES  country(id); 

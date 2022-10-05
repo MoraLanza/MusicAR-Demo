@@ -119,17 +119,12 @@ let productController = {
                     event_id: eventId
                 }}
             );
-            const eventTickets = [];
-
-            for (let i = 0; i <= functions.length; i++){
-                eventTickets = await Tickets.findAll({
-                    where: {
-                    function_id: functions[i].id
-                    }
-                });
-            }
-
-                return res.render('./products/edit-event', {Event, functions, eventTickets, teater} );
+            const tickets = await Tickets.findAll({
+                where: {
+                    event_id: eventId
+                }
+            })
+                return res.render('./products/edit-event', {Event, functions, tickets, teater} );
 
             
         } catch (error) {
@@ -188,6 +183,7 @@ let productController = {
     },
     delete: async (req, res) => {
 		try {
+        // agregar delete de sus funciones y de sus tickets
             const eventId = req.params.id;
             await Events.destroy({where: {id: eventId}})
             return res.redirect('/products/all');

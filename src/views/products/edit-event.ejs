@@ -14,26 +14,26 @@
         <section class="section-form-event-create">
             <form action="/products/update/<%=product.id%>?_method=PUT" method="POST" class="form-crear-evento" enctype="multipart/form-data">
                 <div class="image-banner no-charged"
-                    style="background-image: url(/image/products/<%=product.image%>);">
+                    style="background-image: url(/image/products/<%=event.imageEvent%>);">
                     <div class="titulo-principal-box">
                         <div class="form-group event-principal-title">
                             <label for="event-title">
                                 <input class="form-control" type="text" id="event-title" maxlength="50"
-                                    name="artist" value="<%= product.artist%>">
+                                    name="artist" value="<%= event.artist%>">
                                 <i class="fa-solid fa-pen"></i>
                             </label>
                         </div>
                         <div class="form-group">
                             <label for="event-description">
                                 <input class="form-control" type="text" id="event-description" maxlength="150"
-                                    name="event-description" value="<%= product.subtitle%>">
+                                    name="event-description" value="<%= event.subtitle%>">
                                 <i class="fa-solid fa-pen"></i>
                             </label>
                         </div>
                     </div>
                     <div class="btn-img-box">
                         <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i></label>
-                        <input type="hidden" name="oldImage" value="<%= product.image %>" >
+                        <input type="hidden" name="oldImage" value="<%= event.imageEvent %>" >
                         <input type="file" name="image" id="image" class="form-input" >
                     </div>
                 </div>
@@ -49,36 +49,37 @@
                             <div class="form-group">
                                 <label for="showType">Tipo de Show*</label>
                                 <select class="form-control" name="showType" id="showType">
-                                    <option value="presencial" <%= product.showType == "Presencial" ? 'selected' : null%>>Presencial</option>
-                                    <option value="virtual" <%= product.showType == "Virtual" ? 'selected' : null%>>Virtual</option>
+                                    <option value="presencial" <%= event.showtype == "Presencial" ? 'selected' : null%>>Presencial</option>
+                                    <option value="virtual" <%= event.showtype == "Virtual" ? 'selected' : null%>>Virtual</option>
                                 </select>
                             </div>
                             <div class="form-group link-maps">
                                 <label for="linkMaps">Link de Maps*</label>
-                                <input class="form-control" type="text" name="linkMaps" id="linkMaps" value="<%= product.linkMaps %> ">
+                                <input class="form-control" type="text" name="linkMaps" id="linkMaps" value="<%= event.linkMaps %> ">
                             </div>
                             <div class="form-group stage">
                                 <label for="stage">Teatro o lugar*</label>
-                                <input class="form-control" type="text" name="stage" id="stage" value="<%=product.stage %>">
+                                <input class="form-control" type="text" name="stage" id="stage" value="<%=event.teater_id %>">
                             </div>
                         </div>
                         <div class="inputs-row">
                             <div class="form-group">
                                 <label for="country">País*</label>
+                                
                                 <select class="form-control" name="country" id="country">
-                                    <option value="Argentina" <%= product.country == "Argentina" ? 'selected' : null%>>Argentina</option>
+                                    <option value="Argentina" <%= event.country_id == "Argentina" ? 'selected' : null%>>Argentina</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="state">Provincia*</label>
                                 <select class="form-control" name="state" id="state">
-                                    <option value="Buenos Aires" <%= product.country == "Buenos Aires" ? 'selected' : null%>>Buenos Aires</option>
+                                    <option value="Buenos Aires" <%= events.state_id == "Buenos Aires" ? 'selected' : null%>>Buenos Aires</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="city">Ciudad*</label>
                                 <select class="form-control" name="city" id="city">
-                                    <option value="CABA"<%= product.city == "CABA" ? 'selected' : null%>>CABA</option>
+                                    <option value="CABA"<%= event.city_id == "CABA" ? 'selected' : null%>>CABA</option>
                                 </select>
                             </div>
                             <div class="form-group">

@@ -11,9 +11,6 @@ const registerValidationMiddleware = [
     body('email').notEmpty().withMessage('Debe ingresar un e-mail.').bail()
     .isEmail().withMessage('Debe ingresar un email valido.'),
 
-    body('username').notEmpty().withMessage('Debe ingresar un nombre de usuario.').bail()
-    .isLength({min: 5, max: 16}).withMessage('El nombre de usuario debe tener mínimo 5 caracteres, máximo 16.'),
-
     body('password').notEmpty().withMessage('Debe ingresar una contraseña.').bail()
     .isLength({min: 8, max: 16}).withMessage('La contraseña debe tener mínimo 8 caracteres, máximo 16.'),
 
@@ -40,8 +37,8 @@ const registerValidationMiddleware = [
         }  
 
         return true;
-    }),
-    body('category_id').notEmpty().withMessage('Debe elegir una categoría.').bail()
+    })
+    // body('category_id').notEmpty().withMessage('Debe elegir una categoría.').bail()
     
 ];
 

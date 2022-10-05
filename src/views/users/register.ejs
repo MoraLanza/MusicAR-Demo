@@ -158,13 +158,6 @@
                              <option value="<%= category.id%>"> <%=category.name%></option>   
                            <% }) %> 
                         </select>
-
-                      
-                           <% if (locals.errors && errors.category_id) {%>
-                            <div class="error-text">
-                               <p><%= errors.category_id.msg %></p>  
-                            </div>
-                           <% } %>  
                     </div>
 
                 </div>
@@ -184,7 +177,6 @@
 
     <%- include('../partials/footer') %>
 
-    <include src="/part-header.html"></include>
 
 
 </body>

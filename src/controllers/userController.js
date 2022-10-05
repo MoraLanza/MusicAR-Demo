@@ -124,7 +124,6 @@ let userController = {
             name: req.body.name,
             lastName: req.body.lastName,
             email: req.body.email,
-            username: req.body.username,
             password: bcryptjs.hashSync(req.body.password, 10),
             imageUser: req.file ? req.file.filename : null,
             role_id: 2,
@@ -132,12 +131,14 @@ let userController = {
             category_id: req.body.category_id
         }
 
-        await Users.create(userToCreate);
+    
+       const userCreated = await Users.create(userToCreate);
 
 
         return  res.redirect('/');
 
     } catch (error) {
+
         res.send(error)
     }
     }
