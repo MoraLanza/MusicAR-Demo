@@ -82,9 +82,6 @@ INSERT INTO countrys (id, countryName)
 VALUES (DEFAULT, 'Uruguay');
 
 
-select *
-from states;
-
 INSERT INTO states (id, stateName, country_id)
 VALUES (DEFAULT, 'Buenos Aires', 1);
 
@@ -178,4 +175,5 @@ VALUES (DEFAULT, 2,  8);
 INSERT INTO user_category (id, user_id, category_id)
 VALUES (DEFAULT, 2,  18);
 
+select * from events;
 

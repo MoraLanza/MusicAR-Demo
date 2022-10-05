@@ -1,4 +1,4 @@
-CREATE DATABASE musicardb;
+CREATE DATABASE musicar_db;
 CREATE TABLE users (
 id INT PRIMARY KEY auto_increment,
 name VARCHAR(45) NOT NULL,
@@ -131,4 +131,4 @@ ADD FOREIGN KEY (state_id) REFERENCES states(id);
 
 alter table events 
 add column country_id INT,
-ADD FOREIGN KEY (country_id) REFERENCES  country(id); 
+ADD FOREIGN KEY (country_id) REFERENCES countrys(id); 

@@ -15,39 +15,29 @@ const Tickets = db.Ticket;
 let mainController = {
     index: async function (req, res) {
         try {
-                  if(req.session.loggedIn){
-                    // console.log(req.cookies.userEmail)
-                // const userCategory = await Users.findOne({
-                //     where: {
-                //         category_id: locals.userLogged.category_id
-                //     }
-                // });
-               
-                //  const eventsUserCategory =  await Events.findAll({
-                //         where: {
-                //             category_id: userCategory.category_id
-                //         }
-                //     });
-                
-                //     return res.render('index', { eventsUserCategory });
-                const allEvents = await Events.findAll();
-                const functions = await Functions.findAll();
-                const teaters = await Teaters.findAll();
-                const citys = await Citys.findAll();
-                const tickets = await Tickets.findAll();
-                
-                return res.render('index', { allEvents, functions, teaters, citys, tickets});
-                  } else {
+            let allEvents; 
+            const functions = await Functions.findAll();
+            const teaters = await Teaters.findAll();
+            const citys = await Citys.findAll();
+            const tickets = await Tickets.findAll();
 
-                 const allEvents = await Events.findAll();
-                const functions = await Functions.findAll();
-                const teaters = await Teaters.findAll();
-                const citys = await Citys.findAll();
-                const tickets = await Tickets.findAll();
-                
-                return res.render('index', { allEvents, functions, teaters, citys, tickets});
-                }
             
+            if (req.session.userLogged) {
+
+                 allEvents = await Events.findAll({
+                        where: {
+                            category_id: req.session.userLogged.category_id
+                        }
+                    });
+
+            } else {
+
+                 allEvents = await Events.findAll();
+
+                
+            }
+            return res.render('index', { allEvents, functions, teaters, citys, tickets });
+
         } catch (error) {
             res.send(error)
         }
@@ -58,9 +48,9 @@ let mainController = {
     },
     faq: function (req, res) {
         res.render("faq");
-    }, 
+    },
     searchBar: function (req, res) {
-        
+
     }
 }
 
