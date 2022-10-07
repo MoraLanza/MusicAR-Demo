@@ -98,11 +98,11 @@
                                 <div class="inputs-row functionsRow" id="functionsRow">
                                     <div class="form-group date1">
                                         <label for="date1">Fecha de función*</label>
-                                        <input class="form-control" type="date" name="date1" id="date1" required>
+                                        <input class="form-control" type="date" name="date[]" required>
                                     </div>
                                     <div class="form-group hour1">
                                         <label for="hour1">Horario de inicio*</label>
-                                        <select class="form-control" name="hour1" id="hour1" required>
+                                        <select class="form-control" name="hour[]" required>
                                             <option value="7pm">7:00 pm</option>
                                             <option value="8pm">8:00 pm</option>
                                             <option value="9pm">9:00 pm</option>
@@ -241,14 +241,14 @@
                         console.log('Holaaa');
 
                         
-                        const inputsFunctions = newFunctionInputs.querySelectorAll('[name]');
+                        // const inputsFunctions = newFunctionInputs.querySelectorAll('[name]');
                         
-                        const totalFunctionsRows = document.querySelectorAll('.functionsRow');
+                        // const totalFunctionsRows = document.querySelectorAll('.functionsRow');
 
-                        const functionNumber = totalFunctionsRows.length + 1;  
+                        // const functionNumber = totalFunctionsRows.length + 1;  
                         
-                        inputsFunctions[0].name = "date" + functionNumber;
-                        inputsFunctions[1].name = "hour" + functionNumber;
+                        // inputsFunctions[0].name = "date" + functionNumber;
+                        // inputsFunctions[1].name = "hour" + functionNumber;
                         
                         functionsBoxSelector.appendChild(newFunctionInputs);
                     })    
