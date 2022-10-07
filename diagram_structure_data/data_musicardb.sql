@@ -102,16 +102,16 @@ INSERT INTO citys (id, cityName, state_id)
 VALUES (DEFAULT, 'CABA', 1);
 
 INSERT INTO citys (id, cityName, state_id)
-VALUES (DEFAULT, 'Bogotá', 7);
+VALUES (DEFAULT, 'Bogotá', 2);
 
 INSERT INTO citys (id, cityName, state_id)
-VALUES (DEFAULT, 'Montevideo', 6);
+VALUES (DEFAULT, 'Montevideo', 3);
 
 INSERT INTO citys (id, cityName, state_id)
-VALUES (DEFAULT, 'Ciudad de México', 8);
+VALUES (DEFAULT, 'Ciudad de México', 4);
 
 INSERT INTO citys (id, cityName, state_id)
-VALUES (DEFAULT, 'Asunción', 9);
+VALUES (DEFAULT, 'Asunción', 5);
 
 
 
@@ -142,23 +142,23 @@ VALUES (DEFAULT,
  1);
  
 INSERT INTO functions (id, date, durationTime, event_id, time)
-VALUES (DEFAULT, '2022-11-26', '2:00:00', 3, '20:30:00');
+VALUES (DEFAULT, '2022-11-26', '2:00:00', 1, '20:30:00');
 
 INSERT INTO functions (id, date, durationTime, event_id, time)
-VALUES (DEFAULT, '2022-12-10', '2:00:00', 3, '20:30:00');
+VALUES (DEFAULT, '2022-12-10', '2:00:00', 1, '20:30:00');
 
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 500, 'Entrada general', 30, 4, 3);
+VALUES (DEFAULT, 500, 'Entrada general', 30, 3, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 1000, 'Entrada vip', 10, 4, 3);
+VALUES (DEFAULT, 1000, 'Entrada vip', 10, 3, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 500, 'Entrada general', 30, 5, 3);
+VALUES (DEFAULT, 500, 'Entrada general', 30, 2, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 1000, 'Entrada vip', 10, 5, 3);
+VALUES (DEFAULT, 1000, 'Entrada vip', 10, 2, 1);
 
 
 INSERT INTO user_category (id, user_id, category_id)
@@ -175,5 +175,8 @@ VALUES (DEFAULT, 2,  8);
 INSERT INTO user_category (id, user_id, category_id)
 VALUES (DEFAULT, 2,  18);
 
-select * from events;
+select * from users;
 
+update users 
+set role_id = 1
+where id = 1;

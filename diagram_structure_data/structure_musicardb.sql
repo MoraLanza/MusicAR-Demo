@@ -105,7 +105,7 @@ ADD FOREIGN KEY (category_id) REFERENCES categories(id),
 ADD FOREIGN KEY (teater_id) REFERENCES teaters(id);
 
 ALTER TABLE functions
-ADD COLUMN time TIME NOT NULL;
+MODIFY COLUMN time TIME NOT NULL;
 
 ALTER TABLE tickets 
 ADD COLUMN event_id INT NOT NULL,
