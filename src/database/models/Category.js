@@ -24,6 +24,10 @@ module.exports = (sequelize, dataTypes) => {
         Category.hasMany(models.Event, {
             as: 'events',
             foreignKey: 'category_id'
+        }),
+        Category.hasMany(models.User, {
+            as: 'users',
+            foreignKey: 'category_id'
         })
     }
 

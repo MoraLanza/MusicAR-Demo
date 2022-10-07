@@ -15,6 +15,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false
         },
+        linkMaps: {
+            type: dataTypes.TEXT,
+            allowNull: false
+         },
         
         city_id: {
             type: dataTypes.INTEGER,
