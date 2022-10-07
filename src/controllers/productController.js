@@ -75,7 +75,7 @@ let productController = {
 			description: req.body.description,
             linkMaps: req.body.linkMaps,
             linkYoutube: req.body.linkYT,
-			imageEvent:  req.file.filename, 
+			imageEvent:  req.file?.filename, 
 		    category_id: req.body.category,
             teater_id: req.body.teater,
 			// country: req.body.country,
@@ -83,6 +83,8 @@ let productController = {
 			// city: req.body.city,
             // direction : req.body.direction,
         };
+
+       
 
 		const newFunction = {
             date: req.body.date,
@@ -98,9 +100,20 @@ let productController = {
             function_id: newFunction.id
         };
 
-      await  Events.create(newEvent);
-      await Functions.create(newFunction);
-      await  Tickets.create(newTicket);
+      const eventCreated =  await  Events.create(newEvent);
+
+      const functions = [];
+
+      req.body.date?.forEach((date, index) => {          
+          functions.push({
+            date, 
+            time: req.body.hour[index],
+            event_id: eventCreated.id
+        });
+      });
+      
+    //   await Functions.create(newFunction);
+    //   await  Tickets.create(newTicket);
 
     // como hago para guardar diferentes funciones y 
     // diferentes tickets?

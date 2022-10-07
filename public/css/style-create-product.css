@@ -51,6 +51,10 @@ body {
     padding: 0 65px 80px 0;
 }
 
+.add-btn-box{
+    margin-bottom: 30px;
+}
+
 .btn-edit-banner{
     background-color: transparent;
     color: white;
@@ -105,6 +109,18 @@ body {
 
 .event-principal-title{
     margin-bottom: 20px;
+}
+
+.btnDeleteInput{
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+    display: flex;
+    align-self: end;
+    margin-bottom: 5px;
 }
 
 #event-title{

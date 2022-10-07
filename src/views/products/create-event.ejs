@@ -85,16 +85,24 @@
                             <hr class="divider-forms-box">
                         </div>
                         <div class="form-data-box function-form">
-                            <h4 class="form-data-box-title">Fecha de función/es</h4>
-                            <div class="form box-white">
-                                <div class="inputs-row">
+                            <div>
+                                <h4 class="form-data-box-title">Fecha de función/es</h4>
+                                <div class="add-btn-box">
+                                    <button class="btn-add-show addFunction" type="button" id="addFunction">
+                                        <i class="fa-solid fa-plus"></i>
+                                        Añadir una función
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form box-white functionBoxWhite" id="functionBoxWhite">
+                                <div class="inputs-row functionsRow" id="functionsRow">
                                     <div class="form-group date1">
                                         <label for="date1">Fecha de función*</label>
-                                        <input class="form-control" type="date" name="date1" id="date1" required>
+                                        <input class="form-control" type="date" name="date[]" required>
                                     </div>
                                     <div class="form-group hour1">
                                         <label for="hour1">Horario de inicio*</label>
-                                        <select class="form-control" name="hour1" id="hour1" required>
+                                        <select class="form-control" name="hour[]" required>
                                             <option value="7pm">7:00 pm</option>
                                             <option value="8pm">8:00 pm</option>
                                             <option value="9pm">9:00 pm</option>
@@ -104,16 +112,7 @@
                                             <option value="1am">1:00 am</option>
                                         </select>
                                     </div>
-                                    <!-- <div class="form-group">
-                                <label for="show-type">Horario de finalización*</label>
-                                <input class="form-control" type="number" name="" id="">
-                            </div> -->
-                                    <div>
-                                        <button class="btn-add-show" id="add-Function" type="button"><i
-                                                class="fa-solid fa-plus"></i>Añadir una función</button>
-                                    </div>
                                 </div>
-
                             </div>
                             <hr class="divider-forms-box">
                         </div>
@@ -205,6 +204,60 @@
             </main>
 
             <%- include('../partials/footer') %>
+    
+            
+           <!-- <script src="/public/js/createEvent.js"></script> -->
+           <script> 
+                // window.addEventListener('load', function(e){
+                    
+                    // const newFunctionInputs = " <div class='inputs-row' id='functionsRow'> <div class='form-group date1'><label for='date1'>Fecha de función*</label> <input class='form-control' type='date' name='date1' id='date1' required> </div> <div class='form-group hour1'> <label for='hour1'>Horario de inicio*</label> <select class='form-control' name='hour1' id='hour1' required> <option value='7pm'>7:00 pm</option> </select></div><div><button class='btn-add-show addFunction' type='button' id='addFunction'><i class='fa-solid fa-plus'></i>Añadir una función</button> </div> </div>"; 
+                    const selectorFunctionInputs = document.querySelector('.functionsRow');
+
+                    const addFunction = document.querySelector('.addFunction');                
+                    
+                    const functionsBoxSelector = document.getElementById('functionBoxWhite'); 
+                    
+                   
+
+                    addFunction.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        let newFunctionInputs = selectorFunctionInputs.cloneNode(true)
+
+                        // Me da el numero para los name 
+                        // document.querySelectorAll('.functionsRow').length + 1
+
+                        const btnDeleteInput = document.createElement('button')
+                        btnDeleteInput.className = "btnDeleteInput";
+                        btnDeleteInput.innerHTML = "&times";    
+                        
+                        newFunctionInputs.appendChild(btnDeleteInput);
+
+                        
+                        btnDeleteInput.addEventListener('click', function(){
+                            this.parentElement.remove();
+                        });
+
+                        console.log('Holaaa');
+
+                        
+                        // const inputsFunctions = newFunctionInputs.querySelectorAll('[name]');
+                        
+                        // const totalFunctionsRows = document.querySelectorAll('.functionsRow');
+
+                        // const functionNumber = totalFunctionsRows.length + 1;  
+                        
+                        // inputsFunctions[0].name = "date" + functionNumber;
+                        // inputsFunctions[1].name = "hour" + functionNumber;
+                        
+                        functionsBoxSelector.appendChild(newFunctionInputs);
+                    })    
+                
+                        // DESPUÉS PARA EL BACKEND PODEMOS GUARDAR TODAS LAS FUNCTIONS EN UN ARRAY DE FUNCTIONS, HACER UN MAP EN ESE ARRAY PARA 
+                        // ORDENAR EL NAME DE LOS INPUTS SEGÚN SU POSICIÓN EN EL ARRAY 
+                    
+                // })
+           </script>
     </body>
 
 </html>
