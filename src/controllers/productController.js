@@ -12,7 +12,9 @@ const Tickets = db.Ticket;
 const Categories = db.Category;
 const Teaters = db.Teater;
 const Citys = db.City;
+const States = db.State;
 const Countries = db.Country;
+const Showtypes = db.Showtype;
 
 let productController = {
     allProducts: async (req, res) => {
@@ -112,19 +114,26 @@ let productController = {
     edit: async (req, res) => {
         try {
             const eventId = req.params.id;
-            const Event = await Events.findByPk(eventId);
-            const teater = await Teaters.findAll();
+            const event = await Events.findByPk(eventId);
+            const countries = await Countries.findAll();
+            const states = await States.findAll();
+            const citys = await Citys.findAll();
+            const teaters = await Teaters.findAll();
+            const showtypes = await Showtypes.findAll();
+            const categories = await Categories.findAll();
             const functions = await Functions.findAll({
                 where: {
                     event_id: eventId
                 }}
             );
+           
             const tickets = await Tickets.findAll({
                 where: {
                     event_id: eventId
                 }
             })
-                return res.render('./products/edit-event', {Event, functions, tickets, teater} );
+           
+                return res.render('./products/edit-event', { event, functions, tickets, countries, states, citys, teaters, showtypes, categories} );
 
             
         } catch (error) {
@@ -133,53 +142,39 @@ let productController = {
     },
     update: async (req, res) => {
         try{
+            
             const eventId = req.params.id;
-            const functions = await Functions.findAll({
-                where: {
-                    event_id: eventId
-                }}
-            );
-
+            // const functions = await Functions.findAll({
+            //     where: {
+            //         event_id: eventId
+            //     }}
+            // );
+            
             const eventToUpdate = {
                 showtype: req.body.showType,
                 artist: req.body.artist,
                 subtitle: req.body.subtitle,
                 description: req.body.description,
-                linkMaps: req.body.linkMaps,
                 linkYoutube: req.body.linkYT,
-                imageEvent:  req.file.filename, 
-                category_id: req.body.category,
-                teater_id: req.body.teater
+                imageEvent:  req.file?.filename, 
+                showtype_id: req.body.showtype_id,
+                category_id: req.body.category_id,
+                teater_id: req.body.teater_id,
+                country_id: req.body.country_id,
+                state_id: req.body.state_id,
+                city_id: req.body.city_id
             };
 
-            const functionToUpdate = {
-                date: req.body.date,
-                time: req.body.time,
-                durationTime: req.body.durationTime
-            }
+       
+            console.log(eventToUpdate)
+       await Events.update(eventToUpdate, {where: { id: eventId}});
 
-            // la idea acá es que: si el id de los datos a cambiar
-            // (porque si se muestran diferentes funciones ya de 
-            // por si tienen su propio id) es igual al id de alguna de las
-            //  funciones que contienen el mismo event_id que el evento 
-            // entonces me haga un update en el modelo donde los datos son los
-            // especificados en el functionToUpdate y el dónde o qué función 
-            // se lo de el id de la función que está dando la vuelta en el loop 
-            // (y que previamente verifiqué)
-            
-        for (let i = 0; i <= functions.length; i++){
-            if(functionToUpdate.id == functions[i].id){
-              return Functions.update(functionToUpdate, {where: {id: functions[i].id}})
-            }
-        }
-
-        Events.update(eventToUpdate, {where: { id: eventId}});
+        return res.redirect('/products/all');
 
         } catch (error){
             res.send(error)
         }
-            
-            return res.redirect('/products/all');
+    
     },
     delete: async (req, res) => {
 		try {
