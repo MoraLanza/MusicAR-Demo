@@ -149,10 +149,10 @@ VALUES (DEFAULT, '2022-12-10', '2:00:00', 3, '20:30:00');
 
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 500, 'Entrada general', 30, 4, 3);
+VALUES (DEFAULT, 500, 'Entrada general', 30, 1, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 1000, 'Entrada vip', 10, 4, 3);
+VALUES (DEFAULT, 1000, 'Entrada vip', 10, 2, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
 VALUES (DEFAULT, 500, 'Entrada general', 30, 5, 3);

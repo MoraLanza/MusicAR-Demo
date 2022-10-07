@@ -15,26 +15,26 @@ const Tickets = db.Ticket;
 let mainController = {
     index: async function (req, res) {
         try {
-            let allEvents; 
+            let allEvents;
             const functions = await Functions.findAll();
             const teaters = await Teaters.findAll();
             const citys = await Citys.findAll();
             const tickets = await Tickets.findAll();
 
-            
+
             if (req.session.userLogged) {
 
-                 allEvents = await Events.findAll({
-                        where: {
-                            category_id: req.session.userLogged.category_id
-                        }
-                    });
+                allEvents = await Events.findAll({
+                    where: {
+                        category_id: req.session.userLogged.category_id
+                    }
+                });
 
             } else {
 
-                 allEvents = await Events.findAll();
+                allEvents = await Events.findAll();
 
-                
+
             }
             return res.render('index', { allEvents, functions, teaters, citys, tickets });
 
@@ -49,8 +49,40 @@ let mainController = {
     faq: function (req, res) {
         res.render("faq");
     },
-    searchBar: function (req, res) {
+    searchBar: async function (req, res) {
+        try {
+            let allEvents;
+            const functions = await Functions.findAll();
+            const teaters = await Teaters.findAll();
+            const citys = await Citys.findAll();
+            const categories = await Categories.findAll();
 
+
+            if (req.session.userLogged) {
+
+                allEvents = await Events.findAll({
+                    where: {
+                        category_id: req.session.userLogged.category_id
+                    }
+                });
+
+            } else {
+
+                allEvents = await Events.findByPk(req.params.id,
+                    {
+                        include: [{ association: 'citys' },
+                                  { association: 'teaters' },
+                                  { association: '' }]
+                    })
+            };
+
+
+
+            return res.render('index', { allEvents, functions, teaters, citys, tickets });
+
+        } catch (error) {
+            res.send(error)
+        }
     }
 }
 
