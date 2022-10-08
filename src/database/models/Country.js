@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
         countryName: {
             type: dataTypes.STRING,
             allowNull: false
-         }
+        }
     };
 
     const config = {
@@ -24,7 +24,12 @@ module.exports = (sequelize, dataTypes) => {
         Country.hasMany(models.State, {
             as: 'states',
             foreignKey: 'country_id'
-        });
+        }),
+
+        Country.hasMany(models.Event, {
+            as: 'events',
+            foreignKey: 'country_id'
+            })
     }
 
     return Country;
