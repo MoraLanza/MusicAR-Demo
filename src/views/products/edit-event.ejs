@@ -25,9 +25,9 @@
                                     </label>
                                 </div>
                                 <div class="form-group">
-                                    <label for="event-description">
+                                    <label for="subtitle">
                                         <input class="form-control" type="text" id="event-description" maxlength="150"
-                                            name="event-description" value="<%= event.subtitle%>">
+                                            name="subtitle" value="<%= event.subtitle%>">
                                         <i class="fa-solid fa-pen"></i>
                                     </label>
                                 </div>
@@ -60,16 +60,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group stage">
-                                        <label for="teater_id">Teatro o lugar*</label>
-                                        <select class="form-control" name="teater_id" id="teater_id">
-                                            <% teaters.forEach(teater=> { %>
-                                                <option value="<%= teater.id%>"
-                                                    <%=event.teater_id==teater.id? 'selected' : null%>><%=teater.name%>
-                                                </option>
-                                                <% }) %>
-                                        </select>
-                                    </div>
+                                  
                                 </div>
                                 <div class="inputs-row">
                                     <div class="form-group">
@@ -103,6 +94,18 @@
                                                 <% }) %>
                                         </select>
                                     </div>
+
+                                      <div class="form-group stage">
+                                        <label for="teater_id">Teatro o lugar*</label>
+                                        <select class="form-control" name="teater_id" id="teater_id">
+                                            <% teaters.forEach(teater=> { %>
+                                                <option value="<%= teater.id%>"
+                                                    <%=event.teater_id==teater.id? 'selected' : null%>><%=teater.name%>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                    </div>
+
                                 </div>
                             </div>
                             <hr class="divider-forms-box">
@@ -115,22 +118,21 @@
 
                                     <div class="inputs-row">
                                         <div class="form-group date1">
-
                                             <label for="date">Fecha de función*</label>
                                             <input class="form-control" type="text" name="date" id="date" value="<%= eventFunction.date%> 
                                             " onfocus="(this.type='date')">
                                         </div>
-                                        <div class="form-group hour1">
+                                        <div class="form-group">
                                             <label for="time">Horario de inicio*</label>
                                             <input type="time" id="time" name="time" min="19:00" max="24:00"
                                                 value="<%=eventFunction.time%>">
                                         </div>
-                                        <div class="form-group hour1">
+                                        <div class="form-group">
                                             <label for="durationTime">Duración del show*</label>
                                             <input type="time" id="durationTime" name="DurationTime" min="00:30"
                                                 max="03:00" value="<%=eventFunction.durationTime%>">
                                         </div>
-                                        <div>
+                                        <div class="form-group">
                                             <button class="btn-add-show" type="button "><i
                                                     class="fa-solid fa-plus"></i>Añadir una función</button>
                                         </div>

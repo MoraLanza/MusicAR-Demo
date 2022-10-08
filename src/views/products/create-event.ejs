@@ -11,14 +11,15 @@
 
             <main>
                 <section class="section-form-event-create">
-                    <form action="/products/create" method="POST" class="form-crear-evento" enctype="multipart/form-data">
-                        <div class="image-banner no-charged" 
+                    <form action="/products/create" method="POST" class="form-crear-evento"
+                        enctype="multipart/form-data">
+                        <div class="image-banner no-charged"
                             style="background-image: url(/image/add-image-default.png) ;">
                             <div class="titulo-principal-box">
                                 <div class="form-group event-principal-title">
                                     <label for="event-title">
-                                        <input class="form-control" type="text" id="artist" maxlength="50"
-                                            name="artist" placeholder="Título">
+                                        <input class="form-control" type="text" id="artist" maxlength="50" name="artist"
+                                            placeholder="Título">
                                         <i class="fa-solid fa-pen"></i>
                                     </label>
                                 </div>
@@ -31,193 +32,227 @@
                                 </div>
                             </div>
                             <div class="btn-img-box">
-                                <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i class="fa-solid fa-plus"></i></label>
-						<input type="file" name="image" id="image" class="form-input">
+                                <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i
+                                        class="fa-solid fa-plus"></i></label>
+                                <input type="file" name="image" id="image" class="form-input">
                             </div>
                         </div>
+                        <section class="data">
+                            <div class="form-data-box">
+                                <h4 class="form-data-box-title">Datos de localización</h4>
+                                <div class="form box-white">
+                                    <div class="inputs-row">
+                                        <div class="form-group">
+                                            <label for="country_id">País*</label>
+                                            <select class="form-control" name="country_id" id="country_id" required>
+                                                <% countries.forEach(country=> { %>
+                                                    <option value="<%= country.id%>">
+                                                        <%=country.countryName%>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="state_id">Provincia*</label>
+                                            <select class="form-control" name="state_id" id="state_id" required>
+                                                <% states.forEach(state=> { %>
+                                                    <option value="<%= state.id%>">
+                                                        <%=state.stateName%>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city_id">Ciudad*</label>
+                                            <select class="form-control" name="city_id" id="city_id" required>
+                                                <% citys.forEach(city=> { %>
+                                                    <option value="<%= city.id%>">
+                                                        <%=city.cityName%>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                        <div class="form-group stage">
+                                            <label for="teater_id">Teatro o lugar*</label>
+                                            <select class="form-control" name="teater_id" id="teater_id">
+                                                <% teaters.forEach(teater=> { %>
+                                                    <option value="<%= teater.id%>">
+                                                        <%=teater.name%>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <div class="form-data-box">
-                            <h4 class="form-data-box-title">Datos de localización</h4>
-                            <div class="form box-white">
-                                <div class="inputs-row">
-                                    <div class="form-group">
-                                        <label for="showType">Tipo de Show*</label>
-                                        <select class="form-control" name="showType" id="showType" required>
-                                            <option value="presencial">Presencial</option>
-                                            <option value="virtual">Virtual</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group link-maps">
-                                        <label for="linkMaps">Link de Maps*</label>
-                                        <input class="form-control" type="text" name="linkMaps" id="linkMaps" required>
-                                    </div>
-                                    <div class="form-group stage">
-                                        <label for="stage">Teatro o lugar*</label>
-                                        <input class="form-control" type="text" name="stage" id="stage" placeholder="Ej: Teatro Vorterix" required>
+                            </div>
+                            <div class="form-data-box function-form">
+                                <div>
+                                    <h4 class="form-data-box-title">Datos de función/es</h4>
+                                    <div class="add-btn-box">
+                                        <button class="btn-add-show addFunction" type="button" id="addFunction">
+                                            <i class="fa-solid fa-plus"></i>
+                                            Añadir una función
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="inputs-row">
-                                    <div class="form-group">
-                                        <label for="country">País*</label>
-                                        <select class="form-control" name="country" id="country" required>   
-                                            <option value='Argentina'>Argentina</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="state">Provincia*</label>
-                                        <select class="form-control" name="state" id="state" required>
-                                            <option value='Buenos Aires'>Buenos Aires</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="city">Ciudad*</label>
-                                        <select class="form-control" name="city" id="city" required>
-                                            <option value="CABA">CABA</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="direction">Dirección*</label>
-                                        <input class="form-control" type="text" name="direction" 
-                                        id="direction" placeholder=" Ej: Av. San Martin 4563" required>
+                                <div class="form box-white functionBoxWhite" id="functionBoxWhite">
+                                    <div class="functionsRow" id="functionsRow">
+                                        <div class="inputs-row">
+                                            <div class="form-group date">
+                                                <label for="date">Fecha de función*</label>
+                                                <input class="form-control" type="date" name="date[]" id="date"
+                                                    required>
+                                            </div>
+                                            <div class="form-group time">
+                                                <label for="time">Horario de inicio*</label>
+                                                <input type="time" id="time" name="time[]" min="19:00" max="24:00">
+                                            </div>
+                                            <div class="form-group time">
+                                                <label for="durationTime">Duración del show*</label>
+                                                <input type="time" id="durationTime" name="durationTime[]" min="00:30"
+                                                    max="03:00">
+                                            </div>
+                                        </div>
+                                             <div class="inputs-row">
+                                                <button class="btn-add-show" type="button"><i
+                                                        class="fa-solid fa-plus"></i>Añadir ticket</button>
+                                            </div>
+                                        <div class="inputs-row ticket-row">
+                                            
+                                            <div class="form-group">
+                                                <label for="ticketType">Tipo de entrada*</label>
+                                                <input class="form-control" type="text" id="ticketType" maxlength="30"
+                                                    name="ticketType[]">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="price">Precio*</label>
+                                                <input class="form-control" type="number" name="price[]"
+                                                    placeholder="Ej: 5000.-" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="lot">Cantidad disponible*</label>
+                                                <input class="form-control" type="number" name="lot[]"
+                                                    placeholder="Ej: 20" required>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr class="divider-forms-box">
-                        </div>
-                        <div class="form-data-box function-form">
-                            <div>
-                                <h4 class="form-data-box-title">Fecha de función/es</h4>
-                                <div class="add-btn-box">
-                                    <button class="btn-add-show addFunction" type="button" id="addFunction">
-                                        <i class="fa-solid fa-plus"></i>
-                                        Añadir una función
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="form box-white functionBoxWhite" id="functionBoxWhite">
-                                <div class="inputs-row functionsRow" id="functionsRow">
-                                    <div class="form-group date1">
-                                        <label for="date1">Fecha de función*</label>
-                                        <input class="form-control" type="date" name="date[]" required>
-                                    </div>
-                                    <div class="form-group hour1">
-                                        <label for="hour1">Horario de inicio*</label>
-                                        <select class="form-control" name="hour[]" required>
-                                            <option value="7pm">7:00 pm</option>
-                                            <option value="8pm">8:00 pm</option>
-                                            <option value="9pm">9:00 pm</option>
-                                            <option value="10pm">10:00 pm</option>
-                                            <option value="11pm">11:00 pm</option>
-                                            <option value="12am">12:00 am</option>
-                                            <option value="1am">1:00 am</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="divider-forms-box">
-                        </div>
-                        <div class="form-data-box">
-                            <h4 class="form-data-box-title">Datos de ticket</h4>
-                            <div class="form box-white">
-                                <div class="inputs-row">
-                                    <div class="form-group">
-                                        <label for="ticketType1">Tipo de entrada*</label>
-                                        <select class="form-control" name="ticketType1" id="ticketType1" required>
-                                            <option value="Pullman">Pullman</option>
-                                            <option value="Super Pullman">Super Pullman</option>
-                                            <option value="Pullman Lateral">Pullman Lateral</option>
-                                            <option value="General">General</option>
-                                            <option value="Campo">Campo</option>
-                                            <option value="discapacitados">Discapacitados</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="price1">Precio*</label>
-                                        <input class="form-control" type="number" name="price1" id="price1"
-                                            placeholder="Ej: 5000.-" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lot1">Cantidad disponible*</label>
-                                        <input class="form-control" type="number" name="lot1" id="lot1" placeholder="Ej: 20" required>
-                                    </div>
-                                    <div>
-                                        <button class="btn-add-show" type="button"><i
-                                                class="fa-solid fa-plus"></i>Añadir una función</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="divider-forms-box">
-                        </div>
-                        <div class="form-data-box">
-                            <h4 class="form-data-box-title">Descripción del evento</h4>
-                            <div class="form box-white">
-                                <div class="inputs-row description-row">
-                                    <div class="form-group description-textarea">
-                                        <label for="description">Descripción del evento*</label>
-                                        <textarea name="description" id="description" cols="80" rows="5" required></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="linkYT">Link de youtube</label>
-                                        <input class="form-control" type="text" name="linkYT" id="linkYT" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="inputs-row">
-                                    <div class="form-group">
-                                        <label for="category">Categorias*</label>
-                                        <select class="form-control" name="category" id="category" required>
-                                            <option value="Jazz">Jazz</option>
-                                            <option value="Blues">Blues</option>
-                                            <option value="Soul">Soul</option>
-                                            <option value="Góspel">Góspel</option>
-                                            <option value="Pop">Pop</option>
-                                            <option value="Rock">Rock</option>
-                                            <option value="Techno">Techno</option>
-                                            <option value="Reggae">Reggae</option>
-                                            <option value="Salsa">Salsa</option>
-                                            <option value="Hip hop/Rap">Hip hop/Rap</option>
-                                            <option value="Metal">Metal</option>
-                                            <option value="Funk">Funk</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <input type="radio" id="all" name="all" value="all" checked hidden>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="form-btns">
-                            <div class="cancel-btn-container">
-                                <input type="button" class="cancel-button" value="Cancelar">
-                            </div>
-                            <div class="right-btns-container">
-                                <div class="reset-btn-container">
-                                    <button type="reset" class="reset-button">Resetear</button>
+                            <!-- <div class="form-data-box">
+                                <div>
+                                    <h4 class="form-data-box-title">Datos de ticket</h4>
+                                    <div class="add-btn-box">
+                                        <button class="btn-add-show addFunction" type="button" id="addFunction">
+                                            <i class="fa-solid fa-plus"></i>
+                                            Añadir un ticket
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="submit-btn-container">
-                                    <button type="submit" class="submit-button">Crear evento</button>
+                                <div class="form box-white">
+                                    <div class="inputs-row">
+                                        <div class="form-group">
+                                            <label for="ticketType">Tipo de entrada*</label>
+                                            <input class="form-control" type="text" id="ticketType" maxlength="30"
+                                                name="ticketType[]">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price">Precio*</label>
+                                            <input class="form-control" type="number" name="price[]"
+                                                placeholder="Ej: 5000.-" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lot">Cantidad disponible*</label>
+                                            <input class="form-control" type="number" name="lot[]" placeholder="Ej: 20"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="function_id">Función*</label>
+                                            <select class="form-control" name="function_id" id="function_id">
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="form-data-box">
+                                <h4 class="form-data-box-title">Descripción del evento</h4>
+                                <div class="form box-white">
+                                    <div class="inputs-row description-row">
+                                        <div class="form-group description-textarea">
+                                            <label for="description">Descripción del evento*</label>
+                                            <textarea name="description" id="description" cols="80" rows="5"
+                                                required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="linkYT">Link de youtube</label>
+                                            <input class="form-control" type="text" name="linkYT" id="linkYT"
+                                                placeholder="" required>
+                                        </div>
+                                    </div>
+                                    <div class="inputs-row">
+                                        <div class="form-group">
+                                            <label for="category">Categorias*</label>
+                                            <select class="form-control" name="category" id="category" required>
+                                                <option value="Jazz">Jazz</option>
+                                                <option value="Blues">Blues</option>
+                                                <option value="Soul">Soul</option>
+                                                <option value="Góspel">Góspel</option>
+                                                <option value="Pop">Pop</option>
+                                                <option value="Rock">Rock</option>
+                                                <option value="Techno">Techno</option>
+                                                <option value="Reggae">Reggae</option>
+                                                <option value="Salsa">Salsa</option>
+                                                <option value="Hip hop/Rap">Hip hop/Rap</option>
+                                                <option value="Metal">Metal</option>
+                                                <option value="Funk">Funk</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="all" name="all" value="all" checked hidden>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="form-btns">
+                                <div class="cancel-btn-container">
+                                    <input type="button" class="cancel-button" value="Cancelar">
+                                </div>
+                                <div class="right-btns-container">
+                                    <div class="reset-btn-container">
+                                        <button type="reset" class="reset-button">Resetear</button>
+                                    </div>
+                                    <div class="submit-btn-container">
+                                        <button type="submit" class="submit-button">Crear evento</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </form>
+
                 </section>
+
+
             </main>
 
             <%- include('../partials/footer') %>
-    
-            
-           <!-- <script src="/public/js/createEvent.js"></script> -->
-           <script> 
-                // window.addEventListener('load', function(e){
-                    
+
+
+                <!-- <script src="/public/js/createEvent.js"></script> -->
+                <script>
+                    // window.addEventListener('load', function(e){
+
                     // const newFunctionInputs = " <div class='inputs-row' id='functionsRow'> <div class='form-group date1'><label for='date1'>Fecha de función*</label> <input class='form-control' type='date' name='date1' id='date1' required> </div> <div class='form-group hour1'> <label for='hour1'>Horario de inicio*</label> <select class='form-control' name='hour1' id='hour1' required> <option value='7pm'>7:00 pm</option> </select></div><div><button class='btn-add-show addFunction' type='button' id='addFunction'><i class='fa-solid fa-plus'></i>Añadir una función</button> </div> </div>"; 
                     const selectorFunctionInputs = document.querySelector('.functionsRow');
 
-                    const addFunction = document.querySelector('.addFunction');                
-                    
-                    const functionsBoxSelector = document.getElementById('functionBoxWhite'); 
-                    
-                   
+                    const addFunction = document.querySelector('.addFunction');
+
+                    const functionsBoxSelector = document.getElementById('functionBoxWhite');
+
+
 
                     addFunction.addEventListener('click', (e) => {
                         e.preventDefault();
@@ -229,35 +264,33 @@
 
                         const btnDeleteInput = document.createElement('button')
                         btnDeleteInput.className = "btnDeleteInput";
-                        btnDeleteInput.innerHTML = "&times";    
-                        
+                        btnDeleteInput.innerHTML = "&times";
+
                         newFunctionInputs.appendChild(btnDeleteInput);
 
-                        
-                        btnDeleteInput.addEventListener('click', function(){
+
+                        btnDeleteInput.addEventListener('click', function () {
                             this.parentElement.remove();
                         });
 
-                        console.log('Holaaa');
 
-                        
                         // const inputsFunctions = newFunctionInputs.querySelectorAll('[name]');
-                        
+
                         // const totalFunctionsRows = document.querySelectorAll('.functionsRow');
 
                         // const functionNumber = totalFunctionsRows.length + 1;  
-                        
+
                         // inputsFunctions[0].name = "date" + functionNumber;
                         // inputsFunctions[1].name = "hour" + functionNumber;
-                        
+
                         functionsBoxSelector.appendChild(newFunctionInputs);
-                    })    
-                
-                        // DESPUÉS PARA EL BACKEND PODEMOS GUARDAR TODAS LAS FUNCTIONS EN UN ARRAY DE FUNCTIONS, HACER UN MAP EN ESE ARRAY PARA 
-                        // ORDENAR EL NAME DE LOS INPUTS SEGÚN SU POSICIÓN EN EL ARRAY 
-                    
+
+
+                    })
+
+
                 // })
-           </script>
+                </script>
     </body>
 
 </html>

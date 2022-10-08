@@ -63,8 +63,21 @@ let productController = {
             res.send(error)
         }
     },
-    create: (req, res) => {
-       return res.render('./products/create-event');
+    create: async (req, res) => {
+        try {
+            const countries = await Countries.findAll();
+            const states = await States.findAll();
+            const citys = await Citys.findAll();
+            const teaters = await Teaters.findAll();
+            const showtypes = await Showtypes.findAll();
+            const categories = await Categories.findAll();
+            // const functions = 
+
+            return res.render('./products/create-event', {countries, states, citys, teaters, showtypes, categories});
+        } catch (error){
+            res.send(error)
+        }
+      
     },
     store: async (req, res) => {
        try {  
@@ -107,7 +120,7 @@ let productController = {
       req.body.date?.forEach((date, index) => {          
           functions.push({
             date, 
-            time: req.body.hour[index],
+            time: req.body.time[index],
             event_id: eventCreated.id
         });
       });
