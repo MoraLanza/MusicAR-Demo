@@ -21,7 +21,11 @@ let productController = {
         try {
             const events = await Events.findAll();
             const functions = await Functions.findAll();
-            const tickets = await Tickets.findAll();
+            const tickets = await Tickets.findAll({
+                order: [
+                    ['price', 'ASC']
+                ]
+            });
             const teaters = await Teaters.findAll();
             const categories = await Categories.findAll();
             const citys = await Citys.findAll();
@@ -71,7 +75,7 @@ let productController = {
             const teaters = await Teaters.findAll();
             const showtypes = await Showtypes.findAll();
             const categories = await Categories.findAll();
-            // const functions = 
+            
 
             return res.render('./products/create-event', {countries, states, citys, teaters, showtypes, categories});
         } catch (error){
@@ -82,35 +86,19 @@ let productController = {
     store: async (req, res) => {
        try {  
 		const newEvent = {             
-			showtype: req.body.showType,
+			showtype_id: req.body.showtype_id,
             artist: req.body.artist,
             subtitle: req.body.subtitle,
 			description: req.body.description,
             linkMaps: req.body.linkMaps,
-            linkYoutube: req.body.linkYT,
+            linkYoutube: req.body.linkYoutube,
 			imageEvent:  req.file?.filename, 
-		    category_id: req.body.category,
-            teater_id: req.body.teater,
-			// country: req.body.country,
-            // state: req.body.state,
-			// city: req.body.city,
-            // direction : req.body.direction,
-        };
-
-       
-
-		const newFunction = {
-            date: req.body.date,
-            time: req.body.time,
-            durationTime: req.body.durationTime,
-            event_id: req.params.id
-        };
-        
-        const newTicket = {
-            type: req.body.type,   
-            price: req.body.price,            
-            lot: req.body.lot,
-            function_id: newFunction.id
+		    category_id: req.body.category_id,
+            teater_id: req.body.teater_id,
+			city_id: req.body.city_id,
+            state_id: req.body.state_id,
+            country_id: req.body.country_id
+           
         };
 
       const eventCreated =  await  Events.create(newEvent);
@@ -125,13 +113,59 @@ let productController = {
         });
       });
       
-    //   await Functions.create(newFunction);
-    //   await  Tickets.create(newTicket);
+      const functionsCreated = await Functions.bulkCreate(functions);
+      
+      const tickets1 = [];
 
-    // como hago para guardar diferentes funciones y 
-    // diferentes tickets?
+      req.body.ticketType1?.forEach((ticketType1, index) => {          
+        tickets1.push({
+          type: ticketType1, 
+          price: req.body.price1[index],
+          lot: req.body.lot1[index],
+          event_id: eventCreated.id,
+          function_id: functionsCreated[index].id
+      });
+    });
 
-          return res.redirect('/');  
+        await Tickets.bulkCreate(tickets1);
+
+
+
+    if (req.body.ticketType2 != '') {
+
+        const tickets2 = [];
+
+        req.body.ticketType2?.forEach((ticketType2, index) => {          
+        tickets2.push({
+            type: ticketType2, 
+            price: req.body.price2[index],
+            lot: req.body.lot2[index],
+            event_id: eventCreated.id,
+            function_id: functionsCreated[index].id
+        });
+    });
+
+        await Tickets.bulkCreate(tickets2);
+    }
+      
+        
+        if (req.body.ticketType3 != '') {
+
+             const tickets3 = [];
+
+        req.body.ticketType3?.forEach((ticketType3, index) => {          
+            tickets3.push({
+            type: ticketType3, 
+            price: req.body.price3[index],
+            lot: req.body.lot3[index],
+            event_id: eventCreated.id,
+            function_id: functionsCreated[index].id
+        });
+        });
+                    await Tickets.bulkCreate(tickets3);
+                }
+       
+          return res.redirect('/products/all');  
     } 
     catch (error) {
         res.send(error);
