@@ -238,9 +238,13 @@ let productController = {
     },
     delete: async (req, res) => {
 		try {
-        // agregar delete de sus funciones y de sus tickets
+            
             const eventId = req.params.id;
-            await Events.destroy({where: {id: eventId}})
+
+            await Tickets.destroy({where: {event_id: eventId}});
+            await Functions.destroy({where: {event_id: eventId}});
+            await Events.destroy({where: {id: eventId}});
+
             return res.redirect('/products/all');
 
         } catch (error) {
