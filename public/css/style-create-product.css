@@ -198,6 +198,11 @@ body {
 
 .ticket-row{
     justify-content: flex-end;
+    width: 100%;
+}
+
+.ticketRow {
+    display: flex;
 }
 
 .ticket-row .form-group {
