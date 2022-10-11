@@ -46,15 +46,18 @@
             </div>
         </div>
         <!-- FIN -- Sección Buscador -->
-        <!-- Sección Destacados -->
+        
 
         <% if (locals.isLogged) {%> 
         
             <section class="section-events">
             
                 <div class="section-title col-12">
-                    <h2>Destacados</h2>
+                    <% categories.forEach( category => { %>
+                        <% if (user.category_id === category.id) { %> 
+                    <h2>Seleccionados para vos - <%= category.name %> </h2>
                     <hr class="line-title">
+                    <% }}) %> 
                 </div>
 
                 <div class="events-container">
@@ -125,6 +128,80 @@
         <br>
         <br>
 
+        <section class="section-events">
+            
+            <div class="section-title col-12">
+                <% citys.forEach( city => { %>
+                    <% if (user.city_id === city.id) { %> 
+                <h2>En tu ciudad, <%= city.cityName %> </h2>
+                <hr class="line-title">
+                <% }}) %> 
+            </div>
+
+            <div class="events-container">
+                <% cityEvents.forEach(event=> { %>
+                    <article class="article-container">
+                        <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
+                        <div class="article-image">
+                                <img src="/image/products/<%= event.imageEvent %> " alt="">
+                        </div>
+
+                        <div class="article-title">
+                            <h2>
+                                <%= event.artist %>
+                            </h2>
+                            <h4>
+                                <%= event.subtitle %>
+                            </h4>
+                        </div>
+
+                        <div class="article-information-general">
+                            <div class="icons">
+                                <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="article-information-specific">
+                                <div class="event-date">
+                                    <p>
+                                            <% if (event.id === functions[0].event_id) {%>
+                                             <%= functions[0].date %>  a las <%= functions[0].time %>.
+                                             <% } %> 
+                                    </p>
+                                </div>
+                                <div class="event-price">
+                                    <p> 
+                                        <% if (event.id === tickets[0].event_id) {%>
+                                            Desde $<%= tickets[0].price %> .-
+                                            <% } %> 
+                                         
+                                    </p>
+                                </div>
+                                <div class="event-place">
+                                    <p>
+                                        <% for( let i = 0; i < teaters.length; i++) {%>
+                                            <% if (event.teater_id === teaters[i].id) {%>
+                                                <%= teaters[i].name%>
+                                                <% }} %>,
+                                        <% for( let i = 0; i < citys.length; i++) {%>
+                                            <% if (event.city_id === citys[i].id) {%> 
+                                                <%= citys[i].cityName %>.
+                                                <% }} %>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article-buttons">
+                            <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                            <a href="" class="buy-button">Comprar ahora</a>
+                        </div>
+                    </article>
+
+                    <% }) %>    
+            </div>
+    </section>
            
 
         <% } else {%> 
