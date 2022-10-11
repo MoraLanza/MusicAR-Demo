@@ -43,25 +43,10 @@
                         <!-- <div class="boton-fixed">
                     <a href="#top"><i class="fas fa-chevron-up"></i></a>
                 </div> -->
-
+                <section class="data">
                         <div class="form-data-box">
                             <h4 class="form-data-box-title">Datos de localización</h4>
                             <div class="form box-white">
-                                <div class="inputs-row">
-                                    <div class="form-group">
-                                        <label for="showtype_id">Tipo de Show*</label>
-                                        <select class="form-control" name="showtype_id" id="showtype_id">
-                                            <% showtypes.forEach(showtype=> { %>
-                                                <option value="<%= showtype.id%>"
-                                                    <%=event.showtype_id==showtype.id? 'selected' : null%>>
-                                                    <%=showtype.type%>
-                                                </option>
-                                                <% }) %>
-                                        </select>
-                                    </div>
-
-                                  
-                                </div>
                                 <div class="inputs-row">
                                     <div class="form-group">
                                         <label for="country_id">País*</label>
@@ -108,84 +93,60 @@
 
                                 </div>
                             </div>
-                            <hr class="divider-forms-box">
+                            
                         </div>
-                        <div class="form-data-box">
-                            <h4 class="form-data-box-title">Fecha de función/es</h4>
+                        <div class="form-data-box function-form">
+                            <h4 class="form-data-box-title">Datos de función/es</h4>
                             <% functions.forEach(eventFunction=> { %>
                                 <div class="form box-white">
-
-
-                                    <div class="inputs-row">
-                                        <div class="form-group date1">
+                                    <div class="inputs-row function-row-div">
+                                        <div> <input type="number" name="functionId[]" value="<%= eventFunction.id %>" hidden></div>
+                                        <div class="form-group date function">
                                             <label for="date">Fecha de función*</label>
-                                            <input class="form-control" type="text" name="date" id="date" value="<%= eventFunction.date%> 
+                                            <input class="form-control" type="text" name="date[]" id="date" value="<%= eventFunction.date%> 
                                             " onfocus="(this.type='date')">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group function">
                                             <label for="time">Horario de inicio*</label>
-                                            <input type="time" id="time" name="time" min="19:00" max="24:00"
+                                            <input type="time" id="time" name="time[]" min="19:00" max="24:00"
                                                 value="<%=eventFunction.time%>">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group function">
                                             <label for="durationTime">Duración del show*</label>
-                                            <input type="time" id="durationTime" name="DurationTime" min="00:30"
+                                            <input type="time" id="durationTime" name="durationTime[]" min="00:30"
                                                 max="03:00" value="<%=eventFunction.durationTime%>">
                                         </div>
-                                        <div class="form-group">
-                                            <button class="btn-add-show" type="button "><i
-                                                    class="fa-solid fa-plus"></i>Añadir una función</button>
-                                        </div>
                                     </div>
                                 </div>
-
-                                <% }) %>
-                                    <hr class="divider-forms-box">
+                            
+                                <% tickets.forEach(ticket => { %> 
+                                    <% if (ticket.function_id === eventFunction.id){ %> 
+                                        <div class="form box-white ticketBoxWhite" id="ticketBoxWhite">
+                                            <div class="ticketRow" id="ticketRow">
+                                                <div class="inputs-row ticket-row">
+                                                    <div> <input type="number" name="ticketId[]" value="<%= ticket.id %>" hidden></div>
+                                                    <div class="form-group">
+                                                        <label for="ticketType">Tipo de entrada*</label>
+                                                        <input class="form-control" type="text" id="ticketType"
+                                                            maxlength="30" name="ticketType[]"
+                                                            value="<%= ticket.type%>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="price">Precio*</label>
+                                                        <input class="form-control" type="number" name="price[]"
+                                                        value="<%= ticket.price%>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="lot">Cantidad disponible*</label>
+                                                        <input class="form-control" type="number" name="lot[]"
+                                                        value="<%= ticket.lot%>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <% }})}) %>
                         </div>
-
-                        <div class="form-data-box">
-                            <h4 class="form-data-box-title">Datos de ticket</h4>
-                            <% tickets.forEach(ticket=> { %>
-                                <div class="form box-white">
-
-                                    <div class="inputs-row">
-                                        <div class="form-group">
-                                            <label for="ticketType">Tipo de entrada*</label>
-                                            <input class="form-control" type="text" id="ticketType" maxlength="30"
-                                                name="ticketType" value="<%= ticket.type%>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="price">Precio*</label>
-                                            <input class="form-control" type="number" name="price" id="price"
-                                                value="<%= ticket.price%>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lot">Cantidad disponible*</label>
-                                            <input class="form-control" type="number" name="lot" id="lot"
-                                                value="<%= ticket.lot%>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="function_id">Función*</label>
-                                            <select class="form-control" name="function_id" id="function_id">
-                                                <% functions.forEach(eventFunction=> { %>
-                                                    <option value="<%= eventFunction.id%>"
-                                                        <%=eventFunction.id==ticket.function_id? 'selected' : null%>>
-                                                        <%=eventFunction.date%> a las <%= eventFunction.time%>
-                                                    </option>
-                                                    <% }) %>
-                                            </select>
-
-                                        </div>
-                                        <div>
-                                            <button class="btn-add-show" type="button"><i
-                                                    class="fa-solid fa-plus"></i>Añadir una función</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <% }) %>
-                                    <hr class="divider-forms-box">
-                        </div>
+                       
                         <div class="form-data-box">
                             <h4 class="form-data-box-title">Descripción del evento</h4>
                             <div class="form box-white">
@@ -195,11 +156,7 @@
                                         <textarea name="description" id="description" cols="80"
                                             rows="5"><%= event.description%></textarea>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="linkYoutube">Link de youtube</label>
-                                        <input class="form-control" type="text" name="linkYoutube" id="linkYoutube"
-                                            value="<%= event.linkYoutube %> ">
-                                    </div>
+                                   
                                 </div>
                                 <div class="inputs-row">
                                     <div class="form-group">
@@ -213,21 +170,33 @@
                                                 <% }) %>
                                         </select>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label for="showtype_id">Tipo de Show*</label>
+                                        <select class="form-control" name="showtype_id" id="showtype_id">
+                                            <% showtypes.forEach(showtype=> { %>
+                                                <option value="<%= showtype.id%>"
+                                                    <%=event.showtype_id==showtype.id? 'selected' : null%>>
+                                                    <%=showtype.type%>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="linkYoutube">Link de youtube</label>
+                                        <input class="form-control" type="text" name="linkYoutube" id="linkYoutube"
+                                            value="<%= event.linkYoutube %> ">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-btns">
-
-                            <div class="reset-btn-container">
-                                <button type="reset" class="reset-button">Borrar</button>
-                            </div>
                             <div class="submit-btn-container">
                                 <button type="submit" class="submit-button">Modificar</button>
                             </div>
                         </div>
                     </form>
                 </section>
+            </section>
             </main>
 
             <%- include('../partials/footer') %>

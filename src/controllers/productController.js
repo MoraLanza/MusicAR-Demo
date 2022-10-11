@@ -109,7 +109,8 @@ let productController = {
           functions.push({
             date, 
             time: req.body.time[index],
-            event_id: eventCreated.id
+            event_id: eventCreated.id,
+            durationTime: req.body.durationTime[index]
         });
       });
       
@@ -204,11 +205,10 @@ let productController = {
         try{
             
             const eventId = req.params.id;
-            // const functions = await Functions.findAll({
-            //     where: {
-            //         event_id: eventId
-            //     }}
-            // );
+            const functions = await Functions.findAll({
+                where: {
+                    event_id: eventId}
+            });
             
             const eventToUpdate = {
                 showtype: req.body.showType,
@@ -225,10 +225,42 @@ let productController = {
                 city_id: req.body.city_id
             };
 
-       
-            console.log(eventToUpdate)
-       await Events.update(eventToUpdate, {where: { id: eventId}});
+            const functionsToUpdate = [];
 
+            req.body.date?.forEach((date, index) => {          
+                functionsToUpdate.push({
+                    date, 
+                    time: req.body.time[index],
+                    durationTime: req.body.durationTime[index],
+                    event_id: eventId,
+                    id: req.body.functionId[index]
+                });
+            });
+
+
+            const ticketsToUpdate = [];
+
+            req.body.ticketType?.forEach((ticketType, index) => {          
+                ticketsToUpdate.push({
+                type: ticketType, 
+                price: req.body.price[index],
+                lot: req.body.lot[index],
+                event_id: eventId,
+                function_id: functionsToUpdate[index].id,
+                id: req.body.ticketId[index]
+            });
+            });
+            
+        for (const functionUpdate of functionsToUpdate){
+            await Functions.update(functionUpdate, {where: {id: functionUpdate.id}})
+        };
+            
+        for (const ticketUpdate of ticketsToUpdate){
+            await Tickets.update(ticketUpdate, {where: {id: ticketUpdate.id}})
+        };
+        
+       await Events.update(eventToUpdate, {where: { id: eventId}});
+    
         return res.redirect('/products/all');
 
         } catch (error){
