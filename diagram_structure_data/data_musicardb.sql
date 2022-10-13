@@ -64,8 +64,6 @@ VALUES (DEFAULT, 'Neo Soul');
 INSERT INTO categories (id, name)
 VALUES (DEFAULT, 'Punk pop');
 
-
-
 INSERT INTO countrys (id, countryName)
 VALUES (DEFAULT, 'Argentina');
 
@@ -81,6 +79,9 @@ VALUES (DEFAULT, 'Paraguay');
 INSERT INTO countrys (id, countryName)
 VALUES (DEFAULT, 'Uruguay');
 
+
+select *
+from states;
 
 INSERT INTO states (id, stateName, country_id)
 VALUES (DEFAULT, 'Buenos Aires', 1);
@@ -149,21 +150,19 @@ VALUES (DEFAULT, '2022-12-10', '2:00:00', 1, '20:30:00');
 
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 500, 'Entrada general', 30, 1, 1);
+VALUES (DEFAULT, 500, 'Entrada general', 30, 3, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 1000, 'Entrada vip', 10, 1, 1);
+VALUES (DEFAULT, 1000, 'Entrada vip', 10, 3, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 500, 'Entrada general', 30, 1, 2);
+VALUES (DEFAULT, 500, 'Entrada general', 30, 2, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
-VALUES (DEFAULT, 1000, 'Entrada vip', 10, 1, 2);
+VALUES (DEFAULT, 1000, 'Entrada vip', 10, 2, 1);
+
+select * from tickets;
 
 
 
-INSERT INTO showtypes (id, type)
-VALUES (DEFAULT, 'Presencial');
 
-INSERT INTO showtypes (id, type)
-VALUES (DEFAULT, 'Virtual');
