@@ -22,6 +22,11 @@
                                             placeholder="Título">
                                         <i class="fa-solid fa-pen"></i>
                                     </label>
+                                    <% if (locals.errors && errors.artist) {%>
+                                        <div class="error-text">
+                                           <p><%= errors.artist.msg %> </p> 
+                                        </div>
+                                       <% } %>  
                                 </div>
                                 <div class="form-group">
                                     <label for="event-description">
@@ -190,8 +195,7 @@
                                     <div class="inputs-row description-row">
                                         <div class="form-group description-textarea">
                                             <label for="description">Descripción del evento*</label>
-                                            <textarea name="description" id="description" cols="80" rows="5"
-                                                required></textarea>
+                                            <textarea name="description" id="description" cols="80" rows="5"></textarea>
                                         </div>
                                     </div>
                                     <div class="inputs-row">
@@ -217,8 +221,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="linkYoutube">Link de youtube*</label>
-                                            <input class="form-control" type="text" name="linkYoutube"
-                                                placeholder="" required>
+                                            <input class="form-control" type="text" name="linkYoutube" placeholder="">
                                         </div>
                                     </div>
                                 </div>

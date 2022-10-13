@@ -60,39 +60,22 @@ let mainController = {
         res.render("faq");
     },
     searchBar: async function (req, res) {
-        // try {
-        //     let allEvents;
-        //     const functions = await Functions.findAll();
-        //     const teaters = await Teaters.findAll();
-        //     const citys = await Citys.findAll();
-        //     const categories = await Categories.findAll();
+        try {
+            const events = await Events.findAll();
+            const functions = await Functions.findAll();
+            const tickets = await Tickets.findAll();
 
+            return res.json({
+                totalEvents: events.length,
+                eventsData: events,
+                totalFunctions: functions.length,
+                functionsData: functions,
+                totalTickets: tickets.length,
+                ticketsData: tickets});
 
-        //     if (req.session.userLogged) {
-
-        //         allEvents = await Events.findAll({
-        //             where: {
-        //                 category_id: req.session.userLogged.category_id
-        //             }
-        //         });
-
-        //     } else {
-
-        //         allEvents = await Events.findByPk(req.params.id,
-        //             {
-        //                 include: [{ association: 'citys' },
-        //                           { association: 'teaters' },
-        //                           { association: '' }]
-        //             })
-        //     };
-
-
-
-        //     return res.render('index', { allEvents, functions, teaters, citys, tickets });
-
-        // } catch (error) {
-        //     res.send(error)
-        // }
+        } catch (error) {
+            res.send(error)
+        }
     }
 }
 

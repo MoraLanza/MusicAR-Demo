@@ -9,7 +9,6 @@ const Users = db.User;
 const Citys = db.City;
 const Countries = db.Country;
 const Categories = db.Category;
-const UserCategories = db.UserCategory;
 
 const { validationResult } = require('express-validator');
 

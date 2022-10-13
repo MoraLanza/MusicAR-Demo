@@ -6,6 +6,7 @@ const sequelize = db.sequelize;
 const { Op } = require('sequelize');
 
 
+
 const Events = db.Event;
 const Functions = db.Function;
 const Tickets = db.Ticket;
@@ -15,6 +16,9 @@ const Citys = db.City;
 const States = db.State;
 const Countries = db.Country;
 const Showtypes = db.Showtype;
+
+
+const { validationResult } = require('express-validator');
 
 let productController = {
     allProducts: async (req, res) => {
@@ -85,6 +89,51 @@ let productController = {
     },
     store: async (req, res) => {
        try {  
+        const resultValidation = validationResult(req);
+        
+        if (resultValidation.errors.length > 0) {
+
+            const countries = await Countries.findAll();
+            const states = await States.findAll();
+            const citys = await Citys.findAll();
+            const teaters = await Teaters.findAll();
+            const showtypes = await Showtypes.findAll();
+            const categories = await Categories.findAll();
+            
+
+            return res.render('./products/create-event', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                countries,
+                states,
+                citys,
+                teaters,
+                showtypes,
+                categories
+            });
+        }
+
+
+        let eventInDB = await Events.findOne({
+            where:{
+                artist: req.body.artist,
+                subtitle: req.body.subtitle,
+                description: req.body.description
+            }
+    });
+
+        if (eventInDB) {
+            return res.render('./products/create-event', {
+                errors: {
+                    artist: {
+                        msg: 'Este evento ya fue creado.'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+
 		const newEvent = {             
 			showtype_id: req.body.showtype_id,
             artist: req.body.artist,
