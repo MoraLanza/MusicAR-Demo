@@ -159,7 +159,11 @@ INSERT INTO tickets (id, price, type, lot, function_id, event_id)
 VALUES (DEFAULT, 500, 'Entrada general', 30, 2, 1);
 
 INSERT INTO tickets (id, price, type, lot, function_id, event_id)
+<<<<<<< HEAD
 VALUES (DEFAULT, 1000, 'Entrada vip', 10, 2, 1);
+=======
+VALUES (DEFAULT, 1000, 'Entrada vip', 10, 1, 1);
+>>>>>>> 260ef27ae4a0f13d94e80a1c39173cf027464842
 
 select * from tickets;
 
