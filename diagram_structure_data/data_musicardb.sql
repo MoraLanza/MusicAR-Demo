@@ -1,5 +1,3 @@
-
-
 INSERT INTO categories (id, name)
 VALUES (DEFAULT, 'Rock');
 

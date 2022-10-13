@@ -124,4 +124,3 @@ ADD FOREIGN KEY (country_id) REFERENCES countrys(id);
 
 ALTER TABLE events
 ADD FOREIGN KEY (showtype_id) REFERENCES showtypes(id);
-
