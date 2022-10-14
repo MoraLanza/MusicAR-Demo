@@ -25,12 +25,12 @@
                 </div>
 
                 <div>
-                    <select name="categories" id="categories">
-                        <option selected="selected">Categorias</option>
-                        <option value="clasic">Clásica</option>
-                        <option value="rock">Rock</option>
-                        <option value="salsa">Salsa</option>
-                        <option value="reggaeton">Reggaeton</option>
+                    <select  name="category_id" id="category_id">
+                        <% categories.forEach(category=> { %>
+                            <option value="<%= category.id%>">
+                                <%=category.name%>
+                            </option>
+                            <% }) %>
                     </select>
                  </div>
                  <div> 

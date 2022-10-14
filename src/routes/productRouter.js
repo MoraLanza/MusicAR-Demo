@@ -17,7 +17,7 @@ router.get('/all', authMiddleware, productController.allProducts);
 router.get('/detail/:id', productController.detail);
 
 router.get('/create', authMiddleware, productController.create);
-router.post('/create',multerProductMiddleware.single('image'), productValidationMiddleware, productController.store);
+router.post('/create',multerProductMiddleware.single('image'), productController.store);
 
 router.get('/edit/:id',authMiddleware,  productController.edit);
 router.put('/update/:id',multerProductMiddleware.single('image'), productController.update);        

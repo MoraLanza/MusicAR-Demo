@@ -32,7 +32,7 @@ body('ticketType1[]').notEmpty().withMessage('El ticket debe tener un nombre.').
 body('price1[]').notEmpty().withMessage('El ticket debe tener un precio.').bail()
 .isNumeric().isLength({min: 1000}),
 
-body('lot1').notEmpty().withMessage('Debe haber una cantidad de tickets.').bail()
+body('lot1[]').notEmpty().withMessage('Debe haber una cantidad de tickets.').bail()
 .isNumeric().isLength({min: 20}),
 
 body('ticketType2[]').optional({nullable: true}).custom((value, { req }) => {
@@ -49,7 +49,7 @@ body('ticketType2[]').optional({nullable: true}).custom((value, { req }) => {
 body('description').notEmpty().withMessage('El evento debe tener una descripción.').bail()
 .isLength({min: 100}),
 
-body.apply('linkYoutube').notEmpty().withMessage('El evento debe tener un video de muestra.')
+body('linkYoutube').notEmpty().withMessage('El evento debe tener un video de muestra.')
 
 ];
 
