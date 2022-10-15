@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/style-profile.css">
+    <link rel="stylesheet" href="/css/style-invalid-Input.css" </head>
+
+    <body>
+        <%- include('../partials/header') %>
+
+            <main>
+                <section class="user-profile-section">
+                    <div class="thumb-profile">
+                        <div class="card color-card element-animation">
+                            <ul class="icon-list">
+                                <li>
+                                    <a href="/" class="">
+                                        <i class="fas fa-arrow-left i-l w"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <img src="/image/users/<%=locals.userLogged.imageUser %>" alt="profile-pic"
+                                class="profile-img">
+                            <h1 class="title">
+                                <%= locals.userLogged.name%>
+                                    <%= locals.userLogged.lastName%>
+                            </h1>
+                            <p class="job-title">
+                                <%= locals.isLogged && locals.userLogged.role_id==1 ? 'Administrador' : 'Cliente' %>
+                            </p>
+                            <div class="desc m-top-16">
+                                <p>
+                                    <%= locals.userLogged.email%>
+                                </p>
+                            </div>
+                            <div class="btns-actions">
+                                <button class="btn color-a" id="edit-profile-btn">Editar perfil</button>
+                                <button class="btn color-b" id="edit-password-btn">Modificar clave</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="edit-profile-container card card-form glass-effect d-none element-animation">
+                        <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-edit-profile">
+
+                            <h2 class="title-form">Modificar tus datos</h2>
+                            <div class="form-inputs">
+                                <div class="inputs-box">
+                                    <div class="item-input">
+                                        <label for="name">Nombre*
+                                            <input type="text" name="name" id="name" class="controls">
+                                        </label>
+                                    </div>
+
+                                    <div class="item-input">
+                                        <label for="lastName">Apellido*
+                                            <input type="text" name="lastName" id="lastName" class="controls">
+                                        </label>
+                                    </div>
+
+                                    <div class="item-input">
+                                        <label for="email">Email*
+                                            <input type="email" name="email" id="email" class="controls">
+                                        </label>
+                                    </div>
+
+                                    <div class="item-input">
+                                        <label for="imageUser">Eligí tu foto de perfil*
+                                            <input class="controls" type="file" name="imageUser" id="imageUser" value="">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="inputs-box">
+                                    <div class="item-input">
+                                        <label for="country_id">Elegí tu país*
+                                            <select name="country_id" class="select-city controls">
+                                                <option value=""></option>
+                                            </select>
+                                        </label>
+                                    </div>
+
+                                    <div class="item-input">
+                                        <label for="city_id">Elegí tu ciudad*
+                                            <select name="city_id" class="select-city controls">
+                                                <option value=""></option>
+
+                                            </select>
+                                        </label>
+                                    </div>
+
+                                    <div class="item-input">
+                                        <label for="category_id">Elegí tu categoria preferida*
+                                            <select name="category_id" class="select-category controls">
+                                                <option value=""></option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btns-actions-form">
+                                <button class="btn color-a" type="submit">Actualizar</button>
+                                <button class="btn color-b btn-cancel" id="cancelEditForm" type="button">Cancelar</button>                           
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </main>
+            
+            <%- include('../partials/footer') %>
+            <script src="./../../js/profile.js"></script>
+    </body>
+
+</html>

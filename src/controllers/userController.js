@@ -22,7 +22,9 @@ let userController = {
     login: function (req, res) {
        return res.render("users/login");
     },
-
+    profile: function (req, res) {
+        return res.render("users/profile");
+     },
     loginProcess: async (req, res) => {
         try{
 

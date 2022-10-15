@@ -14,6 +14,8 @@ router.get('/shopping-cart', userController.cart);
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', userController.loginProcess);
 
+router.get('/profile', userController.profile);
+
 router.get('/register', guestMiddleware, userController.register);
 router.post('/register', multerUserMiddleware.single('imageUser'), registerValidationMiddleware, userController.store);
 
