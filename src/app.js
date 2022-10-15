@@ -9,7 +9,7 @@ const app = express();
 const mainRouter = require('./routes/mainRouter');
 const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
-
+const searchRouter = require('./routes/searchRouter');
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
@@ -37,6 +37,8 @@ app.use('/', mainRouter);
 app.use('/products', productRouter);
 
 app.use('/users', userRouter);
+
+app.use(searchRouter);
 
 
 

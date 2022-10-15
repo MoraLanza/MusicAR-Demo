@@ -23,6 +23,11 @@
                                             name="artist" value="<%= event.artist%>">
                                         <i class="fa-solid fa-pen"></i>
                                     </label>
+                                    <% if (locals.errors && errors.artist) {%>
+                                        <div class="error-text">
+                                           <p><%= errors.artist.msg %> </p> 
+                                        </div>
+                                       <% } %>  
                                 </div>
                                 <div class="form-group">
                                     <label for="subtitle">
@@ -37,6 +42,7 @@
                                         class="fa-solid fa-plus"></i></label>
                                 <input type="hidden" name="oldImage" value="<%= event.imageEvent %>">
                                 <input type="file" name="image" id="image" class="form-input">
+                                
                             </div>
                         </div>
 
@@ -155,6 +161,11 @@
                                         <label for="description">Descripción del evento*</label>
                                         <textarea name="description" id="description" cols="80"
                                             rows="5"><%= event.description%></textarea>
+                                            <% if (locals.errors && errors.description) {%>
+                                                <div class="error-text">
+                                                   <p><%= errors.description.msg %> </p> 
+                                                </div>
+                                               <% } %>  
                                     </div>
                                    
                                 </div>
@@ -185,6 +196,11 @@
                                         <label for="linkYoutube">Link de youtube</label>
                                         <input class="form-control" type="text" name="linkYoutube" id="linkYoutube"
                                             value="<%= event.linkYoutube %> ">
+                                            <% if (locals.errors && errors.linkYoutube) {%>
+                                                <div class="error-text">
+                                                   <p><%= errors.linkYoutube.msg %> </p> 
+                                                </div>
+                                               <% } %>  
                                     </div>
                                 </div>
                             </div>

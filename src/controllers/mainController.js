@@ -1,4 +1,4 @@
-const { localsName } = require('ejs');
+
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const Op = db.sequelize.Op;
@@ -18,10 +18,14 @@ let mainController = {
         try {
             let allEvents;
             const functions = await Functions.findAll();
+            const tickets = await Tickets.findAll({
+                order: [
+                    ['price', 'ASC']
+                ]
+            });
             const teaters = await Teaters.findAll();
-            const citys = await Citys.findAll();
-            const tickets = await Tickets.findAll();
             const categories = await Categories.findAll();
+            const citys = await Citys.findAll();
             
 
             if (req.session.userLogged) {

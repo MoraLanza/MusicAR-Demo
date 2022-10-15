@@ -252,12 +252,47 @@ let productController = {
     },
     update: async (req, res) => {
         try{
-            
+            const resultValidation = validationResult(req);
+        
+            if (resultValidation.errors.length > 0) {
+    
+                const eventId = req.params.id;
+                const event = await Events.findByPk(eventId);
+                const countries = await Countries.findAll();
+                const states = await States.findAll();
+                const citys = await Citys.findAll();
+                const teaters = await Teaters.findAll();
+                const showtypes = await Showtypes.findAll();
+                const categories = await Categories.findAll();
+                const functions = await Functions.findAll({
+                    where: {
+                        event_id: eventId
+                    }}
+                );
+               
+                const tickets = await Tickets.findAll({
+                    where: {
+                        event_id: eventId
+                    }
+                })
+                
+    
+                return res.render('./products/edit-event', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    event,
+                    functions,
+                    tickets,
+                    countries,
+                    states,
+                    citys,
+                    teaters,
+                    showtypes, 
+                    categories
+                });
+            }
+
             const eventId = req.params.id;
-            const functions = await Functions.findAll({
-                where: {
-                    event_id: eventId}
-            });
             
             const eventToUpdate = {
                 showtype: req.body.showType,
@@ -295,7 +330,7 @@ let productController = {
                 price: req.body.price[index],
                 lot: req.body.lot[index],
                 event_id: eventId,
-                function_id: functionsToUpdate[index].id,
+                
                 id: req.body.ticketId[index]
             });
             });

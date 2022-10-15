@@ -112,29 +112,17 @@
                                             <div class="form-group date function">
                                                 <label for="date">Fecha de función*</label>
                                                 <input class="form-control" type="date" name="date[]" id="date">
-                                                <% if (locals.errors && errors.date) {%>
-                                                    <div class="error-text">
-                                                       <p><%= errors.date.msg %> </p> 
-                                                    </div>
-                                                   <% } %>  
+                                               
                                             </div>
                                             <div class="form-group time function">
                                                 <label for="time">Horario de inicio*</label>
                                                 <input type="time" id="time" name="time[]" min="19:00" max="24:00">
-                                                <% if (locals.errors && errors.time) {%>
-                                                    <div class="error-text">
-                                                       <p><%= errors.time.msg %> </p> 
-                                                    </div>
-                                                   <% } %>  
+                                                
                                             </div>
                                             <div class="form-group time function">
                                                 <label for="durationTime">Duración del show*</label>
                                                 <input type="time" id="durationTime" name="durationTime[]" min="00:30" max="03:00">
-                                                <% if (locals.errors && errors.durationTime) {%>
-                                                    <div class="error-text">
-                                                       <p><%= errors.durationTime.msg %> </p> 
-                                                    </div>
-                                                   <% } %>  
+                                               
                                             </div>
                                         </div>
                                         <br>
@@ -215,6 +203,11 @@
                                         <div class="form-group description-textarea">
                                             <label for="description">Descripción del evento*</label>
                                             <textarea name="description" id="description" cols="80" rows="5"></textarea>
+                                            <% if (locals.errors && errors.description) {%>
+                                                <div class="error-text">
+                                                   <p><%= errors.description.msg %> </p> 
+                                                </div>
+                                               <% } %>  
                                         </div>
                                     </div>
                                     <div class="inputs-row">
@@ -241,6 +234,11 @@
                                         <div class="form-group">
                                             <label for="linkYoutube">Link de youtube*</label>
                                             <input class="form-control" type="text" name="linkYoutube" placeholder="">
+                                            <% if (locals.errors && errors.linkYoutube) {%>
+                                                <div class="error-text">
+                                                   <p><%= errors.linkYoutube.msg %> </p> 
+                                                </div>
+                                               <% } %>  
                                         </div>
                                     </div>
                                 </div>
