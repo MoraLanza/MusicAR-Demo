@@ -6,7 +6,7 @@ const image = document.getElementById('image');
 const dates = document.querySelectorAll('.date');
 const times = document.querySelectorAll('.time');
 const durationTimes = document.querySelectorAll('.durationTime');
-const ticketType1 = document.querySelectorAll('.ticketType1');
+let ticketType1;
 const ticketType2 = document.querySelectorAll('.ticketType2');
 const ticketType3 = document.querySelectorAll('.ticketType3');
 const price1 = document.querySelectorAll('.price1');
@@ -18,6 +18,13 @@ const lot3 = document.querySelectorAll('.lot3');
 const description = document.getElementById('description');
 const linkYoutube = document.getElementById('linkYoutube');
 
+const regexYoutube = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/;
+
+
+const ticketType1Update = () => {
+     ticketType1 = document.querySelectorAll('.ticketType1');
+     return ticketType1
+}
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -51,27 +58,39 @@ subtitle.addEventListener('keydown', event => {
 dates.forEach(date => {
     date.addEventListener('blur', event => {
 
-       let inputDate = new Date(event.target.value);
-       let todayDay = new Date().getDate();
-       let todayMonth = new Date().getMonth();
-       let todayYear = new Date().getFullYear();
+        let inputDate = new Date(event.target.value);
+        let todayDay = new Date().getDate();
+        let todayMonth = new Date().getMonth();
+        let todayYear = new Date().getFullYear();
 
-       console.log(inputDate.getDate)
-       console.log(todayDay)
-
-        if (inputDate.getDate() <= todayDay && inputDate.getMonth() <= todayMonth && inputDate.getFullYear() <= todayYear){
+        if (inputDate.getDate() <= todayDay && inputDate.getMonth() <= todayMonth && inputDate.getFullYear() <= todayYear || inputDate == '') {
             setErrorFor(date, 'La fecha no puede ser hoy o anterior a hoy.')
         } else {
             setSuccessFor(date)
         }
-})
+    })
 })
 
+linkYoutube.addEventListener('change', event =>{
+    if (regexYoutube.test(event.target.value)){
+        setSuccessFor(linkYoutube)
+    } else {
+        setErrorFor(linkYoutube, 'El link debe ser embebido y válido.')
+    }
+})
+
+description.addEventListener('change', event => {
+    if(event.target.value <= 149 || event.target.value.trim == ''){
+        setErrorFor(description, 'La descripción debe contener por lo menos 150 caracteres.')
+    } else {
+        setSuccessFor(description)
+    }
+})
 
 ticketType1.forEach(ticket => {
 
-    ticket.addEventListener('keydown', event => {
-        if (event.target.value.length <= 5 || event.target.value.trim == '') {
+    ticket.addEventListener('change', event => {
+        if (event.target.value.length <= 4 || event.target.value.trim == '') {
             setErrorFor(ticket, 'El nombre de la entrada no puede tener menos de 5 caracteres.')
         } else {
             setSuccessFor(ticket)
@@ -82,8 +101,8 @@ ticketType1.forEach(ticket => {
 
 price1.forEach(price => {
 
-    price.addEventListener('keydown', event => {
-        if (event.target.value <= 500 || event.target.value.trim == '') {
+    price.addEventListener('change', event => {
+        if (event.target.value <= 499 || event.target.value.trim == '') {
             setErrorFor(price, 'El precio de la entrada no puede ser menor a 500.')
         } else {
             setSuccessFor(price)
@@ -93,7 +112,7 @@ price1.forEach(price => {
 
 lot1.forEach(lot => {
 
-    lot.addEventListener('keydown', event => {
+    lot.addEventListener('change', event => {
         if (event.target.value <= 10 || event.target.value.trim == '') {
             setErrorFor(lot, 'La cantidad de entradas no puede ser menor a 10.')
         } else {
@@ -116,7 +135,6 @@ function checkInputs() {
 
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
-    console.log(formGroup)
     const small = formGroup.querySelector('small');
     formGroup.className = 'form-group error';
     small.innerText = message;
@@ -127,3 +145,5 @@ function setSuccessFor(input) {
     formGroup.className = 'form-group success';
 }
 
+setInterval(ticketType1Update, 1000);
+console.log(ticketType1)
