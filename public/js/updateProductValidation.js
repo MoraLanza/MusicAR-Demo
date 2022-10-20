@@ -189,19 +189,21 @@ lots.forEach((lot) => {
 });
 
 
-
-let messageErrors = document.getElementById('messageErrors');
-          ulErrores.classList.add('alert-danger')
+const validations = () => {
+    let messageErrors = document.getElementById('messageErrors');
+        
           if(errores.length > 0){
               evento.preventDefault();
-              ulErrores.innerHTML = "";
+            me.innerHTML = "";
               for (let i = 0 ; i < errores.length; i++){
-                ulErrores.innerHTML += `<li> ${errores[i]} </li> `
+              me.innerHTML += `<li> ${errores[i]} </li> `
               }
               errores = [];
           }else{
               return true;
           } 
+}
+
 
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
