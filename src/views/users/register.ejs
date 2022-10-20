@@ -16,7 +16,7 @@
         </div>
         
         <div class="formulario">
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <form class="form" action="/users/register" method="POST" enctype="multipart/form-data">
 
                 <h2>Crea tu cuenta</h2>
                 <div class="name-and-surname">
@@ -25,14 +25,8 @@
                             <label for="name">Nombre* </label>
                         </div>
                         <input type="text" name="name" id="name"
-                        class="controls  <%= locals.errors && errors.name ? 'is-invalid': null  %> "
-                          value = "<%= locals.oldData ? oldData.name : null %>"
-                        >
-                        <% if (locals.errors && errors.name) {%>
-                            <div class="error-text">
-                               <p><%= errors.name.msg %> </p> 
-                            </div>
-                           <% } %>  
+                        class="controls"
+                          value = "<%= locals.oldData ? oldData.name : null %>">
                     </div>
 
                     <div class="item-input">
@@ -40,31 +34,12 @@
                             <label for="lastName">Apellido* </label>
                         </div>
                         <input type="text" name="lastName" id="lastName"
-                         class="controls  <%= locals.errors && errors.lastName ? 'is-invalid': null  %> "  
-                         value = "<%= locals.oldData ? oldData.lastName : null %>"
-                         >
-                         <% if (locals.errors && errors.lastName) {%>
-                            <div class="error-text">
-                               <p><%= errors.lastName.msg %> </p> 
-                            </div>
-                           <% } %>  
+                         class="controls"  
+                         value = "<%= locals.oldData ? oldData.lastName : null %>">
+                         
                     </div>
                 </div>
                 <div class="users">
-
-                    <!-- <div class="item-input">
-                        <div class="input-user">
-                            <label for="username">Usuario* </label>
-                        </div>
-                        <input  type="text" name="username" id="username"
-                        class="controls  " 
-                        value = "">
-                       
-                            <div class="error-text">
-                               <p> </p> 
-                            </div>
-                          
-                    </div> -->
 
                     <div class="item-input">
                         <div class="input-user">
@@ -72,13 +47,7 @@
                         </div>
                         <input type="email" name="email" id="email"
                         class="controls  <%= locals.errors && errors.email ? 'is-invalid': null  %> "  
-                        value = "<%= locals.oldData ? oldData.email : null %>"
-                        >
-                        <% if (locals.errors && errors.email) {%>
-                            <div class="error-text">
-                               <p><%= errors.email.msg %></p>  
-                            </div>
-                           <% } %>  
+                        value = "<%= locals.oldData ? oldData.email : null %>">
                     </div>
 
                     <div class="item-input">
@@ -87,13 +56,7 @@
                         </div>
                         <input type="password" name="password" id="password"
                         class="controls  <%= locals.errors && errors.password ? 'is-invalid': null  %> "  
-                        value = "<%= locals.oldData ? oldData.password : null %>"
-                        >
-                        <% if (locals.errors && errors.password) {%>
-                            <div class="error-text">
-                               <p><%= errors.password.msg %></p>  
-                            </div>
-                           <% } %>  
+                        value = "<%= locals.oldData ? oldData.password : null %>">
                     </div>
 
                     <div class="item-input">
@@ -102,11 +65,7 @@
                         </div>
                         <input type="password" name="passwordConfirm" id="passwordConfirm"
                          class="controls  <%= locals.errors && errors.passwordConfirm ? 'is-invalid': null  %> ">
-                         <% if (locals.errors && errors.passwordConfirm) {%>
-                            <div class="error-text">
-                               <p><%= errors.passwordConfirm.msg %></p>  
-                            </div>
-                           <% } %> 
+                         
                     </div>
 
                     <div class="item-input">
@@ -141,11 +100,7 @@
                             <input class="controls"  type="file" name="imageUser" id="imageUser"
                             value = "<%= locals.oldData ? oldData.imageUser : null %>"
                             >
-                            <% if (locals.errors && errors.imageUser) {%>
-                                <div class="error-text">
-                                   <p><%= errors.imageUser.msg %></p>  
-                                </div>
-                               <% } %>  
+                           
                     </div>
 
                     <div class="item-input">
@@ -169,7 +124,7 @@
         </div>
 
 
-        <script src="/js/registerValidation.js"></script>
+        <script src="../../../js/registerValidation.js"></script>
 
     </main>
 
