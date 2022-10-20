@@ -16,44 +16,32 @@ const regexYoutube = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:emb
 
 const inputs = [artist, subtitle, image, description, linkYoutube];
 
-let errors = [];
 
 form.addEventListener('submit', event => {
-    formValidationBlur(event);
-    formValidationKeydown(event);
-    formValidationChange(event)
-
-    if (errors.length > 0) {
-        event.preventDefault();
-    } else {
-        formulario.submit();
-    }
-
-    let messageErrors = document.getElementById('messageErrors');
-    if(errors.length > 0){
-        event.preventDefault();
-        messageErrors.innerHTML = "<h6>Revisa el formulario nuevamente</h6>";        
-        errors = [];
-    }else{
-        return true;
-    } 
+   
+   
 
 });
 
-const formValidationBlur = (event) => {
+const formValidation = (event) => {
     switch (event.target.className) {
         case "form-control artist":
             if (event.target.value === '' || event.target.value === null) {
                 setErrorFor(artist, 'El nombre del artista no puede estar vacío.')
-                errors.push('artist error')
+
+            } else if (event.target.value.length <= 2) {
+                setErrorFor(artist, 'El nombre del artista no puede tener menos de 2 caracteres.');
+                
+            } else {
+                setSuccessFor(artist)
+
             }
-            break;
+        break;
         case "form-control subtitle":
-            if (event.target.value == '' || event.target.value == null) {
-                const formGroup = subtitle.closest('div');
-                const small = formGroup.querySelector('small');
-                formGroup.className = 'form-group';
-                small.innerText = '';
+            if (event.target.value.length <= 8 || event.target.value.trim == '') {
+                setErrorFor(subtitle, 'El subtitulo no puede tener menos de 8 caracteres.');
+            } else {
+                setSuccessFor(subtitle)
             }
             break;
         case "form-control date":
@@ -66,133 +54,102 @@ const formValidationBlur = (event) => {
             if (inputDate.getDate() <= todayDay && inputDate.getMonth() <= todayMonth && inputDate.getFullYear() <= todayYear || inputDate == '') {
 
                 setErrorFor(event.currentTarget, 'La fecha no puede ser hoy o anterior a hoy.');
-                errors.push('date error')
 
             } else {
                 setSuccessFor(event.currentTarget)
             }
             break;
+            case "form-control linkYoutube":
+                if (regexYoutube.test(event.target.value)) {
+                    setSuccessFor(linkYoutube)
+                } else {
+                    setErrorFor(linkYoutube, 'El link debe ser embebido y válido.');
+                }
+                break;
+            case "description":
+                if (event.target.value <= 149 || event.target.value.trim == '') {
+                    setErrorFor(description, 'La descripción debe contener por lo menos 150 caracteres.');
+                } else {
+                    setSuccessFor(description)
+                }
+                break;
+            case "form-control ticketType":
+                if (event.target.value.length <= 4 || event.target.value.trim == '') {
+                    setErrorFor(event.currentTarget, 'El nombre de la entrada no puede tener menos de 5 caracteres.');
+                } else {
+                    setSuccessFor(event.currentTarget)
+                }
+    
+                break;
+            case "form-control price":
+                if (event.target.value <= 499 || event.target.value.trim == '') {
+                    setErrorFor(event.currentTarget, 'El precio de la entrada no puede ser menor a 500.');
+                } else {
+                    setSuccessFor(event.currentTarget)
+                }
+                break;
+            case "form-control lot":
+                if (event.target.value <= 10 || event.target.value.trim == '') {
+                    setErrorFor(event.currentTarget, 'La cantidad de entradas no puede ser menor a 10.');
+                } else {
+                    setSuccessFor(event.currentTarget)
+                }
+    
+                break;
+            case "form-control time":
+                let time = event.target.value;
+                let time2 = time.split(":");
+                let time3 = time2.join(".");
+                let time4 = parseInt(time3);
+                if (time4 >= 18 && time4 <= 23) {
+                    setSuccessFor(event.currentTarget)
+                } else {
+                    setErrorFor(event.currentTarget, 'El horario debe ser entre las 18 y las 23 hs.');
+                }
+    
+                break;
+            case "form-control timeDuration":
+                let timeDuration = event.target.value;
+                let timeDuration2 = timeDuration.split(":");
+                let timeDuration3 = timeDuration2.join(".");
+                let timeDuration4 = parseInt(timeDuration3);
+                if (timeDuration4 >= 1 && timeDuration4 <= 4) {
+                    setSuccessFor(event.currentTarget)
+                } else {
+                    setErrorFor(event.currentTarget, 'La duración debe ser aproximadamente entre 1 y 4 hs.');
+                }
+                break;
+    
     }
 }
 
-const formValidationKeydown = (event) => {
-    switch (event.target.className) {
-        case "form-control artist":
-            if (event.target.value.length <= 2) {
-                setErrorFor(artist, 'El nombre del artista no puede tener menos de 2 caracteres.');
-                errors.push('artist error')
-            } else {
-                setSuccessFor(artist)
-
-            }
-            break;
-        case "form-control subtitle":
-            if (event.target.value.length <= 8 || event.target.value.trim == '') {
-                setErrorFor(subtitle, 'El subtitulo no puede tener menos de 8 caracteres.');
-                errors.push('subtitle error')
-            } else {
-                setSuccessFor(subtitle)
-            }
-            break;
-
-    }
-}
-
-const formValidationChange = (event) => {
-    switch (event.target.className) {
-        case "form-control linkYoutube":
-            if (regexYoutube.test(event.target.value)) {
-                setSuccessFor(linkYoutube)
-            } else {
-                setErrorFor(linkYoutube, 'El link debe ser embebido y válido.');
-                errors.push('youtube error')
-            }
-            break;
-        case "description":
-            if (event.target.value <= 149 || event.target.value.trim == '') {
-                setErrorFor(description, 'La descripción debe contener por lo menos 150 caracteres.');
-                errors.push('description error')
-            } else {
-                setSuccessFor(description)
-            }
-            break;
-        case "form-control ticketType":
-            if (event.target.value.length <= 4 || event.target.value.trim == '') {
-                setErrorFor(event.currentTarget, 'El nombre de la entrada no puede tener menos de 5 caracteres.');
-                errors.push('ticketType error')
-            } else {
-                setSuccessFor(event.currentTarget)
-            }
-
-            break;
-        case "form-control price":
-            if (event.target.value <= 499 || event.target.value.trim == '') {
-                setErrorFor(event.currentTarget, 'El precio de la entrada no puede ser menor a 500.');
-                errors.push('price error');
-            } else {
-                setSuccessFor(event.currentTarget)
-            }
-            break;
-        case "form-control lot":
-            if (event.target.value <= 10 || event.target.value.trim == '') {
-                setErrorFor(event.currentTarget, 'La cantidad de entradas no puede ser menor a 10.');
-                errors.push('lot error');
-            } else {
-                setSuccessFor(event.currentTarget)
-            }
-
-            break;
-        case "form-control time":
-            let time = event.target.value;
-            let time2 = time.split(":");
-            let time3 = time2.join(".");
-            let time4 = parseInt(time3);
-            if (time4 >= 18 && time4 <= 23) {
-                setSuccessFor(event.currentTarget)
-            } else {
-                setErrorFor(event.currentTarget, 'El horario debe ser entre las 18 y las 23 hs.');
-                errors.push('time error')
-            }
-
-            break;
-        case "form-control timeDuration":
-            let timeDuration = event.target.value;
-            let timeDuration2 = timeDuration.split(":");
-            let timeDuration3 = timeDuration2.join(".");
-            let timeDuration4 = parseInt(timeDuration3);
-            if (timeDuration4 >= 1 && timeDuration4 <= 4) {
-                setSuccessFor(event.currentTarget)
-            } else {
-                setErrorFor(event.currentTarget, 'La duración debe ser aproximadamente entre 1 y 4 hs.');
-                errors.push('durationTime error');
-            }
-            break;
-
-    }
-}
 
 inputs.forEach((input) => {
-    input.addEventListener('keydown', formValidationKeydown);
-    input.addEventListener('blur', formValidationBlur);
-    input.addEventListener('change', formValidationChange);
+    input.addEventListener('change', formValidation);
 });
+
 dates.forEach((date) => {
-    date.addEventListener('blur', formValidationBlur);
+    date.addEventListener('change', formValidation);
 });
+
 times.forEach((time) => {
-    time.addEventListener('change', formValidationChange);
+    time.addEventListener('change', formValidation);
 });
+
 durationTime.forEach((timeD) => {
-    timeD.addEventListener('change', formValidationChange);
+    timeD.addEventListener('change', formValidation);
 });
+
 ticketType.forEach((ticket) => {
-    ticket.addEventListener('change', formValidationChange);
+    ticket.addEventListener('change', formValidation);
 });
+
 prices.forEach((price) => {
-    price.addEventListener('change', formValidationChange);
+    price.addEventListener('change', formValidation);
 });
+
 lots.forEach((lot) => {
-    lot.addEventListener('change', formValidationChange);
+    lot.addEventListener('change', formValidation);
 });
 
 

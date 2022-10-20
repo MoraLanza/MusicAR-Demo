@@ -18,7 +18,7 @@
                             <div class="titulo-principal-box">
                                 <div class="form-group event-principal-title">
                                     <label for="event-title">
-                                        <input class="form-control" type="text" id="artist" maxlength="50" name="artist"
+                                        <input class="form-control artist" type="text" id="artist" maxlength="50" name="artist"
                                             placeholder="Título">
                                         <i class="fa-solid fa-pen"></i>
                                         <i class="fas fa-check-circle"></i>
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="event-description">
-                                        <input class="form-control" type="text" id="subtitle" maxlength="150"
+                                        <input class="form-control subtitle" type="text" id="subtitle" maxlength="150"
                                             name="subtitle" placeholder="Subtítulo">
                                         <i class="fa-solid fa-pen"></i>
                                         <i class="fas fa-check-circle"></i>
@@ -131,7 +131,7 @@
                                                     <i class="fas fa-check-circle"></i>
                                                     <i class="fas fa-exclamation-circle"></i>
                                                 </label>
-                                                <input class="form-control durationTime" type="time" id="durationTime" name="durationTime[]" min="00:30"
+                                                <input class="form-control timeDuration" type="time" id="durationTime" name="durationTime[]" min="00:30"
                                                     max="03:00">
                                                 <small>Error message</small>
                                             </div>
@@ -146,7 +146,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control ticketType1" type="text" name="ticketType1[]"
+                                                        <input class="form-control ticketType" type="text" name="ticketType1[]"
                                                             placeholder="Ej: Pullman">
                                                         <small>Error message</small>
                                                     </div>
@@ -155,7 +155,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control price1" type="number" name="price1[]"
+                                                        <input class="form-control price" type="number" name="price1[]"
                                                             placeholder="Ej: 5000.-">
                                                         <small>Error message</small>
                                                     </div>
@@ -164,7 +164,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control lot1" type="number" name="lot1[]"
+                                                        <input class="form-control lot" type="number" name="lot1[]"
                                                             placeholder="Ej: 20">
                                                         <small>Error message</small>
                                                     </div>
@@ -175,11 +175,11 @@
                                             <div class="ticketRow" id="ticketRow">
                                                 <div class="inputs-row ticket-row">
                                                     <div class="form-group">
-                                                        <label for="ticketType2">Tipo de entrada
+                                                        <label for="ticketType">Tipo de entrada
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control ticketType2" type="text" maxlength="30"
+                                                        <input class="form-control ticketType" type="text" maxlength="30"
                                                             name="ticketType2[]" placeholder="Ej: Pullman">
                                                         <small>Error message</small>
                                                     </div>
@@ -188,7 +188,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control price2" type="number" name="price2[]"
+                                                        <input class="form-control price" type="number" name="price2[]"
                                                             placeholder="Ej: 5000.-">
                                                         <small>Error message</small>
                                                     </div>
@@ -197,7 +197,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control lot2" type="number" name="lot2[]"
+                                                        <input class="form-control lot" type="number" name="lot2[]"
                                                             placeholder="Ej: 20">
                                                         <small>Error message</small>
                                                     </div>
@@ -208,11 +208,11 @@
                                             <div class="ticketRow" id="ticketRow">
                                                 <div class="inputs-row ticket-row">
                                                     <div class="form-group">
-                                                        <label for="ticketType3">Tipo de entrada
+                                                        <label for="ticketType">Tipo de entrada
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control ticketType3" type="text" maxlength="30"
+                                                        <input class="form-control ticketType" type="text" maxlength="30"
                                                             name="ticketType3[]" placeholder="Ej: Pullman">
                                                         <small>Error message</small>
                                                     </div>
@@ -221,7 +221,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control price3" type="number" name="price3[]"
+                                                        <input class="form-control price" type="number" name="price3[]"
                                                             placeholder="Ej: 5000.-">
                                                         <small>Error message</small>
                                                     </div>
@@ -230,7 +230,7 @@
                                                             <i class="fas fa-check-circle"></i>
                                                             <i class="fas fa-exclamation-circle"></i>
                                                         </label>
-                                                        <input class="form-control lot3" type="number" name="lot3[]"
+                                                        <input class="form-control lot" type="number" name="lot3[]"
                                                             placeholder="Ej: 20">
                                                         <small>Error message</small>
                                                     </div>
@@ -258,7 +258,7 @@
                                     <div class="inputs-row">
                                         <div class="form-group">
                                             <label for="category_id">Categorias*</label>
-                                            <select class="form-control" name="category_id" id="category_id">
+                                            <select class="form-control linkYoutube" name="category_id" id="category_id">
                                                 <% categories.forEach(category=> { %>
                                                     <option value="<%= category.id%>">
                                                         <%=category.name%>
