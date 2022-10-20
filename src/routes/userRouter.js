@@ -4,6 +4,7 @@ const router = express.Router();
 const userController = require('../controllers/userController');
 
 // Middlewares
+const authMiddleware = require('../middlewares/authMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const multerUserMiddleware = require('../middlewares/multerUserMiddleware');
 const registerValidationMiddleware = require('../middlewares/registerValidationMiddleware');
@@ -13,6 +14,8 @@ router.get('/shopping-cart', userController.cart);
 
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', userController.loginProcess);
+
+router.get('/profile', authMiddleware, userController.profile && userController.allUsers);
 
 router.get('/register', guestMiddleware, userController.register);
 router.post('/register', multerUserMiddleware.single('imageUser'), registerValidationMiddleware, userController.store);
