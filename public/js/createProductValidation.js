@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const artist = document.querySelector('.artist');
 const subtitle = document.querySelector('.subtitle');
 const image = document.getElementById('image');
-const dates = document.querySelectorAll('.date');
+let dates = document.querySelectorAll('.dateEvent');
 const times = document.querySelectorAll('.time');
 const durationTime = document.querySelectorAll('.timeDuration');
 const ticketType = document.querySelectorAll('.ticketType');
@@ -22,6 +22,13 @@ form.addEventListener('submit', event => {
 
 });
 
+function getDates() {
+    dates =  document.querySelectorAll('.dateEvent');
+    return dates;
+}
+
+dates = getDates();
+console.log(dates)
 const formValidation = (event) => {
     switch (event.target.className) {
         case "form-control artist":
@@ -43,7 +50,7 @@ const formValidation = (event) => {
                 setSuccessFor(subtitle)
             }
             break;
-        case "form-control date":
+        case "form-control dateEvent":
 
             let inputDate = new Date(event.target.value);
             let todayDay = new Date().getDate();
@@ -127,7 +134,7 @@ inputs.forEach((input) => {
     input.addEventListener('change', formValidation);
 });
 
-dates.forEach((date) => {
+getDates().forEach((date) => {
     date.addEventListener('change', formValidation);
 });
 
