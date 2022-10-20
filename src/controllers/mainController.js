@@ -1,6 +1,7 @@
-const { localsName } = require('ejs');
+
 const db = require('../database/models');
 const sequelize = db.sequelize;
+const Op = db.sequelize.Op;
 
 
 const Users = db.User;
@@ -17,10 +18,14 @@ let mainController = {
         try {
             let allEvents;
             const functions = await Functions.findAll();
+            const tickets = await Tickets.findAll({
+                order: [
+                    ['price', 'ASC']
+                ]
+            });
             const teaters = await Teaters.findAll();
-            const citys = await Citys.findAll();
-            const tickets = await Tickets.findAll();
             const categories = await Categories.findAll();
+            const citys = await Citys.findAll();
             
 
             if (req.session.userLogged) {
@@ -60,39 +65,33 @@ let mainController = {
         res.render("faq");
     },
     searchBar: async function (req, res) {
-        // try {
-        //     let allEvents;
-        //     const functions = await Functions.findAll();
-        //     const teaters = await Teaters.findAll();
-        //     const citys = await Citys.findAll();
-        //     const categories = await Categories.findAll();
+        try {
+            const eventsArtist = await Events.findAll({ 
+                where: {
+                    artist: {[Op.like]: `%${req.body.key-word}%`}
 
+                }
+            });
 
-        //     if (req.session.userLogged) {
+            const eventsCategories = await Events.findAll({
+                where:{
+                    category_id: req.body.category_id
+                }
+            });
 
-        //         allEvents = await Events.findAll({
-        //             where: {
-        //                 category_id: req.session.userLogged.category_id
-        //             }
-        //         });
+            const eventsDate =await Events.findAll({
+                where:{
+                    date: req.body.event-date
+                }
+            });
+            
+            
 
-        //     } else {
+           
 
-        //         allEvents = await Events.findByPk(req.params.id,
-        //             {
-        //                 include: [{ association: 'citys' },
-        //                           { association: 'teaters' },
-        //                           { association: '' }]
-        //             })
-        //     };
-
-
-
-        //     return res.render('index', { allEvents, functions, teaters, citys, tickets });
-
-        // } catch (error) {
-        //     res.send(error)
-        // }
+        } catch (error) {
+            res.send(error)
+        }
     }
 }
 
