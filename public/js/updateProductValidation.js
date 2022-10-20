@@ -16,7 +16,20 @@ const regexYoutube = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:emb
 
 const inputs = [artist, subtitle, image, description, linkYoutube];
 
-const errors = [];
+let errors = [];
+
+form.addEventListener('submit', event => {
+  
+    if (errors.length > 0) {
+        event.preventDefault();
+        errors = [];
+        formValidationBlur(event);
+        formValidationChange(event);
+        formValidationKeydown(event);
+    } else {
+        formulario.submit();
+    }
+});
 
 const formValidationBlur = (event) => {
     switch (event.target.className) {
@@ -97,14 +110,13 @@ const formValidationChange = (event) => {
             }
             break;
         case "form-control ticketType":
-            ticketType.forEach(ticket => {
-                if (event.target.value.length <= 4 || event.target.value.trim == '') {
-                    setErrorFor(event.currentTarget, 'El nombre de la entrada no puede tener menos de 5 caracteres.');
-                    errors.push('ticketType error')
-                } else {
-                    setSuccessFor(event.currentTarget)
-                }
-            });
+            if (event.target.value.length <= 4 || event.target.value.trim == '') {
+                setErrorFor(event.currentTarget, 'El nombre de la entrada no puede tener menos de 5 caracteres.');
+                errors.push('ticketType error')
+            } else {
+                setSuccessFor(event.currentTarget)
+            }
+
             break;
         case "form-control price":
             if (event.target.value <= 499 || event.target.value.trim == '') {
@@ -176,41 +188,20 @@ lots.forEach((lot) => {
     lot.addEventListener('change', formValidationChange);
 });
 
-form.addEventListener('submit', event => {
-    if (errors.length > 0) {
-        event.preventDefault();
-        errors = [];
-    }else{
-        formulario.submit();
-    }  
-});
 
 
-const validations = () => {
-    inputs.forEach((input) => {
-        input.addEventListener('keydown', formValidationKeydown);
-        input.addEventListener('blur', formValidationBlur);
-        input.addEventListener('change', formValidationChange);
-    });
-    dates.forEach((date) => {
-        date.addEventListener('blur', formValidationBlur);
-    });
-    times.forEach((time) => {
-        time.addEventListener('change', formValidationChange);
-    });
-    durationTime.forEach((timeD) => {
-        timeD.addEventListener('change', formValidationChange);
-    });
-    ticketType.forEach((ticket) => {
-        ticket.addEventListener('change', formValidationChange);
-    });
-    prices.forEach((price) => {
-        price.addEventListener('change', formValidationChange);
-    });
-    lots.forEach((lot) => {
-        lot.addEventListener('change', formValidationChange);
-    });
-}
+let messageErrors = document.getElementById('messageErrors');
+          ulErrores.classList.add('alert-danger')
+          if(errores.length > 0){
+              evento.preventDefault();
+              ulErrores.innerHTML = "";
+              for (let i = 0 ; i < errores.length; i++){
+                ulErrores.innerHTML += `<li> ${errores[i]} </li> `
+              }
+              errores = [];
+          }else{
+              return true;
+          } 
 
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
