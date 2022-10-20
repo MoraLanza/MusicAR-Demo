@@ -19,16 +19,25 @@ const inputs = [artist, subtitle, image, description, linkYoutube];
 let errors = [];
 
 form.addEventListener('submit', event => {
-  
+    formValidationBlur(event);
+    formValidationKeydown(event);
+    formValidationChange(event)
+
     if (errors.length > 0) {
         event.preventDefault();
-        errors = [];
-        formValidationBlur(event);
-        formValidationChange(event);
-        formValidationKeydown(event);
     } else {
         formulario.submit();
     }
+
+    let messageErrors = document.getElementById('messageErrors');
+    if(errors.length > 0){
+        event.preventDefault();
+        messageErrors.innerHTML = "<h6>Revisa el formulario nuevamente</h6>";        
+        errors = [];
+    }else{
+        return true;
+    } 
+
 });
 
 const formValidationBlur = (event) => {
@@ -65,8 +74,6 @@ const formValidationBlur = (event) => {
             break;
     }
 }
-
-
 
 const formValidationKeydown = (event) => {
     switch (event.target.className) {
@@ -189,22 +196,6 @@ lots.forEach((lot) => {
 });
 
 
-const validations = () => {
-    let messageErrors = document.getElementById('messageErrors');
-        
-          if(errores.length > 0){
-              evento.preventDefault();
-            me.innerHTML = "";
-              for (let i = 0 ; i < errores.length; i++){
-              me.innerHTML += `<li> ${errores[i]} </li> `
-              }
-              errores = [];
-          }else{
-              return true;
-          } 
-}
-
-
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
     const small = formGroup.querySelector('small');
@@ -216,4 +207,3 @@ function setSuccessFor(input) {
     const formGroup = input.closest('div');
     formGroup.className = 'form-group success';
 }
-

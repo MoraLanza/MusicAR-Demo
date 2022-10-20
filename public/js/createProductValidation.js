@@ -6,7 +6,8 @@ const image = document.getElementById('image');
 const dates = document.querySelectorAll('.date');
 const times = document.querySelectorAll('.time');
 const durationTimes = document.querySelectorAll('.durationTime');
-let ticketType1;
+ let ticketType1 = document.querySelector('.ticketTypeGeneral');
+ let ticketType1Live = ticketType1.childNodes;
 const ticketType2 = document.querySelectorAll('.ticketType2');
 const ticketType3 = document.querySelectorAll('.ticketType3');
 const price1 = document.querySelectorAll('.price1');
@@ -20,11 +21,7 @@ const linkYoutube = document.getElementById('linkYoutube');
 
 const regexYoutube = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:watch|embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/;
 
-
-const ticketType1Update = () => {
-     ticketType1 = document.querySelectorAll('.ticketType1');
-     return ticketType1
-}
+console.log(ticketType1Live)
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -87,7 +84,7 @@ description.addEventListener('change', event => {
     }
 })
 
-ticketType1.forEach(ticket => {
+ticketType1Live.forEach(ticket => {
 
     ticket.addEventListener('change', event => {
         if (event.target.value.length <= 4 || event.target.value.trim == '') {
@@ -144,6 +141,3 @@ function setSuccessFor(input) {
     const formGroup = input.closest('div');
     formGroup.className = 'form-group success';
 }
-
-setInterval(ticketType1Update, 1000);
-console.log(ticketType1)
