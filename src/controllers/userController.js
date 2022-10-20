@@ -143,7 +143,16 @@ let userController = {
 
         res.send(error)
     }
-    }
+    },
+    allUsers: async (req, res) => {
+        try {
+            const users = await Users.findAll();
+           
+            return res.render('./users/profile', {users})
+        } catch (error) {
+            res.send(error)
+        }
+    },
 }
 
 module.exports = userController;

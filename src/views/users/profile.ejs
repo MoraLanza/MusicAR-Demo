@@ -13,8 +13,8 @@
                         <div class="card color-card element-animation">
                             <ul class="icon-list">
                                 <li>
-                                    <a href="/" class="">
-                                        <i class="fas fa-arrow-left i-l w"></i>
+                                    <a href="/" class="arrow-back">
+                                        <i class="fas fa-arrow-left w"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -36,12 +36,17 @@
                                 <button class="btn color-a" id="edit-profile-btn">Editar perfil</button>
                                 <button class="btn color-b" id="edit-password-btn">Modificar clave</button>
                             </div>
+                            <% if (locals.userLogged.role_id == 1 ) {%>
+                            <div class="btn-users-list">
+                                <button class="btn btn-long color-c">Ver usuarios</button>
+                            </div
+                            <% } %>
                         </div>
                     </div>
 
                     </div>
-                    <div class="edit-profile-container card card-form glass-effect d-none element-animation">
-                        <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-edit-profile">
+                    <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editProfile">
+                        <form action="" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
 
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs">
@@ -102,6 +107,88 @@
                                 <button class="btn color-a" type="submit">Actualizar</button>
                                 <button class="btn color-b btn-cancel" id="cancelEditForm" type="button">Cancelar</button>                           
                             </div>
+                        </form>                
+                    </div>
+                                        
+                    <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editPassword">
+                        <form action="" method="POST" enctype="multipart/form-data" class="form-edit-password">
+                            <h2 class="title-form">Modificar tus datos</h2>
+                            <div class="form-inputs d-column">
+                                <div class="item-input">
+                                    <label for="name">Contraseña actual*
+                                        <input type="text" name="name" id="name" class="controls">
+                                    </label>
+                                </div>
+                                <div class="item-input">
+                                    <label for="name">Nueva contraseña*
+                                        <input type="text" name="name" id="name" class="controls">
+                                    </label>
+                                </div>
+                                <div class="item-input">
+                                    <label for="name">Repetir nueva contraseña*
+                                        <input type="text" name="name" id="name" class="controls">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="btns-actions-form">
+                                <button class="btn color-a" type="submit">Actualizar</button>
+                                <button class="btn color-b btn-cancel" id="cancelPasswordForm" type="button">Cancelar</button>                           
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="edit-profile-container card card-form glass-effect element-animation" id="listUsers">
+                        <form action="" method="POST" enctype="multipart/form-data" class="form-edit-password">
+                            <h4 class="title-form">Lista de usuarios</h4>
+                            <table data-current-page="1" aria-live="polite">
+                                <thead>
+                                    <tr>
+                                        <td>Nombre</td>
+                                        <td>Apellido</td>
+                                        <td>Email</td>
+                                        <td>Rol</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="paginated-list">
+                                    <% users.forEach( user => { %>                                         
+                                    <tr>
+                                        <td>
+                                        <%= user.name %> 
+                                        </td>
+                                        <td>
+                                        <%= user.lastName %> 
+                                        </td>
+                                        <td>
+                                        <%= user.email %> 
+                                        </td>
+                                        <td>
+                                        <select name="userRole" id="userRole">
+                                            <% if(user.role_id == 1) { %> 
+                                                <option value="1" selected>Administrador</option>
+                                                <option value="2">Cliente</option>
+                                            <% } else { %>
+                                                <option value="1">Administrador</option>
+                                                <option value="2" selected>Cliente</option>
+                                            <% } %>
+                                        </select>
+                                        </td>
+                                    </tr>
+                                    <% }) %> 
+                                </tbody>
+                            </table>                          
+                            <nav class="pagination-container">
+                                <button type="button" class="pagination-button" id="prev-button" title="Previous page" aria-label="Previous page">
+                                  &lt;
+                                </button>
+                                 
+                                <div id="pagination-numbers">
+                               
+                                </div>
+                                 
+                                <button type="button" class="pagination-button" id="next-button" title="Next page" aria-label="Next page">
+                                  &gt;
+                                </button>
+                            </nav>
                         </form>
                     </div>
                 </section>

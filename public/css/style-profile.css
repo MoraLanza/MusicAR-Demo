@@ -48,11 +48,16 @@ body{
     align-self: flex-start;
 }
 
-
-.i-l {
-    margin-left: 16px;
-    margin-top: 16px;
+.icon-list a i{
+    padding: 20px;
+    transition: 0.5s;
 }
+
+.arrow-back:hover i{
+    transition: 0.5s;
+    padding-left: 5px;
+}
+
 
 .w {
     color: #ffffff;
@@ -88,7 +93,11 @@ hr {
 
 .color-b{
     background: linear-gradient(to bottom right, #6452E9, #639FF9);
-  }
+}
+
+.color-c{
+    background: linear-gradient(333deg, rgba(99,159,249,1) 23%, rgba(129,98,206,1) 46%, rgba(245,75,165,1) 76%);
+}
 
 .btn {
     border: none;
@@ -114,6 +123,11 @@ hr {
     border-radius: 30px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
 }
+
+.btn-long, .btn-long:hover{
+    width: 50%;
+}
+
 
 .btn-cancel{
     max-width: 100px;
@@ -147,10 +161,17 @@ hr {
     
 }
 
-
 .d-none{
     display: none !important;
 }
+
+.btn-users-list{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
 
 /*cards*/
 
@@ -196,12 +217,17 @@ hr {
     height: 100%;
     max-width: 135px;
     min-height: 136px;
+    object-fit: cover;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto
+}
+
+#editPassword{
+    max-width: fit-content;
 }
 
 
@@ -293,7 +319,7 @@ hr {
 
     /* form  */
 
-.form-edit-profile{
+.form-edit-profile, .form-edit-password{
     width: 100%;
 }
 
@@ -338,4 +364,16 @@ hr {
 
 .controls:focus, .controls:focus-visible{
     outline: 0;
+}
+
+.d-column{
+    flex-direction: column;
+}
+
+.form-edit-password input, .form-edit-password .item-input {
+    width: initial;
+}
+
+.form-edit-password .item-input {
+    width: 100%;
 }
