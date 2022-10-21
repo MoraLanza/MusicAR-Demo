@@ -9,7 +9,8 @@ body('artist').notEmpty().withMessage('Debe ingresar un artista.').bail()
 body('description').notEmpty().withMessage('El evento debe tener una descripción.').bail()
 .isLength({min: 100}),
 
-body('linkYoutube').notEmpty().withMessage('El evento debe tener un video de muestra.')
+body('linkYoutube').notEmpty().withMessage('El evento debe tener un video de muestra.').bail()
+.matches(/(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/),
 
 ];
 

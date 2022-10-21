@@ -13,11 +13,13 @@ form.addEventListener('submit', event =>{
         email.classList.add('is-invalid');
         password.classList.add('is-invalid');
         error.style.visibility = 'visible';   
+    } else {
+        event.submit();
     }
 })
 
 const validations = () => {
-    if (!emailRegex.test(email)){
+    if (emailRegex.test(email)){
         return false
     }
     if (password.value == '' || password.value == null){

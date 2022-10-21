@@ -5,10 +5,29 @@
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 5px;
     visibility: hidden;
+    margin-bottom: 10px;
 }
 
 .is-invalid{
         box-shadow: inset 0px 0px 0px 1px rgb(255, 121, 121);
         box-sizing: border-box;
         border: 1px solid rgb(255, 100, 100);
+}
+
+i.fa-check-circle,  i.fa-exclamation-circle  {
+	visibility: hidden;
+	
+}
+
+.item-input.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.item-input.success {
+    margin-right: 20px;
+}
+.item-input.error label i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
 }
