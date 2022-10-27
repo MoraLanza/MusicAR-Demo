@@ -24,10 +24,14 @@ i.fa-check-circle,  i.fa-exclamation-circle  {
 	visibility: visible;
 }
 
-.item-input.success {
-    margin-right: 20px;
-}
 .item-input.error label i.fa-exclamation-circle {
 	color: #e74c3c;
 	visibility: visible;
+}
+
+.warning{
+    color: #ff6453;
+    font-size: 24px;
+    margin: 20px 0;
+    visibility: hidden;
 }

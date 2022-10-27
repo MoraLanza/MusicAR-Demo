@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const artist = document.querySelector('.artist');
 const subtitle = document.querySelector('.subtitle');
 const image = document.getElementById('image');
-let dates = document.querySelectorAll('.dateEvent');
+const dates = document.querySelectorAll('.dateEvent');
 const times = document.querySelectorAll('.time');
 const durationTime = document.querySelectorAll('.timeDuration');
 const ticketType = document.querySelectorAll('.ticketType');
@@ -10,6 +10,9 @@ const prices = document.querySelectorAll('.price');
 const lots = document.querySelectorAll('.lot');
 const description = document.querySelector('.description-textarea');
 const linkYoutube = document.querySelector('.linkYoutube');
+const formFunction = document.querySelector('.function-form');
+const formFunctionChildNode = formFunction.childNodes;
+
 
 const regexYoutube = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/;
 
@@ -22,12 +25,12 @@ form.addEventListener('submit', event => {
 
 });
 
-function getDates() {
-    dates =  document.querySelectorAll('.dateEvent');
-    return dates;
-}
+// function getDates() {
+//     dates =  document.querySelectorAll('.dateEvent');
+//     return dates;
+// }
 
-dates = getDates();
+// dates = getDates();
 console.log(dates)
 const formValidation = (event) => {
     switch (event.target.className) {
@@ -134,7 +137,7 @@ inputs.forEach((input) => {
     input.addEventListener('change', formValidation);
 });
 
-getDates().forEach((date) => {
+dates.forEach((date) => {
     date.addEventListener('change', formValidation);
 });
 

@@ -32,7 +32,9 @@ main.fondoImagen {
 .name-and-surname .controls {
     width: 320px;
 }
-
+.controls.name {
+    margin-right: 20px;
+}
 .formulario {
     color: white;
     text-align: center;
