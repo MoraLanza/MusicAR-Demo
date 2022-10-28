@@ -2,12 +2,16 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const Op = db.sequelize.Op;
 
-const Users = db.Users;
+const Users = db.User;
 
 const userController = {
     userList: async (req, res) => {
         try {
-            const users = Users.findAll();
+            const users = Users.findAll({
+                attributes: [
+                    'id', 'name', 'lastName', 'email'
+                ]
+            });
             return res.json({
                 count: users.lenght,
                 data: users
@@ -18,10 +22,9 @@ const userController = {
     },
     userDetail: async (req, res) => {
         try {
-            const users = Users.findByPk(req.params.id);
+            const user = Users.findByPk(req.params.id);
             return res.json({
-                count: users.lenght,
-                data: users
+                
             })
         } catch(error) {
             res.send(error)
