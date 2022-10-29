@@ -38,7 +38,7 @@ app.use('/products', productRouter);
 
 app.use('/users', userRouter);
 
-app.use(searchRouter);
+app.use('/search',searchRouter);
 
 
 

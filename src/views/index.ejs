@@ -17,15 +17,16 @@
 
         <div class="search-container">
             <div class="search-nav">
-                <form action="" class="search-form">
+                <form action="/search/events"  method="get" class="search-form">
 
                  <div class="search" >
-                    <input type="text" name="key-word" id="search-artist" placeholder="Buscar sala, artista, recinto...">
+                    <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
                      <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
 
                 <div>
                     <select  name="category_id" id="category_id">
+                        <option value="" selected>Selecciona una categoria</option>
                         <% categories.forEach(category=> { %>
                             <option value="<%= category.id%>">
                                 <%=category.name%>
@@ -41,7 +42,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                  </div>  
                     
-                    <input class="search-btn" type="button" value="Buscar">
+                    <input class="search-btn" type="submit" value="Buscar">
                 </form>
             </div>
         </div>
