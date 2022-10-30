@@ -1,6 +1,7 @@
-const { localsName } = require('ejs');
+
 const db = require('../database/models');
 const sequelize = db.sequelize;
+const Op = db.sequelize.Op;
 
 
 const Users = db.User;
@@ -17,10 +18,14 @@ let mainController = {
         try {
             let allEvents;
             const functions = await Functions.findAll();
+            const tickets = await Tickets.findAll({
+                order: [
+                    ['price', 'ASC']
+                ]
+            });
             const teaters = await Teaters.findAll();
-            const citys = await Citys.findAll();
-            const tickets = await Tickets.findAll();
             const categories = await Categories.findAll();
+            const citys = await Citys.findAll();
             
 
             if (req.session.userLogged) {
@@ -61,17 +66,28 @@ let mainController = {
     },
     searchBar: async function (req, res) {
         try {
-            const events = await Events.findAll();
-            const functions = await Functions.findAll();
-            const tickets = await Tickets.findAll();
+            const eventsArtist = await Events.findAll({ 
+                where: {
+                    artist: {[Op.like]: `%${req.body.key-word}%`}
 
-            return res.json({
-                totalEvents: events.length,
-                eventsData: events,
-                totalFunctions: functions.length,
-                functionsData: functions,
-                totalTickets: tickets.length,
-                ticketsData: tickets});
+                }
+            });
+
+            const eventsCategories = await Events.findAll({
+                where:{
+                    category_id: req.body.category_id
+                }
+            });
+
+            const eventsDate =await Events.findAll({
+                where:{
+                    date: req.body.event-date
+                }
+            });
+            
+            
+
+           
 
         } catch (error) {
             res.send(error)

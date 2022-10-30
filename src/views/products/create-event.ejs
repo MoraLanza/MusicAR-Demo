@@ -12,35 +12,41 @@
             <main>
                 <section class="section-form-event-create">
                     <form action="/products/create" method="POST" class="form-crear-evento"
-                        enctype="multipart/form-data">
+                        enctype="multipart/form-data" id="form">
                         <div class="image-banner no-charged"
                             style="background-image: url(/image/add-image-default.png) ;">
                             <div class="titulo-principal-box">
                                 <div class="form-group event-principal-title">
                                     <label for="event-title">
-                                        <input class="form-control" type="text" id="artist" maxlength="50" name="artist"
+                                        <input class="form-control artist" type="text" id="artist" maxlength="50" name="artist"
                                             placeholder="Título">
                                         <i class="fa-solid fa-pen"></i>
+                                        <i class="fas fa-check-circle"></i>
+                                        <i class="fas fa-exclamation-circle"></i>
                                     </label>
-                                    <% if (locals.errors && errors.artist) {%>
-                                        <div class="error-text">
-                                           <p><%= errors.artist.msg %> </p> 
-                                        </div>
-                                       <% } %>  
+                                    <small>Error message</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-description">
-                                        <input class="form-control" type="text" id="subtitle" maxlength="150"
+                                        <input class="form-control subtitle" type="text" id="subtitle" maxlength="150"
                                             name="subtitle" placeholder="Subtítulo">
                                         <i class="fa-solid fa-pen"></i>
+                                        <i class="fas fa-check-circle"></i>
+                                        <i class="fas fa-exclamation-circle"></i>
                                     </label>
+                                    <small>Error message</small>
                                 </div>
                             </div>
-                            <div class="btn-img-box">
+                            <div class="btn-img-box form-group">
                                 <label for="image" class="form-label"> <i class="fa-regular fa-image"></i><i
                                         class="fa-solid fa-plus"></i></label>
                                 <input type="file" name="image" id="image" class="form-input">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <div><small>Error message</small></div>
+
                             </div>
+
                         </div>
                         <section class="data">
                             <div class="form-data-box">
@@ -105,17 +111,29 @@
                                     <div class="functionsRow" id="functionsRow">
                                         <div class="inputs-row function-row-div">
                                             <div class="form-group date function">
-                                                <label for="date">Fecha de función*</label>
-                                                <input class="form-control" type="date" name="date[]" id="date">
+                                                <label for="date">Fecha de función*
+                                                    <i class="fas fa-check-circle"></i>
+                                                    <i class="fas fa-exclamation-circle"></i>
+                                                </label>
+                                                <input class="form-control dateEvent" type="date" name="date[]" id="date">
+                                                <small>Error message</small>
                                             </div>
                                             <div class="form-group time function">
-                                                <label for="time">Horario de inicio*</label>
-                                                <input type="time" id="time" name="time[]" min="19:00" max="24:00">
+                                                <label for="time">Horario de inicio*
+                                                    <i class="fas fa-check-circle"></i>
+                                                    <i class="fas fa-exclamation-circle"></i>
+                                                </label>
+                                                <input class="form-control time" type="time" id="time" name="time[]" min="19:00" max="24:00">
+                                                <small>Error message</small>
                                             </div>
                                             <div class="form-group time function">
-                                                <label for="durationTime">Duración del show*</label>
-                                                <input type="time" id="durationTime" name="durationTime[]" min="00:30"
+                                                <label for="durationTime">Duración del show*
+                                                    <i class="fas fa-check-circle"></i>
+                                                    <i class="fas fa-exclamation-circle"></i>
+                                                </label>
+                                                <input class="form-control timeDuration" type="time" id="durationTime" name="durationTime[]" min="00:30"
                                                     max="03:00">
+                                                <small>Error message</small>
                                             </div>
                                         </div>
                                         <br>
@@ -123,21 +141,32 @@
                                         <div class="form box-white ticketBoxWhite" id="ticketBoxWhite">
                                             <div class="ticketRow" id="ticketRow">
                                                 <div class="inputs-row ticket-row">
-                                                    <div class="form-group">
-                                                        <label for="ticketType1">Tipo de entrada*</label>
-                                                        <input class="form-control" type="text" id="ticketType1"
-                                                            maxlength="30" name="ticketType1[]"
+                                                    <div class="form-group ticketTypeGeneral">
+                                                        <label for="ticketType1">Tipo de entrada*
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control ticketType" type="text" name="ticketType1[]"
                                                             placeholder="Ej: Pullman">
+                                                        <small>Error message</small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="price1">Precio*</label>
-                                                        <input class="form-control" type="number" name="price1[]"
+                                                        <label for="price1">Precio*
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control price" type="number" name="price1[]"
                                                             placeholder="Ej: 5000.-">
+                                                        <small>Error message</small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="lot1">Cantidad disponible*</label>
-                                                        <input class="form-control" type="number" name="lot1[]"
+                                                        <label for="lot1">Cantidad disponible*
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control lot" type="number" name="lot1[]"
                                                             placeholder="Ej: 20">
+                                                        <small>Error message</small>
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,19 +175,31 @@
                                             <div class="ticketRow" id="ticketRow">
                                                 <div class="inputs-row ticket-row">
                                                     <div class="form-group">
-                                                        <label for="ticketType2">Tipo de entrada</label>
-                                                        <input class="form-control" type="text" maxlength="30"
+                                                        <label for="ticketType">Tipo de entrada
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control ticketType" type="text" maxlength="30"
                                                             name="ticketType2[]" placeholder="Ej: Pullman">
+                                                        <small>Error message</small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="price2">Precio</label>
-                                                        <input class="form-control" type="number" name="price2[]"
+                                                        <label for="price2">Precio
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control price" type="number" name="price2[]"
                                                             placeholder="Ej: 5000.-">
+                                                        <small>Error message</small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="lot2">Cantidad disponible</label>
-                                                        <input class="form-control" type="number" name="lot2[]"
+                                                        <label for="lot2">Cantidad disponible
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control lot" type="number" name="lot2[]"
                                                             placeholder="Ej: 20">
+                                                        <small>Error message</small>
                                                     </div>
                                                 </div>
                                             </div>
@@ -167,19 +208,31 @@
                                             <div class="ticketRow" id="ticketRow">
                                                 <div class="inputs-row ticket-row">
                                                     <div class="form-group">
-                                                        <label for="ticketType3">Tipo de entrada</label>
-                                                        <input class="form-control" type="text" maxlength="30"
+                                                        <label for="ticketType">Tipo de entrada
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control ticketType" type="text" maxlength="30"
                                                             name="ticketType3[]" placeholder="Ej: Pullman">
+                                                        <small>Error message</small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="price3">Precio</label>
-                                                        <input class="form-control" type="number" name="price3[]"
+                                                        <label for="price3">Precio
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control price" type="number" name="price3[]"
                                                             placeholder="Ej: 5000.-">
+                                                        <small>Error message</small>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="lot3">Cantidad disponible</label>
-                                                        <input class="form-control" type="number" name="lot3[]"
+                                                        <label for="lot3">Cantidad disponible
+                                                            <i class="fas fa-check-circle"></i>
+                                                            <i class="fas fa-exclamation-circle"></i>
+                                                        </label>
+                                                        <input class="form-control lot" type="number" name="lot3[]"
                                                             placeholder="Ej: 20">
+                                                        <small>Error message</small>
                                                     </div>
                                                 </div>
                                             </div>
@@ -194,20 +247,25 @@
                                 <div class="form box-white">
                                     <div class="inputs-row description-row">
                                         <div class="form-group description-textarea">
-                                            <label for="description">Descripción del evento*</label>
+                                            <label for="description">Descripción del evento*
+                                                <i class="fas fa-check-circle"></i>
+                                                <i class="fas fa-exclamation-circle"></i>
+                                            </label>
                                             <textarea name="description" id="description" cols="80" rows="5"></textarea>
+                                            <small>Error message</small>
                                         </div>
                                     </div>
                                     <div class="inputs-row">
                                         <div class="form-group">
                                             <label for="category_id">Categorias*</label>
-                                            <select class="form-control" name="category_id" id="category_id">
+                                            <select class="form-control linkYoutube" name="category_id" id="category_id">
                                                 <% categories.forEach(category=> { %>
                                                     <option value="<%= category.id%>">
                                                         <%=category.name%>
                                                     </option>
                                                     <% }) %>
                                             </select>
+                                            
                                         </div>
                                         <div class="form-group">
                                             <label for="showtype_id">Tipo de Show*</label>
@@ -218,19 +276,22 @@
                                                     </option>
                                                     <% }) %>
                                             </select>
+                                           
                                         </div>
                                         <div class="form-group">
-                                            <label for="linkYoutube">Link de youtube*</label>
-                                            <input class="form-control" type="text" name="linkYoutube" placeholder="">
+                                            <label for="linkYoutube">Link de youtube*
+                                                <i class="fas fa-check-circle"></i>
+                                                <i class="fas fa-exclamation-circle"></i>
+                                            </label>
+                                            <input class="form-control" type="text" id="linkYoutube" name="linkYoutube" placeholder="">
+                                            <small>Error message</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-btns">
-                                <div class="cancel-btn-container">
-                                    <input type="button" class="cancel-button" value="Cancelar">
-                                </div>
+                               
                                 <div class="right-btns-container">
                                     <div class="reset-btn-container">
                                         <button type="reset" class="reset-button">Resetear</button>
@@ -252,73 +313,8 @@
 
 
 
-                <script>
-
-                    const selectorFunctionInputs = document.querySelector('.functionsRow');
-                    const addFunction = document.querySelector('.addFunction');
-                    const functionsBoxSelector = document.getElementById('functionBoxWhite');
-                    // const selectorTicketInputs = document.querySelector('.ticketRow');
-                    // const addTicket = document.querySelectorAll('.addTicket');
-                    // const ticketBoxSelector = document.querySelector('.ticketBoxWhite');
-
-
-
-                    addFunction.addEventListener('click', (e) => {
-                        e.preventDefault();
-
-                        let newFunctionInputs = selectorFunctionInputs.cloneNode(true);
-
-
-
-                        const btnDeleteInput = document.createElement('button');
-                        btnDeleteInput.className = "btnDeleteInput";
-                        btnDeleteInput.innerHTML = "Eliminar función";
-
-                        newFunctionInputs.appendChild(btnDeleteInput);
-
-
-                        btnDeleteInput.addEventListener('click', function () {
-                            this.parentElement.remove();
-                        });
-
-
-                        functionsBoxSelector.appendChild(newFunctionInputs);
-
-
-                    });
-                    // console.log(addTicket);
-                    // addTicket.forEach(addBtnTicket => {
-                    //     addBtnTicket.addEventListener('click', (e) => {
-                    //         e.preventDefault();
-
-                    //         let newTicketInputs = selectorTicketInputs.cloneNode(true);
-
-
-
-                    //         const btnDeleteInput = document.createElement('button');
-                    //         btnDeleteInput.className = "btnDeleteInput";
-                    //         btnDeleteInput.innerHTML = "&times";
-
-                    //         newTicketInputs.appendChild(btnDeleteInput);
-
-
-                    //         btnDeleteInput.addEventListener('click', function () {
-                    //             this.parentElement.remove();
-                    //         });
-
-
-                    //         ticketBoxSelector.appendChild(newTicketInputs);
-
-
-                    //     });
-                    // })
-
-
-
-
-
-
-                </script>
+                <script src="../../../js/createEvent.js"></script>
+                <script type= "module" src="../../../js/createProductValidation.js"></script>
     </body>
 
 </html>

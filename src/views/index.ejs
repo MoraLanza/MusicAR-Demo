@@ -17,20 +17,21 @@
 
         <div class="search-container">
             <div class="search-nav">
-                <form action="" class="search-form">
+                <form action="/search/events"  method="get" class="search-form">
 
                  <div class="search" >
-                    <input type="text" name="key-word" id="key-word" placeholder="Buscar sala, artista, recinto...">
+                    <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
                      <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
 
                 <div>
-                    <select name="categories" id="categories">
-                        <option selected="selected">Categorias</option>
-                        <option value="clasic">Clásica</option>
-                        <option value="rock">Rock</option>
-                        <option value="salsa">Salsa</option>
-                        <option value="reggaeton">Reggaeton</option>
+                    <select  name="category_id" id="category_id">
+                        <option value="" selected>Selecciona una categoria</option>
+                        <% categories.forEach(category=> { %>
+                            <option value="<%= category.id%>">
+                                <%=category.name%>
+                            </option>
+                            <% }) %>
                     </select>
                  </div>
                  <div> 
@@ -41,7 +42,7 @@
                     <i class="fa-solid fa-location-dot"></i>
                  </div>  
                     
-                    <input class="search-btn" type="button" value="Buscar">
+                    <input class="search-btn" type="submit" value="Buscar">
                 </form>
             </div>
         </div>
@@ -87,16 +88,22 @@
                                 <div class="article-information-specific">
                                     <div class="event-date">
                                         <p>
-                                                <% if (event.id === functions[0].event_id) {%>
-                                                 <%= functions[0].date %>  a las <%= functions[0].time %>.
-                                                 <% } %> 
+                                            <% const eventFunctions = []; %>
+                                            <% functions.forEach(eventFunction => { %> 
+                                            <% if (event.id === eventFunction.event_id) {%>
+                                                <% eventFunctions.push(eventFunction); %> 
+                                                <% }}) %> 
+                                             <%= eventFunctions[0].date %>  a las <%= eventFunctions[0].time %>. 
                                         </p>
                                     </div>
                                     <div class="event-price">
                                         <p> 
-                                            <% if (event.id === tickets[0].event_id) {%>
-                                                Desde $<%= tickets[0].price %> .-
-                                                <% } %> 
+                                            <% const eventTickets = []; %>
+                                        <% tickets.forEach(eventTicket => { %> 
+                                        <% if (event.id === eventTicket.event_id) {%>
+                                            <% eventTickets.push(eventTicket); %> 
+                                            <% }}) %> 
+                                            Desde $<%= eventTickets[0].price %> .-
                                              
                                         </p>
                                     </div>
@@ -165,16 +172,22 @@
                             <div class="article-information-specific">
                                 <div class="event-date">
                                     <p>
-                                            <% if (event.id === functions[0].event_id) {%>
-                                             <%= functions[0].date %>  a las <%= functions[0].time %>.
-                                             <% } %> 
+                                        <% const eventFunctions = []; %>
+                                        <% functions.forEach(eventFunction => { %> 
+                                        <% if (event.id === eventFunction.event_id) {%>
+                                            <% eventFunctions.push(eventFunction); %> 
+                                            <% }}) %> 
+                                         <%= eventFunctions[0].date %>  a las <%= eventFunctions[0].time %>. 
                                     </p>
                                 </div>
                                 <div class="event-price">
                                     <p> 
-                                        <% if (event.id === tickets[0].event_id) {%>
-                                            Desde $<%= tickets[0].price %> .-
-                                            <% } %> 
+                                        <% const eventTickets = []; %>
+                                        <% tickets.forEach(eventTicket => { %> 
+                                        <% if (event.id === eventTicket.event_id) {%>
+                                            <% eventTickets.push(eventTicket); %> 
+                                            <% }}) %> 
+                                            Desde $<%= eventTickets[0].price %> .-
                                          
                                     </p>
                                 </div>
@@ -243,16 +256,22 @@
                                 <div class="article-information-specific">
                                     <div class="event-date">
                                         <p>
-                                                <% if (event.id === functions[0].event_id) {%>
-                                                 <%= functions[0].date %>  a las <%= functions[0].time %>.
-                                                 <% } %> 
+                                            <% const eventFunctions = []; %>
+                                            <% functions.forEach(eventFunction => { %> 
+                                            <% if (event.id === eventFunction.event_id) {%>
+                                                <% eventFunctions.push(eventFunction); %> 
+                                                <% }}) %> 
+                                             <%= eventFunctions[0].date %>  a las <%= eventFunctions[0].time %>. 
                                         </p>
                                     </div>
                                     <div class="event-price">
                                         <p> 
-                                            <% if (event.id === tickets[0].event_id) {%>
-                                                Desde $<%= tickets[0].price %> .-
-                                                <% } %> 
+                                            <% const eventTickets = []; %>
+                                            <% tickets.forEach(eventTicket => { %> 
+                                            <% if (event.id === eventTicket.event_id) {%>
+                                                <% eventTickets.push(eventTicket); %> 
+                                                <% }}) %> 
+                                                Desde $<%= eventTickets[0].price %> .-
                                              
                                         </p>
                                     </div>
@@ -286,7 +305,7 @@
 
 
         <%- include('./partials/footer') %>
-
+<script src="../../js/searchIndex.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,379 @@
+body{
+    background-image: url('/image/wallpapers/2-fondo.png');
+    background-size: contain; 
+}
+
+.user-profile-section{
+    padding: 150px 0 100px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.color-card {
+    background: #31394D;
+}
+
+
+.title {
+    color: #ffffff;
+    font-family: roboto;
+    weight: 300;
+}
+
+.title-2 {
+    color: #2D354A;
+    font-family: roboto;
+    weight: 300;
+}
+
+
+.job-title {
+    color: #7C8097;
+    font-size: 16px;
+}
+
+.desc {
+    font-size: 18px;
+    margin: 0 auto;
+    color: #B7B8C0;
+    text-align: center;
+}
+
+
+.icon-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-self: flex-start;
+}
+
+.icon-list a i{
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.arrow-back:hover i{
+    transition: 0.5s;
+    padding-left: 5px;
+}
+
+
+.w {
+    color: #ffffff;
+}
+
+.b {
+    color: #2F3B4B;
+}
+
+hr {
+    border-color: #7C8097;
+    width: 90%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.hr-2 {
+    border-color: #E4E8ED;
+}
+
+
+.content {
+    display: center;
+}
+
+.m-top-16 {
+    margin-top: 16px;
+}
+
+.color-a {
+    background: linear-gradient(to top right, #8162CE, #F54BA5);
+}
+
+.color-b{
+    background: linear-gradient(to bottom right, #6452E9, #639FF9);
+}
+
+.color-c{
+    background: linear-gradient(333deg, rgba(99,159,249,1) 23%, rgba(129,98,206,1) 46%, rgba(245,75,165,1) 76%);
+}
+
+.btn {
+    border: none;
+    height: 40px;
+    color: #ffffff;
+    width: 35%;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.btn:hover {
+    border: solid 1px #DA59B1;
+    transition: 0.5s;
+    height: 40px;
+    color: #DA59B1;
+    background: #ffffff;
+    width: 35%;
+    border-color: linear-gradient(to top right, #8162CE, #F54BA5);
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.btn-long, .btn-long:hover{
+    width: 50%;
+}
+
+
+.btn-cancel{
+    max-width: 100px;
+}
+
+.btns-actions-form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns-actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.img {
+    width: 280px;
+}
+
+.glass-effect{
+    background: rgba(108, 22, 82, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(108, 22, 82, 0.46);
+    
+}
+
+.d-none{
+    display: none !important;
+}
+
+.btn-users-list{
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+/*cards*/
+
+.card {
+    border-radius: 6px;
+    padding: 10px 10px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    position: relative;
+    width: 375px;
+    box-shadow: 0 12px 13px rgba(0, 0, 0, 0.16), 0 12px 13px rgba(0, 0, 0, 0.16);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card-form{
+    padding: 20px 40px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.card-elevation {
+    /*sombra*/
+    -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.25);
+    ;
+}
+
+
+
+.header {
+    background: linear-gradient(to bottom right, #F762D2, #FF51A0);
+    height: 250px;
+}
+
+
+.profile-img {
+    border-radius: 100%;
+    margin: 15px 0;
+    width: 100%;
+    height: 100%;
+    max-width: 135px;
+    min-height: 136px;
+    object-fit: cover;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#editPassword{
+    max-width: fit-content;
+}
+
+
+.element-animation {
+    animation: animationFrames ease 2s;
+    animation-iteration-count: 2;
+    transform-origin: 50% 50%;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+    -webkit-animation: animationFrames ease 1.5s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-animation-fill-mode: forwards;
+    /*Chrome 16+, Safari 4+*/
+}
+
+
+@keyframes animationFrames {
+    0% {
+        opacity: 0;
+        transform: translate(-1500px, 0px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate(30px, 0px);
+    }
+
+    80% {
+        transform: translate(-10px, 0px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+@-webkit-keyframes animationFrames {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate(-1500px, 0px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(30px, 0px);
+    }
+
+    80% {
+        -webkit-transform: translate(-10px, 0px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0px, 0px);
+    }
+
+}
+
+.element-animation-back {
+    animation: animationFramesBack ease 1.5s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animationFramesBack {
+    0% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    
+    30% {
+        opacity: 1;
+        transform: translate(30px, 0px);
+    }
+    
+    /* 60% {
+        transform: translate(-10px, 0px);
+    } */
+    
+    100% {
+        /* opacity: 0; */
+        transform: translate(-1500px, 0px);
+        display: none;
+    }
+}
+
+    /* form  */
+
+.form-edit-profile, .form-edit-password{
+    width: 100%;
+}
+
+.form-inputs{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.title-form{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.inputs-box{
+    width: 45%;
+}
+
+.item-input{
+    margin-bottom: 15px;
+}
+
+.item-input label{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+}
+
+.controls{
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 5px 15px;
+}
+
+.controls:focus, .controls:focus-visible{
+    outline: 0;
+}
+
+.d-column{
+    flex-direction: column;
+}
+
+.form-edit-password input, .form-edit-password .item-input {
+    width: initial;
+}
+
+.form-edit-password .item-input {
+    width: 100%;
+}

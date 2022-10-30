@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/style-invalid-Input.css" 
 </head>
 
-
+<!--  locals.errors && errors.email ||locals.errors && errors.password?  -->
     <body>
         <%- include('../partials/header') %>
             <main>
@@ -17,16 +17,15 @@
 
                         <div class="barra">
                             <label for="email">E-mail</label>
-                            <input class="controls  <%= locals.errors && errors.email ||locals.errors && errors.password?  'is-invalid': null  %> "
+                            <input class="controls"
                              type="email" name="email" placeholder="ejemplo@..." id="email">
 
                         </div>
 
                         <div class="barra">
                             <label for="password">Contraseña</label>
-                            <input class="controls  <%= locals.errors && errors.email ||locals.errors && errors.password? 'is-invalid': null  %> "
-                            type="password" name="password" placeholder="****************"
-                                id="password">
+                            <input class="controls"
+                            type="password" name="password" placeholder="****************" id="password">
                             
                             <label class="form-check-label" style=" font-size: 14px;">
                                 <input type="checkbox" class="form-check-input" name="remember_user"> Recordar mi usuario
@@ -34,14 +33,13 @@
 
                         </div>
                         <br>
-                        <% if (locals.errors && errors.email) { %>
                             <div class="error-text">
                                 <p>
-                                    <%= errors.email.msg %>
+                                    Email o contraseña incorrectos.
                                 </p>
                             </div>
 
-                            <% } %>
+                            
                                 <div class="barra">
                                     <button type="submit">Ingresar</button>
                                 </div>
@@ -65,7 +63,7 @@
             </main>
 
             <%- include('../partials/footer') %>
-
+            <script src="../../../js/loginValidation.js"></script>
 
     </body>
 
