@@ -136,7 +136,7 @@ let userController = {
        const userCreated = await Users.create(userToCreate);
 
 
-        return  res.redirect('users/login');
+        return  res.redirect('/users/login');
 
     } catch (error) {
 
