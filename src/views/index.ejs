@@ -17,7 +17,7 @@
 
         <div class="search-container">
             <div class="search-nav">
-                <form action="/search/events"  method="get" class="search-form">
+                <form action="/"  method="get" class="search-form">
 
                  <div class="search" >
                     <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
@@ -34,12 +34,18 @@
                             <% }) %>
                     </select>
                  </div>
-                 <div> 
+                 <!-- <div> 
                     <input type="date" name="event-date" id="event-date">
-                </div>
-                 <div class="place">
-                    <input type="text" name="event-place" id="event-place" placeholder="Lugar">
-                    <i class="fa-solid fa-location-dot"></i>
+                </div> -->
+                 <div >
+                    <select  name="teater_id" id="teater_id">
+                        <option value="" selected>Selecciona un Teatro / Bar</option>
+                        <% teaters.forEach(teater=> { %>
+                            <option value="<%= teater.id%>">
+                                <%=teater.name%>
+                            </option>
+                            <% }) %>
+                    </select>
                  </div>  
                     
                     <input class="search-btn" type="submit" value="Buscar">
@@ -48,7 +54,7 @@
         </div>
         <!-- FIN -- Sección Buscador -->
         
-
+        <div id="result-events"></div>
         <% if (locals.isLogged) {%> 
         
             <section class="section-events">
