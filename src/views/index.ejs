@@ -17,47 +17,98 @@
 
         <div class="search-container">
             <div class="search-nav">
-                <form action="/"  method="get" class="search-form">
+                <div class="search-form">
 
-                 <div class="search" >
-                    <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
-                     <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+                    <div class="search" >
+                        <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
 
-                <div>
-                    <select  name="category_id" id="category_id">
-                        <option value="" selected>Selecciona una categoria</option>
-                        <% categories.forEach(category=> { %>
-                            <option value="<%= category.id%>">
-                                <%=category.name%>
-                            </option>
-                            <% }) %>
-                    </select>
-                 </div>
-                 <!-- <div> 
-                    <input type="date" name="event-date" id="event-date">
-                </div> -->
-                 <div >
-                    <select  name="teater_id" id="teater_id">
-                        <option value="" selected>Selecciona un Teatro / Bar</option>
-                        <% teaters.forEach(teater=> { %>
-                            <option value="<%= teater.id%>">
-                                <%=teater.name%>
-                            </option>
-                            <% }) %>
-                    </select>
-                 </div>  
+                    <div>
+                        <select  name="category_id" id="category_id">
+                            <option value="" selected>Selecciona una categoria</option>
+                            <% categories.forEach(category=> { %>
+                                <option value="<%= category.id%>">
+                                    <%=category.name%>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                    <!-- <div> 
+                        <input type="date" name="event-date" id="event-date">
+                    </div> -->
+                    <div >
+                        <select  name="teater_id" id="teater_id">
+                            <option value="" selected>Selecciona un Teatro / Bar</option>
+                            <% teaters.forEach(teater=> { %>
+                                <option value="<%= teater.id%>">
+                                    <%=teater.name%>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>  
                     
-                    <input class="search-btn" type="submit" value="Buscar">
-                </form>
+                    <input class="search-btn" id="searchBtn" type="button" value="Buscar">
+                </div>
             </div>
         </div>
         <!-- FIN -- Sección Buscador -->
         
-        <div id="result-events">
-           
+        <section class="section-events">
+            
+            <div class="section-title">
+                <h2>Resultados de busqueda</h2>
+                <hr class="line-title">
             </div>
-        </div>
+
+            <div class="events-container hidden" id="results-container">
+                <article class="article-container" id="results-thumb">
+                    <a id="event-thumb-link" class="article-container-link"></a>
+                    <div class="article-image">
+                            <img alt="" id="event-thumb-img">
+                    </div>
+
+                    <div class="article-title">
+                        <h2 id="event-thumb-title">
+                        </h2>
+                        <h4 id="event-thumb-subtitle">
+                        </h4>
+                    </div>
+
+                    <div class="article-information-general">
+                        <div class="icons">
+                            <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                            <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                            <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="article-information-specific">
+                            <div class="event-date">
+                                <p id="event-thumb-date">
+                                   
+                                </p>
+                            </div>
+                            <div class="event-price">
+                                <p id="event-thumb-price">   
+                                </p>
+                            </div>
+                            <div class="event-place">
+                                <p id="event-thumb-place">
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-buttons">
+                        <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                        <a href="" class="buy-button">Comprar ahora</a>
+                    </div>
+                </article> 
+            </div>
+    </section>
+
+
         <% if (locals.isLogged) {%> 
         
             <section class="section-events">
