@@ -6,7 +6,7 @@ function searchArtist(query) {
 
             response.json())
         .then((jsonData) => {
-            const results = jsonData.map(element => element);
+            const results = jsonData.data;
             renderResults(results);
 
         });
@@ -18,7 +18,7 @@ function searchCategory(query) {
         .then((response) =>
             response.json())
         .then((jsonData) => {
-            const results = jsonData.map(element => element);
+            const results = jsonData.data;
             renderResults(results);
         });
 };
@@ -30,27 +30,28 @@ function searchPlace(query) {
         .then((response) =>
             response.json())
         .then((jsonData) => {
-            const results = jsonData.map(element => element);
+            const results = jsonData.data;
             renderResults(results);
         });
 };
 
-function searchDate(query) {
-    const url = `http://localhost:3000/search/events?date=${query}`
-    fetch(url)
-        .then((response) =>
-            response.json())
-        .then((jsonData) => {
-            const results = jsonData.map(element => element);
-            renderResults(results);
-        });
-}
+// function searchDate(query) {
+//     const url = `http://localhost:3000/search/events?date=${query}`
+//     fetch(url)
+//         .then((response) =>
+//             response.json())
+//         .then((jsonData) => {
+//             const results = jsonData.data;
+//             renderResults(results);
+//         });
+// }
 
 function renderResults(results) {
     const searchEvents = document.getElementById('result-events');
-    results.forEach(result => {
-        const elemnt
-    })
+    results.forEach(element => {
+        
+    });
+    
 }
 
 window.onload = () => {
@@ -80,7 +81,7 @@ window.onload = () => {
         searchPlace(event.target.value)
     });
 
-    date.addEventListener('change', event => {
-        searchPlace(event.target.value)
-    });
+    // date.addEventListener('change', event => {
+    //     searchPlace(event.target.value)
+    // });
 }

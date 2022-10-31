@@ -22,11 +22,11 @@ const searchController = {
                 }
             });
             
-            const functions = await Functions.findAll({
-                where: {
-                ...(req.query.date != null) && {date: req.query.date}
-                }
-            });
+            // const functions = await Functions.findAll({
+            //     where: {
+            //     ...(req.query.date != null) && {date: req.query.date}
+            //     }
+            // });
         
             return res.json({
                 total: events.length,
