@@ -54,15 +54,19 @@
         </div>
         <!-- FIN -- Sección Buscador -->
         
-        <section class="section-events">
+        <section id="section-results" class="section-events hidden">
             
             <div class="section-title">
                 <h2>Resultados de busqueda</h2>
                 <hr class="line-title">
             </div>
 
-            <div class="events-container hidden" id="results-container">
-                <article class="article-container" id="results-thumb">
+            <div class="no-results-box hidden">
+                <h4>No encontramos eventos para esta búsqueda</h4>
+            </div>
+
+            <div class="events-container" id="results-container">
+                <article class="article-container result-thumb" id="results-thumb">
                     <a id="event-thumb-link" class="article-container-link"></a>
                     <div class="article-image">
                             <img alt="" id="event-thumb-img">
@@ -75,33 +79,8 @@
                         </h4>
                     </div>
 
-                    <div class="article-information-general">
-                        <div class="icons">
-                            <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                            <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
-                            <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                        <div class="article-information-specific">
-                            <div class="event-date">
-                                <p id="event-thumb-date">
-                                   
-                                </p>
-                            </div>
-                            <div class="event-price">
-                                <p id="event-thumb-price">   
-                                </p>
-                            </div>
-                            <div class="event-place">
-                                <p id="event-thumb-place">
-                                    
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="article-buttons">
-                        <div class="cart-icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
                         <a href="" class="buy-button">Comprar ahora</a>
                     </div>
                 </article> 
@@ -141,7 +120,7 @@
                             <div class="article-information-general">
                                 <div class="icons">
                                     <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon" aria-hidden="true"></i></div>
                                     <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </div>
                                 </div>
@@ -225,7 +204,7 @@
                         <div class="article-information-general">
                             <div class="icons">
                                 <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon" aria-hidden="true"></i></div>
                                 <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -309,7 +288,7 @@
                             <div class="article-information-general">
                                 <div class="icons">
                                     <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="price-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon" aria-hidden="true"></i></div>
                                     <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </div>
                                 </div>

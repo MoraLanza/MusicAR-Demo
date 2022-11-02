@@ -47,6 +47,8 @@ function searchPlace(query) {
 // }
 
 const resultsContainer = document.querySelector('#results-container');
+const noResultsContainer = document.querySelector('.no-results-box');
+const resultsSection = document.querySelector('#section-results');
 const eventThumb = document.querySelector('#results-thumb');
 const eventThumbImg = document.querySelector('#event-thumb-img');
 const eventThumbLink = document.querySelector('#event-thumb-link');
@@ -69,16 +71,27 @@ const createThumbEvent = (element) => {
 
 function renderResults(results) {
     resultsContainer.innerHTML = '';    
-    resultsContainer.classList.remove("hidden");
+    resultsSection.classList.remove("hidden");
     const searchEvents = document.getElementById('result-events');
     console.log(results)
+    let counterResults = 0;
     results.forEach(element => {   
-        createThumbEvent(element)
-        const cloneThumb = eventThumb.cloneNode(true)
-        resultsContainer.appendChild(cloneThumb)
+        createThumbEvent(element);
+        const cloneThumb = eventThumb.cloneNode(true);
+        resultsContainer.appendChild(cloneThumb);
+        counterResults ++
     });
+    if(counterResults == 0){
+        noResultsContainer.classList.remove("hidden");
+    } else {
+        noResultsContainer.classList.add("hidden");
+
+    }
     
 };
+
+
+
 
 
 window.onload = () => {
@@ -98,11 +111,37 @@ window.onload = () => {
     // });
 
     btnSearch.addEventListener('click', event => {
-        // searchCategory(category.value)
-        if(artist.value != ""){
+        if(artist.value != null && category.value != null && place.value != null ){
+            searchCategory(category.value)
             searchArtist(artist.value)
+            searchPlace(place.value)
+        } else if (artist.value != null && category.value == null && place.value == null){
+            searchArtist(artist.value)
+        } else if (artist.value == null && category.value != null && place.value == null){
+            searchCategory(category.value)
+        } else if (artist.value == null && category.value == null && place.value != null){
+            searchPlace(place.value)
+        } else if (artist.value != null && category.value == null && place.value != null){
+            searchPlace(place.value)
+            searchArtist(artist.value)
+        } else if (artist.value == null && category.value != null && place.value != null){
+            searchPlace(place.value)
+            searchCategory(category.value)
+        } else if (artist.value != null && category.value == null && place.value != null){
+            searchArtist(artist.value)
+            searchCategory(category.value)
         }
-        // searchPlace(place.value)
+
+        // switch(artist, category, place){
+        //         case artist.value != null && category.value == null && place.value == null:
+        //             searchArtist(artist.value)
+        //             break;
+        //         case artist.value != null && category.value != null && place.value != null:
+        //             searchCategory(category.value)
+        //             searchArtist(artist.value)
+        //             searchPlace(place.value)
+        //             break;
+        //     };
         
     });
 

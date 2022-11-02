@@ -212,6 +212,16 @@ a.buy-button{
     z-index: 3;
 }
 
+.thumb-ticket-icon{
+    color: black;
+    margin-left: 10px;
+    font-size: 23px;
+}
+
+.result-thumb .buy-button{
+    width: 100%;
+}
+
 /* MEDIA QUERIES */
 
 
