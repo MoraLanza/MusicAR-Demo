@@ -11,6 +11,9 @@ const productRouter = require('./routes/productRouter');
 const userRouter = require('./routes/userRouter');
 const searchRouter = require('./routes/searchRouter');
 
+const apiProductRouter = require('./routes/api/apiProductRouter');
+const apiUserRouter = require('./routes/api/apiUserRouter');
+
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
 
@@ -40,6 +43,10 @@ app.use('/users', userRouter);
 
 app.use('/search',searchRouter);
 
+
+app.use('/api', apiProductRouter);
+
+app.use('/api', apiUserRouter);
 
 
 app.listen(3000, () =>

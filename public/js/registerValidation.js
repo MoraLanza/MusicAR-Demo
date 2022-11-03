@@ -17,102 +17,34 @@ const errors = [];
 
 
 form.addEventListener('submit', event =>{
-    
-    if(!validations()){
-        warning.style.visibility = 'visible';
-        event.preventDefault();
-    } else {;
-        form.submit()
+    if (validation()){
+        event.submit()
+    } else {
+        event.preventDefault()
     }
 })
-
-const validations = () => {
-    if (nameInput.value.trim == '' || nameInput.value.trim == null){
-        return false        
-    } else if (nameInput.value.length <= 2){
-        return false        
-    }
-
-    if (lastName.value.trim == '' || lastName.value.trim == null){
-        return false
-    } else if (lastName.value.length <= 2) {
-        return false
-    }
-
-    if (!emailRegex.test(email.value)){
-        return false
-    }
-
-    if (passwordRegex.test(password.value)){
-        return false
-    }
-
-    if (password.value !== passwordConfirm.value){
-        return false
-    }
-
-    return true
-    //      if(imageRegex.test(imageUser.value)){
-    // //     return false
-    // // }
-}
 
 
 const validationsLive = (event) => {
     switch (event.target.className){
         case "controls name":
-            if (event.target.value.trim == '' || event.target.value.trim == null){
-                errors.push('El nombre no puede quedar vacío.')
-                setErrorFor(nameInput, 'El nombre no puede quedar vacio.')
-            } else if (nameInput.value.length <= 2){
-                setErrorFor(nameInput, 'El nombre debe tener más de 2 caracteres.')
-                errors.push('El nombre no puede tener menos de 2 caracteres.')
-            } else {
-                setSuccessFor(nameInput)
-            }
+            validationName()
             break;
 
         case "controls lastName":
-            if (event.target.value.trim == '' || event.target.value.trim == null){
-                errors.push('El apellido no puede quedar vacio.')
-                setErrorFor(lastName, 'El apellido no puede quedar vacio.')
-            } else if (event.target.value.length <= 2) {
-                errors.push('El apellido debe tener más de 2 caracteres.')
-                setErrorFor(lastName, 'El apellido debe tener más de 2 caracteres.')
-            } else {
-                setSuccessFor(lastName)
-            }
+            validationLastName()
             break;
 
         case "controls email":
-            if (!emailRegex.test(event.target.value)){
-                errors.push('El email no es válido.')
-                setErrorFor(email, 'El email no es válido.')
-            } else {
-                setSuccessFor(email)
-            }
+           validationEmail()
             break;
             
         case "controls password":
-            if (event.target.value < 8 && event.target.value > 16 && event.target.value){
-               errors.push('La contraseña debe tener mínimo 8 caracteres, maximo 16, al menos 1 número y 1 letra.')
-               setErrorFor(password, 'La contraseña debe tener mínimo 8 caracteres, maximo 16, al menos 1 número y 1 letra.')
-            } else if (password.length > 16) {
-                setErrorFor(password, 'La contraseña debe tener mínimo 8 caracteres, maximo 16, al menos 1 número y 1 letra.')
-            } else {
-                    setSuccessFor(password)
-                }
-               
-            
+            validationPassword()
             break;
 
         case "controls passwordConfirm":
-            if (password.value !== event.target.value){
-                errors.push('Las contraseñas no coinciden.')
-                setErrorFor(passwordConfirm, 'Las contraseñas no coinciden.')
-            } else {
-                setSuccessFor(passwordConfirm)
-            }
+            validationConfirmPassword()
             break;
 
         // case "controls imageUser":
@@ -125,6 +57,24 @@ const validationsLive = (event) => {
     }
 }
 
+const validation = () =>{
+    if (!validationName()){
+        return false
+    }
+    if(!validationLastName()){
+        return false
+    }
+    if(!validationEmail()){
+        return false
+    }
+    if(!validationPassword()){
+        return false
+    }
+    if(!validationConfirmPassword()){
+        return false
+    }
+    return true
+}
 
 inputs.forEach(input =>{
     input.addEventListener('change', validationsLive)
@@ -143,4 +93,61 @@ function setSuccessFor(input) {
     const small = itemInput.querySelector('small');
     itemInput.className = 'item-input success';
     small.style.visibility = 'hidden';
+}
+
+
+const validationName = () => {
+    if (nameInput.value.trim == '' || nameInput.value.trim == null){
+        setErrorFor(nameInput, 'El nombre no puede quedar vacio.')
+        return false
+    } else if (nameInput.value.length <= 2){
+        setErrorFor(nameInput, 'El nombre debe tener más de 2 caracteres.')
+        errors.push('El nombre no puede tener menos de 2 caracteres.')
+        return false
+    } else {
+        setSuccessFor(nameInput)
+    }
+}
+
+const validationLastName = () => {
+    if (lastName.value.trim == '' || lastName.value.trim == null){
+        setErrorFor(lastName, 'El apellido no puede quedar vacio.')
+        return false
+    } else if (lastName.value.length <= 2) {
+        setErrorFor(lastName, 'El apellido debe tener más de 2 caracteres.')
+        return false
+    } else {
+        setSuccessFor(lastName)
+        return true
+    }
+}
+
+const validationEmail = () => {
+    if (!emailRegex.test(email.value)){
+        setErrorFor(email, 'El email no es válido.')
+        return false
+    } else {
+        setSuccessFor(email)
+        return true
+    }
+}
+
+const validationPassword = () => {
+    if (password.value.length < 8 || password.value.length > 16 ){
+        setErrorFor(password, 'La contraseña debe tener mínimo 8 caracteres, maximo 16.')
+        return false
+     } else {
+        setSuccessFor(password)
+        return true
+     }
+}
+
+const validationConfirmPassword = () => {
+    if (password.value !== passwordConfirm.value){
+        setErrorFor(passwordConfirm, 'Las contraseñas no coinciden.')
+        return false
+    } else {
+        setSuccessFor(passwordConfirm)
+        return true
+    }
 }
