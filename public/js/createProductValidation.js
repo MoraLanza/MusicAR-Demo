@@ -2,17 +2,18 @@ const form = document.getElementById('form');
 const artist = document.querySelector('.artist');
 const subtitle = document.querySelector('.subtitle');
 const image = document.getElementById('image');
-const dates = document.querySelectorAll('.dateEvent');
-const times = document.querySelectorAll('.time');
-const durationTime = document.querySelectorAll('.timeDuration');
-const ticketType = document.querySelectorAll('.ticketType');
-const prices = document.querySelectorAll('.price');
-const lots = document.querySelectorAll('.lot');
 const description = document.querySelector('.description-textarea');
 const linkYoutube = document.querySelector('.linkYoutube');
-const formFunction = document.querySelector('.function-form');
-const formFunctionChildNode = formFunction.childNodes;
+// const formFunction = document.querySelector('.functionBoxWhite');
+const addFunctionBtn = document.querySelector('#addFunction');
 
+let functions;
+let eventDates;
+let functionsTime;
+let functionsDuration;
+let functionsTicketType;
+let functionsTicketPrice;
+let functionsTicketLot;
 
 const regexYoutube = /(?:https?:\/\/)?(?:www\.)?youtu(?:\.be\/|be.com\/\S*(?:embed)(?:(?:(?=\/[-a-zA-Z0-9_]{11,}(?!\S))\/)|(?:\S*v=|v\/)))([-a-zA-Z0-9_]{11,})/;
 
@@ -25,13 +26,46 @@ form.addEventListener('submit', event => {
 
 });
 
-// function getDates() {
-//     dates =  document.querySelectorAll('.dateEvent');
-//     return dates;
-// }
 
-// dates = getDates();
-console.log(dates)
+const getDinamicInputs = (inputClass, variable) => {
+    variable = document.querySelectorAll(inputClass);
+    return variable;
+};
+
+
+addFunctionBtn.addEventListener('click', event => {
+    dinamicValidations();
+});
+
+
+
+
+const dinamicValidations = () => {
+    getDinamicInputs('.dateEvent', eventDates).forEach(dateInput => {
+        dateInput.addEventListener('change', formValidation);
+    });
+    
+    getDinamicInputs('.time', functionsTime).forEach(timeInput => {
+        timeInput.addEventListener('change', formValidation)
+    });
+
+    getDinamicInputs('.timeDuration', functionsDuration).forEach(timeDurationInput => {
+        timeDurationInput.addEventListener('change', formValidation)
+    });
+
+    getDinamicInputs('.ticketType', functionsTicketType).forEach(ticketTypeInput => {
+        ticketTypeInput.addEventListener('change', formValidation)
+    });
+
+    getDinamicInputs('.price', functionsTicketPrice).forEach(priceInput => {
+        priceInput.addEventListener('change', formValidation)
+    });
+
+    getDinamicInputs('.lot', functionsTicketPrice).forEach(lotInput => {
+        lotInput.addEventListener('change', formValidation)
+    });
+}
+
 const formValidation = (event) => {
     switch (event.target.className) {
         case "form-control artist":
@@ -53,6 +87,7 @@ const formValidation = (event) => {
                 setSuccessFor(subtitle)
             }
             break;
+
         case "form-control dateEvent":
 
             let inputDate = new Date(event.target.value);
@@ -61,13 +96,12 @@ const formValidation = (event) => {
             let todayYear = new Date().getFullYear();
 
             if (inputDate.getDate() <= todayDay && inputDate.getMonth() <= todayMonth && inputDate.getFullYear() <= todayYear || inputDate == '') {
-
-                setErrorFor(event.currentTarget, 'La fecha no puede ser hoy o anterior a hoy.');
-
+                setErrorFor(event.currentTarget, 'La fecha no puede estar vacía, ser hoy o anterior a hoy.');
             } else {
                 setSuccessFor(event.currentTarget)
             }
             break;
+
             case "form-control linkYoutube":
                 if (regexYoutube.test(event.target.value)) {
                     setSuccessFor(linkYoutube)
@@ -137,30 +171,7 @@ inputs.forEach((input) => {
     input.addEventListener('change', formValidation);
 });
 
-dates.forEach((date) => {
-    date.addEventListener('change', formValidation);
-});
-
-times.forEach((time) => {
-    time.addEventListener('change', formValidation);
-});
-
-durationTime.forEach((timeD) => {
-    timeD.addEventListener('change', formValidation);
-});
-
-ticketType.forEach((ticket) => {
-    ticket.addEventListener('change', formValidation);
-});
-
-prices.forEach((price) => {
-    price.addEventListener('change', formValidation);
-});
-
-lots.forEach((lot) => {
-    lot.addEventListener('change', formValidation);
-});
-
+dinamicValidations();
 
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
@@ -173,3 +184,4 @@ function setSuccessFor(input) {
     const formGroup = input.closest('div');
     formGroup.className = 'form-group success';
 }
+
