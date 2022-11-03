@@ -6,7 +6,7 @@ import SmallCard from './SmallCard';
 /* <!-- Movies in DB --> */
 
 let moviesInDB = {
-    title: 'Movies in Data Base',
+    title: 'Events in Data Base',
     color: 'primary', 
     cuantity: 21,
     icon: 'fa-clipboard-list'
@@ -15,7 +15,7 @@ let moviesInDB = {
 /* <!-- Total awards --> */
 
 let totalAwards = {
-    title:' Total awards', 
+    title:'Total awards', 
     color:'success', 
     cuantity: '79',
     icon:'fa-award'
