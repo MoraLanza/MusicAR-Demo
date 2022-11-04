@@ -1,22 +1,34 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 
     
 function UsersPagination(){
+    const [users, setUsers] = useState([]);
     const url = `http://localhost:3000/api/users`;
-    const users = fetch(url)
+
+    const getUsers = fetch(url)
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            // setUsers(data.Search);
+            setUsers(data)
         })
         .catch(err => {
             console.log(err);
-        });
+    });
+
 
     // React.useEffect(() => {
-	// }, []);
+    //     const urlApi = `http://localhost:3000/api/users`;
+    
+    //     const getUsers = fetch(urlApi)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data)
+    //     })
+    //     .catch(err => {
+    //         console.log(err);
+    //     });            
+    // }, []);
 
-    console.log(users)
 
     return(
         <>
@@ -35,6 +47,7 @@ function UsersPagination(){
                                 <td>Acciones</td>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <td>Lidia</td>
