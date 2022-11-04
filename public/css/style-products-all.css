@@ -36,7 +36,7 @@ input#event-date,
     height: 40px;
     width: 250px;
     padding: 0 5px;
-    border-radius: 8px;
+    border-radius: 15px;
     border: solid 1px #7F7F7F;
     margin-bottom: 5px;
 }
@@ -61,7 +61,7 @@ input#event-date,
     background-color: white;
     display: flex;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 15px;
     border: solid 1px #7F7F7F;
     height: 40px;
     width: 250px;

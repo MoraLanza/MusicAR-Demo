@@ -18,15 +18,10 @@ const searchController = {
                     ...(req.query.artist != null) && {artist: {[Op.like]:`%${req.query.artist}%`}},
                     ...(req.query.category != null) && {category_id: req.query.category},
                     ...(req.query.place != null) && {teater_id: req.query.place},
-                    // ...(req.query.date != null) && {id: }
+                    
                 }
             });
-            
-            // const functions = await Functions.findAll({
-            //     where: {
-            //     ...(req.query.date != null) && {date: req.query.date}
-            //     }
-            // });
+         
         
             return res.json({
                 total: events.length,

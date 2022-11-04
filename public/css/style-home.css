@@ -1,9 +1,24 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: normal;
+}
+ul{
+    margin-bottom: 0;
+}
+li{
+    text-align: center;
+}
+
+.boton-border:hover, .boton-blanco:hover {
+color: black;
+}
 header {
     position: fixed;
     width: 100%;
     z-index: 1000;
 
 }
+
 .search-container {
     width: 100%;
     justify-content: center;
@@ -19,9 +34,10 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 40px;
     position: relative;
-    top:-50px;
+    top: -50px;
 }
-.search-form{
+
+.search-form {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -29,36 +45,43 @@ header {
     padding: 20px;
 }
 
-input#event-date, .search-nav select {
+input#event-date,
+.search-nav select {
     height: 40px;
     width: 250px;
     padding: 0 5px;
-    border-radius: 8px;
+    border-radius: 15px;
     border: solid 1px #7F7F7F;
     margin-bottom: 5px;
 }
 
-.search-nav select{
+.search-nav select {
     height: 42px;
 }
-.search i, .place i {
-margin: 0 5px;
+
+.search i,
+.place i {
+    margin: 0 5px;
 }
 
-.search input, .place input{
+.search input,
+.place input {
     border: transparent;
     padding: 8px;
 }
-.search, .place {
+
+.search,
+.place {
     background-color: white;
     display: flex;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 15px;
     border: solid 1px #7F7F7F;
     height: 40px;
     width: 250px;
     justify-content: space-around;
     margin-bottom: 5px;
+    line-height: normal;
 }
 
 input.search-btn {
@@ -72,51 +95,55 @@ input.search-btn {
     cursor: pointer;
 }
 
-input.search-btn:hover{
+input.search-btn:hover {
     background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     transition: 0.5s;
 }
 
 .section-title {
-    text-align:left;
+    text-align: left;
     position: relative;
     margin-bottom: 50px;
-    
+
 
 }
 
-.section-title h2{
+.section-title h2 {
     font-size: 45px;
 }
-.line-title{
-    height:10px;
-    width:110px;
-    color:#FAC025;
-    background-color:#FAC025;
-    border:transparent;
+
+.line-title {
+    height: 10px;
+    width: 110px;
+    color: #FAC025;
+    background-color: #FAC025;
+    border: transparent;
 
 }
+
 .events-container {
     margin-top: 10px;
 }
 
-section{
+section {
     width: 100%;
     justify-content: center;
 
 }
-.section-events{
+
+.section-events {
     width: 80%;
 
     margin: 0 auto;
 
 }
-.article-container{
+
+.article-container {
     display: flex;
     flex-direction: column;
 }
 
-.article-image{
+.article-image {
     width: 100%;
 }
 
@@ -131,20 +158,38 @@ section{
     text-align: center;
     margin-bottom: 10px;
 }
+
 .article-title h2 {
     font-size: 24px;
     font-weight: bold;
 }
 
+.p-own {
+    margin: 0;
+}
 
-.icons{
+a {
+    text-decoration: none;
+}
+
+.nav-footer a:hover {
+    color: #7F7F7F;
+    transition: 0.5s;
+}
+
+
+.nav-item:hover {
+    color: white;
+}
+
+.icons {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px 10px 10px 0;
 }
 
-.article-information-specific{
+.article-information-specific {
     display: flex;
     flex-direction: column;
     margin: 5px 0 10px 0;
@@ -152,11 +197,14 @@ section{
 
 
 
-.article-information-general{
+.article-information-general {
     display: flex;
 }
 
-.date-icon, .price-icon, .event-date, .event-price {
+.date-icon,
+.price-icon,
+.event-date,
+.event-price {
     margin-bottom: 5px;
 }
 
@@ -168,28 +216,29 @@ section{
 }
 
 
-.place{
+.place {
     font-size: 14px;
 }
 
-.btn.icon {
+.btn-card-own.icon {
     font-size: 30px;
     width: 30%;
     cursor: pointer;
     text-align: center;
 }
 
-.btn.buy{
+.btn-card-own.buy {
     width: 60%;
     text-align: center;
     padding: 10px;
-    height: 20px;
 }
 
-.btn.buy:hover, .btn.icon:hover{
+.btn-card-own.buy:hover,
+.btn-card-own.icon:hover {
     border: none;
 }
-.article-container{
+
+.article-container {
     position: relative;
 }
 
@@ -203,15 +252,17 @@ section{
     z-index: 3;
 } */
 
-.thumb-ticket-icon{
+.thumb-ticket-icon {
     color: black;
     margin-left: 10px;
     font-size: 23px;
 }
 
-.result-thumb .buy-button{
+.result-thumb .btn-card-own {
     width: 100%;
 }
+
+
 
 /* MEDIA QUERIES */
 
@@ -228,13 +279,15 @@ section{
         margin: 0 auto;
         margin: 6%;
     }
+
     .events-container {
         width: 100%;
         margin-top: 10px;
         display: block;
-        flex-wrap:inherit;
+        flex-wrap: inherit;
     }
 }
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
     article.article-container {
@@ -248,19 +301,20 @@ section{
         margin: 6%;
     }
 
-.events-container {
-    width: 100%;
-    margin-top: 10px;
-    display: block;
-    flex-wrap:inherit;
+    .events-container {
+        width: 100%;
+        margin-top: 10px;
+        display: block;
+        flex-wrap: inherit;
+    }
 }
-}
+
 /*Desktop */
 @media only screen and (min-width: 992px) {
-    .article-container{
+    .article-container {
         background: #FFFFFF;
-    box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+        box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
@@ -268,16 +322,19 @@ section{
         width: 30%;
         transition: 100ms;
     }
-    .article-container:hover{
-    transform: scale(1.1);
-    box-shadow: 0px 0px 41px 4px rgba(0,0,0,0.25);
-}
+
+    .article-container:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 41px 4px rgba(0, 0, 0, 0.25);
+    }
+
     .events-container {
         width: 100%;
         margin-top: 10px;
         display: flex;
         flex-wrap: wrap;
     }
+
     article.article-container {
         width: 30%;
         background: #FFFFFF;
@@ -286,11 +343,12 @@ section{
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-               
+
     }
 }
+
 @media only screen and (min-width: 1300px) {
     article.article-container {
-        width: 23%;
+        width: 30%;
     }
 }

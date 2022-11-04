@@ -21,6 +21,30 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
+
+.btn-card-own{
+    border: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.btn-card-own:hover{
+    border: solid 1px #DA59B1;
+    transition: 0.5s;
+    height: 40px;
+    color: #DA59B1;
+    background: #ffffff;
+    border-color: linear-gradient(to top right, #8162CE, #F54BA5);
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
 .color-a {
     background: linear-gradient(to top right, #8162CE, #F54BA5);
 }
@@ -35,4 +59,31 @@
 
 .btn-search{
  width: 150px;
+}
+
+.glass-effect{
+    background: rgba(108, 22, 82, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(108, 22, 82, 0.46);
+    
+}
+
+.glass-effect-header{
+    background: rgba(36, 13, 60, 0.524);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    
+}
+.glass-effect1{
+    background: rgba(45, 10, 34, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(108, 22, 82, 0.46);
+    
 }

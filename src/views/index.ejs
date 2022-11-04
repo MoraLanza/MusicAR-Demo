@@ -3,29 +3,72 @@
 
 <head>
     <%- include('./partials/head') %>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/style-home.css">
+
 </head>
 
 <body>
 
     <%- include('./partials/header') %>
 
-        <div class="slider-home col-12">
-            <img src="/image/home/slider-home.png" width="100%" alt="Slider Home">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/image/home/slider-home.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/image/home/slider-home.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/image/home/slider-home.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <!-- Sección Buscador -->
+
 
         <div class="search-container">
             <div class="search-nav">
                 <div class="search-form">
 
-                    <div class="search" >
+                    <div class="search">
                         <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
 
                     <div>
-                        <select  name="category_id" id="category_id">
+                        <select name="category_id" id="category_id">
                             <option value="" selected>Selecciona una categoria</option>
                             <% categories.forEach(category=> { %>
                                 <option value="<%= category.id%>">
@@ -37,8 +80,8 @@
                     <!-- <div> 
                         <input type="date" name="event-date" id="event-date">
                     </div> -->
-                    <div >
-                        <select  name="teater_id" id="teater_id">
+                    <div>
+                        <select name="teater_id" id="teater_id">
                             <option value="" selected>Selecciona un Teatro / Bar</option>
                             <% teaters.forEach(teater=> { %>
                                 <option value="<%= teater.id%>">
@@ -46,16 +89,16 @@
                                 </option>
                                 <% }) %>
                         </select>
-                    </div>  
-                    
-                    <input class="btn btn-search color-a" id="searchBtn" type="button" value="Buscar">
+                    </div>
+
+                    <input class="btn-card-own btn-search color-a" id="searchBtn" type="button" value="Buscar">
                 </div>
             </div>
         </div>
         <!-- FIN -- Sección Buscador -->
-        
+
         <section id="section-results" class="section-events hidden">
-            
+
             <div class="section-title">
                 <h2>Resultados de busqueda</h2>
                 <hr class="line-title">
@@ -69,7 +112,7 @@
                 <article class="article-container result-thumb" id="results-thumb">
                     <a id="event-thumb-link" class="article-container-link"></a>
                     <div class="article-image">
-                            <img alt="" id="event-thumb-img">
+                        <img alt="" id="event-thumb-img">
                     </div>
 
                     <div class="article-title">
@@ -81,23 +124,24 @@
 
 
                     <div class="article-buttons">
-                        <a href="" class="buy-button">Comprar ahora</a>
+                        <a href="" class="btn-card-own color-a buy">Comprar ahora</a>
                     </div>
-                </article> 
+                </article>
             </div>
-    </section>
+        </section>
 
 
-        <% if (locals.isLogged) {%> 
-        
+        <% if (locals.isLogged) {%>
+
             <section class="section-events">
-            
+
                 <div class="section-title col-12">
-                    <% categories.forEach( category => { %>
-                        <% if (user.category_id === category.id) { %> 
-                    <h2>Seleccionados para vos - <%= category.name %> </h2>
-                    <hr class="line-title">
-                    <% }}) %> 
+                    <% categories.forEach( category=> { %>
+                        <% if (user.category_id===category.id) { %>
+                            <h2>Seleccionados para vos - <%= category.name %>
+                            </h2>
+                            <hr class="line-title">
+                            <% }}) %>
                 </div>
 
                 <div class="events-container">
@@ -105,7 +149,7 @@
                         <article class="article-container">
                             <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                             <div class="article-image">
-                                    <img src="/image/products/<%= event.imageEvent %> " alt="">
+                                <img src="/image/products/<%= event.imageEvent %> " alt="">
                             </div>
 
                             <div class="article-title">
@@ -120,160 +164,172 @@
                             <div class="article-information-general">
                                 <div class="icons">
                                     <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon"
+                                            aria-hidden="true"></i></div>
                                     <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div class="article-information-specific">
                                     <div class="event-date">
-                                        <p>
-                                            <% const eventFunctions = []; %>
-                                            <% functions.forEach(eventFunction => { %> 
-                                            <% if (event.id === eventFunction.event_id) {%>
-                                                <% eventFunctions.push(eventFunction); %> 
-                                                <% }}) %> 
-                                             <%= eventFunctions[0].date %>  a las <%= eventFunctions[0].time %>. 
+                                        <p class="p-own">
+                                            <% const eventFunctions=[]; %>
+                                                <% functions.forEach(eventFunction=> { %>
+                                                    <% if (event.id===eventFunction.event_id) {%>
+                                                        <% eventFunctions.push(eventFunction); %>
+                                                            <% }}) %>
+                                                                <%= eventFunctions[0].date %> a las <%=
+                                                                        eventFunctions[0].time %>.
                                         </p>
                                     </div>
                                     <div class="event-price">
-                                        <p> 
-                                            <% const eventTickets = []; %>
-                                        <% tickets.forEach(eventTicket => { %> 
-                                        <% if (event.id === eventTicket.event_id) {%>
-                                            <% eventTickets.push(eventTicket); %> 
-                                            <% }}) %> 
-                                            Desde $<%= eventTickets[0].price %> .-
-                                             
+                                        <p class="p-own">
+                                            <% const eventTickets=[]; %>
+                                                <% tickets.forEach(eventTicket=> { %>
+                                                    <% if (event.id===eventTicket.event_id) {%>
+                                                        <% eventTickets.push(eventTicket); %>
+                                                            <% }}) %>
+                                                                Desde $<%= eventTickets[0].price %> .-
+
                                         </p>
                                     </div>
                                     <div class="event-place">
-                                        <p>
-                                            <% for( let i = 0; i < teaters.length; i++) {%>
-                                                <% if (event.teater_id === teaters[i].id) {%>
+                                        <p class="p-own">
+                                            <% for( let i=0; i < teaters.length; i++) {%>
+                                                <% if (event.teater_id===teaters[i].id) {%>
                                                     <%= teaters[i].name%>
-                                                    <% }} %>,
-                                            <% for( let i = 0; i < citys.length; i++) {%>
-                                                <% if (event.city_id === citys[i].id) {%> 
-                                                    <%= citys[i].cityName %>.
-                                                    <% }} %>
+                                                        <% }} %>,
+                                                            <% for( let i=0; i < citys.length; i++) {%>
+                                                                <% if (event.city_id===citys[i].id) {%>
+                                                                    <%= citys[i].cityName %>.
+                                                                        <% }} %>
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="article-buttons">
-                                <div class="btn color-b icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                                <a href="" class="btn color-a buy">Comprar ahora</a>
+                                <div class="btn-card-own color-b icon"> <i class="fa fa-cart-plus"
+                                        aria-hidden="true"></i></div>
+                                <a href="" class="btn-card-own color-a buy">Comprar ahora</a>
                             </div>
                         </article>
 
-                        <% }) %>    
+                        <% }) %>
                 </div>
-        </section>
-        
-        <br>
-        <br>
+            </section>
 
-        <section class="section-events">
-            
-            <div class="section-title col-12">
-                <% citys.forEach( city => { %>
-                    <% if (user.city_id === city.id) { %> 
-                <h2>En tu ciudad, <%= city.cityName %> </h2>
-                <hr class="line-title">
-                <% }}) %> 
-            </div>
+            <br>
+            <br>
 
-            <div class="events-container">
-                <% cityEvents.forEach(event=> { %>
-                    <article class="article-container">
-                        <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
+            <section class="section-events">
+
+                <div class="section-title col-12">
+                    <% citys.forEach( city=> { %>
+                        <% if (user.city_id===city.id) { %>
+                            <h2>En tu ciudad, <%= city.cityName %>
+                            </h2>
+                            <hr class="line-title">
+                            <% }}) %>
+                </div>
+
+                <div class="events-container">
+                    <% cityEvents.forEach(event=> { %>
+                        <article class="article-container">
+                            <div class="article-image">
+                                <a href="/products/detail/<%=event.id%>">
+                                    <img src="/image/products/<%= event.imageEvent %> " alt="">
+                                </a>
+                            </div>
+                            <!-- <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                         <div class="article-image">
                                 <img src="/image/products/<%= event.imageEvent %> " alt="">
-                        </div>
+                        </div> -->
 
-                        <div class="article-title">
-                            <h2>
-                                <%= event.artist %>
-                            </h2>
-                            <h4>
-                                <%= event.subtitle %>
-                            </h4>
-                        </div>
+                            <div class="article-title">
+                                <h2>
+                                    <%= event.artist %>
+                                </h2>
+                                <h4>
+                                    <%= event.subtitle %>
+                                </h4>
+                            </div>
 
-                        <div class="article-information-general">
-                            <div class="icons">
-                                <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon" aria-hidden="true"></i></div>
-                                <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <div class="article-information-general">
+                                <div class="icons">
+                                    <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon"
+                                            aria-hidden="true"></i></div>
+                                    <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div class="article-information-specific">
+                                    <div class="event-date">
+                                        <p class="p-own">
+                                            <% const eventFunctions=[]; %>
+                                                <% functions.forEach(eventFunction=> { %>
+                                                    <% if (event.id===eventFunction.event_id) {%>
+                                                        <% eventFunctions.push(eventFunction); %>
+                                                            <% }}) %>
+                                                                <%= eventFunctions[0].date %> a las <%=
+                                                                        eventFunctions[0].time %>.
+                                        </p>
+                                    </div>
+                                    <div class="event-price">
+                                        <p class="p-own">
+                                            <% const eventTickets=[]; %>
+                                                <% tickets.forEach(eventTicket=> { %>
+                                                    <% if (event.id===eventTicket.event_id) {%>
+                                                        <% eventTickets.push(eventTicket); %>
+                                                            <% }}) %>
+                                                                Desde $<%= eventTickets[0].price %> .-
+
+                                        </p>
+                                    </div>
+                                    <div class="event-place">
+                                        <p class="p-own">
+                                            <% for( let i=0; i < teaters.length; i++) {%>
+                                                <% if (event.teater_id===teaters[i].id) {%>
+                                                    <%= teaters[i].name%>
+                                                        <% }} %>,
+                                                            <% for( let i=0; i < citys.length; i++) {%>
+                                                                <% if (event.city_id===citys[i].id) {%>
+                                                                    <%= citys[i].cityName %>.
+                                                                        <% }} %>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="article-information-specific">
-                                <div class="event-date">
-                                    <p>
-                                        <% const eventFunctions = []; %>
-                                        <% functions.forEach(eventFunction => { %> 
-                                        <% if (event.id === eventFunction.event_id) {%>
-                                            <% eventFunctions.push(eventFunction); %> 
-                                            <% }}) %> 
-                                         <%= eventFunctions[0].date %>  a las <%= eventFunctions[0].time %>. 
-                                    </p>
-                                </div>
-                                <div class="event-price">
-                                    <p> 
-                                        <% const eventTickets = []; %>
-                                        <% tickets.forEach(eventTicket => { %> 
-                                        <% if (event.id === eventTicket.event_id) {%>
-                                            <% eventTickets.push(eventTicket); %> 
-                                            <% }}) %> 
-                                            Desde $<%= eventTickets[0].price %> .-
-                                         
-                                    </p>
-                                </div>
-                                <div class="event-place">
-                                    <p>
-                                        <% for( let i = 0; i < teaters.length; i++) {%>
-                                            <% if (event.teater_id === teaters[i].id) {%>
-                                                <%= teaters[i].name%>
-                                                <% }} %>,
-                                        <% for( let i = 0; i < citys.length; i++) {%>
-                                            <% if (event.city_id === citys[i].id) {%> 
-                                                <%= citys[i].cityName %>.
-                                                <% }} %>
-                                    </p>
-                                </div>
+
+                            <div class="article-buttons">
+                                <div class="btn-card-own color-b icon"> <i class="fa fa-cart-plus"
+                                        aria-hidden="true"></i></div>
+                                <a href="" class="btn-card-own color-a buy">Comprar ahora</a>
                             </div>
-                        </div>
+                        </article>
 
-                        <div class="article-buttons">
-                            <div class="btn color-b icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                            <a href="" class="btn color-a buy">Comprar ahora</a>
-                        </div>
-                    </article>
-
-                    <% }) %>    
-            </div>
-    </section>
-           
-
-        <% } else {%> 
-        
-        <br>
-        <br>
-        
-        <section class="section-events">
-            
-                <div class="section-title col-12">
-                    <h2>Destacados</h2>
-                    <hr class="line-title">
+                        <% }) %>
                 </div>
+            </section>
 
+
+            <% } else {%>
+
+                <br>
+                <br>
+
+                <section class="section-events">
+
+                    <div class="section-title col-12">
+                        <h2>Destacados</h2>
+                        <hr class="line-title">
+                    </div>
+                           
                 <div class="events-container">
                     <% allEvents.forEach(event=> { %>
                         <article class="article-container">
                             <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                             <div class="article-image">
-                                    <img src="/image/products/<%= event.imageEvent %> " alt="">
+                                <img src="/image/products/<%= event.imageEvent %> " alt="">
                             </div>
 
                             <div class="article-title">
@@ -288,63 +344,72 @@
                             <div class="article-information-general">
                                 <div class="icons">
                                     <div class="date-icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon" aria-hidden="true"></i></div>
+                                    <div class="price-icon"><i class="fa fa-ticket thumb-ticket-icon"
+                                            aria-hidden="true"></i></div>
                                     <div class="place-icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </div>
                                 </div>
                                 <div class="article-information-specific">
                                     <div class="event-date">
-                                        <p>
-                                            <% const eventFunctions = []; %>
-                                            <% functions.forEach(eventFunction => { %> 
-                                            <% if (event.id === eventFunction.event_id) {%>
-                                                <% eventFunctions.push(eventFunction); %> 
-                                                <% }}) %> 
-                                             <%= eventFunctions[0].date %>  a las <%= eventFunctions[0].time %>. 
+                                        <p class="p-own">
+                                            <% const eventFunctions=[]; %>
+                                                <% functions.forEach(eventFunction=> { %>
+                                                    <% if (event.id===eventFunction.event_id) {%>
+                                                        <% eventFunctions.push(eventFunction); %>
+                                                            <% }}) %>
+                                                                <%= eventFunctions[0].date %> a las <%=
+                                                                        eventFunctions[0].time %>.
                                         </p>
                                     </div>
                                     <div class="event-price">
-                                        <p> 
-                                            <% const eventTickets = []; %>
-                                            <% tickets.forEach(eventTicket => { %> 
-                                            <% if (event.id === eventTicket.event_id) {%>
-                                                <% eventTickets.push(eventTicket); %> 
-                                                <% }}) %> 
-                                                Desde $<%= eventTickets[0].price %> .-
-                                             
+                                        <p class="p-own">
+                                            <% const eventTickets=[]; %>
+                                                <% tickets.forEach(eventTicket=> { %>
+                                                    <% if (event.id===eventTicket.event_id) {%>
+                                                        <% eventTickets.push(eventTicket); %>
+                                                            <% }}) %>
+                                                                Desde $<%= eventTickets[0].price %> .-
+
                                         </p>
                                     </div>
                                     <div class="event-place">
-                                        <p>
-                                            <% for( let i = 0; i < teaters.length; i++) {%>
-                                                <% if (event.teater_id === teaters[i].id) {%>
+                                        <p class="p-own">
+                                            <% for( let i=0; i < teaters.length; i++) {%>
+                                                <% if (event.teater_id===teaters[i].id) {%>
                                                     <%= teaters[i].name%>
-                                                    <% }} %>,
-                                            <% for( let i = 0; i < citys.length; i++) {%>
-                                                <% if (event.city_id === citys[i].id) {%> 
-                                                    <%= citys[i].cityName %>.
-                                                    <% }} %>
+                                                        <% }} %>,
+                                                            <% for( let i=0; i < citys.length; i++) {%>
+                                                                <% if (event.city_id===citys[i].id) {%>
+                                                                    <%= citys[i].cityName %>.
+                                                                        <% }} %>
                                         </p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="article-buttons">
-                                <div class="btn color-b icon"> <i class="fa fa-cart-plus" aria-hidden="true"></i></div>
-                                <a href="" class="btn color-a buy">Comprar ahora</a>
+                                <div class="btn-card-own color-b icon"> <i class="fa fa-cart-plus"
+                                        aria-hidden="true"></i></div>
+                                <a href="" class=" btn-card-own color-a buy">Comprar ahora</a>
                             </div>
                         </article>
 
-                        <% }) %>    
+                        <% }) %>
                 </div>
-        </section>
-        <% } %> 
-        <br>
-        <br>
+                        
+
+                </section>
+                <% } %>
+                    <br>
+                    <br>
 
 
-        <%- include('./partials/footer') %>
-<script src="../../js/searchIndex.js"></script>
+                    <%- include('./partials/footer') %>
+                        <script src="../../js/searchIndex.js"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                            crossorigin="anonymous"></script>
+                    
 </body>
 
 </html>
