@@ -283,22 +283,8 @@ body {
     display: flex;
 }
 
-.submit-button, .reset-button, .cancel-button{
-    height: 40px;
-    border-radius: 8px;
-    padding: 0px 50px;
-}
-
-.submit-button{
-    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);    margin-left: 10px ;
-    font-size: 16px;
-    font-weight: bold;
-    border: transparent;
-}
-
-.submit-button:hover{
-    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-    transition: 0.5s;
+.btn.submit{
+    width: 250px;
 }
 
 .cancel-button, .reset-button{
@@ -348,6 +334,39 @@ body {
 .form-group.error small {
     color: #e74c3c;
 	visibility: visible;
+}
+
+.warning {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 90%;
+    background-color: white;
+}
+
+.warning-title{
+    text-align: center;
+    padding: 10px;
+    background-color: #ff7171;
+    color: white;
+    font-size: large
+}
+.warning p{
+    padding-top: 10px;
+    text-align: center;
+}
+.warning li{
+    list-style-type: disc;
+}
+
+.warning-uls{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.warning-uls ul {
+    margin-right: 10px;
 }
 @media (max-width: 1250px) {
     .form-data-box label{

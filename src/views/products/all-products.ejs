@@ -33,15 +33,12 @@
                             <option value="reggaeton">Reggaeton</option>
                         </select>
                     </div>
-                    <div>
-                        <input type="date" name="event-date" id="event-date">
-                    </div>
                     <div class="place">
                         <input type="text" name="event-place" id="event-place" placeholder="Lugar">
                         <i class="fa-solid fa-location-dot"></i>
                     </div>
 
-                    <input class="search-btn" type="button" value="Buscar">
+                    <input class="btn btn-search color-a" type="button" value="Buscar">
                 </form>
             </div>
         </div>
@@ -118,11 +115,11 @@
                         </div>
 
                         <div class="article-buttons">
-                            <form action="/products/delete/<%=event.id%>?_method=DELETE" method="POST">
-                                <button type="submit" class="delete-button">Eliminar</button>
+                            <form class="delete" action="/products/delete/<%=event.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn color-b delete">Eliminar</button>
                             </form>
                             
-                             <a class="update-button" href="/products/edit/<%= event.id%>" >Modificar</a>
+                             <a class="btn color-a update" href="/products/edit/<%= event.id%>" >Modificar</a>
                             
 
                             </form>

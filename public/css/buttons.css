@@ -1,0 +1,38 @@
+.btn {
+    border: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.btn:hover {
+    border: solid 1px #DA59B1;
+    transition: 0.5s;
+    height: 40px;
+    color: #DA59B1;
+    background: #ffffff;
+    border-color: linear-gradient(to top right, #8162CE, #F54BA5);
+    border-radius: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.color-a {
+    background: linear-gradient(to top right, #8162CE, #F54BA5);
+}
+
+.color-b{
+    background: linear-gradient(to bottom right, #6452E9, #639FF9);
+}
+
+.color-c{
+    background: linear-gradient(333deg, rgba(99,159,249,1) 23%, rgba(129,98,206,1) 46%, rgba(245,75,165,1) 76%);
+}
+
+.btn-search{
+ width: 150px;
+}
