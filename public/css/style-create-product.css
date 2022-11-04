@@ -194,14 +194,13 @@ body {
     height: 40px;
     background: #FFFFFF;
     border: 1px solid #808080;
-    border-radius: 8px;
+    border-radius: 15px;
     padding-left: 8px;
 }
 
 .inputs-row{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .ticket-row{
@@ -236,21 +235,12 @@ body {
 
 .btn-add-show{
     cursor: pointer;
-    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-    border-radius: 10px;
-    font-size: 12px;
     border: transparent;
     text-align: center;
-    padding: 12px;
-    color: black;
-    font-weight: bold;
-    margin-top: 40px
+    margin-top: 40px;
+    width: 200px;
 }
 
-.btn-add-show:hover{
-    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-    transition: 0.5s;
-}
 
 .btn-add-show i{
     border-radius: 50%;
@@ -287,6 +277,9 @@ body {
     width: 250px;
 }
 
+.btn.reset{
+    width: 200px;
+}
 .cancel-button, .reset-button{
     background-color: transparent;
    color: #4D4D4D;
@@ -302,7 +295,7 @@ body {
 
 .form-group.error{
     margin-right: 20px;
-    margin-top: 18px;
+
 }
 .form-group.error input {
 	border: 2px solid #e74c3c;
@@ -341,13 +334,16 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    border-radius: 15px;
     width: 90%;
     background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .warning-title{
     text-align: center;
     padding: 10px;
+    border-radius: 15px;
     background-color: #ff7171;
     color: white;
     font-size: large

@@ -187,10 +187,15 @@
             <div class="events-container">
                 <% cityEvents.forEach(event=> { %>
                     <article class="article-container">
-                        <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
+                        <div class="article-image">
+                            <a href="/products/detail/<%=event.id%>">
+                                <img src="/image/products/<%= event.imageEvent %> " alt="">
+                            </a>
+                        </div>
+                        <!-- <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                         <div class="article-image">
                                 <img src="/image/products/<%= event.imageEvent %> " alt="">
-                        </div>
+                        </div> -->
 
                         <div class="article-title">
                             <h2>
@@ -271,9 +276,10 @@
                 <div class="events-container">
                     <% allEvents.forEach(event=> { %>
                         <article class="article-container">
-                            <a href="/products/detail/<%=event.id%>" class="article-container-link"></a>
                             <div class="article-image">
+                                <a href="/products/detail/<%=event.id%>">
                                     <img src="/image/products/<%= event.imageEvent %> " alt="">
+                                </a>
                             </div>
 
                             <div class="article-title">

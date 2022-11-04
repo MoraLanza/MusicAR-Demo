@@ -26,7 +26,6 @@ ul.menu {
 }
 
 header {
-    background-color: rgba(46, 26, 78, 0.5);
     padding: 20px 0 15px 0;
     display: flex;
     justify-content: space-between;
@@ -92,7 +91,7 @@ ul.lista-opciones li {
 .boton-border {
     border: 2px solid white;
     padding: 8px 30px;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
     display: flex;
     align-items: center;
@@ -106,7 +105,7 @@ ul.lista-opciones li {
 .boton-blanco {
     background-color: white;
     padding: 10px 40px;
-    border-radius: 10px;
+    border-radius: 15px;
     color: #000000;
     display: flex;
     align-items: center;

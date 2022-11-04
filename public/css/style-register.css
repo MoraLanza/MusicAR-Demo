@@ -40,7 +40,6 @@ main.fondoImagen {
     text-align: center;
     font-size: 13px;
     border-radius: 5px;
-    background: rgb(5, 7, 12, 0.5);
     margin: 120px 0;
     padding: 20px;
 
@@ -79,19 +78,13 @@ main.fondoImagen {
 }
 
 .register-button button {
-    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
     width: 210px;
     height: 40px;
-    border: transparent;
     font-weight: 600;
-    border-radius: 10px;
     font-size: 16px;
     margin: 17px 0;
 }
 
-.register-button button:hover {
-    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-}
 
 .selects {
     display: flex;

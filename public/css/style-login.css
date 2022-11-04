@@ -40,8 +40,6 @@ header{
     color: white;
     text-align: center;
     font-size: 13px;
-    border-radius: 15px;
-    background: rgb(5, 7, 12, 0.50);
     align-self: center;
     margin: 5% 30%;
    
@@ -122,21 +120,14 @@ header{
     margin: 20px;
 }
 
-.barra button{
-    background: linear-gradient(180deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-    height: 40px;
-    border: transparent;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 16px;
+.btn{
+    
     text-align: center;
     width: 100%;
     max-width: 80%;
 }
 
- .barra button:hover {
-    background: linear-gradient(90deg, #FFBA01 0%, #E7CB3A 45.83%, #EDD921 83.33%);
-}
+
 
 .form-check-label {
     font-size: 10px;

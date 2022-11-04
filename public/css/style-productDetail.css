@@ -69,30 +69,23 @@ header {
 .boton-comprar {
     width: 250px;
     height: 50px;
-    border-radius: 10px;
-    border: none;
-    background-image: linear-gradient(to bottom, #d7c521, #d9be36, #daa002);
-    font-size: 1rem;
-    font-weight: bolder;
     margin-right: 50px;
     margin-left: 190px;
 }
 
 .boton-comprar:hover{
-    background-image: linear-gradient(to bottom, #EDD921, #E7CB3A, #FFBA01);
+    height: 50px;
 }
 
 .boton-carrito {
-    width: 48px;
-    height: 48px;
-    border: none;
-    background: none;
-    color: white;
-    font-size: 2.6rem;
+    width: 130px;
+    height: 50px;
+    font-size: 35px;
 }
 
 .boton-carrito:hover{
-    font-size: 2.8rem;
+    height: 50px;
+
 }
 
 .image-banner{
@@ -128,6 +121,12 @@ header {
     color: #afacac;
     text-decoration: none;
 }
+.ticket-nav{
+    color: #afacac;
+    text-decoration: none;
+    font-size: 16px;
+}
+
 
 .lista-pagina a:hover{
     color:#817f7f;
