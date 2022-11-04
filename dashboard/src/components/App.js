@@ -1,6 +1,8 @@
 import React from 'react';
 import SideBar from './SideBar';
+import '../assets/scss/app.scss';
 import ContentWrapper from './ContentWrapper';
+
 function App() {
   return (
     <React.Fragment>

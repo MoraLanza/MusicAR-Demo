@@ -29,29 +29,19 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Título</th>
+                                <th>Artista</th>
+                                <th>Fecha y hora</th>
                                 <th>Duración</th>
-                                <th>Rating</th>
+                                <th>Teatro</th>
                                 <th>Género</th>
-                                <th>Premios</th>
                             </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Título</th>
-                                <th>Duración</th>
-                                <th>Rating</th>
-                                <th>Género</th>
-                                <th>Premios</th>
-                            </tr>
-                        </tfoot>
+                        </thead>                       
                         <tbody>
                             {
                             tableRowsData.map( ( row , i) => {
                                 return <ChartRow { ...row} key={i}/>
                             })
                             }
-
                         </tbody>
                     </table>
                 </div>

@@ -3,7 +3,7 @@ import image from '../assets/images/logo-DH.png';
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastEventInDb from './LastEventInDb';
-import ContentRowMovies from './ContentRowMovies';
+import UsersPagination from './UsersPagination';
 import SearchMovies from './SearchMovies';
 
 import NotFound from './NotFound';
@@ -13,7 +13,7 @@ function SideBar(){
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion bg-red" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -40,7 +40,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/CategoriesInDb">
+                    <Link className="nav-link" to="/users">
                         <i className="fas fa-users"></i>
                         <span>Usuarios</span>
                     </Link>
@@ -56,7 +56,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/ContentRowMovies">
+                    <Link className="nav-link" to="/CategoriesInDb">
                         <i className="fas fa-music"></i>
                         <span>Categorías</span>
                     </Link>
@@ -67,22 +67,6 @@ function SideBar(){
             </ul>
             {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
-            </Route>
-            <Route path="/LastEventInDb">
-                <LastEventInDb />
-            </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Switch>
                 <Route exact path="/">
                     <ContentWrapper />
@@ -93,8 +77,8 @@ function SideBar(){
                 <Route path="/LastEventInDb">
                     <LastEventInDb />
                 </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/users">
+                    <UsersPagination />
                 </Route>
                 <Route path="/SearchEvent">
                     <SearchMovies />
