@@ -73,7 +73,7 @@ const apiProductController = {
            
             return res.json({
                 count: events.length,
-                categories: categories,
+                countByCategory: categories,
                 products: showAllEvents(events)
             });
 
