@@ -52,14 +52,19 @@ const apiProductController = {
             //     include: [
             //         {
             //             model: Categories,
-            //             attributes: attributes
+            //             attributes: name
             //         }
             //     ],
             //     group: ['categories.id']
             // });
+            // console.log(categories)
 
-
-
+            const eventsCategory = await Categories.findAll({
+                attributes: ['category_id', [sequelize.fn('count', sequelize.col('events.category_id')), 'eventCount']],
+                include: [{ attributes: [], model: Events }],
+                group: ['categories.id']
+              });
+           
             return res.json({
                 count: events.length,
                 // countByCategory: categories,

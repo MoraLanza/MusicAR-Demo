@@ -35,17 +35,6 @@ function searchPlace(query) {
         });
 }; 
 
-// function searchDate(query) {
-//     const url = `http://localhost:3000/search/events?date=${query}`
-//     fetch(url)
-//         .then((response) =>
-//             response.json())
-//         .then((jsonData) => {
-//             const results = jsonData.data;
-//             renderResults(results);
-//         });
-// }
-
 const resultsContainer = document.querySelector('#results-container');
 const noResultsContainer = document.querySelector('.no-results-box');
 const resultsSection = document.querySelector('#section-results');
