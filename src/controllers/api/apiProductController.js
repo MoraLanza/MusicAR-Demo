@@ -59,15 +59,21 @@ const apiProductController = {
             // });
             // console.log(categories)
 
-            const eventsCategory = await Categories.findAll({
-                attributes: ['category_id', [sequelize.fn('count', sequelize.col('events.category_id')), 'eventCount']],
-                include: [{ attributes: [], model: Events }],
-                group: ['categories.id']
-              });
+            const categories = await Categories.findAll({
+                
+                include: ['events'],
+                group: ['category.id']
+            });
+
+            // const eventsCategory = await Categories.findAll({
+            //     attributes: ['category_id', [sequelize.fn('count', sequelize.col('events.category_id')), 'eventCount']],
+            //     include: [{ attributes: [], model: Events }],
+            //     group: ['categories.id']
+            //   });
            
             return res.json({
                 count: events.length,
-                // countByCategory: categories,
+                categories: categories,
                 products: showAllEvents(events)
             });
 
