@@ -107,9 +107,6 @@ body {
     font-size: 40px;
 }
 
-.event-principal-title{
-    margin-bottom: 20px;
-}
 
 .btnDeleteInput{
     padding: 15px;
@@ -174,7 +171,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 30px;
+
 }
 
 .form-data-box .form-group{
@@ -293,6 +290,13 @@ body {
     border: 2px solid #2ecc71;
 }
 
+.form-group.success .form-control.artist, .form-group.success .form-control.subtitle  {
+    border-bottom: 3px solid #2ecc71;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
 .form-group.error{
     margin-right: 20px;
 
@@ -301,6 +305,12 @@ body {
 	border: 2px solid #e74c3c;
 }
 
+.form-group.error .form-control.artist, .form-group.error .form-control.subtitle  {
+    border-bottom: 3px solid #e74c3c;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
 
 .form-group i.fa-check-circle, .form-group i.fa-exclamation-circle  {
 	visibility: hidden;

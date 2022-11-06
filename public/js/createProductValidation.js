@@ -187,7 +187,7 @@ const formValidation = () => {
 
     if(getDinamicInputs('.price', functionsTicketPrice).every(priceInput => priceValidation(priceInput.value))) return false;
 
-    if(getDinamicInputs('.lot', functionsTicketPrice).every(lotInput => lotValidation(lotInput.value))) return false;
+    if(getDinamicInputs('.lot', functionsTicketLot).every(lotInput => lotValidation(lotInput.value))) return false;
 
 
     return true
@@ -205,6 +205,7 @@ function setSuccessFor(input) {
     const formGroup = input.closest('div');
     formGroup.className = 'form-group success';
 }
+
 
 
 // INPUT VALIDATIONS FUNCTIONS
@@ -282,21 +283,21 @@ const timeDurationValidation = (target) => {
 }
 
 const lotValidation = (target) => {
-    if (target <= 10 || target.trim == '') {
+    if (target <= 10 || target.trim === '' || target === null) {
         return false
     }
     return true
 }
 
 const priceValidation = (target) => {
-    if (target <= 499 || target.trim == '') {
+    if (target <= 499 || target.trim == '' || target === null) {
         return false
     }
     return true
 }
 
 const ticketTypeValidation = (target) => {
-    if (target.length <= 4 || target.trim == '') {
+    if (target.length <= 4 || target.trim == '' || target === null) {
         return false
     }
     return true

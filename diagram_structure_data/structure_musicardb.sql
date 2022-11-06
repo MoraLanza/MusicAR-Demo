@@ -132,3 +132,9 @@ ADD FOREIGN KEY (state_id) REFERENCES states(id);
 alter table events 
 add column country_id INT,
 ADD FOREIGN KEY (country_id) REFERENCES countrys(id); 
+
+select name, events.category_id
+from categories
+left join events
+on categories.id = events.category_id;
+

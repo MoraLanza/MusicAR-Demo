@@ -1,6 +1,28 @@
 
-function searchArtist(query) {
-    const url = `http://localhost:3000/search/events?artist=${query}`
+// function searchArtist(query) {
+//     const url = `http://localhost:3000/search/events?artist=${query}`
+//     fetch(url)
+//         .then((response) =>
+
+//             response.json())
+//         .then((jsonData) => {
+//             const results = jsonData.data;
+//             renderResults(results);
+
+//         });
+// };
+
+function handleSearch(artist = null, category = null, place = null) {
+    let url = `http://localhost:3000/search/events?q=q`;
+    if(artist){
+        url += `&artist=${artist}`
+    }
+    if(category){
+        url += `&category=${category}`
+    }
+    if(place){
+        url += `&place=${place}`
+    }
     fetch(url)
         .then((response) =>
 
@@ -12,31 +34,8 @@ function searchArtist(query) {
         });
 };
 
-function searchCategory(query) {
-    const url = `http://localhost:3000/search/events?category=${query}`
-    fetch(url)
-        .then((response) =>
-            response.json())
-        .then((jsonData) => {
-            const results = jsonData.data;
-            renderResults(results);
-        });
-};
-
-
-function searchPlace(query) {
-    const url = `http://localhost:3000/search/events?place=${query}`
-    fetch(url)
-        .then((response) =>
-            response.json())
-        .then((jsonData) => {
-            const results = jsonData.data;
-            renderResults(results);
-        });
-}; 
-
-// function searchDate(query) {
-//     const url = `http://localhost:3000/search/events?date=${query}`
+// function searchCategory(query) {
+//     const url = `http://localhost:3000/search/events?category=${query}`
 //     fetch(url)
 //         .then((response) =>
 //             response.json())
@@ -44,7 +43,19 @@ function searchPlace(query) {
 //             const results = jsonData.data;
 //             renderResults(results);
 //         });
-// }
+// };
+
+
+// function searchPlace(query) {
+//     const url = `http://localhost:3000/search/events?place=${query}`
+//     fetch(url)
+//         .then((response) =>
+//             response.json())
+//         .then((jsonData) => {
+//             const results = jsonData.data;
+//             renderResults(results);
+//         });
+// }; 
 
 const resultsContainer = document.querySelector('#results-container');
 const noResultsContainer = document.querySelector('.no-results-box');
@@ -111,26 +122,29 @@ window.onload = () => {
     // });
 
     btnSearch.addEventListener('click', event => {
-        if(artist.value != null && category.value != null && place.value != null ){
-            searchCategory(category.value)
-            searchArtist(artist.value)
-            searchPlace(place.value)
-        } else if (artist.value != null && category.value == null && place.value == null){
-            searchArtist(artist.value)
-        } else if (artist.value == null && category.value != null && place.value == null){
-            searchCategory(category.value)
-        } else if (artist.value == null && category.value == null && place.value != null){
-            searchPlace(place.value)
-        } else if (artist.value != null && category.value == null && place.value != null){
-            searchPlace(place.value)
-            searchArtist(artist.value)
-        } else if (artist.value == null && category.value != null && place.value != null){
-            searchPlace(place.value)
-            searchCategory(category.value)
-        } else if (artist.value != null && category.value == null && place.value != null){
-            searchArtist(artist.value)
-            searchCategory(category.value)
-        }
+        event.preventDefault()
+        handleSearch(artist.value, category.value, place.value);
+        // if(artist.value != null && category.value != null && place.value != null ){
+        //     searchCategory(category.value)
+        //     searchArtist(artist.value)
+        //     searchPlace(place.value)
+        // } else if (artist.value != null && category.value == null && place.value == null){
+        //     searchArtist(artist.value)
+        // } else if (artist.value == null && category.value != null && place.value == null){
+        //     searchCategory(category.value)
+        // } else if (artist.value == null && category.value == null && place.value != null){
+        //     searchPlace(place.value)
+        // } else if (artist.value != null && category.value == null && place.value != null){
+        //     searchPlace(place.value)
+        //     searchArtist(artist.value)
+        // } else if (artist.value == null && category.value != null && place.value != null){
+        //     searchPlace(place.value)
+        //     searchCategory(category.value)
+        // } else if (artist.value != null && category.value == null && place.value != null){
+        //     searchArtist(artist.value)
+        //     searchCategory(category.value)
+        // }
+    
 
         // switch(artist, category, place){
         //         case artist.value != null && category.value == null && place.value == null:

@@ -18,25 +18,25 @@
                                     </a>
                                 </li>
                             </ul>
-                            <img src="/image/users/<%=locals.userLogged.imageUser %>" alt="profile-pic"
+                            <img src="/image/users/<%=user.imageUser %>" alt="profile-pic"
                                 class="profile-img">
                             <h1 class="title">
-                                <%= locals.userLogged.name%>
-                                    <%= locals.userLogged.lastName%>
+                                <%= user.name%>
+                                    <%= user.lastName%>
                             </h1>
                             <p class="job-title">
-                                <%= locals.isLogged && locals.userLogged.role_id==1 ? 'Administrador' : 'Cliente' %>
+                                <%= locals.isLogged && user.role_id==1 ? 'Administrador' : 'Cliente' %>
                             </p>
                             <div class="desc m-top-16">
                                 <p>
-                                    <%= locals.userLogged.email%>
+                                    <%= user.email%>
                                 </p>
                             </div>
                             <div class="btns-actions">
                                 <button class="btn color-a" id="edit-profile-btn">Editar perfil</button>
                                 <button class="btn color-b" id="edit-password-btn">Modificar clave</button>
                             </div>
-                            <% if (locals.userLogged.role_id == 1 ) {%>
+                            <% if (user.role_id == 1 ) {%>
                             <div class="btn-users-list">
                                 <button class="btn btn-long color-c">Ver usuarios</button>
                             </div
@@ -46,40 +46,60 @@
 
                     </div>
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editProfile">
-                        <form action="" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
+                        <form action="/users/profile/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
 
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs">
                                 <div class="inputs-box">
                                     <div class="item-input">
                                         <label for="name">Nombre*
-                                            <input type="text" name="name" id="name" class="controls">
+                                            <input type="text" name="name" id="name" class="controls" value="<%= user.name %> ">
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="lastName">Apellido*
-                                            <input type="text" name="lastName" id="lastName" class="controls">
+                                            <input type="text" name="lastName" id="lastName" class="controls" value="<%= user.lastName %> ">
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="email">Email*
-                                            <input type="email" name="email" id="email" class="controls">
+                                            <input type="email" name="email" id="email" class="controls" value="<%= user.email %> ">
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="imageUser">Eligí tu foto de perfil*
-                                            <input class="controls" type="file" name="imageUser" id="imageUser" value="">
+                                            <input class="controls" type="file" name="imageUser" id="imageUser" value="<%= user.userImage %>">
                                         </label>
                                     </div>
                                 </div>
                                 <div class="inputs-box">
                                     <div class="item-input">
+
                                         <label for="country_id">Elegí tu país*
                                             <select name="country_id" class="select-city controls">
-                                                <option value=""></option>
+                                                <% countries.forEach(country=> { %>
+                                                    <option value="<%= country.id%>" <%=user.country_id==country.id
+                                                        ? 'selected' : null%>>
+                                                        <%=country.countryName%>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </label>
+                                    </div>
+
+                                    <div class="item-input">
+                                        <label for="state_id">Elegí tu provincia*
+                                            <select name="state_id" class="select-state controls">
+                                                <% states.forEach(state=> { %>
+                                                    <option value="<%= state.id%>"
+                                                        <%=user.state_id==state.id? 'selected' : null%>>
+                                                        <%=state.stateName%>
+                                                    </option>
+                                                    <% }) %>
+
                                             </select>
                                         </label>
                                     </div>
@@ -87,7 +107,11 @@
                                     <div class="item-input">
                                         <label for="city_id">Elegí tu ciudad*
                                             <select name="city_id" class="select-city controls">
-                                                <option value=""></option>
+                                                <% citys.forEach(city=> { %>
+                                                    <option value="<%= city.id%>" <%=user.city_id==city.id? 'selected'
+                                                        : null%>><%=city.cityName%>
+                                                    </option>
+                                                    <% }) %>
 
                                             </select>
                                         </label>
@@ -96,7 +120,12 @@
                                     <div class="item-input">
                                         <label for="category_id">Elegí tu categoria preferida*
                                             <select name="category_id" class="select-category controls">
-                                                <option value=""></option>
+                                                <% categories.forEach(category=> { %>
+                                                    <option value="<%= category.id%>"
+                                                        <%=user.category_id==category.id? 'selected' : null%>>
+                                                        <%=category.name%>
+                                                    </option>
+                                                    <% }) %>
                                             </select>
                                         </label>
                                     </div>
@@ -104,35 +133,35 @@
                             </div>
 
                             <div class="btns-actions-form">
-                                <button class="btn color-a" type="submit">Actualizar</button>
                                 <button class="btn color-b btn-cancel" id="cancelEditForm" type="button">Cancelar</button>                           
+                                <button class="btn color-a" type="submit">Actualizar</button>
                             </div>
                         </form>                
                     </div>
                                         
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editPassword">
-                        <form action="" method="POST" enctype="multipart/form-data" class="form-edit-password">
+                        <form action="/users/profile/updatePass/<%=user.id%>?_method=PUT" method="POST"  class="form-edit-password">
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs d-column">
                                 <div class="item-input">
-                                    <label for="name">Contraseña actual*
-                                        <input type="text" name="name" id="name" class="controls">
+                                    <label for="password">Contraseña actual*
+                                        <input type="password" name="password" id="password" class="controls">
                                     </label>
                                 </div>
                                 <div class="item-input">
-                                    <label for="name">Nueva contraseña*
-                                        <input type="text" name="name" id="name" class="controls">
+                                    <label for="newPassword">Nueva contraseña*
+                                        <input type="password" name="newPassword" id="newPassword" class="controls">
                                     </label>
                                 </div>
                                 <div class="item-input">
-                                    <label for="name">Repetir nueva contraseña*
-                                        <input type="text" name="name" id="name" class="controls">
+                                    <label for="confirmPassword">Repetir nueva contraseña*
+                                        <input type="password" name="confirmPassword" id="confirmPassword" class="controls">
                                     </label>
                                 </div>
                             </div>
                             <div class="btns-actions-form">
-                                <button class="btn color-a" type="submit">Actualizar</button>
                                 <button class="btn color-b btn-cancel" id="cancelPasswordForm" type="button">Cancelar</button>                           
+                                <button class="btn color-a" type="submit">Actualizar</button>
                             </div>
                         </form>
                     </div>
@@ -150,16 +179,16 @@
                                     </tr>
                                 </thead>
                                 <tbody id="paginated-list">
-                                    <% users.forEach( user => { %>                                         
+                                    <% users.forEach( userDB => { %>                                         
                                     <tr>
                                         <td>
-                                        <%= user.name %> 
+                                        <%= userDB.name %> 
                                         </td>
                                         <td>
-                                        <%= user.lastName %> 
+                                        <%= userDB.lastName %> 
                                         </td>
                                         <td>
-                                        <%= user.email %> 
+                                        <%= userDB.email %> 
                                         </td>
                                         <td>
                                         <select name="userRole" id="userRole">
