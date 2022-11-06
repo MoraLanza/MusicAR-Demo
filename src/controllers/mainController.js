@@ -35,19 +35,23 @@ let mainController = {
                 allEvents = await Events.findAll({
                     where: {
                         category_id: req.session.userLogged.category_id
-                    }
+                    },
+                    limit: 12
                 });
 
                 cityEvents = await Events.findAll({
                     where: {
                         city_id: req.session.userLogged.city_id
-                    }
+                    }, 
+                    limit: 8
                 })
 
                 return res.render('index', { allEvents, functions, teaters, citys, tickets, user, categories, cityEvents });
             } else {
 
-                allEvents = await Events.findAll();
+                allEvents = await Events.findAll({
+                    limit: 12
+                });
 
                 return res.render('index', { allEvents, functions, teaters, citys, tickets, categories });
             }
