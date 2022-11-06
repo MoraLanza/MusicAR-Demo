@@ -16,8 +16,10 @@ const apiUserController = {
 
                     const userDetail = {
                         id: user.id,
-                        name: user.name + ' ' + user.lastName,
+                        name: user.name,
+                        lastname: user.lastName,
                         email: user.email,
+                        rol: user.role_id,
                         detail: "http://localhost:3000/api/users/" + user.id
                     };
                     allUsers.push(userDetail);

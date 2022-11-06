@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../assets/images/logo-DH.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
+import CategoriesPagination from './CategoriesPagination';
 import LastEventInDb from './LastEventInDb';
 import UsersPagination from './UsersPagination';
 import SearchMovies from './SearchMovies';
@@ -56,7 +56,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/CategoriesInDb">
+                    <Link className="nav-link" to="/CategoriesPagination">
                         <i className="fas fa-music"></i>
                         <span>Categorías</span>
                     </Link>
@@ -71,8 +71,8 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/CategoriesInDb">
-                    <GenresInDb />
+                <Route path="/CategoriesPagination">
+                    <CategoriesPagination />
                 </Route>
                 <Route path="/LastEventInDb">
                     <LastEventInDb />
