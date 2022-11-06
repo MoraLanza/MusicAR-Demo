@@ -46,7 +46,7 @@
 
                     </div>
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editProfile">
-                        <form action="/users/profile/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
+                        <form class="form-NotSensibleData" action="/users/profile/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
 
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs">
@@ -71,7 +71,8 @@
 
                                     <div class="item-input">
                                         <label for="imageUser">Eligí tu foto de perfil*
-                                            <input class="controls" type="file" name="imageUser" id="imageUser" value="<%= user.userImage %>">
+                                            <input type="hidden" name="oldImage" value="<%= user.imageUser %>">
+                                            <input class="controls" type="file" name="imageUser" id="imageUser" >
                                         </label>
                                     </div>
                                 </div>
@@ -224,7 +225,7 @@
             </main>
             
             <%- include('../partials/footer') %>
-            <script src="./../../js/profile.js"></script>
+            <script src="/js/profile.js"></script>
     </body>
 
 </html>

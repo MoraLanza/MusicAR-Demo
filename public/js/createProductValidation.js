@@ -5,7 +5,7 @@ const image = document.getElementById('image');
 const linkYoutube = document.querySelector('.linkYoutube');
 const addFunctionBtn = document.querySelector('#addFunction');
 const description = document.getElementById('description');
-const warning = document.querySelector('.warning');
+const warning = document.querySelector('.warning-submit');
 
 let functions;
 let eventDates;

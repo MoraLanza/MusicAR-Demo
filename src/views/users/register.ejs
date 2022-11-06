@@ -10,9 +10,6 @@
         <%- include('../partials/header') %>
 
             <main class="fondoImagen">
-                <div class="errors">
-
-                </div>
 
                 <div class="formulario glass-effect">
                     <form class="form" action="/users/register" method="POST" enctype="multipart/form-data">
@@ -76,7 +73,8 @@
                                         <i class="fas fa-exclamation-circle"></i>
                                     </label>
                                 </div>
-                                <input type="password" name="passwordConfirm" id="passwordConfirm" class="controls passwordConfirm">
+                                <input type="password" name="passwordConfirm" id="passwordConfirm"
+                                    class="controls passwordConfirm">
                                 <small class="error-text">Error text</small>
                             </div>
 
@@ -136,26 +134,37 @@
                                 </div>
 
                             </div>
-                            <div class="warning">
-                                <p> <i class="fa-solid fa-triangle-exclamation"></i> ¡Revise el formulario, por favor! <i class="fa-solid fa-triangle-exclamation"></i></p>
-                            </div>
+
                             <div class="register-button">
                                 <button type="submit" class="btn color-a">Registrarse</button>
                             </div>
+                        </div>
                     </form>
                 </div>
 
+                <div class="warning-submit">
+                    <div class="warning-title">
+                        <h4>Algo salió mal, por favor revise el formulario.</h4>
+                    </div>
 
-                <script src="../../../js/registerValidation.js"></script>
+                    <p> Tenga en cuenta que:</p>
+                    <div class="warning-uls">
+                        <ul>
+                            <li>El nombre no puede tener menos de 2 carácteres.</li>
+                            <li>El apellido no puede tener menos de 2 carácteres.</li>
+                            <li>El email debe ser válido.</li>
+                            <li>La imagen solo puede ser en formato jpg, png y gif.</li>
+                            <li>La contraseña debe tener entre 8 y 16 carácteres.</li>
+                        </ul>
+                    </div>
+                </div>
 
             </main>
-
-
-
             <%- include('../partials/footer') %>
 
 
 
+                <script src="../../../js/registerValidation.js"></script>
     </body>
 
 </html>
