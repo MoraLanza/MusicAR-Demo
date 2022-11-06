@@ -300,16 +300,16 @@ const inputs = [artist, subtitle, image, linkYoutube];
 // EVENT LISTENERS
 
 form.addEventListener('submit', event => {
-// if (!formValidation()){
-    
+    // if (!formValidation()){
+
     event.preventDefault();
     console.log(formValidation())
-//     warning.style.visibility = 'visible';
-//     console.log('chau')
-// } else{
-//     event.preventDefault()
-//     console.log('hola')
-// }
+    //     warning.style.visibility = 'visible';
+    //     console.log('chau')
+    // } else{
+    //     event.preventDefault()
+    //     console.log('hola')
+    // }
 
 });
 
@@ -324,7 +324,7 @@ const getDinamicInputs = (inputClass, variable) => {
 
 // DINAMIC VALIDATIONS
 
-    
+
 
 const formValidationLive = (event) => {
     switch (event.target.className) {
@@ -444,6 +444,7 @@ getDinamicInputs('.lot', functionsTicketPrice).forEach(lotInput => {
 
 
 
+
 // FORM SUBMIT VALIDATION
 
 const formValidation = () => {
@@ -453,7 +454,10 @@ const formValidation = () => {
     if (!youtubeValidation()) return false;
     if (!descriptionValidation()) return false;
 
-    if (getDinamicInputs('.dateEvent', eventDates).forEach(dateInput => EventDateValitadion(dateInput.value))) return false;
+    const isInvalidDateEventInputs = getDinamicInputs('.dateEvent', eventDates)
+        .map(dateInput => EventDateValitadion(dateInput.value)).includes(false);
+
+    if (getDinamicInputs('.dateEvent', eventDates).every(dateInput => EventDateValitadion(dateInput.value))) return false;
 
     if (getDinamicInputs('.time', functionsTime).forEach(timeInput => timeValidation(timeInput.value))) return false;
 
@@ -461,9 +465,9 @@ const formValidation = () => {
 
     if (getDinamicInputs('.ticketType', functionsTicketType).forEach(ticketTypeInput => ticketTypeValidation(ticketTypeInput.value))) return false;
 
-    if(getDinamicInputs('.price', functionsTicketPrice).forEach(priceInput => priceValidation(priceInput.value))) return false;
+    if (getDinamicInputs('.price', functionsTicketPrice).forEach(priceInput => priceValidation(priceInput.value))) return false;
 
-    if(getDinamicInputs('.lot', functionsTicketLot).forEach(lotInput => lotValidation(lotInput.value))) return false;
+    if (getDinamicInputs('.lot', functionsTicketLot).forEach(lotInput => lotValidation(lotInput.value))) return false;
 
 
     return true
