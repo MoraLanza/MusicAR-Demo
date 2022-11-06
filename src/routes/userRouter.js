@@ -16,6 +16,9 @@ router.get('/login', guestMiddleware, userController.login);
 router.post('/login', userController.loginProcess);
 
 router.get('/profile/:id', authMiddleware, userController.profile);
+router.put('/profile/update/:id', multerUserMiddleware.single('imageUser'), userController.update);
+
+router.put('/profile/updatePass/:id', userController.updatePassword);
 
 router.get('/register', guestMiddleware, userController.register);
 router.post('/register', multerUserMiddleware.single('imageUser'), registerValidationMiddleware, userController.store);

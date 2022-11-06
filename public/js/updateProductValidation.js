@@ -302,7 +302,6 @@ const inputs = [artist, subtitle, image, linkYoutube];
 form.addEventListener('submit', event => {
     // if (!formValidation()){
 
-    event.preventDefault();
     console.log(formValidation())
     //     warning.style.visibility = 'visible';
     //     console.log('chau')

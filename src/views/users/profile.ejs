@@ -46,7 +46,7 @@
 
                     </div>
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editProfile">
-                        <form action="/users/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
+                        <form action="/users/profile/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
 
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs">
@@ -133,35 +133,35 @@
                             </div>
 
                             <div class="btns-actions-form">
-                                <button class="btn color-a" type="submit">Actualizar</button>
                                 <button class="btn color-b btn-cancel" id="cancelEditForm" type="button">Cancelar</button>                           
+                                <button class="btn color-a" type="submit">Actualizar</button>
                             </div>
                         </form>                
                     </div>
                                         
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editPassword">
-                        <form action="" method="POST" enctype="multipart/form-data" class="form-edit-password">
+                        <form action="/users/profile/updatePass/<%=user.id%>?_method=PUT" method="POST"  class="form-edit-password">
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs d-column">
                                 <div class="item-input">
-                                    <label for="name">Contraseña actual*
-                                        <input type="text" name="name" id="name" class="controls">
+                                    <label for="password">Contraseña actual*
+                                        <input type="password" name="password" id="password" class="controls">
                                     </label>
                                 </div>
                                 <div class="item-input">
-                                    <label for="name">Nueva contraseña*
-                                        <input type="text" name="name" id="name" class="controls">
+                                    <label for="newPassword">Nueva contraseña*
+                                        <input type="password" name="newPassword" id="newPassword" class="controls">
                                     </label>
                                 </div>
                                 <div class="item-input">
-                                    <label for="name">Repetir nueva contraseña*
-                                        <input type="text" name="name" id="name" class="controls">
+                                    <label for="confirmPassword">Repetir nueva contraseña*
+                                        <input type="password" name="confirmPassword" id="confirmPassword" class="controls">
                                     </label>
                                 </div>
                             </div>
                             <div class="btns-actions-form">
-                                <button class="btn color-a" type="submit">Actualizar</button>
                                 <button class="btn color-b btn-cancel" id="cancelPasswordForm" type="button">Cancelar</button>                           
+                                <button class="btn color-a" type="submit">Actualizar</button>
                             </div>
                         </form>
                     </div>

@@ -308,7 +308,6 @@ let productController = {
                 state_id: req.body.state_id,
                 city_id: req.body.city_id
             };
-
             const functionsToUpdate = [];
 
             req.body.date?.forEach((date, index) => {          

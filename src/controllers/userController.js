@@ -159,9 +159,30 @@ let userController = {
     update: async function (req, res) {
         try {
             const userId = req.params.id;
-            const userToUpdate = {
 
+            const userToUpdate = {
+                name: req.body.name,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                imageUser:  req.file?.filename
             }
+            await Users.update(userToUpdate, {where: { id: userId}});
+            return res.redirect(`/users/profile/${userId}`);
+
+        } catch (error) {
+            res.send(error)
+        }
+    },
+    updatePassword: async function (req, res) {
+        try {
+            const userId = req.params.id;
+
+            const passwordToUpdate = {
+                password: bcryptjs.hashSync(req.body.newPassword, 10)
+            }
+            await Users.update(passwordToUpdate, {where: { id: userId}});
+            return res.redirect(`/users/profile/${userId}`);
+
         } catch (error) {
             res.send(error)
         }
