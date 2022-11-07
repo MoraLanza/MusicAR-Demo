@@ -12,6 +12,7 @@ const updateNewPasswordValidationMiddleware = [
       }
       return false;
     })
-    .withMessage("Las contraseñas no coinciden.")
+    .withMessage("Las contraseñas no coinciden."),
+    
 ]
 module.exports = updateNewPasswordValidationMiddleware;

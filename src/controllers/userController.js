@@ -192,7 +192,7 @@ let userController = {
                 category_id: req.body.category_id,
                 city_id: req.body.city_id
             }
-            await Users.update(userToUpdate, {where: { id: userId}});
+            await Users.update(userToUpdate, { where: { id: userId } });
             return res.redirect(`/users/profile/${userId}`);
 
         } catch (error) {
@@ -203,22 +203,24 @@ let userController = {
         try {
             const userId = req.params.id;
             let user = await Users.findByPk(userId);
-            let actualPassword = bcryptjs.compareSync(req.body.password, user.password); 
+            const users = await Users.findAll();
+            const countries = await Countries.findAll();
+            const states = await States.findAll();
+            const citys = await Citys.findAll();
+            const categories = await Categories.findAll();
 
-            if (actualPassword){
-            const passwordToUpdate = {
-                password: bcryptjs.hashSync(req.body.newPassword, 10)
-            }
-            await Users.update(passwordToUpdate, {where: { id: userId}});
-            return res.redirect(`/users/profile/${userId}`);
-        }
-        return res.render(`/users/profile/${userId}`, {
-            errors: {
-                password: {
-                    msg: 'La contraseña actual es invalida.'
+            let actualPassword = bcryptjs.compareSync(req.body.password, user.password);
+
+            if (actualPassword) {
+                const passwordToUpdate = {
+                    password: bcryptjs.hashSync(req.body.newPassword, 10)
                 }
+                await Users.update(passwordToUpdate, { where: { id: userId } });
+                return res.redirect(`/users/profile/${userId}`);
+            } else {
+
+                return res.redirect(`/users/profile/${userId}`)
             }
-        })
 
         } catch (error) {
             res.send(error)
