@@ -8,7 +8,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #FCFAFF;
-    background-image: linear-gradient(to top, rgba(250, 189, 12, 0.2), transparent);
+    background-image: linear-gradient(to top, #31394D, #31394d94);
 }
 
 /* HERO PAGE  */
@@ -149,6 +149,7 @@ body {
     box-shadow: 0px 7px 12px 0px rgb(0 0 0 / 30%);
     margin-bottom: 40px;
     padding: 30px;
+    border-radius: 6px;
 }
 
 .form-data-box:first-of-type{

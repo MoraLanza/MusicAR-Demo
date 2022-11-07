@@ -377,3 +377,7 @@ hr {
 .form-edit-password .item-input {
     width: 100%;
 }
+
+.error-text {
+    display: none;
+}

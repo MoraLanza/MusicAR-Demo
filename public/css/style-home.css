@@ -19,6 +19,23 @@ header {
 
 }
 
+.carousel-inner img {
+    height: 465px;
+    object-fit: cover;
+}
+
+.carousel-caption h5{
+    font-size: 60px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-shadow: rgb(0, 0, 0) 4px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
+}
+
+.carousel-caption p{
+    font-size: 20px;
+    text-shadow: rgb(0, 0, 0) 4px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
+}
+
+
 .search-container {
     width: 100%;
     justify-content: center;
@@ -103,12 +120,13 @@ input.search-btn:hover {
 .section-title {
     text-align: left;
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 
 
 }
 
 .section-title h2 {
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 45px;
 }
 
@@ -260,6 +278,25 @@ a {
 
 .result-thumb .btn-card-own {
     width: 100%;
+}
+
+form.delete {
+    width: 40%;
+}
+.btn.delete {
+    width: 100%;
+}
+
+.btn.update {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    height: 20px;
+}
+
+.btn.update:hover,
+.btn.delete:hover {
+    border: none;
 }
 
 

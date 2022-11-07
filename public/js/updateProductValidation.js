@@ -300,15 +300,14 @@ const inputs = [artist, subtitle, image, linkYoutube];
 // EVENT LISTENERS
 
 form.addEventListener('submit', event => {
-    // if (!formValidation()){
+    if (!formValidation()){
 
-    console.log(formValidation())
-    //     warning.style.visibility = 'visible';
-    //     console.log('chau')
-    // } else{
-    //     event.preventDefault()
-    //     console.log('hola')
-    // }
+        warning.style.visibility = 'visible';
+        console.log('chau')
+    } else{
+        event.preventDefault()
+        console.log('hola')
+    }
 
 });
 
@@ -448,25 +447,50 @@ getDinamicInputs('.lot', functionsTicketPrice).forEach(lotInput => {
 
 const formValidation = () => {
 
-    if (!artistValidation()) return false;
-    if (!subtitleValidation()) return false;
-    if (!youtubeValidation()) return false;
-    if (!descriptionValidation()) return false;
-
     const isInvalidDateEventInputs = getDinamicInputs('.dateEvent', eventDates)
         .map(dateInput => EventDateValitadion(dateInput.value)).includes(false);
 
-    if (getDinamicInputs('.dateEvent', eventDates).every(dateInput => EventDateValitadion(dateInput.value))) return false;
+    const isInvalidTimeInputs = getDinamicInputs('.time', functionsTime)
+        .map(timeInput => EventDateValitadion(timeInput.value)).includes(false);
 
-    if (getDinamicInputs('.time', functionsTime).forEach(timeInput => timeValidation(timeInput.value))) return false;
+    const isInvalidtimeDurationInputs = getDinamicInputs('.timeDuration', functionsDuration)
+        .map(timeDurationInput => EventDateValitadion(timeDurationInput.value)).includes(false);
 
-    if (getDinamicInputs('.timeDuration', functionsDuration).forEach(timeDurationInput => timeDurationValidation(timeDurationInput.value))) return false;
+    const isInvalidTicketTypeInputs = getDinamicInputs('.ticketType', functionsTicketType)
+        .map(ticketTypeInput => EventDateValitadion(ticketTypeInput.value)).includes(false);
 
-    if (getDinamicInputs('.ticketType', functionsTicketType).forEach(ticketTypeInput => ticketTypeValidation(ticketTypeInput.value))) return false;
+    const isInvalidPriceInputs = getDinamicInputs('.price', functionsTicketPrice)
+        .map(priceInput => EventDateValitadion(priceInput.value)).includes(false);
 
-    if (getDinamicInputs('.price', functionsTicketPrice).forEach(priceInput => priceValidation(priceInput.value))) return false;
+    const isInvalidLotInputs = getDinamicInputs('.lot', functionsTicketLot)
+        .map(lotInput => EventDateValitadion(lotInput.value)).includes(false);
 
-    if (getDinamicInputs('.lot', functionsTicketLot).forEach(lotInput => lotValidation(lotInput.value))) return false;
+
+    if (!artistValidation() || !subtitleValidation() || !youtubeValidation() ||
+        !descriptionValidation() || isInvalidDateEventInputs || isInvalidTimeInputs ||
+        isInvalidtimeDurationInputs || isInvalidTicketTypeInputs || isInvalidPriceInputs ||
+        isInvalidLotInputs
+    ) { 
+        return false
+    }
+    // if (!artistValidation()) return false;
+    // if (!subtitleValidation()) return false;
+    // if (!youtubeValidation()) return false;
+    // if (!descriptionValidation()) return false;
+
+
+
+    // if (getDinamicInputs('.dateEvent', eventDates).every(dateInput => EventDateValitadion(dateInput.value))) return false;
+
+    // if (getDinamicInputs('.time', functionsTime).forEach(timeInput => timeValidation(timeInput.value))) return false;
+
+    // if (getDinamicInputs('.timeDuration', functionsDuration).forEach(timeDurationInput => timeDurationValidation(timeDurationInput.value))) return false;
+
+    // if (getDinamicInputs('.ticketType', functionsTicketType).forEach(ticketTypeInput => ticketTypeValidation(ticketTypeInput.value))) return false;
+
+    // if (getDinamicInputs('.price', functionsTicketPrice).forEach(priceInput => priceValidation(priceInput.value))) return false;
+
+    // if (getDinamicInputs('.lot', functionsTicketLot).forEach(lotInput => lotValidation(lotInput.value))) return false;
 
 
     return true
@@ -476,16 +500,48 @@ const formValidation = () => {
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
     const small = formGroup.querySelector('small');
+    const iconBad = formGroup.querySelector('.fa-exclamation-circle');
+    const iconCheck = formGroup.querySelector('.fa-check-circle');
     formGroup.className = 'form-group error';
     small.innerText = message;
+    small.style.visibility = 'visible';
+    iconBad.style.display = 'inline';
+    iconCheck.style.display = 'none';
 }
 
 function setSuccessFor(input) {
     const formGroup = input.closest('div');
     formGroup.className = 'form-group success';
+    const small = formGroup.querySelector('small');
+    const iconCheck = formGroup.querySelector('.fa-check-circle');
+    const iconBad = formGroup.querySelector('.fa-exclamation-circle');
+    small.style.visibility = 'hidden';
+    iconCheck.style.display = 'inline';
+    iconBad.style.display = 'none';
 }
 
 
+// function setErrorFor(input, message) {
+//     const itemInput = input.closest('div');
+//     const small = itemInput.querySelector('small');
+//     const iconBad = itemInput.querySelector('.fa-exclamation-circle');
+//     const iconCheck = itemInput.querySelector('.fa-check-circle');
+//     itemInput.className = 'item-input error';
+//     small.innerText = message;
+//     small.style.visibility = 'visible';
+//     iconBad.style.display = 'inline';
+//     iconCheck.style.display = 'none';
+// }
+// function setSuccessFor(input) {
+//     const itemInput = input.closest('div');
+//     const small = itemInput.querySelector('small');
+//     const iconCheck = itemInput.querySelector('.fa-check-circle');
+//     const iconBad = itemInput.querySelector('.fa-exclamation-circle');
+//     itemInput.className = 'item-input success';
+//     small.style.visibility = 'hidden';
+//     iconCheck.style.display = 'inline';
+//     iconBad.style.display = 'none';
+// }
 
 // INPUT VALIDATIONS FUNCTIONS
 
