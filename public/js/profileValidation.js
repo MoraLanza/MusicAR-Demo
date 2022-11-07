@@ -1,4 +1,4 @@
-const form = document.querySelector('form');
+const formNotSensible = document.querySelector('.form-NotSensibleData');
 const nameInput = document.querySelector('#name');
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
@@ -12,12 +12,12 @@ const passwordRegex = /"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/;
 // const imageRegex = /([^\s]+(\.(?i)(jpg|png|gif))$)/;
 
 
-const inputs = [nameInput, lastName, email, password, passwordConfirm, imageUser];
+const inputsNotSensible = [nameInput, lastName, email, imageUser];
 const errors = [];
 
 
-form.addEventListener('submit', event => {
-    if (validation()) {
+formNotSensible.addEventListener('submit', event => {
+    if (validationNotSensible()) {
         event.submit()
     } else {
         event.preventDefault()
@@ -78,26 +78,14 @@ const validationsLive = (event) => {
     }
 }
 
-const validation = () => {
-    if (!validationName()) {
-        return false
-    }
-    if (!validationLastName()) {
-        return false
-    }
-    if (!validationEmail()) {
-        return false
-    }
-    if (!validationPassword()) {
-        return false
-    }
-    if (!validationConfirmPassword()) {
+const validationNotSensible = () => {
+    if (!validationName() || !validationLastName() || !validationEmail()) {
         return false
     }
     return true
 }
 
-inputs.forEach(input => {
+inputsNotSensible.forEach(input => {
     input.addEventListener('change', validationsLive)
 })
 
@@ -141,6 +129,8 @@ const validationEmail = () => {
         return true
     }
 }
+
+
 
 const validationPassword = () => {
     if (password.value.length < 8 || password.value.length > 16) {

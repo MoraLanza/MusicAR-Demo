@@ -35,3 +35,41 @@ i.fa-check-circle,  i.fa-exclamation-circle  {
     margin: 20px 0;
     visibility: hidden;
 }
+
+.warning-submit {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.warning-title{
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #ff7171;
+    color: white;
+    font-size: large
+}
+.warning-submit p{
+    padding-top: 10px;
+    text-align: center;
+    color: black;
+}
+.warning-submit li{
+    list-style-type: disc;
+    color: black;
+}
+
+.warning-uls{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.warning-uls ul {
+    margin-right: 10px;
+}

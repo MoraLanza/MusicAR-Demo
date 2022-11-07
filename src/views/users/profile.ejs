@@ -46,32 +46,33 @@
 
                     </div>
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editProfile">
-                        <form action="/users/profile/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
+                        <form class="form-NotSensibleData" action="/users/profile/update/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"  class="form-edit-profile">
 
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs">
                                 <div class="inputs-box">
                                     <div class="item-input">
                                         <label for="name">Nombre*
-                                            <input type="text" name="name" id="name" class="controls" value="<%= user.name %> ">
+                                            <input type="text" name="name" id="name" class="controls name" value="<%= user.name %> ">
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="lastName">Apellido*
-                                            <input type="text" name="lastName" id="lastName" class="controls" value="<%= user.lastName %> ">
+                                            <input type="text" name="lastName" id="lastName" class="controls lastName" value="<%= user.lastName %> ">
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="email">Email*
-                                            <input type="email" name="email" id="email" class="controls" value="<%= user.email %> ">
+                                            <input type="email" name="email" id="email" class="controls email" value="<%= user.email %> ">
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="imageUser">Eligí tu foto de perfil*
-                                            <input class="controls" type="file" name="imageUser" id="imageUser" value="<%= user.userImage %>">
+                                            <input type="hidden" name="oldImage" value="<%= user.imageUser %>">
+                                            <input class="controls" type="file" name="imageUser" id="imageUser" >
                                         </label>
                                     </div>
                                 </div>
@@ -224,7 +225,7 @@
             </main>
             
             <%- include('../partials/footer') %>
-            <script src="./../../js/profile.js"></script>
+            <script src="/js/profile.js"></script>
     </body>
 
 </html>

@@ -158,15 +158,41 @@ let userController = {
     },
     update: async function (req, res) {
         try {
+            const resultValidation = validationResult(req);
+
+            if (resultValidation.errors.length > 0) {
+
+                const userId = req.params.id;
+                const user = await Users.findByPk(userId);
+                const users = await Users.findAll();
+                const countries = await Countries.findAll();
+                const states = await States.findAll();
+                const citys = await Citys.findAll();
+                const categories = await Categories.findAll();
+
+                return res.render("./users/profile", {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    countries,
+                    citys,
+                    categories,
+                    states,
+                    categories,
+                    users,
+                    user
+                });
+            }
             const userId = req.params.id;
 
             const userToUpdate = {
                 name: req.body.name,
                 lastName: req.body.lastName,
                 email: req.body.email,
-                imageUser:  req.file?.filename
+                imageUser: req.file?.filename,
+                category_id: req.body.category_id,
+                city_id: req.body.city_id
             }
-            await Users.update(userToUpdate, {where: { id: userId}});
+            await Users.update(userToUpdate, { where: { id: userId } });
             return res.redirect(`/users/profile/${userId}`);
 
         } catch (error) {
@@ -176,12 +202,25 @@ let userController = {
     updatePassword: async function (req, res) {
         try {
             const userId = req.params.id;
+            let user = await Users.findByPk(userId);
+            const users = await Users.findAll();
+            const countries = await Countries.findAll();
+            const states = await States.findAll();
+            const citys = await Citys.findAll();
+            const categories = await Categories.findAll();
 
-            const passwordToUpdate = {
-                password: bcryptjs.hashSync(req.body.newPassword, 10)
+            let actualPassword = bcryptjs.compareSync(req.body.password, user.password);
+
+            if (actualPassword) {
+                const passwordToUpdate = {
+                    password: bcryptjs.hashSync(req.body.newPassword, 10)
+                }
+                await Users.update(passwordToUpdate, { where: { id: userId } });
+                return res.redirect(`/users/profile/${userId}`);
+            } else {
+
+                return res.redirect(`/users/profile/${userId}`)
             }
-            await Users.update(passwordToUpdate, {where: { id: userId}});
-            return res.redirect(`/users/profile/${userId}`);
 
         } catch (error) {
             res.send(error)
