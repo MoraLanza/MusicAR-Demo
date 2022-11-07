@@ -1,8 +1,9 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/logo.png';
 import ContentWrapper from './ContentWrapper';
 import CategoriesPagination from './CategoriesPagination';
-import LastEventInDb from './LastEventInDb';
+import ProductsList from './ProductsList';
+import ProductDetail from './ProductDetail';
 import UsersPagination from './UsersPagination';
 import SearchMovies from './SearchMovies';
 
@@ -48,7 +49,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastEventInDb">
+                    <Link className="nav-link" to="/ProductsList">
                         <i className="fas fa-ticket-alt"></i>
                         <span>Eventos</span>
                     </Link>
@@ -74,8 +75,11 @@ function SideBar(){
                 <Route path="/CategoriesPagination">
                     <CategoriesPagination />
                 </Route>
-                <Route path="/LastEventInDb">
-                    <LastEventInDb />
+                <Route path="/ProductsList">
+                    <ProductsList />
+                </Route>
+                <Route path="/products/:id">
+                    <ProductDetail />
                 </Route>
                 <Route path="/users">
                     <UsersPagination />
