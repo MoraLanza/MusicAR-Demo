@@ -41,3 +41,10 @@
     max-height: 300px;
     margin-bottom: 25px;
 }
+
+.bg-gradient-color{
+    background: rgba(36, 13, 60, 0.524);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+}
