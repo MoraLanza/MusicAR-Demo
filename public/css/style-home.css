@@ -181,7 +181,9 @@ section {
     font-size: 24px;
     font-weight: bold;
 }
-
+.article-title h4{
+    font-size: 18px;
+}
 .p-own {
     margin: 0;
 }

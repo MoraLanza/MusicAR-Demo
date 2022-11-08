@@ -64,7 +64,7 @@ let productController = {
                 ['price', 'ASC']
             ]
            });
-            
+            console.log(teater)
             return res.render('./products/product-detail', {event, tickets, functions, teater});
         
         } catch (error) {

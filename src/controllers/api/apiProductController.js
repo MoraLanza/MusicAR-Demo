@@ -4,6 +4,7 @@ const Op = db.sequelize.Op;
 
 const Events = db.Event;
 const Categories = db.Category;
+const Tickets = db.Tickets;
 
 const apiProductController = {
     eventsList: async (req, res) => {
@@ -40,7 +41,9 @@ const apiProductController = {
                     'subtitle',
                     'description',
                     'linkYoutube'
-                ]
+                ],
+                offset: 10,
+                limit: 10
             });
 
             const categories = await Categories.findAll({
@@ -75,6 +78,11 @@ const apiProductController = {
                 ]
             });
 
+            const tickets = await Tickets.findAll({
+                where: {
+                    event_id: req.params.id
+                }
+            })
 
             return res.json({
                 
