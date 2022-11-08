@@ -21,6 +21,7 @@ function LastEventInDb(){
                     <h5 className="m-0 font-weight-bold text-gray-800">Último evento en la db</h5>
                 </div>
                 <div className="card-body">                    
+                    <img className='img-last-event' src={lastProducts[0].imageEvent} alt="Imagen del evento" />
                     <h5 className="m-0 last-event-title text-gray-800">{lastProducts[0].artist}</h5>
                     <h5 className="mb-3 font-weight-bold text-gray-800">{lastProducts[0].subtitle}</h5>
                     <p>{lastProducts[0].description}</p>

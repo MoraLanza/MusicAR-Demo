@@ -11,28 +11,6 @@ const Function = db.Function;
 const apiProductController = {
     eventsList: async (req, res) => {
         try {
-
-            const showAllEvents = (events) => {
-                let allEvents = [];
-
-                for (let i = 0; i < events.length; i++) {
-                    const event = events[i];
-                    
-                    const eventDetail = {
-                        id: event.id,
-                        artist: event.artist,
-                        subtitle: event.subtitle,
-                        description: event.description,
-                        category: event.categories.name,
-                        linkYoutube: event.linkYoutube,
-                        detail: "http://localhost:3000/api/products/" + event.id
-                    };
-                    allEvents.push(eventDetail);
-                    
-                }
-                return allEvents;
-            }
-
             const events = await Events.findAll({
                 include: [
                     'categories'
@@ -42,9 +20,11 @@ const apiProductController = {
                     'artist',
                     'subtitle',
                     'description',
-                    'linkYoutube'
+                    'linkYoutube',
+                    'imageEvent',
                 ]
             });
+
 
             const categories = await Categories.findAll({
                 attributes: {
@@ -53,12 +33,23 @@ const apiProductController = {
                 include:['events'],
                 group: ['id']
             })
+
+            console.log("respuesta del get event", events)
            
            
             return res.json({
                 count: events.length,
                 countByCategory: categories,
-                products: showAllEvents(events)
+                products: events.map((event) => ({
+                    id: event.id,
+                    artist: event.artist,
+                    subtitle: event.subtitle,
+                    description: event.description,
+                    category: event.categories.name,
+                    linkYoutube: event.linkYoutube,
+                    imageEvent: 'http://localhost:3000/image/products/' + event.imageEvent,
+                    detail: "http://localhost:3000/api/products/" + event.id
+                }))
             });
 
         } catch (error) {
@@ -92,7 +83,6 @@ const apiProductController = {
             })
 
             const response = {
-                
                 id: event.id,
                 artist: event.artist,
                 subtitle: event.subtitle,
