@@ -80,7 +80,7 @@ header{
 .controls {
     width: 100%; 
     max-width: 80%; 
-    border-radius: 7px;
+    border-radius: 15px;
     margin-bottom: 5px;
     padding: 7px;
     height: 45px;
