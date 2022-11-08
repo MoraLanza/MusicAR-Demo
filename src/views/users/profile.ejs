@@ -38,7 +38,7 @@
                             </div>
                             <% if (user.role_id == 1 ) {%>
                             <div class="btn-users-list">
-                                <button class="btn btn-long color-c">Ver usuarios</button>
+                                <button id="view-users-btn" class="btn btn-long color-c">Ver usuarios</button>
                             </div
                             <% } %>
                         </div>
@@ -174,10 +174,11 @@
                         </form>
                     </div>
 
-                    <div class="edit-profile-container card card-form glass-effect element-animation" id="listUsers">
+                    <div class="edit-profile-container users-card card card-form d-none glass-effect element-animation" id="listUsers">
+                        <div class="close-list-users" id="btnCloseUsers">X</div>
                         <form action="" method="POST" enctype="multipart/form-data" class="form-edit-password">
                             <h4 class="title-form">Lista de usuarios</h4>
-                            <table data-current-page="1" aria-live="polite">
+                            <table class="users-table" cellpadding="0" data-current-page="1" aria-live="polite">
                                 <thead>
                                     <tr>
                                         <td>Nombre</td>
@@ -214,7 +215,7 @@
                                 </tbody>
                             </table>                          
                             <nav class="pagination-container">
-                                <button type="button" class="pagination-button" id="prev-button" title="Previous page" aria-label="Previous page">
+                                <button type="button" class="pagination-button color-a" id="prev-button" title="Previous page" aria-label="Previous page">
                                   &lt;
                                 </button>
                                  
@@ -222,7 +223,7 @@
                                
                                 </div>
                                  
-                                <button type="button" class="pagination-button" id="next-button" title="Next page" aria-label="Next page">
+                                <button type="button" class="pagination-button color-a" id="next-button" title="Next page" aria-label="Next page">
                                   &gt;
                                 </button>
                             </nav>

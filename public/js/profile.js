@@ -6,7 +6,7 @@ window.addEventListener('load', function(){
   
     const divFormEdit = document.querySelector('#editProfile')
   
-    const btnFormCancel = document.querySelector('#cancelEditForm')
+    const btnFormCancel = document.querySelector('#cancelEditForm')   
 
     btnFormEdit.addEventListener('click', function(e){
         e.preventDefault();
@@ -40,6 +40,29 @@ window.addEventListener('load', function(){
         divFormPassword.classList.add('element-animation-back')
         setTimeout(function(){
             divFormPassword.classList.add('d-none'); 
+        }, 1800)
+    });
+
+    const btnShowUsers = document.querySelector('#view-users-btn')
+
+    const divListUsers = document.querySelector('#listUsers')
+
+    const btnCloseUsers = document.querySelector('#btnCloseUsers')
+
+
+
+
+    btnShowUsers.addEventListener('click', function(e){
+        e.preventDefault();
+        divListUsers.classList.remove('element-animation-back');        
+        divListUsers.classList.remove('d-none');
+    });
+
+    btnCloseUsers.addEventListener('click', function(e){
+        e.preventDefault();
+        divListUsers.classList.add('element-animation-back')
+        setTimeout(function(){
+            divListUsers.classList.add('d-none'); 
         }, 1800)
     });
 

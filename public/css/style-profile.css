@@ -7,6 +7,7 @@ body{
     padding: 150px 0 100px;
     display: flex;
     align-items: flex-start;
+    min-height: 65vh;
 }
 
 .color-card {
@@ -379,4 +380,82 @@ hr {
 
 .error-text {
     display: none;
+}
+
+.users-table{
+    color: white;
+    width: 100%;
+}
+
+.users-table thead td{
+    padding-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #da59b191
+}
+
+.users-table tbody td{
+    padding: 5px 0;
+    font-size: 18px;
+}
+
+
+.users-table select{
+    background-color: transparent;
+    color: white;
+    padding: 15px 0;
+    border: none;
+    font-size: 18px;
+}
+
+.users-table select option{
+    background-color: transparent;
+    color: black;
+    padding: 15px;
+}
+
+.users-card{
+    height: 100%;
+    min-height: 247px;
+    position: relative;
+}
+
+.pagination-button{
+    border: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.pagination-number.active{
+    border: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    background: linear-gradient(to bottom right, #6452E9, #639FF9);
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+
+.pagination-container{
+    margin-bottom: 20px;
+}
+
+.close-list-users{
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: 5;
+    cursor: pointer;
 }
