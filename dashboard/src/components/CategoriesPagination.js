@@ -1,16 +1,20 @@
 import {React, useState, useEffect} from 'react';
-import {getCategories} from '../services/categories'
+// import {getCategories} from '../services/categories'
+import {getProducts} from '../services/products'
+
 
     
 function CategoriesPagination(){
-    const [categories, setCategories] = useState([]);
+    const [countByCategory, setCountByCategory] = useState([]);
 
     useEffect( async () => {
-        const {categories} = await getCategories();
-        setCategories(categories) //De esta manera hacemos destructuring trayendo solo data de la respuesta  del fetch
+        const {countByCategory} = await getProducts(); //De esta manera hacemos destructuring trayendo solo countByCategory de la respuesta  del fetch       
+        setCountByCategory(countByCategory)
     }, []);    
+  
+ console.log(countByCategory)
 
- console.log(categories)
+//  console.log(categories)
 
     return(
         <>
@@ -24,17 +28,17 @@ function CategoriesPagination(){
                             <thead>
                                 <tr>
                                     <td>Nombre de categoria</td>
-                                    <td>Acciones</td>                                    
+                                    <td>Eventos por categoría</td>                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                    categories.map((category, index) => {
+                                    countByCategory.map((category, index) => {
                                         return(
                                             <tr>
                                                 <td>{category.name}</td>
                                                 <td>
-                                                    Ver
+                                                    {category.eventCount}
                                                 </td>
                                             </tr>
                                             )

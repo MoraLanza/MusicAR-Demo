@@ -8,10 +8,11 @@ function ProductsList(){
 
     useEffect( async () => {
         const {products} = await getProducts();
-        setProducts(products) //De esta manera hacemos destructuring trayendo solo data de la respuesta  del fetch
+        setProducts(products) //De esta manera hacemos destructuring trayendo solo data de la respuesta  del fetch        
     }, []);    
 
  console.log(products)
+
 
     return(
         <>
@@ -32,14 +33,14 @@ function ProductsList(){
                             </thead>
                             <tbody>
                                 {
-                                    products.map((category, index) => {
+                                    products.map((product, index) => {
                                         return(
                                             <tr>
-                                                <td>{category.artist}</td>
-                                                <td>{category.subtitle}</td> 
-                                                <td>{category.category}</td>
+                                                <td>{product.artist}</td>
+                                                <td>{product.subtitle}</td> 
+                                                <td>{product.category}</td>
                                                 <td>
-                                                   <Link to={`products/${category.id}`}>Ver</Link> 
+                                                    <Link to={`products/${product.id}`}>Ver</Link> 
                                                 </td>
                                             </tr>
                                             )
