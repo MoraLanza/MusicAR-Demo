@@ -9,6 +9,7 @@ import SearchMovies from './SearchMovies';
 
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import LastEventInDb from './LastEventInDb';
 
 function SideBar(){
     return(
@@ -86,6 +87,9 @@ function SideBar(){
                 </Route>
                 <Route path="/SearchEvent">
                     <SearchMovies />
+                </Route>
+                <Route path="/LastEventInDb">
+                    <LastEventInDb />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

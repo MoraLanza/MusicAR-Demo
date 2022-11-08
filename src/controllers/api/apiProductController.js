@@ -4,7 +4,9 @@ const Op = db.sequelize.Op;
 
 const Events = db.Event;
 const Categories = db.Category;
-const Tickets = db.Tickets;
+const Tickets = db.Ticket;
+const Function = db.Function;
+
 
 const apiProductController = {
     eventsList: async (req, res) => {
@@ -12,7 +14,7 @@ const apiProductController = {
 
             const showAllEvents = (events) => {
                 let allEvents = [];
-                
+
                 for (let i = 0; i < events.length; i++) {
                     const event = events[i];
                     
@@ -41,9 +43,7 @@ const apiProductController = {
                     'subtitle',
                     'description',
                     'linkYoutube'
-                ],
-                offset: 10,
-                limit: 10
+                ]
             });
 
             const categories = await Categories.findAll({
@@ -67,6 +67,7 @@ const apiProductController = {
     },
     eventDetail: async (req, res) => {
         try {
+            console.log("buscando detalle producto", req.params.id, Events, Tickets)
             const event = await Events.findByPk(req.params.id,{
                 include: [
                     'categories', 
@@ -84,7 +85,13 @@ const apiProductController = {
                 }
             })
 
-            return res.json({
+            const functions = await Function.findAll({
+                where: {
+                    event_id: req.params.id
+                }
+            })
+
+            const response = {
                 
                 id: event.id,
                 artist: event.artist,
@@ -97,9 +104,16 @@ const apiProductController = {
                 citys: event.citys,
                 states: event.states,
                 countries: event.countrys,
-                showtypes: event.showtypes
-            })
+                showtypes: event.showtypes,
+                tickets,
+                functions
+            }
+
+            console.log("respondio buscando detalle producto", req.params.id, JSON.stringify(response, null, 2))
+
+            return res.json(response)
         } catch (error) {
+            console.log("hubo un error buscando detalle producto", req.params.id,JSON.stringify(error, null, 2) )
             res.send(error)
         }
     },

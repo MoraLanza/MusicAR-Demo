@@ -29,8 +29,6 @@ const apiUserController = {
             }
 
             const users = await Users.findAll({
-                offset: 10,
-                limit: 10
             });
 
             return res.json({
