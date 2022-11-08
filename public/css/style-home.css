@@ -121,8 +121,20 @@ input.search-btn:hover {
     text-align: left;
     position: relative;
     margin-bottom: 30px;
+}
 
+.title-n-btn{
+    display: flex;
+    align-items: center;
+}
 
+.btn.see-more {
+   border-radius: 30px; 
+   margin-left: 40px;
+   padding-left: 30px;
+   padding-right: 30px;
+   background-color: rgba(255, 251, 238, 0.999);
+   font-family: 'Open Sans', sans-serif;
 }
 
 .section-title h2 {
@@ -301,7 +313,9 @@ form.delete {
     border: none;
 }
 
-
+.slider-home img {
+    height: 465px;
+}
 
 /* MEDIA QUERIES */
 
@@ -325,8 +339,22 @@ form.delete {
         display: block;
         flex-wrap: inherit;
     }
-}
 
+    
+}
+@media only screen and (max-width: 1000px) {
+    .title-n-btn {
+        flex-direction: column;
+    }
+
+    hr{
+        display: none;
+    }
+
+    .btn.see-more {
+        margin-top: 20px
+    }
+}
 /* Tablet */
 @media only screen and (min-width: 768px) {
     article.article-container {
@@ -382,7 +410,7 @@ form.delete {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
 
     }
 }
@@ -390,6 +418,6 @@ form.delete {
 @media only screen and (min-width: 1300px) {
     article.article-container {
         width: 23%;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
     }
 }

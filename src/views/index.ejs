@@ -24,24 +24,26 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/image/home/slider-home.png" class="d-block w-100" alt="...">
+                    <img src="/image/products/1667866293995-grace-badlove.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5>20 de Diciembre 20hs</h5>
+                        <p>Virasoro Bar, CABA</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/image/home/slider-home.png" class="d-block w-100" alt="...">
+                    <img src="/image/products/1667866825712-divididos.jpg" class="d-block w-100" alt="..."
+                        style="object-position: 100% 93%;">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
+                        <h5>9 de Diciembre 23hs</h5>
+                        <p>Teatro Flores, CABA</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/image/home/slider-home.png" class="d-block w-100" alt="...">
+                    <img src="/image/products/1667853247035-37.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
+                        <h3 style="font-size:70px ;">Liam Gallagher</h3>
+                        <h5>10 de Noviembre 19hs</h5>
+                        <p>El Quetzal, CABA</p>
                     </div>
                 </div>
             </div>
@@ -136,8 +138,10 @@
                 <div class="section-title col-12">
                     <% categories.forEach( category=> { %>
                         <% if (user.category_id===category.id) { %>
-                            <h2>Seleccionados para vos - <%= category.name %>
-                            </h2>
+                            <div class="title-n-btn">
+                                <h2> Seleccionados para vos - <%= category.name %> </h2>
+                                <a href="" class="btn see-more">Ver más</a>
+                            </div>
                             <hr class="line-title">
                             <% }}) %>
                 </div>
@@ -157,6 +161,13 @@
                                 <h4>
                                     <%= event.subtitle %>
                                 </h4>
+                                <h6>
+                                    <% categories.forEach(category=>{ %>
+                                        <% if(category.id===event.category_id){ %>
+                                            <%= category.name %>
+
+                                                <% }}) %>
+                                </h6>
                             </div>
 
                             <div class="article-information-general">
@@ -224,7 +235,10 @@
                 <div class="section-title col-12">
                     <% citys.forEach( city=> { %>
                         <% if (user.city_id===city.id) { %>
+                        <div class="title-n-btn">
                             <h2>En tu ciudad, <%= city.cityName %>
+                            <a href="" class="btn see-more">Ver más</a>
+                        </div>
                             </h2>
                             <hr class="line-title">
                             <% }}) %>
@@ -250,6 +264,13 @@
                                 <h4>
                                     <%= event.subtitle %>
                                 </h4>
+                                <h6>
+                                    <% categories.forEach(category=>{ %>
+                                        <% if(category.id===event.category_id){ %>
+                                            <%= category.name %>
+
+                                                <% }}) %>
+                                </h6>
                             </div>
 
                             <div class="article-information-general">
@@ -315,7 +336,10 @@
                 <section class="section-events">
 
                     <div class="section-title col-12">
-                        <h2>Destacados</h2>
+                        <div class="title-n-btn">
+                            <h2>Destacados</h2>
+                            <a href="" class="btn see-more">Ver más</a>
+                        </div>
                         <hr class="line-title">
                     </div>
 
@@ -408,7 +432,10 @@
                     <section class="section-events">
 
                         <div class="section-title col-12">
-                            <h2>Esta semana</h2>
+                            <div class="title-n-btn">
+                                <h2>Esta semana</h2>
+                                <a href="" class="btn see-more">Ver más</a>
+                            </div>
                             <hr class="line-title">
                         </div>
 
@@ -498,7 +525,10 @@
                     <section class="section-events">
 
                         <div class="section-title col-12">
-                            <h2>Este mes</h2>
+                            <div class="title-n-btn">
+                                <h2>Este mes</h2>
+                                <a href="" class="btn see-more">Ver más</a>
+                            </div>
                             <hr class="line-title">
                         </div>
 
