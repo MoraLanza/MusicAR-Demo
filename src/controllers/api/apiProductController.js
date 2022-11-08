@@ -91,7 +91,7 @@ const apiProductController = {
                 subtitle: event.subtitle,
                 description: event.description,
                 linkYoutube: event.linkYoutube,
-                image: 'http://localhost:3000/images/products' + event.imageEvent,
+                image: 'http://localhost:3000/image/products/' + event.imageEvent,
                 category: event.categories,
                 teater: event.teaters,
                 citys: event.citys,
