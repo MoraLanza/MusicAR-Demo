@@ -1,0 +1,43 @@
+@import './product-detail.scss';
+@import './fonts.scss';
+@import './variables.scss';
+@import './titles.scss';
+
+
+.button-primary{
+    border: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 30px !important;
+    cursor: pointer;
+    transition: 0.5s;
+    background: linear-gradient(to top right, #8162CE, #F54BA5);
+    padding: 10px 15px;
+    box-shadow:0 4px 14px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 16%);
+    &:hover{
+        border: solid 1px #DA59B1;
+        transition: 0.5s;
+        height: 40px;
+        color: #DA59B1;
+        background: #ffffff;
+        border-color: linear-gradient(to top right, #8162CE, #F54BA5);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+
+.card-last-event{
+    .card-body{
+        padding: 30px 20px 40px;
+        .button-primary{
+            margin-top: 20px;
+        }
+    }
+}
+
+.img-last-event{
+    width: 100%;
+    object-fit: cover;
+    max-height: 300px;
+    margin-bottom: 25px;
+}

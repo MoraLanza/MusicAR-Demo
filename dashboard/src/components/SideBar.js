@@ -1,13 +1,15 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/logo.png';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastEventInDb from './LastEventInDb';
+import CategoriesPagination from './CategoriesPagination';
+import ProductsList from './ProductsList';
+import ProductDetail from './ProductDetail';
 import UsersPagination from './UsersPagination';
 import SearchMovies from './SearchMovies';
 
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import LastEventInDb from './LastEventInDb';
 
 function SideBar(){
     return(
@@ -48,7 +50,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastEventInDb">
+                    <Link className="nav-link" to="/ProductsList">
                         <i className="fas fa-ticket-alt"></i>
                         <span>Eventos</span>
                     </Link>
@@ -56,7 +58,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/CategoriesInDb">
+                    <Link className="nav-link" to="/CategoriesPagination">
                         <i className="fas fa-music"></i>
                         <span>Categorías</span>
                     </Link>
@@ -71,17 +73,23 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/CategoriesInDb">
-                    <GenresInDb />
+                <Route path="/CategoriesPagination">
+                    <CategoriesPagination />
                 </Route>
-                <Route path="/LastEventInDb">
-                    <LastEventInDb />
+                <Route path="/ProductsList">
+                    <ProductsList />
+                </Route>
+                <Route path="/products/:id">
+                    <ProductDetail />
                 </Route>
                 <Route path="/users">
                     <UsersPagination />
                 </Route>
                 <Route path="/SearchEvent">
                     <SearchMovies />
+                </Route>
+                <Route path="/LastEventInDb">
+                    <LastEventInDb />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

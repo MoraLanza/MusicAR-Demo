@@ -124,7 +124,7 @@ update teaters
 set teaterImage = 'vorterix.jpg'
 where id=3;
 
-select * from teaters;
+select * from users;
 
 
 
