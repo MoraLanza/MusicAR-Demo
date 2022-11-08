@@ -19,7 +19,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
          },
-        
+         teaterImage: {
+            type: dataTypes.TEXT,
+            allowNull: false
+         },
         city_id: {
             type: dataTypes.INTEGER,
             allowNull: false

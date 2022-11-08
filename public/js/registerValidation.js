@@ -21,7 +21,7 @@ form.addEventListener('submit', event => {
         event.submit()
     } else {
         event.preventDefault()
-        warning.style.visibility = 'visible';
+        warning.style.display = 'flex';
     }
 })
 
@@ -32,7 +32,7 @@ const validationsLive = (event) => {
             if (validationName()) {
                 setSuccessFor(nameInput)
             } else {
-                setErrorFor(nameInput, 'El nombre no puede quedar vacio y debe tener más de 2 caracteres.')
+                setErrorFor(nameInput, 'El nombre debe tener más de 2 caracteres.')
             }
             break;
 
@@ -40,7 +40,7 @@ const validationsLive = (event) => {
             if (validationLastName()) {
                 setSuccessFor(lastName)
             } else {
-                setErrorFor(lastName, 'El nombre no puede quedar vacio y debe tener más de 2 caracteres.')
+                setErrorFor(lastName, 'El apellido debe tener más de 2 caracteres.')
             }
             break;
 
@@ -61,7 +61,7 @@ const validationsLive = (event) => {
             break;
 
         case "controls passwordConfirm":
-            if(validationConfirmPassword()){
+            if (validationConfirmPassword()) {
                 setSuccessFor(passwordConfirm)
             } else {
                 setErrorFor(passwordConfirm, 'Las contraseñas no coinciden.')
@@ -104,16 +104,24 @@ inputs.forEach(input => {
 function setErrorFor(input, message) {
     const itemInput = input.closest('div');
     const small = itemInput.querySelector('small');
+    const iconBad = itemInput.querySelector('.fa-exclamation-circle');
+    const iconCheck = itemInput.querySelector('.fa-check-circle');
     itemInput.className = 'item-input error';
     small.innerText = message;
     small.style.visibility = 'visible';
+    iconBad.style.display = 'inline';
+    iconCheck.style.display = 'none';
 }
 
 function setSuccessFor(input) {
     const itemInput = input.closest('div');
     const small = itemInput.querySelector('small');
+    const iconCheck = itemInput.querySelector('.fa-check-circle');
+    const iconBad = itemInput.querySelector('.fa-exclamation-circle');
     itemInput.className = 'item-input success';
     small.style.visibility = 'hidden';
+    iconCheck.style.display = 'inline';
+    iconBad.style.display = 'none';
 }
 
 

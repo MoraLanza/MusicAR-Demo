@@ -54,18 +54,21 @@
                                     <div class="item-input">
                                         <label for="name">Nombre*
                                             <input type="text" name="name" id="name" class="controls name" value="<%= user.name %> ">
+                                            <small class="error-text">Error text</small>
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="lastName">Apellido*
                                             <input type="text" name="lastName" id="lastName" class="controls lastName" value="<%= user.lastName %> ">
+                                            <small class="error-text">Error text</small>
                                         </label>
                                     </div>
 
                                     <div class="item-input">
                                         <label for="email">Email*
                                             <input type="email" name="email" id="email" class="controls email" value="<%= user.email %> ">
+                                            <small class="error-text">Error text</small>
                                         </label>
                                     </div>
 
@@ -73,6 +76,7 @@
                                         <label for="imageUser">Eligí tu foto de perfil*
                                             <input type="hidden" name="oldImage" value="<%= user.imageUser %>">
                                             <input class="controls" type="file" name="imageUser" id="imageUser" >
+                                            <small class="error-text">Error text</small>
                                         </label>
                                     </div>
                                 </div>
@@ -141,22 +145,25 @@
                     </div>
                                         
                     <div class="edit-profile-container card card-form glass-effect d-none element-animation" id="editPassword">
-                        <form action="/users/profile/updatePass/<%=user.id%>?_method=PUT" method="POST"  class="form-edit-password">
+                        <form class="form-SensibleData"action="/users/profile/updatePass/<%=user.id%>?_method=PUT" method="POST"  class="form-edit-password">
                             <h2 class="title-form">Modificar tus datos</h2>
                             <div class="form-inputs d-column">
                                 <div class="item-input">
                                     <label for="password">Contraseña actual*
-                                        <input type="password" name="password" id="password" class="controls">
+                                        <input type="password" name="password" id="password" class="controls password">
+                                        <small class="error-text">Error text</small>
                                     </label>
                                 </div>
                                 <div class="item-input">
                                     <label for="newPassword">Nueva contraseña*
-                                        <input type="password" name="newPassword" id="newPassword" class="controls">
+                                        <input type="password" name="newPassword" id="newPassword" class="controls newPassword">
+                                        <small class="error-text">Error text</small>
                                     </label>
                                 </div>
                                 <div class="item-input">
                                     <label for="confirmPassword">Repetir nueva contraseña*
-                                        <input type="password" name="confirmPassword" id="confirmPassword" class="controls">
+                                        <input type="password" name="confirmPassword" id="confirmPassword" class="controls confirmPassword">
+                                        <small class="error-text">Error text</small>
                                     </label>
                                 </div>
                             </div>
@@ -226,6 +233,7 @@
             
             <%- include('../partials/footer') %>
             <script src="/js/profile.js"></script>
+            <script src="/js/profileValidation.js"></script>
     </body>
 
 </html>

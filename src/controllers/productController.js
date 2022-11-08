@@ -64,7 +64,7 @@ let productController = {
                 ['price', 'ASC']
             ]
            });
-            
+            console.log(teater)
             return res.render('./products/product-detail', {event, tickets, functions, teater});
         
         } catch (error) {
@@ -92,7 +92,6 @@ let productController = {
         const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
-            console.log('hay error')
             const countries = await Countries.findAll();
             const states = await States.findAll();
             const citys = await Citys.findAll();

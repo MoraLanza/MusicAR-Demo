@@ -4,7 +4,6 @@ header {
     z-index: 1000;
 
 }
-
 .search-container {
     width: 100%;
     justify-content: center;
@@ -23,7 +22,7 @@ header {
     top: -50px;
 }
 
-form.search-form {
+.search-form {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -80,9 +79,9 @@ input#event-date,
 
 
 }
-
 .section-title h2 {
-    font-size: 32px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 45px;
 }
 
 .line-title {
@@ -115,7 +114,6 @@ section {
 .article-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
 }
 
 .article-image {
@@ -212,6 +210,18 @@ form.delete {
     cursor: pointer;
     z-index: 3;
 }
+
+
+.thumb-ticket-icon {
+    color: black;
+    margin-left: 10px;
+    font-size: 23px;
+}
+
+.result-thumb .btn-card-own {
+    width: 100%;
+}
+
 
 /* MEDIA QUERIES */
 

@@ -28,7 +28,10 @@ const apiUserController = {
                 return allUsers;
             }
 
-            const users = await Users.findAll();
+            const users = await Users.findAll({
+                offset: 10,
+                limit: 10
+            });
 
             return res.json({
                 count: users.lenght,

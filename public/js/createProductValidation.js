@@ -26,7 +26,7 @@ const inputs = [artist, subtitle, image, linkYoutube];
 form.addEventListener('submit', event => {
 if (!formValidation()){
     event.preventDefault();
-    warning.style.visibility = 'visible';
+    warning.style.display = 'block';
 } else{
     form.submit()
 }
@@ -197,13 +197,24 @@ const formValidation = () => {
 function setErrorFor(input, message) {
     const formGroup = input.closest('div');
     const small = formGroup.querySelector('small');
+    const iconBad = formGroup.querySelector('.fa-exclamation-circle');
+    const iconCheck = formGroup.querySelector('.fa-check-circle');
     formGroup.className = 'form-group error';
     small.innerText = message;
+    small.style.visibility = 'visible';
+    iconBad.style.display = 'inline';
+    iconCheck.style.display = 'none';
 }
 
 function setSuccessFor(input) {
     const formGroup = input.closest('div');
     formGroup.className = 'form-group success';
+    const small = formGroup.querySelector('small');
+    const iconCheck = formGroup.querySelector('.fa-check-circle');
+    const iconBad = formGroup.querySelector('.fa-exclamation-circle');
+    small.style.visibility = 'hidden';
+    iconCheck.style.display = 'inline';
+    iconBad.style.display = 'none';
 }
 
 

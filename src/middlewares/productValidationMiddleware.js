@@ -8,7 +8,7 @@ body('artist').notEmpty().withMessage('Debe ingresar un artista.').bail()
 
 body('image').custom((value, { req }) => {
     let file = req.file;
-    let acceptedExtensions = ['.jpg', '.jpge', '.png'];
+    let acceptedExtensions = ['.jpg', '.jpeg', '.png'];
     
     if (!file) {
         throw new Error('Debe subir una imagen de perfil.')

@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head') %>
-        <link rel="stylesheet" href="/css/style-products-all.css">
+        <link rel="stylesheet" href="/css/style-home.css">
 </head>
 
 <body>
@@ -17,32 +17,73 @@
 
         <div class="search-container">
             <div class="search-nav">
-                <form action="" class="search-form">
+                <div class="search-form">
 
                     <div class="search">
-                        <input type="text" name="key-word" id="key-word" placeholder="Buscar sala, artista, recinto...">
+                        <input type="text" name="key-word" id="search-artist" placeholder="Buscar artista">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
 
                     <div>
-                        <select name="categories" id="categories">
-                            <option selected="selected">Categorias</option>
-                            <option value="clasic">Clásica</option>
-                            <option value="rock">Rock</option>
-                            <option value="salsa">Salsa</option>
-                            <option value="reggaeton">Reggaeton</option>
+                        <select name="category_id" id="category_id">
+                            <option value="" selected>Selecciona una categoria</option>
+                            <% categories.forEach(category=> { %>
+                                <option value="<%= category.id%>">
+                                    <%=category.name%>
+                                </option>
+                                <% }) %>
                         </select>
                     </div>
-                    <div class="place">
-                        <input type="text" name="event-place" id="event-place" placeholder="Lugar">
-                        <i class="fa-solid fa-location-dot"></i>
+                
+                    <div>
+                        <select name="teater_id" id="teater_id">
+                            <option value="" selected>Selecciona un Teatro / Bar</option>
+                            <% teaters.forEach(teater=> { %>
+                                <option value="<%= teater.id%>">
+                                    <%=teater.name%>
+                                </option>
+                                <% }) %>
+                        </select>
                     </div>
 
-                    <input class="btn btn-search color-a" type="button" value="Buscar">
-                </form>
+                    <input class="btn-card-own btn-search color-a" id="searchBtn" type="button" value="Buscar">
+                </div>
             </div>
         </div>
         <!-- FIN -- Sección Buscador -->
+
+        <section id="section-results" class="section-events hidden">
+
+            <div class="section-title">
+                <h2>Resultados de busqueda</h2>
+                <hr class="line-title">
+            </div>
+
+            <div class="no-results-box hidden">
+                <h4>No encontramos eventos para esta búsqueda</h4>
+            </div>
+
+            <div class="events-container" id="results-container">
+                <article class="article-container result-thumb" id="results-thumb">
+                    <a id="event-thumb-link" class="article-container-link"></a>
+                    <div class="article-image">
+                        <img alt="" id="event-thumb-img">
+                    </div>
+
+                    <div class="article-title">
+                        <h2 id="event-thumb-title">
+                        </h2>
+                        <h4 id="event-thumb-subtitle">
+                        </h4>
+                    </div>
+
+
+                    <div class="article-buttons">
+                        <a href="" class="btn-card-own color-a buy">Comprar ahora</a>
+                    </div>
+                </article>
+            </div>
+        </section>
         <!-- Sección Destacados -->
         <section class="section-events">
 
@@ -129,6 +170,7 @@
             </div>
         </section>
         <%- include('../partials/footer') %>
+        <script src="/js/searchIndex.js"></script>
 </body>
 
 </html>

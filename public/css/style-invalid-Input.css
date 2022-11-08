@@ -1,44 +1,42 @@
-.error-text{
+.error-text {
     color: rgb(255, 70, 70);
     font-size: 14px;
     text-align: left;
     background-color: rgb(0, 0, 0, 0.2);
     border-radius: 5px;
-    visibility: hidden;
+    visibility:hidden ;
     margin-bottom: 10px;
 }
 
-.is-invalid{
-        box-shadow: inset 0px 0px 0px 1px rgb(255, 121, 121);
-        box-sizing: border-box;
-        border: 1px solid rgb(255, 100, 100);
+.is-invalid {
+    box-shadow: inset 0px 0px 0px 1px rgb(255, 121, 121);
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 100, 100);
 }
 
-i.fa-check-circle,  i.fa-exclamation-circle  {
-	visibility: hidden;
-	
+i.fa-check-circle,
+i.fa-exclamation-circle {
+display: none;
 }
 
 .item-input.success i.fa-check-circle {
-	color: #2ecc71;
-	visibility: visible;
+    color: #2ecc71;
+    
 }
 
 .item-input.error label i.fa-exclamation-circle {
-	color: #e74c3c;
-	visibility: visible;
+    color: #e74c3c;
 }
 
-.warning{
+.warning {
     color: #ff6453;
     font-size: 24px;
     margin: 20px 0;
-    visibility: hidden;
+    display: none;
 }
 
 .warning-submit {
-    visibility: hidden;
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-bottom: 20px;
     border-radius: 15px;
@@ -47,7 +45,7 @@ i.fa-check-circle,  i.fa-exclamation-circle  {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.warning-title{
+.warning-title {
     text-align: center;
     padding: 10px;
     border-radius: 15px;
@@ -55,21 +53,24 @@ i.fa-check-circle,  i.fa-exclamation-circle  {
     color: white;
     font-size: large
 }
-.warning-submit p{
+
+.warning-submit p {
     padding-top: 10px;
     text-align: center;
     color: black;
 }
-.warning-submit li{
+
+.warning-submit li {
     list-style-type: disc;
     color: black;
 }
 
-.warning-uls{
+.warning-uls {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
 }
+
 .warning-uls ul {
     margin-right: 10px;
 }
