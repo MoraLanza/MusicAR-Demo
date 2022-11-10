@@ -1,10 +1,9 @@
 # Digital House
 Grupo4-MusicAR
 
-## Descripción
-Musicar es un sitio web dedicado a la venta de entradas a eventos musicales. La venta de entradas se efectúa desde el sitio web, mediante la apertura de una cuenta como “Cliente” que le permitirá seleccionar entradas y agregarlas al carrito, para posteriormente efectuar la compra. 
-
-
+## Sobre el proyecto
+Lo que nos interpeló para encarar este proyecto fue la música como el espacio para compartir momentos; nuestro objetivo principal fue que las personas encuentren estos espacios de manera personalizada y rápida para que puedan asistir a sus eventos de preferencia.
+Encontramos como solución crear una web que permita encontrar los eventos a los que les gustaria atender dando lugar a cierto nivel de personalización. 
 
 ## Páginas de Referencia:
 - https://flashpass.com.ar
