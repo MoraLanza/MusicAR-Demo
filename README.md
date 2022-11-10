@@ -1,5 +1,5 @@
-# Digital House
-Grupo4-MusicAR
+# MusicAR
+### desarrollado en el marco de Digital House.
 
 ## El proyecto
 Lo que nos interpeló para encarar este proyecto fue la música como el espacio para compartir momentos; nuestro objetivo principal fue que las personas encuentren estos espacios de manera personalizada y rápida para que puedan asistir a sus eventos de preferencia.
