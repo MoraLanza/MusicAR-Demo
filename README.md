@@ -5,9 +5,6 @@
 Lo que nos interpeló para encarar este proyecto fue la música como el espacio para compartir momentos; nuestro objetivo principal fue que las personas encuentren estos espacios de manera personalizada y rápida para que puedan asistir a sus eventos de preferencia.
 Encontramos como solución crear una web que permita encontrar los eventos a los que les gustaria atender dando lugar a cierto nivel de personalización. 
 
-## Video presentación 
-https://clipchamp.com/watch/TQ6bv9jNHwO
-
 ## Páginas de Referencia:
 - https://flashpass.com.ar
 - https://www.passline.com
